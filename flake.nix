@@ -14,9 +14,15 @@
       url = "git+https://codeberg.org/penwings/Turntable";
       flake = false;
     };
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
+      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.7.tar.gz"; # uncomment line for solaar version 1.1.19
+      #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, solaar, ... }@inputs:
   let
     system = "x86_64-linux";
   in {
@@ -24,6 +30,7 @@
       inherit system;
       modules = [
         ./configuration.nix
+        solaar.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
