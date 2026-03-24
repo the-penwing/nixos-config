@@ -1,5 +1,4 @@
 # Hardware-specific config (varies per machine)
-hardware-configuration.nix
 
 # Lock file (auto-generated, causes merge conflicts)
 flake.lock
