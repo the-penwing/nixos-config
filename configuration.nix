@@ -118,12 +118,14 @@
     
     # Audio
     easyeffects
+    mpv
   
     # Utilities
     bitwarden-desktop
     discord
     vlc
     gnome-software
+    
     
     # Terminal & Editor
     ghostty
