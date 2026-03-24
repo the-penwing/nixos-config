@@ -6,19 +6,19 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     plank-reloaded.url = "github:zquestz/plank-reloaded";
+    naviterm = {
+      url = "gitlab:detoxify92/naviterm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     turntable-src = {
       url = "git+https://codeberg.org/penwings/Turntable";
       flake = false;
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, plank-reloaded, turntable-src, ... }:
+  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, ... }@inputs:
   let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    turntable = pkgs.callPackage ./turntable.nix {
-      src = turntable-src;
-    };
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -33,7 +33,10 @@
         {
           environment.systemPackages = [
             plank-reloaded.packages.${system}.default
-            turntable
+            naviterm.packages.${system}.default
+            (nixpkgs.legacyPackages.${system}.callPackage ./turntable.nix {
+              src = turntable-src;
+            })
           ];
         }
       ];
