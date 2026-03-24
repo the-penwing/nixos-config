@@ -1,0 +1,26 @@
+# Hardware-specific config (varies per machine)
+hardware-configuration.nix
+
+# Lock file (auto-generated, causes merge conflicts)
+flake.lock
+
+# Nix build artifacts
+result
+result-*
+*.drv
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Secrets/sensitive files (if you add any)
+secrets.nix
+.env
+
+# Temporary files
+*.tmp
+*.log
