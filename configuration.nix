@@ -133,7 +133,8 @@
     discord
     vlc
     gnome-software
-    
+    syncthing
+    syncthingtray
     
     # Terminal & Editor
     ghostty
@@ -160,6 +161,7 @@
     tea
     pyenv
     uv
+    sqlitebrowser
         
     # Virtualisation
     docker-compose
