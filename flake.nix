@@ -25,6 +25,7 @@
   outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, solaar, ... }@inputs:
   let
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations."bens-nixos-laptop" = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -32,11 +33,16 @@
         ./configuration.nix
         solaar.nixosModules.default
         home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.benvl = import ./home.nix;
-        }
+		{
+  		  home-manager.useGlobalPkgs = true;
+		  home-manager.useUserPackages = true;
+		  home-manager.users.benvl = import ./home.nix {
+		    inherit pkgs;
+		    turntable = nixpkgs.legacyPackages.${system}.callPackage ./turntable.nix {
+      		  src = turntable-src;
+    		};
+  		  };
+		}
         {
           environment.systemPackages = [
             plank-reloaded.packages.${system}.default
