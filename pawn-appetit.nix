@@ -13,7 +13,7 @@ pkgs.stdenv.mkDerivation rec {
     pnpm
     nodejs
     typescript
-    makeWrapper
+    wrapGAppsHook3
   ];
 
   buildInputs = with pkgs; [
@@ -30,12 +30,15 @@ pkgs.stdenv.mkDerivation rec {
     webkitgtk_6_0
   ];
 
+  configurePhase = ''
+    export HOME=$(mktemp -d)
+    pnpm config set store-dir $HOME/.pnpm-store
+  '';
+
   buildPhase = ''
-    # Build frontend
-    pnpm install --frozen-lockfile
+    pnpm install
     pnpm run build-vite
     
-    # Build Tauri app
     cd src-tauri
     cargo build --release
   '';
