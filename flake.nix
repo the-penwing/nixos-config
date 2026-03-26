@@ -62,7 +62,6 @@
         nodejs
         pkg-config
         gtk3
-        libjavascriptcoregtk_6_0
         webkitgtk_6_0
         libsoup_3
       ];
