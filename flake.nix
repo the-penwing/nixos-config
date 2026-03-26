@@ -65,12 +65,8 @@
         webkitgtk_6_0
         libsoup_3
       ];
-      
       shellHook = ''
-        # Create symlink for javascriptcoregtk-4.1 -> 6.0
-        mkdir -p /tmp/pkgconfig
-        ln -sf ${pkgs.webkitgtk_6_0.dev}/lib/pkgconfig/javascriptcoregtk-6.0.pc /tmp/pkgconfig/javascriptcoregtk-4.1.pc
-        export PKG_CONFIG_PATH="/tmp/pkgconfig:${pkgs.webkitgtk_6_0.dev}/lib/pkgconfig:$PKG_CONFIG_PATH"
+        export JAVASCRIPTCOREGTK_4_1_NO_PKG_CONFIG=1
         export LD_LIBRARY_PATH="${pkgs.webkitgtk_6_0}/lib:$LD_LIBRARY_PATH"
         echo "Pawn-Appetit dev shell loaded"
       '';
