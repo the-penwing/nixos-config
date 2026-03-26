@@ -18,6 +18,7 @@
 , desktop-file-utils
 , appstream
 , wrapGAppsHook3
+, glycin-loaders
 }:
 
 stdenv.mkDerivation {
@@ -48,6 +49,7 @@ stdenv.mkDerivation {
     libportal
     libglycin
     libglycin-gtk4
+    glycin-loaders
   ];
   postInstall = ''
     glib-compile-schemas $out/share/glib-2.0/schemas/

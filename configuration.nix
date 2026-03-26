@@ -85,6 +85,7 @@
   # ============================================================
   services.tailscale.enable = true;
   services.flatpak.enable = true;
+  programs.thunderbird.enable = true;
   services.dbus.enable = true;
   services.solaar = {
     enable = true; # Enable the service
@@ -92,6 +93,12 @@
     window = "hide"; # Show the window on startup (show, *hide*, only [window only])
     batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
     extraArgs = ""; # Extra arguments to pass to solaar on startup
+  };
+  services.syncthing = {
+  	enable = true;
+  	user = "benvl";
+  	dataDir = "/home/benvl/.local/share/syncthing";
+  	openDefaultPorts = true;
   };
   
   # ============================================================
@@ -133,9 +140,8 @@
     discord
     vlc
     gnome-software
-    syncthing
-    syncthingtray
-    
+    imv
+       
     # Terminal & Editor
     ghostty
     neovim
@@ -174,6 +180,7 @@
     fzf
     fd
     btop
+    screenfetch
     fastfetch
     tree
     ripgrep
@@ -183,6 +190,7 @@
     dust
     tldr
     jq
+    imagemagick
 
     # Screenshot (Hyprland)
     grim
@@ -200,6 +208,7 @@
     brightnessctl
     pamixer
     bamf
+    libheif
   ];
 
   programs.nix-ld.enable = true;
