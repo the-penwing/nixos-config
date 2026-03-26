@@ -63,6 +63,7 @@
         pkg-config
         gtk3
         webkitgtk_6_0
+        webkitgtk_6_0.dev
         libsoup_3
       ];
       
