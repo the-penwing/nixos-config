@@ -1,12 +1,10 @@
 { pkgs, src }:
 
-pkgs.rustPlatform.buildRustBinary rec {
+pkgs.stdenv.mkDerivation rec {
   pname = "pawn-appetit";
   version = "0.11.0";
 
   inherit src;
-
-  sourceRoot = "${src.name}/src-tauri";
 
   nativeBuildInputs = with pkgs; [
     pkg-config
@@ -15,6 +13,7 @@ pkgs.rustPlatform.buildRustBinary rec {
     pnpm
     nodejs
     typescript
+    makeWrapper
   ];
 
   buildInputs = with pkgs; [
@@ -33,18 +32,17 @@ pkgs.rustPlatform.buildRustBinary rec {
 
   buildPhase = ''
     # Build frontend
-    cd ..
     pnpm install --frozen-lockfile
     pnpm run build-vite
-    cd src-tauri
-
+    
     # Build Tauri app
+    cd src-tauri
     cargo build --release
   '';
 
   installPhase = ''
     mkdir -p $out/bin
-    cp target/release/pawn-appetit $out/bin/
+    cp target/release/pawn_appetit $out/bin/pawn-appetit
   '';
 
   meta = {
