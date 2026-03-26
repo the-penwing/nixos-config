@@ -67,9 +67,12 @@
       ];
       
       shellHook = ''
-        export PKG_CONFIG_PATH="${pkgs.webkitgtk_6_0.dev}/lib/pkgconfig:$PKG_CONFIG_PATH"
+        # Create symlink for javascriptcoregtk-4.1 -> 6.0
+        mkdir -p /tmp/pkgconfig
+        ln -sf ${pkgs.webkitgtk_6_0.dev}/lib/pkgconfig/javascriptcoregtk-6.0.pc /tmp/pkgconfig/javascriptcoregtk-4.1.pc
+        export PKG_CONFIG_PATH="/tmp/pkgconfig:${pkgs.webkitgtk_6_0.dev}/lib/pkgconfig:$PKG_CONFIG_PATH"
+        export LD_LIBRARY_PATH="${pkgs.webkitgtk_6_0}/lib:$LD_LIBRARY_PATH"
         echo "Pawn-Appetit dev shell loaded"
-        echo "Run: pnpm run tauri dev"
       '';
     };
   };
