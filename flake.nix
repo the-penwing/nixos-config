@@ -62,13 +62,14 @@
         nodejs
         pkg-config
         gtk3
+        libjavascriptcoregtk_6_0
         webkitgtk_6_0
         libsoup_3
       ];
       
       shellHook = ''
         echo "Pawn-Appetit dev shell loaded"
-        echo "Run: pnpm install && pnpm run tauri dev"
+        echo "Run: pnpm run tauri dev"
       '';
     };
   };
