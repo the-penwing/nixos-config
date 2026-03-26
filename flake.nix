@@ -58,5 +58,22 @@
         }
       ];
     };
+    devShells.x86_64-linux.pawn-appetit = pkgs.mkShell {
+      buildInputs = with pkgs; [
+        cargo
+        rustc
+        pnpm
+        nodejs
+        pkg-config
+        gtk3
+        webkitgtk_6_0
+        libsoup_3
+      ];
+      
+      shellHook = ''
+        echo "Pawn-Appetit dev shell loaded"
+        echo "Run: pnpm install && pnpm run tauri dev"
+      '';
+    };
   };
 }
