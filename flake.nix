@@ -62,12 +62,11 @@
         nodejs
         pkg-config
         gtk3
-        webkitgtk_6_0
+        webkitgtk
         libsoup_3
       ];
+      
       shellHook = ''
-        export JAVASCRIPTCOREGTK_4_1_NO_PKG_CONFIG=1
-        export LD_LIBRARY_PATH="${pkgs.webkitgtk_6_0}/lib:$LD_LIBRARY_PATH"
         echo "Pawn-Appetit dev shell loaded"
       '';
     };
