@@ -54,10 +54,6 @@
             (nixpkgs.legacyPackages.${system}.callPackage ./turntable.nix {
               src = turntable-src;
             })
-			(import (self + /pawn-appetit.nix) {
-			  pkgs = nixpkgs.legacyPackages.${system};
-			  src = pawn-appetit-src;
-			})
           ];
         }
       ];
