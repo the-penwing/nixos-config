@@ -20,7 +20,6 @@ pkgs.stdenv.mkDerivation rec {
     libGL
     openssl
     gtk3
-    libjavascriptcoregtk-4_1
     webkitgtk_6_0
     libsoup_3
   ];
