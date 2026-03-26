@@ -63,11 +63,11 @@
         pkg-config
         gtk3
         webkitgtk_6_0
-        webkitgtk_6_0.dev
         libsoup_3
       ];
       
       shellHook = ''
+        export PKG_CONFIG_PATH="${pkgs.webkitgtk_6_0.dev}/lib/pkgconfig:$PKG_CONFIG_PATH"
         echo "Pawn-Appetit dev shell loaded"
         echo "Run: pnpm run tauri dev"
       '';
