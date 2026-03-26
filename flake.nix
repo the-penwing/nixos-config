@@ -20,13 +20,9 @@
       #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pawn-appetit-src = {
-      url = "github:Pawn-Appetit/pawn-appetit";
-      flake = false;
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, solaar, pawn-appetit-src, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, solaar, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
