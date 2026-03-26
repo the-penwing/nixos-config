@@ -12,8 +12,6 @@ pkgs.stdenv.mkDerivation rec {
     rustc
     pnpm
     nodejs
-    typescript
-    wrapGAppsHook3
   ];
 
   buildInputs = with pkgs; [
@@ -22,21 +20,14 @@ pkgs.stdenv.mkDerivation rec {
     libGL
     openssl
     gtk3
-    glib
-    cairo
-    pango
-    atk
-    gdk-pixbuf
+    libjavascriptcoregtk
     webkitgtk_6_0
+    libsoup_3
   ];
 
-  configurePhase = ''
-    export HOME=$(mktemp -d)
-    pnpm config set store-dir $HOME/.pnpm-store
-  '';
-
   buildPhase = ''
-    pnpm install
+    export HOME=$(mktemp -d)
+    pnpm install --frozen-lockfile
     pnpm run build-vite
     
     cd src-tauri
