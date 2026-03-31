@@ -1,0 +1,71 @@
+/* ============================================
+   WOFI — GRUVBOX SOFT DARK
+   ============================================ */
+
+window {
+    background-color: #32302f;
+    border: 1px solid #504945;
+    border-radius: 12px;
+}
+
+#input {
+    background-color: #3c3836;
+    color: #ebdbb2;
+    border: 1px solid #504945;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: "0xProto Nerd Font", monospace;
+    font-size: 14px;
+    margin: 8px 8px 4px 8px;
+}
+
+#input:focus {
+    border-color: #fe8019;
+    outline: none;
+}
+
+#input image {
+    color: #a89984;
+}
+
+#scroll {
+    margin: 4px 4px 8px 4px;
+}
+
+#inner-box {
+    background-color: transparent;
+}
+
+#outer-box {
+    padding: 4px;
+}
+
+#text {
+    color: #ebdbb2;
+    font-family: "0xProto Nerd Font", monospace;
+    font-size: 13px;
+    padding: 0 8px;
+}
+
+#text:selected {
+    color: #1d2021;
+}
+
+#entry {
+    border-radius: 6px;
+    padding: 6px 4px;
+    margin: 1px 4px;
+}
+
+#entry:selected {
+    background-color: #d65d0e;
+}
+
+#entry:hover {
+    background-color: #504945;
+}
+
+#img {
+    padding: 4px;
+    border-radius: 4px;
+}

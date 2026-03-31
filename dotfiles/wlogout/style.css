@@ -1,0 +1,58 @@
+/* ============================================
+   WLOGOUT — GRUVBOX SOFT DARK
+   ============================================ */
+
+window {
+    background-color: rgba(29, 32, 33, 0.88);
+}
+
+button {
+    font-family: "0xProto Nerd Font", monospace;
+    font-size: 14px;
+    color: #ebdbb2;
+    background-color: rgba(60, 56, 54, 0.85);
+    border: 1px solid #504945;
+    border-radius: 12px;
+    margin: 10px;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px;
+    transition: all 0.15s ease;
+    outline-style: none;
+}
+
+button:focus, button:active {
+    background-color: rgba(214, 93, 14, 0.4);
+    border-color: #fe8019;
+    color: #fbf1c7;
+}
+
+button:hover {
+    background-color: rgba(80, 73, 69, 0.9);
+    border-color: #fe8019;
+}
+
+#lock {
+    background-image: url("/run/current-system/sw/share/wlogout/icons/lock.png");
+}
+
+#logout {
+    background-image: url("/run/current-system/sw/share/wlogout/icons/logout.png");
+}
+
+#suspend {
+    background-image: url("/run/current-system/sw/share/wlogout/icons/suspend.png");
+}
+
+#hibernate {
+    background-image: url("/run/current-system/sw/share/wlogout/icons/hibernate.png");
+}
+
+#shutdown {
+    background-image: url("/run/current-system/sw/share/wlogout/icons/shutdown.png");
+}
+
+#reboot {
+    background-image: url("/run/current-system/sw/share/wlogout/icons/reboot.png");
+}

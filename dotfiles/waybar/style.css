@@ -1,0 +1,229 @@
+/* ============================================
+   WAYBAR — GRUVBOX SOFT DARK
+   ============================================ */
+
+/* Gruvbox palette */
+@define-color bg0_h     #1d2021;
+@define-color bg0       #282828;
+@define-color bg0_s     #32302f;
+@define-color bg1       #3c3836;
+@define-color bg2       #504945;
+@define-color bg3       #665c54;
+@define-color bg4       #7c6f64;
+@define-color fg0       #fbf1c7;
+@define-color fg1       #ebdbb2;
+@define-color fg2       #d5c4a1;
+@define-color fg3       #bdae93;
+@define-color fg4       #a89984;
+@define-color red_s     #cc241d;
+@define-color green_s   #98971a;
+@define-color yellow_s  #d79921;
+@define-color blue_s    #458588;
+@define-color purple_s  #b16286;
+@define-color aqua_s    #689d6a;
+@define-color orange_s  #d65d0e;
+@define-color red_h     #fb4934;
+@define-color green_h   #b8bb26;
+@define-color yellow_h  #fabd2f;
+@define-color blue_h    #83a598;
+@define-color purple_h  #d3869b;
+@define-color aqua_h    #8ec07c;
+@define-color orange_h  #fe8019;
+
+* {
+    font-family: "0xProto Nerd Font", "FiraCode Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @fg1;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: alpha(@bg0_s, 0.92);
+    border: 1px solid @bg2;
+    border-radius: 10px;
+    padding: 0 6px;
+}
+
+/* ============ WORKSPACES ============ */
+
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 4px 10px;
+    margin: 4px 2px;
+    background: transparent;
+    color: @fg4;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.15s ease;
+    font-size: 12px;
+}
+
+#workspaces button:hover {
+    background: @bg2;
+    color: @fg1;
+}
+
+#workspaces button.active {
+    background: @orange_s;
+    color: @bg0_h;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: @red_s;
+    color: @fg0;
+}
+
+#workspaces button.special {
+    background: @bg2;
+    color: @yellow_h;
+}
+
+/* ============ WINDOW TITLE ============ */
+
+#window {
+    padding: 0 10px;
+    color: @fg3;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* ============ CLOCK ============ */
+
+#clock {
+    padding: 0 14px;
+    color: @fg1;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* ============ RIGHT MODULES BASE ============ */
+
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#tray,
+#custom-power {
+    padding: 0 10px;
+    color: @fg2;
+    margin: 3px 0;
+}
+
+/* ============ PULSEAUDIO ============ */
+
+#pulseaudio {
+    color: @blue_h;
+}
+
+#pulseaudio.muted {
+    color: @fg4;
+}
+
+/* ============ BACKLIGHT ============ */
+
+#backlight {
+    color: @yellow_h;
+}
+
+/* ============ BATTERY ============ */
+
+#battery {
+    color: @green_h;
+}
+
+#battery.charging {
+    color: @green_h;
+    animation-name: blink;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow_h;
+}
+
+#battery.critical:not(.charging) {
+    color: @red_h;
+    animation-name: blink-critical;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to { color: @fg1; }
+}
+
+@keyframes blink-critical {
+    to { color: @bg0_h; background: @red_h; }
+}
+
+/* ============ NETWORK ============ */
+
+#network {
+    color: @aqua_h;
+}
+
+#network.disconnected {
+    color: @fg4;
+}
+
+/* ============ TRAY ============ */
+
+#tray {
+    color: @fg3;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @orange_s;
+    border-radius: 6px;
+}
+
+/* ============ POWER BUTTON ============ */
+
+#custom-power {
+    color: @red_h;
+    font-size: 14px;
+    padding: 0 12px 0 8px;
+}
+
+#custom-power:hover {
+    color: @fg0;
+    background: @red_s;
+    border-radius: 8px;
+}
+
+/* ============ TOOLTIPS ============ */
+
+tooltip {
+    background: @bg1;
+    border: 1px solid @bg3;
+    border-radius: 8px;
+    color: @fg1;
+    padding: 6px 10px;
+}
+
+tooltip label {
+    color: @fg1;
+    font-size: 12px;
+}
