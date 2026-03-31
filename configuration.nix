@@ -130,6 +130,7 @@
     gimp
     inkscape
     krita
+    f3d
     
     # Audio
     easyeffects
@@ -141,6 +142,7 @@
     vlc
     gnome-software
     imv
+    kdePackages.k3b
        
     # Terminal & Editor
     ghostty
@@ -151,6 +153,7 @@
     libreoffice
     obsidian  
     xournalpp
+    kiwix
   
 
     # File Manager
@@ -168,6 +171,8 @@
     pyenv
     uv
     sqlitebrowser
+    starship
+    filezilla
         
     # Virtualisation
     docker-compose
@@ -191,6 +196,7 @@
     tldr
     jq
     imagemagick
+    tmux
 
     # Screenshot (Hyprland)
     grim
@@ -219,6 +225,8 @@
   fonts.packages = with pkgs; [
     nerd-fonts._0xproto
     nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.envy-code-r
   ];
 
   # ============================================================

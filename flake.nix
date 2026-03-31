@@ -62,7 +62,7 @@
         nodejs
         pkg-config
         gtk3
-        webkitgtk
+        webkitgtk_4_1
         libsoup_3
       ];
       
