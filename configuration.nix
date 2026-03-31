@@ -208,6 +208,20 @@
     hyprpaper
     hyprlock
     dunst
+    hypridle
+    hyprpolkitagent
+    wl-clipboard
+    cliphist
+    nwg-displays
+    nwg-look
+    qt6Packages.qt6ct
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
+    pavucontrol
+    waypaper
+    wlogout
+    playerctl
+    bibata-cursors
 
     # System
     networkmanagerapplet
