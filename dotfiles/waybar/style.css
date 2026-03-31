@@ -1,41 +1,35 @@
 /* ============================================
-   WAYBAR — GRUVBOX SOFT DARK
+   WAYBAR — GRUVBOX SOFT DARK  (clean rebuild)
    ============================================ */
 
-/* Gruvbox palette */
-@define-color bg0_h     #1d2021;
-@define-color bg0       #282828;
-@define-color bg0_s     #32302f;
-@define-color bg1       #3c3836;
-@define-color bg2       #504945;
-@define-color bg3       #665c54;
-@define-color bg4       #7c6f64;
-@define-color fg0       #fbf1c7;
-@define-color fg1       #ebdbb2;
-@define-color fg2       #d5c4a1;
-@define-color fg3       #bdae93;
-@define-color fg4       #a89984;
-@define-color red_s     #cc241d;
-@define-color green_s   #98971a;
-@define-color yellow_s  #d79921;
-@define-color blue_s    #458588;
-@define-color purple_s  #b16286;
-@define-color aqua_s    #689d6a;
-@define-color orange_s  #d65d0e;
-@define-color red_h     #fb4934;
-@define-color green_h   #b8bb26;
-@define-color yellow_h  #fabd2f;
-@define-color blue_h    #83a598;
-@define-color purple_h  #d3869b;
-@define-color aqua_h    #8ec07c;
-@define-color orange_h  #fe8019;
+@define-color bg0_h   #1d2021;
+@define-color bg0_s   #32302f;
+@define-color bg1     #3c3836;
+@define-color bg2     #504945;
+@define-color bg3     #665c54;
+@define-color bg4     #7c6f64;
+@define-color fg0     #fbf1c7;
+@define-color fg1     #ebdbb2;
+@define-color fg2     #d5c4a1;
+@define-color fg3     #bdae93;
+@define-color fg4     #a89984;
+@define-color orange  #fe8019;
+@define-color orange2 #d65d0e;
+@define-color red     #fb4934;
+@define-color green   #b8bb26;
+@define-color yellow  #fabd2f;
+@define-color blue    #83a598;
+@define-color aqua    #8ec07c;
+@define-color purple  #d3869b;
 
 * {
-    font-family: "0xProto Nerd Font", "FiraCode Nerd Font", monospace;
-    font-size: 13px;
+    font-family: "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 12px;
     border: none;
     border-radius: 0;
     min-height: 0;
+    padding: 0;
+    margin: 0;
 }
 
 window#waybar {
@@ -43,72 +37,71 @@ window#waybar {
     color: @fg1;
 }
 
+/* Each section floats as its own pill */
 .modules-left,
 .modules-center,
 .modules-right {
-    background: alpha(@bg0_s, 0.92);
+    background: alpha(@bg0_h, 0.90);
     border: 1px solid @bg2;
-    border-radius: 10px;
-    padding: 0 6px;
-}
-
-/* ============ WORKSPACES ============ */
-
-#workspaces {
+    border-radius: 12px;
+    margin: 6px 4px;
     padding: 0 4px;
 }
 
+/* ── WORKSPACES ─────────────────────────── */
+
+#workspaces {
+    padding: 0 2px;
+}
+
 #workspaces button {
-    padding: 4px 10px;
-    margin: 4px 2px;
+    min-width: 28px;
+    padding: 4px 8px;
+    margin: 4px 1px;
     background: transparent;
-    color: @fg4;
-    border-radius: 6px;
-    border: none;
-    transition: all 0.15s ease;
-    font-size: 12px;
+    color: @bg3;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    transition: all 0.12s ease;
 }
 
 #workspaces button:hover {
     background: @bg2;
-    color: @fg1;
+    color: @fg2;
 }
 
 #workspaces button.active {
-    background: @orange_s;
+    background: @orange2;
     color: @bg0_h;
-    font-weight: bold;
+    min-width: 32px;
 }
 
 #workspaces button.urgent {
-    background: @red_s;
+    background: @red;
     color: @fg0;
 }
 
-#workspaces button.special {
-    background: @bg2;
-    color: @yellow_h;
-}
-
-/* ============ WINDOW TITLE ============ */
+/* ── WINDOW TITLE ────────────────────────── */
 
 #window {
     padding: 0 10px;
-    color: @fg3;
-    font-size: 12px;
+    color: @fg4;
+    font-size: 11px;
     font-style: italic;
 }
 
-/* ============ CLOCK ============ */
+/* ── CLOCK ───────────────────────────────── */
 
 #clock {
     padding: 0 14px;
     color: @fg1;
     font-weight: bold;
     font-size: 13px;
+    letter-spacing: 0.5px;
 }
 
-/* ============ RIGHT MODULES BASE ============ */
+/* ── RIGHT MODULES base ──────────────────── */
 
 #pulseaudio,
 #backlight,
@@ -117,113 +110,72 @@ window#waybar {
 #tray,
 #custom-power {
     padding: 0 10px;
-    color: @fg2;
     margin: 3px 0;
 }
 
-/* ============ PULSEAUDIO ============ */
+/* ── PULSEAUDIO ──────────────────────────── */
 
-#pulseaudio {
-    color: @blue_h;
-}
+#pulseaudio { color: @blue; }
+#pulseaudio.muted { color: @bg3; }
 
-#pulseaudio.muted {
-    color: @fg4;
-}
+/* ── BACKLIGHT ───────────────────────────── */
 
-/* ============ BACKLIGHT ============ */
+#backlight { color: @yellow; }
 
-#backlight {
-    color: @yellow_h;
-}
+/* ── BATTERY ─────────────────────────────── */
 
-/* ============ BATTERY ============ */
+#battery { color: @green; }
 
-#battery {
-    color: @green_h;
-}
+#battery.charging,
+#battery.plugged { color: @aqua; }
 
-#battery.charging {
-    color: @green_h;
-    animation-name: blink;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.warning:not(.charging) {
-    color: @yellow_h;
-}
+#battery.warning:not(.charging) { color: @yellow; }
 
 #battery.critical:not(.charging) {
-    color: @red_h;
-    animation-name: blink-critical;
-    animation-duration: 0.6s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    color: @red;
+    animation: blink-crit 0.7s linear infinite alternate;
 }
 
-@keyframes blink {
-    to { color: @fg1; }
+@keyframes blink-crit {
+    to { color: @bg0_h; background: @red; border-radius: 6px; }
 }
 
-@keyframes blink-critical {
-    to { color: @bg0_h; background: @red_h; }
-}
+/* ── NETWORK ─────────────────────────────── */
 
-/* ============ NETWORK ============ */
+#network { color: @aqua; }
+#network.disconnected { color: @bg3; }
 
-#network {
-    color: @aqua_h;
-}
+/* ── TRAY ────────────────────────────────── */
 
-#network.disconnected {
-    color: @fg4;
-}
-
-/* ============ TRAY ============ */
-
-#tray {
-    color: @fg3;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
+#tray { padding: 0 6px; }
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: @orange_s;
+    background: @orange2;
     border-radius: 6px;
+    padding: 2px 4px;
 }
 
-/* ============ POWER BUTTON ============ */
+/* ── POWER BUTTON ────────────────────────── */
 
 #custom-power {
-    color: @red_h;
-    font-size: 14px;
-    padding: 0 12px 0 8px;
+    color: @fg4;
+    font-size: 13px;
+    padding: 0 12px 0 6px;
+    margin-right: 2px;
 }
 
 #custom-power:hover {
-    color: @fg0;
-    background: @red_s;
-    border-radius: 8px;
+    color: @red;
 }
 
-/* ============ TOOLTIPS ============ */
+/* ── TOOLTIPS ────────────────────────────── */
 
 tooltip {
     background: @bg1;
     border: 1px solid @bg3;
     border-radius: 8px;
-    color: @fg1;
     padding: 6px 10px;
-}
-
-tooltip label {
     color: @fg1;
     font-size: 12px;
 }

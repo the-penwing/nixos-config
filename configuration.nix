@@ -20,8 +20,9 @@
   # NETWORKING
   # ============================================================
   networking = {
-  	hostName = "bens-nixos-laptop";
-  	networkmanager.enable = true;
+    hostName = "bens-nixos-laptop";
+    networkmanager.enable = true;
+    firewall.allowedTCPPorts = [ 22 ];
   };
   security.pki.certificateFiles = [ ./root.crt ];
 
@@ -43,19 +44,37 @@
   };
 
   # ============================================================
-  # DESKTOP — Cinnamon + LightDM (Hyprland also available)
+  # DESKTOP — Cinnamon kept as fallback, Hyprland is primary
   # ============================================================
   services.xserver = {
     enable = true;
     displayManager.lightdm.enable = true;
-    desktopManager.cinnamon.enable = true;
+    desktopManager.cinnamon.enable = true;  # Keep as fallback
     xkb = {
       layout = "au";
       variant = "";
     };
   };
 
-  programs.hyprland.enable = true;
+  # Hyprland (Wayland)
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  # Hyprlock & Hypridle — declarative
+  programs.hyprlock.enable = true;
+  services.hypridle.enable = true;
+
+  # XDG desktop portals
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = [ "hyprland" "gtk" ];
+  };
 
   # ============================================================
   # HARDWARE
@@ -74,7 +93,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # jack.enable = true;
   };
 
   # Printing
@@ -88,30 +106,38 @@
   programs.thunderbird.enable = true;
   services.dbus.enable = true;
   services.solaar = {
-    enable = true; # Enable the service
-    package = pkgs.solaar; # The package to use
-    window = "hide"; # Show the window on startup (show, *hide*, only [window only])
-    batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
-    extraArgs = ""; # Extra arguments to pass to solaar on startup
+    enable = true;
+    package = pkgs.solaar;
+    window = "hide";
+    batteryIcons = "regular";
+    extraArgs = "";
   };
   services.syncthing = {
-  	enable = true;
-  	user = "benvl";
-  	dataDir = "/home/benvl/.local/share/syncthing";
-  	openDefaultPorts = true;
+    enable = true;
+    user = "benvl";
+    dataDir = "/home/benvl/.local/share/syncthing";
+    openDefaultPorts = true;
   };
-  
+  services.openssh = {
+  	enable = true;
+  	settings = {
+  	  PermitRootLogin = "no";
+  	};
+  };
+  # Polkit (needed for auth dialogs in Hyprland)
+  security.polkit.enable = true;
+
   # ============================================================
   # PROGRAMS
   # ============================================================
   programs.firefox.enable = true;
   programs.zsh.enable = true;
-  
+
   # ============================================================
   # VIRTUALISATION
   # ============================================================
   virtualisation.docker.enable = true;
-  
+
   # ============================================================
   # USER
   # ============================================================
@@ -131,11 +157,11 @@
     inkscape
     krita
     f3d
-    
+
     # Audio
     easyeffects
     mpv
-  
+
     # Utilities
     bitwarden-desktop
     discord
@@ -143,7 +169,7 @@
     gnome-software
     imv
     kdePackages.k3b
-       
+
     # Terminal & Editor
     ghostty
     neovim
@@ -151,13 +177,13 @@
 
     # Browser & Office
     libreoffice
-    obsidian  
+    obsidian
     xournalpp
     kiwix
-  
 
-    # File Manager
+    # File Manager (Nautilus — no Nemo!)
     nautilus
+    nautilus-python  # Extensions support
 
     # Dev tools
     git
@@ -165,7 +191,6 @@
     nodejs
     rustup
     sassc
-    tailscale-systray
     lazygit
     tea
     pyenv
@@ -173,7 +198,7 @@
     sqlitebrowser
     starship
     filezilla
-        
+
     # Virtualisation
     docker-compose
 
@@ -198,11 +223,16 @@
     imagemagick
     tmux
 
-    # Screenshot (Hyprland)
+    # Screenshot (Hyprland/Wayland)
     grim
     slurp
+    swappy  # Screenshot editor
 
-    # Hyprland extras
+    # Wayland clipboard
+    wl-clipboard
+    cliphist
+
+    # Hyprland ecosystem
     waybar
     wofi
     hyprpaper
@@ -210,25 +240,43 @@
     dunst
     hypridle
     hyprpolkitagent
-    wl-clipboard
-    cliphist
     nwg-displays
     nwg-look
-    qt6Packages.qt6ct
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
-    pavucontrol
-    waypaper
     wlogout
     playerctl
     bibata-cursors
+    rofi
+    nwg-dock-hyprland
+    # Hyprland Plugins
+    
+    
+    # Qt theming (for non-GTK apps under Hyprland)
+    qt6Packages.qt6ct
+    qt6Packages.qtstyleplugin-kvantum
+    libsForQt5.qt5ct
+    libsForQt5.qtstyleplugins
 
-    # System
-    networkmanagerapplet
+    # Brightness & audio controls
     brightnessctl
     pamixer
+    pavucontrol
+
+    # GTK / icon themes (Gruvbox)
+    gruvbox-dark-gtk           # GTK theme
+    gruvbox-plus-icons         # Icon pack
+
+    # Polkit agent
+    polkit_gnome
+
+    # System / misc
+    networkmanagerapplet
     bamf
     libheif
+    xdg-utils
+
+    # Wayland compatibility
+    xwayland
+    waypaper
   ];
 
   programs.nix-ld.enable = true;
@@ -241,6 +289,7 @@
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     nerd-fonts.envy-code-r
+    cantarell-fonts           # GTK default font
   ];
 
   # ============================================================
