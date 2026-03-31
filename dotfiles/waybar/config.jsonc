@@ -89,7 +89,7 @@
         "format-ethernet": "󰈀  {ipaddr}",
         "format-disconnected": "󰤭  offline",
         "tooltip-format-wifi": "{signalStrength}%  |  {ipaddr}",
-        "on-click": "network-manager",
+        "on-click": "nm-connection-manager",
         "max-length": 22
     },
 

@@ -43,6 +43,9 @@
 
   xdg.configFile."gtk-3.0/settings.ini".source = ./dotfiles/gtk-3.0/settings.ini;
 
+  xdg.configFile."networkmanager-dmenu/config.ini".source = ./dotfiles/networkmanager-dmenu/config.ini;
+
+  xdg.configFile."rofi/config.rasi".source = ./dotfiles/rofi/config.rasi
   # ============================================================
   # SYSTEMD USER SERVICES (Turntable scrobblers — unchanged)
   # ============================================================

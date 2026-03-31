@@ -247,6 +247,7 @@
     bibata-cursors
     rofi
     nwg-dock-hyprland
+    networkmanager_dmenu
     # Hyprland Plugins
     
     
