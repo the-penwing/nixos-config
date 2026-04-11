@@ -22,7 +22,7 @@
   networking = {
     hostName = "bens-nixos-laptop";
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [ 22 ];
+    firewall.allowedTCPPorts = [ 22 8000 ];
   };
   security.pki.certificateFiles = [ ./root.crt ];
 
@@ -93,6 +93,15 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+  
+  services.pipewire.extraConfig.pipewire."10-clock" = {
+    "context.properties" = {
+      "default.clock.rate" = 48000;
+      "default.clock.quantum" = 1024;
+      "default.clock.min-quantum" = 32;
+      "default.clock.max-quantum" = 8192;
+    };
   };
 
   # Printing
@@ -175,6 +184,9 @@
     neovim
     micro
 
+    # Games
+    mgba
+    
     # Browser & Office
     libreoffice
     obsidian
@@ -247,9 +259,7 @@
     bibata-cursors
     rofi
     nwg-dock-hyprland
-    networkmanager_dmenu
-    # Hyprland Plugins
-    
+    networkmanager_dmenu    
     
     # Qt theming (for non-GTK apps under Hyprland)
     qt6Packages.qt6ct
