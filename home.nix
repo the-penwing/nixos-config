@@ -46,6 +46,8 @@
   xdg.configFile."networkmanager-dmenu/config.ini".source = ./dotfiles/networkmanager-dmenu/config.ini;
 
   xdg.configFile."rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
+
+  xdg.configFile."starship.toml".source = ./dotfiles/starship.toml;
   # ============================================================
   # SYSTEMD USER SERVICES (Turntable scrobblers — unchanged)
   # ============================================================

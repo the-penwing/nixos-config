@@ -178,7 +178,10 @@
     gnome-software
     imv
     kdePackages.k3b
-
+    ollama
+    chatbox
+    jellyfin-desktop
+    
     # Terminal & Editor
     ghostty
     neovim
