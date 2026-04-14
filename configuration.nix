@@ -106,7 +106,7 @@
 
   # Printing
   services.printing.enable = true;
-
+  
   # ============================================================
   # SERVICES
   # ============================================================
@@ -136,6 +136,11 @@
   # Polkit (needed for auth dialogs in Hyprland)
   security.polkit.enable = true;
 
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
+
   # ============================================================
   # PROGRAMS
   # ============================================================
@@ -162,26 +167,24 @@
   # ============================================================
   environment.systemPackages = with pkgs; [
     # Creative
-    gimp
     inkscape
     krita
     f3d
     aseprite
 
-    # Audio
+    # Audio & Video
     easyeffects
     mpv
+    vlc
+    kdePackages.k3b
+    jellyfin-desktop
 
     # Utilities
     bitwarden-desktop
     discord
-    vlc
     gnome-software
     imv
-    kdePackages.k3b
     ollama
-    chatbox
-    jellyfin-desktop
     
     # Terminal & Editor
     ghostty
@@ -194,7 +197,6 @@
     # Browser & Office
     libreoffice
     obsidian
-    xournalpp
     kiwix
 
     # File Manager (Nautilus — no Nemo!)
@@ -288,7 +290,8 @@
     bamf
     libheif
     xdg-utils
-    usbmuxd2
+    libimobiledevice
+    ifuse
     
     # Wayland compatibility
     xwayland

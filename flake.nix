@@ -28,7 +28,7 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    nixosConfigurations."bens-nixos-laptop" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         ./configuration.nix
