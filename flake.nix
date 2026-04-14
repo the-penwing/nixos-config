@@ -20,9 +20,10 @@
       #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    iloader.url = "github:nab138/iloader";
   };
 
-  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, solaar, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, solaar, iloader, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -47,6 +48,7 @@
           environment.systemPackages = [
             plank-reloaded.packages.${system}.default
             naviterm.packages.${system}.default
+            iloader.packages.${system}.default
             (nixpkgs.legacyPackages.${system}.callPackage ./turntable.nix {
               src = turntable-src;
             })
