@@ -19,6 +19,7 @@ result-*
 # Secrets/sensitive files (if you add any)
 secrets.nix
 .env
+.crt
 
 # Temporary files
 *.tmp
