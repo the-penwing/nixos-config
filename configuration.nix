@@ -166,6 +166,7 @@
     inkscape
     krita
     f3d
+    aseprite
 
     # Audio
     easyeffects
