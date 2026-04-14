@@ -288,6 +288,7 @@
     bamf
     libheif
     xdg-utils
+    usbmuxd
 
     # Wayland compatibility
     xwayland
