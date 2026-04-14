@@ -3,7 +3,7 @@ palette     = "gruvbox_dark_soft"
 add_newline = true
 
 format = '''
-[┌─╼](red_n)$directory$git_branch$git_status$username$hostname
+[┌─╼](red_n)$directory$username$hostname$git_branch$git_status
 [├─╼](red_n)$python
 $character'''
 
@@ -45,7 +45,7 @@ truncation_length = 0
 truncate_to_repo  = false
 
 [username]
-style_user = "aqua_n"
+style_user = "green_n"
 style_root = "red_n"
 format = '\[[$user]($style)'
 disabled = false
