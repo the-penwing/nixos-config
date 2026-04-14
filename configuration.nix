@@ -20,7 +20,7 @@
   # NETWORKING
   # ============================================================
   networking = {
-    hostName = "bens-nixos-laptop";
+    hostName = "nixos-laptop";
     networkmanager.enable = true;
     firewall.allowedTCPPorts = [ 22 8000 ];
   };

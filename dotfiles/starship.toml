@@ -3,7 +3,7 @@ palette     = "gruvbox_dark_soft"
 add_newline = true
 
 format = '''
-[┌─╼](red_n)$directory$git_branch$git_status$hostname
+[┌─╼](red_n)$directory$git_branch$git_status$username$hostname
 [├─╼](red_n)$python
 $character'''
 
@@ -44,10 +44,18 @@ format            = '\[[$path]($style)\]'
 truncation_length = 0
 truncate_to_repo  = false
 
+[username]
+style_user = "aqua_n"
+style_root = "red_n"
+format = '\[[$user]($style)'
+disabled = false
+show_always = true
+
 [hostname]
 ssh_only = false
 style    = "aqua_n"
-format   = '\[[$hostname]($style)\] '
+format   = '[@$hostname]($style)\]'
+disabled = false
 
 [character]
 success_symbol = "[└────╼](red_n)"
