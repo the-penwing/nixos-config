@@ -92,8 +92,8 @@
   # ============================================================
   # Docker — socket activated, starts on first docker command
   virtualisation.docker.enable = true;
-  # Remove docker daemon from boot targets; docker.socket activates it on demand
-  systemd.services.docker.wantedBy = lib.mkForce [ ];
+  # Disable docker daemon at boot; docker.socket activates it on demand
+  virtualisation.docker.enableOnBoot = false;
 
   programs.nix-ld.enable = true;
 }
