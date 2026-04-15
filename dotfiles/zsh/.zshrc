@@ -6,7 +6,7 @@ ZSH_THEME=""
 
 ENABLE_CORRECTION="true"
 
-plugins=(
+plugins=( 
     zsh-autosuggestions
     git
     zsh-syntax-highlighting
@@ -37,7 +37,7 @@ export FZF_DEFAULT_COMMAND='fd'
 DISABLE_FZF_AUTO_COMPLETION="false"
 DISABLE_FZF_KEY_BINDINGS="false"
 
-# Starship
+# Starship 
 eval "$(starship init zsh)"
 
 # oh-my-zsh — must be near end
