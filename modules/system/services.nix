@@ -2,7 +2,7 @@
 
 {
   # ============================================================
-  # DESKTOP — Hyprland is primary, greetd as login manager
+  # DESKTOP — Hyprland is primary, TTY autologin (no display manager)
   # ============================================================
   # X11 server disabled — Wayland only
   # (XWayland enabled via Hyprland for app compatibility)
@@ -14,16 +14,8 @@
     variant = "";
   };
 
-  # Wayland-native greeter (replaces LightDM)
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd '${pkgs.hyprland}/bin/Hyprland'";
-        user = "greeter";
-      };
-    };
-  };
+  # Automatic TTY login — Hyprland is started from .zshrc on TTY1
+  services.getty.autologinUser = "benvl";
 
   # Hyprland (Wayland)
   programs.hyprland = {

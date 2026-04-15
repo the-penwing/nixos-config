@@ -62,3 +62,8 @@ alias find='fd'
 alias du='dust'
 alias df='duf'
 alias ps='btop'
+
+# Auto-start Hyprland on TTY1 login (interactive shell only)
+if [[ -z $WAYLAND_DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
+  exec start-hyprland
+fi
