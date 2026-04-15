@@ -27,6 +27,7 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    turntable = pkgs.callPackage ./turntable.nix { src = turntable-src; };
   in {
     nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -38,10 +39,7 @@
   		  home-manager.useGlobalPkgs = true;
 		  home-manager.useUserPackages = true;
 		  home-manager.users.benvl = import ./home.nix {
-		    inherit pkgs;
-		    turntable = nixpkgs.legacyPackages.${system}.callPackage ./turntable.nix {
-      		  src = turntable-src;
-    		};
+		    inherit pkgs turntable;
   		  };
 		}
         {
@@ -49,9 +47,7 @@
             plank-reloaded.packages.${system}.default
             naviterm.packages.${system}.default
             iloader.packages.${system}.default
-            (nixpkgs.legacyPackages.${system}.callPackage ./turntable.nix {
-              src = turntable-src;
-            })
+            turntable
           ];
         }
       ];
