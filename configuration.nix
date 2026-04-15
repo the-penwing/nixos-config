@@ -170,6 +170,8 @@
     krita
     f3d
     aseprite
+    oculante
+    feh
 
     # Audio & Video
     easyeffects
@@ -177,6 +179,7 @@
     vlc
     kdePackages.k3b
     jellyfin-desktop
+    feishin
 
     # Utilities
     bitwarden-desktop
