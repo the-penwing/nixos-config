@@ -21,33 +21,54 @@
 
   # ============================================================
   # XDG CONFIG FILES
-  # Drop all Hyprland config files via home-manager
+  # Drop all dotfiles via home-manager symlinks
   # ============================================================
 
+  # Hyprland - Wayland Compositor
   xdg.configFile."hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
   xdg.configFile."hypr/hyprpaper.conf".source = ./dotfiles/hypr/hyprpaper.conf;
   xdg.configFile."hypr/hyprlock.conf".source = ./dotfiles/hypr/hyprlock.conf;
   xdg.configFile."hypr/hypridle.conf".source = ./dotfiles/hypr/hypridle.conf;
 
+  # Waybar - Status Bar
   xdg.configFile."waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc;
   xdg.configFile."waybar/style.css".source   = ./dotfiles/waybar/style.css;
 
+  # Wofi - Application Launcher
   xdg.configFile."wofi/style.css".source = ./dotfiles/wofi/style.css;
   xdg.configFile."wofi/config".source    = ./dotfiles/wofi/config;
 
+  # Dunst - Notification Daemon
   xdg.configFile."dunst/dunstrc".source = ./dotfiles/dunst/dunstrc;
 
+  # Wlogout - Session Management
   xdg.configFile."wlogout/style.css".source = ./dotfiles/wlogout/style.css;
 
+  # Ghostty - Terminal Emulator
   xdg.configFile."ghostty/config".source = ./dotfiles/ghostty/config;
 
+  # GTK - GUI Toolkit Theme
   xdg.configFile."gtk-3.0/settings.ini".source = ./dotfiles/gtk-3.0/settings.ini;
 
+  # NetworkManager Dmenu - Network Control
   xdg.configFile."networkmanager-dmenu/config.ini".source = ./dotfiles/networkmanager-dmenu/config.ini;
 
+  # Rofi - Application Launcher & Menu
   xdg.configFile."rofi/config.rasi".source = ./dotfiles/rofi/config.rasi;
 
+  # Starship - Shell Prompt
   xdg.configFile."starship.toml".source = ./dotfiles/starship.toml;
+
+  # ============================================================
+  # NEOVIM CONFIG
+  # ============================================================
+  xdg.configFile."nvim/init.lua".source = ./dotfiles/nvim/init.lua;
+  xdg.configFile."nvim/lazyvim.json".source = ./dotfiles/nvim/lazyvim.json;
+  xdg.configFile."nvim/lazy-lock.json".source = ./dotfiles/nvim/lazy-lock.json;
+  xdg.configFile."nvim/stylua.toml".source = ./dotfiles/nvim/stylua.toml;
+  xdg.configFile."nvim/lua".source = ./dotfiles/nvim/lua;
+
+  
   # ============================================================
   # SYSTEMD USER SERVICES (Turntable scrobblers — unchanged)
   # ============================================================
