@@ -44,12 +44,11 @@
   };
 
   # ============================================================
-  # DESKTOP — Cinnamon kept as fallback, Hyprland is primary
+  # DESKTOP — Hyprland is primary, LightDM as login manager
   # ============================================================
   services.xserver = {
     enable = true;
     displayManager.lightdm.enable = true;
-    desktopManager.cinnamon.enable = true;  # Keep as fallback
     xkb = {
       layout = "au";
       variant = "";
