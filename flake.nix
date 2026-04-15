@@ -27,12 +27,12 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    turntable = pkgs.callPackage ./turntable.nix { src = turntable-src; };
+    turntable = pkgs.callPackage ./packages/turntable.nix { src = turntable-src; };
   in {
     nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        ./configuration.nix
+        ./hosts/nixos-laptop/configuration.nix
         solaar.nixosModules.default
         home-manager.nixosModules.home-manager
 		{
