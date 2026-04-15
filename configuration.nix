@@ -269,9 +269,7 @@
     # Qt theming (for non-GTK apps under Hyprland)
     qt6Packages.qt6ct
     qt6Packages.qtstyleplugin-kvantum
-    libsForQt5.qt5ct
-    libsForQt5.qtstyleplugins
-
+    
     # Brightness & audio controls
     brightnessctl
     pamixer
