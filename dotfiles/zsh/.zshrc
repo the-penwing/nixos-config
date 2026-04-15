@@ -46,3 +46,5 @@ source $ZSH/oh-my-zsh.sh
 alias python3='python3.14'
 alias python='python3.14'
 alias pip='uv pip'
+alias tlp-perf='sudo tlp ac'
+alias tlp-save='sudo tlp bat'
