@@ -17,8 +17,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(direnv hook zsh)"
 
-# Gruvbox in ls
-source ~/.zsh-gruvbox-ls
+# SSH agent auto-start and cache passphrase
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)" > /dev/null
+fi
+ssh-add ~/.ssh/id_ed25519 2>/dev/null
 
 # Node (global via NixOS)
 export PATH="$PATH:$HOME/.npm-global/bin"
