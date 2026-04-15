@@ -114,6 +114,7 @@
     rofi
     nwg-dock-hyprland
     networkmanager_dmenu    
+    swww
     
     # Qt theming (for non-GTK apps under Hyprland)
     qt6Packages.qt6ct
