@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Disable broken touchscreen
@@ -27,4 +27,5 @@
 
   # Printing
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.brlaser ];
 }
