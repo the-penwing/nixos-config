@@ -1,62 +1,48 @@
-# ============================================================
-# ZSH Configuration
-# ============================================================
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Theme — disabled in favour of Starship prompt
+#ZSH_THEME="classyTouch"
 ZSH_THEME=""
 
-# ============================================================
-# Oh My Zsh plugins
-# ============================================================
+ENABLE_CORRECTION="true"
+
 plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  docker
-  npm
-  rust
+    zsh-autosuggestions
+    git
+    zsh-syntax-highlighting
+    fzf
+    zsh-interactive-cd
 )
+export PATH="$HOME/.local/bin:$PATH"
 
-source $ZSH/oh-my-zsh.sh
+eval "$(direnv hook zsh)"
 
-# ============================================================
-# Starship prompt
-# ============================================================
+# Gruvbox in ls
+source ~/.zsh-gruvbox-ls
+
+# Node (global via NixOS)
+export PATH="$PATH:$HOME/.npm-global/bin"
+
+# Rust/Cargo (via NixOS rustup)
+export PATH="$PATH:$HOME/.cargo/bin"
+
+# NeoVim (installed via NixOS packages)
+export SUDO_EDITOR=$(which nvim)
+export EDITOR=$(which nvim)
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_BASE=~/.fzf/
+export FZF_DEFAULT_COMMAND='fd'
+DISABLE_FZF_AUTO_COMPLETION="false"
+DISABLE_FZF_KEY_BINDINGS="false"
+
+# Starship
 eval "$(starship init zsh)"
 
-# ============================================================
-# Environment variables
-# ============================================================
+# oh-my-zsh — must be near end
+source $ZSH/oh-my-zsh.sh
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-if [[ -d $PYENV_ROOT/bin ]]; then
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-fi
-
-# npm global prefix
-export PATH="$HOME/.npm-global/bin:$PATH"
-
-# Rust / Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# ============================================================
-# Aliases
-# ============================================================
-alias ls='ls --color=auto'
-alias ll='ls -lah'
-alias la='ls -a'
-alias grep='grep --color=auto'
-
-# Git
-alias lg='lazygit'
-alias g='git'
-
-# NixOS
-alias nrs='sudo nixos-rebuild switch --flake ~/nixos-config#default'
-alias nrb='sudo nixos-rebuild boot --flake ~/nixos-config#default'
-alias hms='home-manager switch --flake ~/nixos-config#default'
+alias python3='python3.14'
+alias python='python3.14'
+alias pip='uv pip'
