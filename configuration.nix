@@ -180,11 +180,13 @@
     kdePackages.k3b
     jellyfin-desktop
     feishin
+    tuxguitar
+    stremio-linux-shell
 
+    
     # Utilities
     bitwarden-desktop
     discord
-    gnome-software
     imv
     ollama
     
@@ -192,9 +194,12 @@
     ghostty
     neovim
     micro
+    vscodium
 
     # Games
     mgba
+    prismlauncher
+    retroarch
     
     # Browser & Office
     libreoffice
