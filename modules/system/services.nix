@@ -78,6 +78,9 @@
 
   services.tlp.enable = true;
 
+  # Bluetooth
+  services.bluetooth.enable = true;
+
   # Printing (CUPS) — socket activated, loads on first print job
   services.printing.enable = true;
 
