@@ -86,7 +86,6 @@
   # ============================================================
   xdg.configFile."nvim/init.lua".source = ./dotfiles/nvim/init.lua;
   xdg.configFile."nvim/lazyvim.json".source = ./dotfiles/nvim/lazyvim.json;
-  xdg.configFile."nvim/lazy-lock.json".source = ./dotfiles/nvim/lazy-lock.json;
   xdg.configFile."nvim/stylua.toml".source = ./dotfiles/nvim/stylua.toml;
   xdg.configFile."nvim/lua".source = ./dotfiles/nvim/lua;
 
