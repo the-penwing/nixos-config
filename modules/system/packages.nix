@@ -15,135 +15,124 @@
   # PACKAGES
   # ============================================================
   environment.systemPackages = with pkgs; [
-    # Creative
-    inkscape
-    krita
-    f3d
-    aseprite
-    oculante
-    feh
 
-    # Audio & Video
-    easyeffects
-    mpv
-    vlc
-    kdePackages.k3b
-    jellyfin-desktop
-    feishin
-    tuxguitar
-    stremio-linux-shell
+    # ── Creative ───────────────────────────────────────────────
+    inkscape        # Vector graphics (occasional use)
+    aseprite        # Pixel art editor
+    oculante        # Fast image viewer
+    feh             # Minimal image viewer / wallpaper setter
 
-    # Utilities
-    bitwarden-desktop
+    # ── Audio & Video ──────────────────────────────────────────
+    mpv             # Video player
+    vlc             # Media player
+    kdePackages.k3b # CD/DVD burner (occasional)
+    tuxguitar       # Guitar tablature editor
+
+    # ── Productivity & Office ──────────────────────────────────
+    libreoffice     # Office suite (school essential)
+    obsidian        # Note-taking (essential)
+    bitwarden-desktop # Password manager (security backup)
+
+    # ── Communication & Social ─────────────────────────────────
     discord
-    imv
-    ollama
 
-    # Terminal & Editor
-    ghostty
-    neovim
-    micro
-    vscodium
+    # ── AI & Misc Utilities ────────────────────────────────────
+    ollama          # Local LLM inference
 
-    # Games
-    mgba
-    prismlauncher
-    retroarch
-    
-    # Browser & Office
-    libreoffice
-    obsidian
-    kiwix
+    # ── Terminal & Editor ──────────────────────────────────────
+    ghostty         # Terminal emulator
+    neovim          # Primary editor
+    micro           # Fallback terminal editor
 
-    # File Manager (Nautilus — no Nemo!)
-    nautilus
-    nautilus-python  # Extensions support
+    # ── Games ──────────────────────────────────────────────────
+    prismlauncher   # Minecraft launcher
 
-    # Dev tools
-    git
-    sqlitebrowser
-    starship
-    filezilla
+    # ── File Manager ───────────────────────────────────────────
+    nautilus        # GUI file manager (occasional use)
+    nautilus-python # Nautilus extensions support
 
-    # Virtualisation
-    docker-compose
+    # ── Dev Tools ──────────────────────────────────────────────
+    git             # Version control (essential)
+    sqlitebrowser   # SQLite GUI (handy when needed)
+    starship        # Shell prompt
+    filezilla       # FTP/SFTP client (home server access)
 
-    # CLI utilities
-    wget
-    curl
-    unzip
-    zip
-    fzf
-    fd
-    btop
-    screenfetch
-    fastfetch
-    tree
-    ripgrep
-    bat
-    eza
-    duf
-    dust
-    tldr
-    jq
-    imagemagick
-    tmux
+    # ── CLI Utilities ──────────────────────────────────────────
+    wget            # File downloader
+    curl            # HTTP client
+    unzip           # Archive extraction
+    zip             # Archive creation
+    fzf             # Fuzzy finder
+    fd              # Fast find replacement
+    btop            # System monitor (also aliased as ps)
+    screenfetch     # System info
+    fastfetch       # Fast system info
+    tree            # Directory tree viewer
+    ripgrep         # Fast grep replacement
+    bat             # Better cat with syntax highlighting
+    eza             # Better ls with icons/colours
+    duf             # Better df / disk usage overview
+    dust            # Better du / directory size analyser
+    tldr            # Command cheatsheets
+    jq              # JSON processor
+    imagemagick     # Image manipulation
+    tmux            # Terminal multiplexer
 
-    # Screenshot (Hyprland/Wayland)
-    grim
-    slurp
-    swappy  # Screenshot editor
+    # ── Screenshot (Hyprland / Wayland) ────────────────────────
+    grim            # Screenshot tool
+    slurp           # Interactive region selector
+    swappy          # Screenshot annotation/editor
 
-    # Wayland clipboard
-    wl-clipboard
-    cliphist
+    # ── Wayland Clipboard ──────────────────────────────────────
+    wl-clipboard    # Clipboard read/write
+    cliphist        # Clipboard history daemon
 
-    # Hyprland ecosystem
-    waybar
-    wofi
-    hyprpaper
-    hyprlock
-    dunst
-    hypridle
-    hyprpolkitagent
-    nwg-displays
-    nwg-look
-    wlogout
-    playerctl
-    bibata-cursors
-    rofi
-    nwg-dock-hyprland
-    networkmanager_dmenu    
-    swww
-    
-    # Qt theming (for non-GTK apps under Hyprland)
-    qt6Packages.qt6ct
-    qt6Packages.qtstyleplugin-kvantum
-    
-    # Brightness & audio controls
-    brightnessctl
-    pamixer
-    pavucontrol
+    # ── Hyprland Ecosystem ─────────────────────────────────────
+    waybar          # Status bar
+    wofi            # App launcher
+    hyprpaper       # Wallpaper daemon
+    hyprlock        # Lock screen
+    dunst           # Notification daemon
+    hypridle        # Idle / DPMS daemon
+    hyprpolkitagent # Polkit authentication dialogs
+    nwg-displays    # Display configuration GUI
+    nwg-look        # GTK theme manager
+    wlogout         # Logout / power menu
+    playerctl       # MPRIS media control
+    bibata-cursors  # Cursor theme
+    rofi            # Alternative launcher
+    nwg-dock-hyprland # Dock
+    networkmanager_dmenu # Network selection menu
+    swww            # Animated wallpaper daemon
+    waypaper        # Wallpaper picker GUI
 
-    # GTK / icon themes (Gruvbox)
-    gruvbox-dark-gtk           # GTK theme
-    gruvbox-plus-icons         # Icon pack
+    # ── Qt Theming ─────────────────────────────────────────────
+    qt6Packages.qt6ct                  # Qt theme configuration tool
+    qt6Packages.qtstyleplugin-kvantum  # Kvantum style engine
 
-    # Polkit agent
-    polkit_gnome
+    # ── Brightness & Audio Controls ────────────────────────────
+    brightnessctl   # Backlight control
+    pamixer         # PulseAudio CLI mixer
+    pavucontrol     # PulseAudio GUI mixer
 
-    # System / misc
-    networkmanagerapplet
-    bamf
-    blueman
-    libheif
-    xdg-utils
-    libimobiledevice
-    ifuse
-    
-    # Wayland compatibility
-    xwayland
-    waypaper
+    # ── GTK / Icon Themes (Gruvbox) ────────────────────────────
+    gruvbox-dark-gtk   # GTK theme
+    gruvbox-plus-icons # Icon pack
+
+    # ── Polkit Agent ───────────────────────────────────────────
+    polkit_gnome    # Auth agent for Hyprland
+
+    # ── System / Misc ──────────────────────────────────────────
+    networkmanagerapplet # Network tray applet
+    bamf            # Window matcher (for docks)
+    blueman         # Bluetooth manager
+    libheif         # HEIF/HEIC image codec
+    xdg-utils       # XDG desktop integration helpers
+    libimobiledevice # iOS device support
+    ifuse           # Mount iOS filesystems
+
+    # ── Wayland / X11 Compatibility ────────────────────────────
+    xwayland        # X11 app compatibility layer
   ];
 
   # ============================================================
