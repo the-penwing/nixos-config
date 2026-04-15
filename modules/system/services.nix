@@ -64,6 +64,7 @@
     dataDir = "/home/benvl/.local/share/syncthing";
     openDefaultPorts = true;
   };
+  # Remove syncthing from boot targets so it only starts when manually triggered
   systemd.services.syncthing.wantedBy = lib.mkForce [ ];
 
   # Polkit (needed for auth dialogs in Hyprland)
@@ -91,6 +92,7 @@
   # ============================================================
   # Docker — socket activated, starts on first docker command
   virtualisation.docker.enable = true;
+  # Remove docker daemon from boot targets; docker.socket activates it on demand
   systemd.services.docker.wantedBy = lib.mkForce [ ];
 
   programs.nix-ld.enable = true;
