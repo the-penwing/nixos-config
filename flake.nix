@@ -10,10 +10,6 @@
       url = "gitlab:detoxify92/naviterm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    turntable-src = {
-      url = "git+https://codeberg.org/penwings/Turntable";
-      flake = false;
-    };
     solaar = {
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.7.tar.gz"; # uncomment line for solaar version 1.1.19
@@ -23,11 +19,10 @@
     iloader.url = "github:nab138/iloader";
   };
 
-  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, turntable-src, solaar, iloader, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, solaar, iloader, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    turntable = pkgs.callPackage ./packages/turntable.nix { src = turntable-src; };
   in {
     nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -40,7 +35,7 @@
 		  home-manager.useUserPackages = true;
 		  home-manager.backupFileExtension = "bak";
 		  home-manager.users.benvl = import ./home.nix {
-		    inherit pkgs turntable;
+		    inherit pkgs;
   		  };
 		}
         {
@@ -48,7 +43,6 @@
             plank-reloaded.packages.${system}.default
             naviterm.packages.${system}.default
             iloader.packages.${system}.default
-            turntable
           ];
         }
       ];
