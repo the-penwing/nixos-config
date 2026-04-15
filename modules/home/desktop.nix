@@ -36,6 +36,9 @@
   # Fastfetch - System Information
   xdg.configFile."fastfetch/config.jsonc".source = ../../dotfiles/apps/fastfetch/config.jsonc;
 
+  # Waypaper - Wallpaper Manager
+  xdg.configFile."waypaper/config.ini".source = ../../dotfiles/apps/waypaper/config.ini;
+
   # Btop - System Monitor
   xdg.configFile."btop/btop.conf".source = ../../dotfiles/apps/btop/btop.conf;
 
