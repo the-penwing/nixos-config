@@ -47,4 +47,4 @@ keybinding:
     quit: q
     return: <esc>
     scrollUpMain: <pgup>
-    scrollDownMain: <pgdn>
+    scrollDownMain: <pgdown>

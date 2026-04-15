@@ -65,9 +65,6 @@
   # Starship - Shell Prompt
   xdg.configFile."starship.toml".source = ./dotfiles/starship.toml;
 
-  # Lazygit - Git TUI
-  xdg.configFile."lazygit/config.yml".source = ./dotfiles/lazygit/config.yml;
-
   # Fastfetch - System Information
   xdg.configFile."fastfetch/config.jsonc".source = ./dotfiles/fastfetch/config.jsonc;
 
