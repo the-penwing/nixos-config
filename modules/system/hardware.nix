@@ -28,4 +28,7 @@
   # Printing
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser ];
+
+  # Bluetooth
+  hardware.bluetooth.enable = true;
 }
