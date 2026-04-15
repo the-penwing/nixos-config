@@ -135,6 +135,7 @@
     # System / misc
     networkmanagerapplet
     bamf
+    blueman
     libheif
     xdg-utils
     libimobiledevice
