@@ -1,9 +1,7 @@
-{ pkgs, turntable, ... }:
+{ pkgs, ... }:
 
 {
   home.stateVersion = "25.11";
-
-  _module.args.turntable = turntable;
 
   imports = [
     ./modules/home/shell.nix
