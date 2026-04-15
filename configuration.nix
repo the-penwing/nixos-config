@@ -135,10 +135,13 @@
   # Polkit (needed for auth dialogs in Hyprland)
   security.polkit.enable = true;
 
+  # usbmuxd iOS compatibility
   services.usbmuxd = {
     enable = true;
     package = pkgs.usbmuxd2;
   };
+
+  services.tlp.enable = true;
 
   # ============================================================
   # PROGRAMS
