@@ -1,15 +1,27 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # ============================================================
-  # DESKTOP — Hyprland is primary, LightDM as login manager
+  # DESKTOP — Hyprland is primary, greetd as login manager
   # ============================================================
-  services.xserver = {
+  # X11 server disabled — Wayland only
+  # (XWayland enabled via Hyprland for app compatibility)
+  services.xserver.enable = false;
+
+  # Keyboard layout — applies system-wide (console + Wayland)
+  services.xserver.xkb = {
+    layout = "au";
+    variant = "";
+  };
+
+  # Wayland-native greeter (replaces LightDM)
+  services.greetd = {
     enable = true;
-    displayManager.lightdm.enable = true;
-    xkb = {
-      layout = "au";
-      variant = "";
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        user = "greeter";
+      };
     };
   };
 
@@ -23,21 +35,19 @@
   programs.hyprlock.enable = true;
   services.hypridle.enable = true;
 
-  # XDG desktop portals
+  # XDG desktop portals — Hyprland portal only (Wayland-only setup)
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
     ];
-    config.common.default = [ "hyprland" "gtk" ];
+    config.common.default = [ "hyprland" ];
   };
 
   # ============================================================
   # SERVICES
   # ============================================================
   services.tailscale.enable = true;
-  services.flatpak.enable = true;
   programs.thunderbird.enable = true;
   services.dbus.enable = true;
   services.solaar = {
@@ -47,18 +57,14 @@
     batteryIcons = "regular";
     extraArgs = "";
   };
+  # Socket-activate syncthing — starts on demand, not at boot
   services.syncthing = {
     enable = true;
     user = "benvl";
     dataDir = "/home/benvl/.local/share/syncthing";
     openDefaultPorts = true;
   };
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no";
-    };
-  };
+  systemd.services.syncthing.wantedBy = lib.mkForce [ ];
 
   # Polkit (needed for auth dialogs in Hyprland)
   security.polkit.enable = true;
@@ -71,6 +77,9 @@
 
   services.tlp.enable = true;
 
+  # Printing (CUPS) — socket activated, loads on first print job
+  services.printing.enable = true;
+
   # ============================================================
   # PROGRAMS
   # ============================================================
@@ -80,7 +89,9 @@
   # ============================================================
   # VIRTUALISATION
   # ============================================================
+  # Docker — socket activated, starts on first docker command
   virtualisation.docker.enable = true;
+  systemd.services.docker.wantedBy = lib.mkForce [ ];
 
   programs.nix-ld.enable = true;
 }
