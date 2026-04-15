@@ -126,4 +126,12 @@
       };
     };
   };
+  
+  # ============================================================
+  # HOME ACTIVATION SCRIPTS
+  # ============================================================
+  home.activation.copyStarship = ''
+    mkdir -p /home/benvl/dev/projects/classyTouch-starship
+    cp ${./dotfiles/starship.toml} /home/benvl/dev/projects/classyTouch-starship/starship.toml
+  '';
 }
