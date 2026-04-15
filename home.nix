@@ -9,6 +9,12 @@
     pkg-config
     gcc
     gnumake
+    rustup
+    sassc
+    lazygit
+    tea
+    pyenv
+    uv
   ];
 
   home.sessionPath = [

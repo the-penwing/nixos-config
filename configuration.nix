@@ -204,14 +204,6 @@
 
     # Dev tools
     git
-    python3
-    nodejs
-    rustup
-    sassc
-    lazygit
-    tea
-    pyenv
-    uv
     sqlitebrowser
     starship
     filezilla
