@@ -65,6 +65,25 @@
   # Starship - Shell Prompt
   xdg.configFile."starship.toml".source = ./dotfiles/starship.toml;
 
+  # Lazygit - Git TUI
+  xdg.configFile."lazygit/config.yml".source = ./dotfiles/lazygit/config.yml;
+
+  # Fastfetch - System Information
+  xdg.configFile."fastfetch/config.jsonc".source = ./dotfiles/fastfetch/config.jsonc;
+
+  # Btop - System Monitor
+  xdg.configFile."btop/btop.conf".source = ./dotfiles/btop/btop.conf;
+
+  # ============================================================
+  # HOME FILES (not in XDG .config)
+  # ============================================================
+
+  # Zsh - Shell Configuration
+  home.file.".zshrc".source = ./dotfiles/zsh/.zshrc;
+
+  # Tmux - Terminal Multiplexer
+  home.file.".tmux.conf".source = ./dotfiles/tmux/.tmux.conf;
+
   # ============================================================
   # NEOVIM CONFIG
   # ============================================================
