@@ -4,7 +4,9 @@
   networking = {
     hostName = "nixos-laptop";
     networkmanager.enable = true;
-    firewall.allowedTCPPorts = [ 22 8000 ];
+    # Port 22 (SSH) removed — OpenSSH disabled, Tailscale SSH used instead
+    # Port 8000 removed — unused
+    firewall.allowedTCPPorts = [ ];
   };
 
   time.timeZone = "Australia/Sydney";
