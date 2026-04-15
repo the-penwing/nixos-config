@@ -1,4 +1,4 @@
-{ turntable, ... }:
+{ pkgs, ... }:
 
 {
   # Hyprland - Wayland Compositor
@@ -43,33 +43,26 @@
   xdg.configFile."btop/btop.conf".source = ../../dotfiles/apps/btop/btop.conf;
 
   # ============================================================
-  # SYSTEMD USER SERVICES (Turntable scrobblers)
+  # SYSTEMD USER SERVICES
   # ============================================================
-  systemd.user.services = {
-    turntable-naviterm = {
-      Unit = {
-        Description = "Turntable scrobbler - naviterm";
-        After = [ "graphical-session.target" ];
-      };
-      Service = {
-        Type = "simple";
-        ExecStart = "${turntable}/bin/dev.geopjr.Turntable --headless --client=org.mpris.MediaPlayer2.naviterm";
-        Restart = "on-failure";
-        RestartSec = 5;
-      };
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
-    };
+  # mpris-scrobbler listens to MPRIS events (VLC and others) and scrobbles to ListenBrainz.
+  # Offline scrobble cache is stored in ~/.local/share/mpris-scrobbler/
+  #
+  # Before first use, manually create your token file:
+  #   mkdir -p ~/.config/mpris-scrobbler
+  #   echo "your-listenbrainz-token" > ~/.config/mpris-scrobbler/token
+  # Get your token from: https://listenbrainz.org/profile/
+  home.packages = [ pkgs.mpris-scrobbler ];
 
-    turntable-vlc = {
+  systemd.user.services = {
+    mpris-scrobbler = {
       Unit = {
-        Description = "Turntable scrobbler - VLC";
+        Description = "mpris-scrobbler - ListenBrainz scrobbler via MPRIS";
         After = [ "graphical-session.target" ];
       };
       Service = {
         Type = "simple";
-        ExecStart = "${turntable}/bin/dev.geopjr.Turntable --headless --client=org.mpris.MediaPlayer2.vlc";
+        ExecStart = "${pkgs.mpris-scrobbler}/bin/mpris-scrobbler";
         Restart = "on-failure";
         RestartSec = 5;
       };
