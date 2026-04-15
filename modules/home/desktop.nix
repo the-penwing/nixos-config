@@ -42,18 +42,22 @@
   # Btop - System Monitor
   xdg.configFile."btop/btop.conf".source = ../../dotfiles/apps/btop/btop.conf;
 
+  # mpris-scrobbler - ListenBrainz credentials
+  # Replace LISTENBRAINZ_TOKEN_HERE in dotfiles/apps/mpris-scrobbler/credentials with your token from:
+  # https://listenbrainz.org/profile/
+  xdg.dataFile."mpris-scrobbler/credentials".source = ../../dotfiles/apps/mpris-scrobbler/credentials;
+
   # ============================================================
   # SYSTEMD USER SERVICES
   # ============================================================
-  # mpris-scrobbler listens to MPRIS events (VLC and others) and scrobbles to Last.fm.
-  # After first rebuild, authenticate by running: mpris-scrobbler --authenticate
-  # Credentials and offline scrobble cache are stored in ~/.config/mpris-scrobbler/
+  # mpris-scrobbler listens to MPRIS events (VLC and others) and scrobbles to ListenBrainz.
+  # Offline scrobble cache is stored in ~/.local/share/mpris-scrobbler/
   home.packages = [ pkgs.mpris-scrobbler ];
 
   systemd.user.services = {
     mpris-scrobbler = {
       Unit = {
-        Description = "mpris-scrobbler - Last.fm scrobbler via MPRIS";
+        Description = "mpris-scrobbler - ListenBrainz scrobbler via MPRIS";
         After = [ "graphical-session.target" ];
       };
       Service = {
