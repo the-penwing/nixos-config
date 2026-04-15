@@ -103,7 +103,7 @@
     rofi            # Alternative launcher
     nwg-dock-hyprland # Dock
     networkmanager_dmenu # Network selection menu
-    swww            # Animated wallpaper daemon
+    awww            # Animated wallpaper daemon
     waypaper        # Wallpaper picker GUI
 
     # ── Qt Theming ─────────────────────────────────────────────
