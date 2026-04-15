@@ -1,0 +1,50 @@
+# ============================================================
+# Lazygit Configuration
+# ============================================================
+
+gui:
+  # Nerd Fonts support (requires a Nerd Font terminal)
+  nerdFontsVersion: "3"
+  showIcons: true
+
+  # Window sizing
+  expandFocusedSidePanel: false
+  mainPanelSplitMode: flexible
+
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+    inactiveBorderColor:
+      - white
+    optionsTextColor:
+      - blue
+    selectedLineBgColor:
+      - blue
+    selectedRangeBgColor:
+      - blue
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+
+git:
+  paging:
+    colorArg: always
+    useConfig: false
+
+  # Automatic fetch interval (seconds, 0 to disable)
+  autoFetch: true
+  autoFetchInterval: 60
+
+  # Commit signing
+  overrideGpg: false
+
+keybinding:
+  universal:
+    quit: q
+    return: <esc>
+    scrollUpMain: <pgup>
+    scrollDownMain: <pgdn>
