@@ -39,12 +39,6 @@
   # Btop - System Monitor
   xdg.configFile."btop/btop.conf".source = ../../dotfiles/apps/btop/btop.conf;
 
-  # Lazygit - Git TUI
-  xdg.configFile."lazygit/config.yml" = {
-    source = ../../dotfiles/apps/lazygit/config.yml;
-    force = true;
-  };
-
   # ============================================================
   # SYSTEMD USER SERVICES (Turntable scrobblers)
   # ============================================================
