@@ -90,7 +90,7 @@
         rustc
         rust-analyzer
         cargo-watch
-        probe-rs
+        probe-rs-tools
         openocd
         rustfmt
         cargo-expand
@@ -120,7 +120,7 @@
         rustc
         rust-analyzer
         cargo-watch
-        probe-rs
+        probe-rs-tools
         openocd
         rustfmt
         cargo-expand
