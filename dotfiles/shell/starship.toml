@@ -1,85 +1,98 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-palette     = "gruvbox_dark_soft"
+palette = "gruvbox_dark_soft"
 add_newline = true
 
 format = '''
-[┌─╼](red_n)$directory$username$hostname$git_branch$git_status
-[├─╼](red_n)$python
+[┌─╼](brightred)$directory$username$hostname$git_branch$git_status
+[├─╼](brightred)$python
 $character'''
 
 [palettes.gruvbox_dark_soft]
-# backgrounds
-bg0_s  = "#32302f"
-bg1    = "#3c3836"
-bg2    = "#504945"
-bg3    = "#665c54"
-bg4    = "#7c6f64"
-# foregrounds
-fg0    = "#fbf1c7"
-fg1    = "#ebdbb2"
-fg2    = "#d5c4a1"
-fg3    = "#bdae93"
-fg4    = "#a89984"
-gray   = "#928374"
-# accents (bright variants — correct for dark mode)
-red    = "#fb4934"
-green  = "#b8bb26"
-yellow = "#fabd2f"
-blue   = "#83a598"
-purple = "#d3869b"
-aqua   = "#8ec07c"
-orange = "#fe8019"
-# neutral variants (for subtler use)
-red_n    = "#cc241d"
-green_n  = "#98971a"
-yellow_n = "#d79921"
-blue_n   = "#458588"
-purple_n = "#b16286"
-aqua_n   = "#689d6a"
-orange_n = "#d65d0e"
-
+# Backgrounds and Foregrounds
+dark0hard = '#1d2021'
+dark0 = '#282828'
+dark0soft = '#32302f'
+dark1 = '#3c3836'
+dark2 = '#504945'
+dark3 = '#665c54'
+dark4 = '#7c6f64'
+dark4256 = '#7c6f64'
+gray245 = '#928374'
+gray244 = '#928374'
+light0hard = '#f9f5d7'
+light0 = '#fbf1c7'
+light0soft = '#f2e5bc'
+light1 = '#ebdbb2'
+light2 = '#d5c4a1'
+light3 = '#bdae93'
+light4 = '#a89984'
+light4256 = '#a89984'
+# Bright Colours
+brightred = '#fb4934'
+brightgreen = '#b8bb26'
+brightyellow = '#fabd2f'
+brightblue = '#83a598'
+brightpurple = '#d3869b'
+brightaqua = '#8ec07c'
+brightorange = '#fe8019'
+# Neutral Colours
+red = '#cc241d'
+green = '#98971a'
+yellow = '#d79921'
+blue = '#458588'
+purple = '#b16286'
+aqua = '#689d6a'
+orange = '#d65d0e'
+# Dim Colours
+dimred = '#9d0006'
+dimgreen = '#79740e'
+dimyellow = '#b57614'
+dimblue = '#076678'
+dimpurple = '#8f3f71'
+dimaqua = '#427b58'
+dimorange = '#af3a03'
 [directory]
-style             = "fg1"
-format            = '\[[$path]($style)\]'
+style = "fg1"
+format = '\[[$path]($style)\]'
 truncation_length = 0
-truncate_to_repo  = false
+truncate_to_repo = false
 
 [username]
-style_user = "green_n"
-style_root = "red_n"
+style_user = "green"
+style_root = "red"
 format = '\[[$user]($style)'
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-style    = "aqua_n"
-format   = '[@$hostname]($style)\]'
+style = "aqua"
+format = '[@$hostname]($style)\]'
 disabled = false
 
 [character]
-success_symbol = "[└────╼](red_n)"
-error_symbol   = "[└╼](orange_n)"
+success_symbol = "[└────╼](brightred)"
+error_symbol = "[└╼](brightorange)"
 
 [git_branch]
-style  = "yellow_n"
-format = '\[[$symbol$branch](yellow)\](yellow_n)'
+style = "yellow"
+format = '\[[$symbol$branch](yellow)\](yellow)'
 symbol = ""
 
 [git_status]
-style      = "fg1"
-format     = '([\[$all_status$ahead_behind\]]($style))'
-ahead      = "[⇡$count](blue)"
-behind     = "[⇣$count](blue)"
-diverged   = "[⇡$ahead_count⇣$behind_count](blue)"
-modified   = "[*](orange)"
-staged     = "[+](green)"
-untracked  = "[?](orange)"
-deleted    = "[✘](red)"
+style = "fg1"
+format = '([\[$all_status$ahead_behind\]]($style))'
+ahead = "[⇡$count](blue)"
+behind = "[⇣$count](blue)"
+diverged = "[⇡$ahead_count⇣$behind_count](blue)"
+modified = "[*](orange)"
+staged = "[+](green)"
+untracked = "[?](orange)"
+deleted = "[✘](red)"
 conflicted = "[~](red)"
 
 [python]
-format         = '\[[${symbol}${version}](yellow)\][(\[$virtualenv\])]($style)'
-symbol         = '[ ](yellow)'
-style          = 'fg1'
+format = '\[[${symbol}${version}](yellow)\][(\[$virtualenv\])]($style)'
+symbol = '[ ](yellow)'
+style = 'fg1'
 version_format = "v${raw}"
