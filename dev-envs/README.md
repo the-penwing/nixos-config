@@ -176,9 +176,9 @@ rust-objcopy -O ihex target/thumbv7em-none-eabihf/release/<your-binary> firmware
 
 | Approach | Typical `.hex` size | Typical build time | Best use case |
 | --- | --- | --- | --- |
-| Python (official editor / `uflash`) | Usually larger (runtime + script in one `.hex`) | Fast (often ~1-5s after setup) | Learning, quick prototyping, classrooms |
+| Python (official editor / `uflash`) | Usually larger (runtime + script in one `.hex`) | Fast for rebuilds (often ~1-5s once tools are installed) | Learning, quick prototyping, classrooms |
 | Python (`mpy-cross` + `uflash`) | Slightly smaller app payloads in some projects | Moderate (~3-10s) | Growing Python projects needing optimizations |
-| Rust (`cargo build` + `objcopy`) | Usually smaller and more performance-focused firmware images | Slower (~10-60s depending on project/host) | Performance, control, production-style embedded work |
+| Rust (`cargo build` + `objcopy`) | Usually smaller and more performance-focused firmware images | Typically slower (~10-60s; varies with project size, host speed, and clean vs incremental builds) | Performance, control, production-style embedded work |
 
 ### Beginner Python workflow
 
