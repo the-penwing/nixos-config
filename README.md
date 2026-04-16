@@ -2,7 +2,6 @@
 
 Personal NixOS configuration for `nixos-laptop` — a Wayland-only setup built on Hyprland, managed entirely with flakes and home-manager.
 
----
 
 ## Quick start
 
@@ -14,7 +13,6 @@ sudo nixos-rebuild switch --flake .#nixos-laptop
 home-manager switch --flake .#nixos-laptop
 ```
 
----
 
 ## File layout
 
@@ -66,7 +64,6 @@ nixos-config/
         └── dunst/dunstrc            # Notification style
 ```
 
----
 
 ## Config approach
 
@@ -89,7 +86,6 @@ Key remapping is split between **keyd** (kernel level) and **Hyprland** (composi
 
 There is no display manager. TTY1 auto-logs in as `benvl` and `.zshrc` starts Hyprland automatically.
 
----
 
 ## Keybindings
 
@@ -175,7 +171,6 @@ There is no display manager. TTY1 auto-logs in as `benvl` and `.zshrc` starts Hy
 | 3-finger swipe left/right | Switch workspace |
 | 3-finger swipe up | Toggle special workspace |
 
----
 
 ## Caps Lock layer (keyd)
 
@@ -215,7 +210,6 @@ These work in any focused app, system-wide:
 | `Super + X` | Cut (`Ctrl+X`) |
 | `Super + A` | Select all (`Ctrl+A`) |
 
----
 
 ## Features
 
@@ -270,7 +264,6 @@ These work in any focused app, system-wide:
 - **fzf**, **ripgrep**, **fd**, **bat**, **eza**, **jq** — CLI utilities
 - **Solaar** — Logitech peripheral manager (Logi Pebble 2 support)
 
----
 
 ## Flake inputs
 
