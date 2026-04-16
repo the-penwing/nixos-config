@@ -106,10 +106,11 @@ probe-rs run --chip <your-chip> target/thumbv7em-none-eabihf/debug/<your-binary>
 
 ```bash
 nix develop .#microbit-python
-esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash 0x1000 firmware.bin
+esptool.py --chip <chip-id> --port /dev/ttyUSB0 --baud 460800 write_flash 0x1000 firmware.bin
 ```
 
-Adjust chip, serial port, baud rate, and flash offset for your board.
+Adjust chip, serial port, baud rate, and flash offset for your board.  
+Use this flow for esptool-compatible targets in your microcontroller workflow.
 
 ### Debug serial output (`minicom` / `screen`)
 
@@ -171,7 +172,7 @@ cargo embed
 black .
 ruff check .
 # build/package as needed
-esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash 0x1000 firmware.bin
+esptool.py --chip <chip-id> --port /dev/ttyUSB0 --baud 460800 write_flash 0x1000 firmware.bin
 ```
 
 ### Auto-rebuild on save with `cargo-watch`
