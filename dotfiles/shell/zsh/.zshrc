@@ -1,3 +1,8 @@
+# Restore dev shell PATH if inside a nix develop session
+if [[ -n $NIX_DEV_SHELL_PATH ]]; then
+  export PATH="$NIX_DEV_SHELL_PATH"
+fi
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 

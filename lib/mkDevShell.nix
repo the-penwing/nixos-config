@@ -22,13 +22,15 @@ pkgs.mkShell {
 
   shellHook = ''
     ${shellHook}
-
+  
     export SHELL=${pkgs.zsh}/bin/zsh
     export STARSHIP_CONFIG="${starshipConfig}"
-
-    # Only switch shell for interactive sessions so `nix develop -c ...` still works.
+  
     case $- in
-      *i*) exec ${pkgs.zsh}/bin/zsh -l ;;
+      *i*)
+        export NIX_DEV_SHELL_PATH="$PATH"
+        exec ${pkgs.zsh}/bin/zsh -l
+      ;;
     esac
   '';
 }
