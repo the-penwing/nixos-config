@@ -33,13 +33,18 @@
   xdg.configFile."starship.toml".source = ../../dotfiles/shell/starship.toml;
 
   # SSH - Cache key passphrases via ssh-agent
+  # SSH - Cache key passphrases via ssh-agent
   services.ssh-agent.enable = true;
   programs.ssh = {
     enable = true;
-    enableDefaultConfig = false;
+    addKeysToAgent = "yes";
     matchBlocks."*" = {
       addKeysToAgent = "yes";
-      identityFile = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
+      identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
     };
+  };
+  
+  home.sessionVariables = {
+    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
   };
 }
