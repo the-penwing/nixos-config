@@ -2,6 +2,7 @@
 {
   buildInputs ? [ ],
   shellHook ? "",
+  starshipConfig ? ../dotfiles/shell/starship.toml,
 }:
 let
   commonInputs = with pkgs; [
@@ -23,7 +24,7 @@ pkgs.mkShell {
     ${shellHook}
 
     export SHELL=${pkgs.zsh}/bin/zsh
-    export STARSHIP_CONFIG="${../dotfiles/shell/starship.toml}"
+    export STARSHIP_CONFIG="${starshipConfig}"
 
     case $- in
       *i*) exec ${pkgs.zsh}/bin/zsh -l ;;
