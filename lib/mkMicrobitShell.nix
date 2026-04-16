@@ -11,7 +11,6 @@ let
     python3Packages.pip
     uv
     micropython
-    python3Packages.mpremote
     gcc
     gnumake
     pkg-config
