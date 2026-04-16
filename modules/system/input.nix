@@ -13,7 +13,7 @@
   #     Super+V  → togglefloating
   #     Super+S  → special workspace
   #     Super+Q  → killactive
-  #     Super+E  → nautilus
+  #     Super+E  → dolphin
   #     Super+1–9,0 → workspace switching
   #     Right Alt → compose key (kb_options = compose:ralt)
   #     XF86 media / brightness → already handled by Hyprland

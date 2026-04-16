@@ -47,9 +47,13 @@
     # ── Games ──────────────────────────────────────────────────
     prismlauncher   # Minecraft launcher
 
-    # ── File Manager ───────────────────────────────────────────
-    nautilus        # GUI file manager (occasional use)
-    nautilus-python # Nautilus extensions support
+    # ── File Managers ──────────────────────────────────────────
+    dolphin         # Primary GUI file manager
+    thunar          # Lightweight GTK file manager
+    yazi            # Terminal file manager
+    ffmpegthumbnailer # Yazi video thumbnails
+    unar            # Yazi archive extraction
+    poppler_utils   # Yazi PDF previews
 
     # ── Dev Tools ──────────────────────────────────────────────
     git             # Version control (essential)
