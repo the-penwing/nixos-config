@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+
+{ config, pkgs, lib, ... }:
 
 {
   home.packages = with pkgs; [
@@ -32,8 +33,7 @@
   # Starship - Shell Prompt
   xdg.configFile."starship.toml".source = ../../dotfiles/shell/starship.toml;
 
-  # SSH - Cache key passphrases via ssh-agent
-  # SSH - Cache key passphrases via ssh-agent
+ # SSH - Cache key passphrases via ssh-agent
   services.ssh-agent.enable = true;
   programs.ssh = {
     enable = true;
@@ -43,8 +43,12 @@
       identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
     };
   };
-  
+
   home.sessionVariables = {
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
   };
+
+  home.activation.sshAddKey = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    ${pkgs.openssh}/bin/ssh-add ${config.home.homeDirectory}/.ssh/id_ed25519 2>/dev/null || true
+  '';
 }
