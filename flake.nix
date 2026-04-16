@@ -23,6 +23,7 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    mkMicrobitShell = import ./lib/mkMicrobitShell.nix { inherit pkgs; };
   in {
     nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -63,74 +64,20 @@
         echo "Pawn-Appetit dev shell loaded"
       '';
     };
-    devShells.x86_64-linux.microbit-python = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        python3
-        python3Packages.pip
-        uv
-        esptool
-        minicom
-        screen
-        picocom
-        ruff
-        black
-        mypy
-        python3Packages.ipython
-      ];
-
-      shellHook = ''
-        echo "micro:bit Python dev shell loaded"
-        echo "Use: python3 -m venv .venv && source .venv/bin/activate"
-      '';
+    devShells.x86_64-linux.microbit-python = mkMicrobitShell {
+      python = true;
+      shellMessage = "micro:bit Python dev shell loaded";
+      includeVenvHint = true;
     };
-    devShells.x86_64-linux.microbit-rust = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        rustup
-        cargo
-        rustc
-        rust-analyzer
-        cargo-watch
-        probe-rs-tools
-        openocd
-        rustfmt
-        cargo-expand
-        cargo-bloat
-      ];
-
-      shellHook = ''
-        echo "micro:bit Rust dev shell loaded"
-        rustup component add clippy >/dev/null 2>&1 || true
-      '';
+    devShells.x86_64-linux.microbit-rust = mkMicrobitShell {
+      rust = true;
+      shellMessage = "micro:bit Rust dev shell loaded";
     };
-    devShells.x86_64-linux.microbit = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        python3
-        python3Packages.pip
-        uv
-        esptool
-        minicom
-        screen
-        picocom
-        ruff
-        black
-        mypy
-        python3Packages.ipython
-        rustup
-        cargo
-        rustc
-        rust-analyzer
-        cargo-watch
-        probe-rs-tools
-        openocd
-        rustfmt
-        cargo-expand
-        cargo-bloat
-      ];
-
-      shellHook = ''
-        echo "micro:bit combined Python + Rust dev shell loaded"
-        rustup component add clippy >/dev/null 2>&1 || true
-      '';
+    devShells.x86_64-linux.microbit = mkMicrobitShell {
+      python = true;
+      rust = true;
+      shellMessage = "micro:bit combined Python + Rust dev shell loaded";
+      includeVenvHint = true;
     };
   };
 }
