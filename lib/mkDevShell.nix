@@ -19,18 +19,11 @@ let
 in
 pkgs.mkShell {
   buildInputs = buildInputs ++ commonInputs;
-
   shellHook = ''
     ${shellHook}
   
     export SHELL=${pkgs.zsh}/bin/zsh
     export STARSHIP_CONFIG="${starshipConfig}"
-  
-    case $- in
-      *i*)
-        export NIX_DEV_SHELL_PATH="$PATH"
-        exec ${pkgs.zsh}/bin/zsh -l
-      ;;
-    esac
+    exec ${pkgs.zsh}/bin/zsh
   '';
 }
