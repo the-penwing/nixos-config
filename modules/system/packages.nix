@@ -53,7 +53,7 @@
     yazi            # Terminal file manager
     ffmpegthumbnailer # Yazi video thumbnails
     unar            # Yazi archive extraction
-    poppler_utils   # Yazi PDF previews
+    poppler-utils   # Yazi PDF previews
 
     # ── Dev Tools ──────────────────────────────────────────────
     git             # Version control (essential)
