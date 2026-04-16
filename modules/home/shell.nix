@@ -31,4 +31,14 @@
 
   # Starship - Shell Prompt
   xdg.configFile."starship.toml".source = ../../dotfiles/shell/starship.toml;
+
+  # SSH - Cache key passphrases via ssh-agent
+  services.ssh-agent.enable = true;
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+    matchBlocks."*" = {
+      identityFile = [ "~/.ssh/id_ed25519" ];
+    };
+  };
 }
