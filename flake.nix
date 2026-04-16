@@ -68,6 +68,14 @@
         python3
         python3Packages.pip
         uv
+        esptool
+        minicom
+        screen
+        picocom
+        ruff
+        black
+        mypy
+        ipython
       ];
 
       shellHook = ''
@@ -82,10 +90,17 @@
         rustc
         rust-analyzer
         cargo-watch
+        cargo-embed
+        probe-rs
+        openocd
+        rustfmt
+        cargo-expand
+        cargo-bloat
       ];
 
       shellHook = ''
         echo "micro:bit Rust dev shell loaded"
+        rustup component add clippy >/dev/null 2>&1 || true
       '';
     };
     devShells.x86_64-linux.microbit = pkgs.mkShell {
@@ -93,15 +108,30 @@
         python3
         python3Packages.pip
         uv
+        esptool
+        minicom
+        screen
+        picocom
+        ruff
+        black
+        mypy
+        ipython
         rustup
         cargo
         rustc
         rust-analyzer
         cargo-watch
+        cargo-embed
+        probe-rs
+        openocd
+        rustfmt
+        cargo-expand
+        cargo-bloat
       ];
 
       shellHook = ''
         echo "micro:bit combined Python + Rust dev shell loaded"
+        rustup component add clippy >/dev/null 2>&1 || true
       '';
     };
   };
