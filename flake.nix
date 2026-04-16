@@ -66,7 +66,8 @@
     };
     devShells.x86_64-linux.microbit-python = mkMicrobitShell {
       python = true;
-      shellMessage = "micro:bit Python dev shell loaded";
+      rust = false;
+      shellMessage = "micro:bit MicroPython dev shell loaded";
       includeVenvHint = true;
     };
     devShells.x86_64-linux.microbit-rust = mkMicrobitShell {

@@ -10,6 +10,11 @@ let
     python3
     python3Packages.pip
     uv
+    micropython
+    python3Packages.mpremote
+    gcc
+    gnumake
+    pkg-config
     esptool
     minicom
     screen
