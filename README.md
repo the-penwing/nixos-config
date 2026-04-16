@@ -18,50 +18,23 @@ home-manager switch --flake .#nixos-laptop
 
 ```
 nixos-config/
-├── flake.nix                        # Flake entry point; declares all inputs & the nixos-laptop output
-├── home.nix                         # Home-manager entry — imports the three home modules
-│
-├── hosts/
-│   └── nixos-laptop/
-│       ├── configuration.nix        # System entry point — imports all system modules
-│       └── hardware-configuration.nix
-│
-├── modules/
-│   ├── system/                      # NixOS (system-level) modules
-│   │   ├── boot.nix                 # Bootloader & kernel
-│   │   ├── networking.nix           # Hostname, NetworkManager, locale, timezone
-│   │   ├── hardware.nix             # Audio (Pipewire), Bluetooth, printing, udev
-│   │   ├── services.nix             # Desktop (Hyprland), programs, Docker, Tailscale, Syncthing…
-│   │   ├── packages.nix             # System packages & fonts
-│   │   └── input.nix                # keyd kernel-level key remapping
-│   └── home/                        # home-manager modules
-│       ├── shell.nix                # Zsh, Tmux, Starship, dev tools
-│       ├── editor.nix               # Neovim (LazyVim) config
-│       └── desktop.nix              # Dotfile symlinks + mpris-scrobbler systemd service
-│
-└── dotfiles/
-    ├── desktop/
-    │   ├── hyprland/                # hyprland.conf, hyprlock.conf, hypridle.conf, hyprpaper.conf
-    │   ├── waybar/                  # config.jsonc + style.css
-    │   ├── wofi/                    # Launcher style + config
-    │   ├── rofi/                    # Alternative launcher
-    │   └── wlogout/                 # Session menu style
-    ├── shell/
-    │   ├── zsh/.zshrc
-    │   ├── starship.toml
-    │   └── tmux/.tmux.conf
-    ├── editor/
-    │   └── nvim/                    # LazyVim init.lua + lua/ modules
-    ├── apps/
-    │   ├── ghostty/                 # Terminal config
-    │   ├── btop/                    # System monitor config
-    │   ├── fastfetch/               # System info config
-    │   ├── lazygit/                 # Git TUI config
-    │   ├── waypaper/                # Wallpaper picker config
-    │   └── networkmanager-dmenu/    # Network menu config
-    └── theme/
-        ├── gtk-3.0/settings.ini     # GTK theme settings
-        └── dunst/dunstrc            # Notification style
+  flake.nix                   # entry point; all inputs & nixos-laptop output
+  home.nix                    # home-manager entry
+
+  hosts/nixos-laptop/
+    configuration.nix         # system entry point
+    hardware-configuration.nix
+
+  modules/
+    system/                   # boot, networking, hardware, services, packages, input
+    home/                     # shell, editor, desktop
+
+  dotfiles/
+    desktop/                  # hyprland, waybar, wofi, rofi, wlogout
+    shell/                    # zsh, starship, tmux
+    editor/                   # nvim (LazyVim)
+    apps/                     # ghostty, btop, fastfetch, lazygit, waypaper, nm-dmenu
+    theme/                    # gtk, dunst
 ```
 
 
