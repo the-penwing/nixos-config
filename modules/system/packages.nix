@@ -48,7 +48,7 @@
     prismlauncher   # Minecraft launcher
 
     # ── File Managers ──────────────────────────────────────────
-    dolphin         # Primary GUI file manager
+    kdePackages.dolphin # Primary GUI file manager
     thunar          # Lightweight GTK file manager
     yazi            # Terminal file manager
     ffmpegthumbnailer # Yazi video thumbnails
