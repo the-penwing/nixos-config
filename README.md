@@ -6,6 +6,7 @@ Personal NixOS configuration for `nixos-laptop` — a Wayland-only setup built o
 
 - [Quick start](./docs/quick-start.md)
 - [File layout](./docs/file-layout.md)
+- [Architecture](./ARCHITECTURE.md)
 - [Config approach](./docs/config-approach.md)
 - [Keybindings](./docs/keybindings.md)
 - [Caps Lock layer (keyd)](./docs/caps-lock-layer.md)

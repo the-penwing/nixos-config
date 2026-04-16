@@ -3,15 +3,22 @@
 ```
 nixos-config/
   flake.nix                   # entry point; all inputs & nixos-laptop output
-  home.nix                    # home-manager entry
+  home.nix                    # home-manager entry; imports ./modules/home
+  ARCHITECTURE.md             # high-level architecture and design decisions
+  lib/
+    mkMicrobitShell.nix       # shared helper for micro:bit dev shells
 
   hosts/nixos-laptop/
-    configuration.nix         # system entry point
+    configuration.nix         # system entry point; imports ../../modules/system
     hardware-configuration.nix
 
   modules/
-    system/                   # boot, networking, hardware, services, packages, input
-    home/                     # shell, editor, desktop
+    system/
+      default.nix             # explicit system module entrypoint/import list
+      ...                     # boot, networking, hardware, services, packages, input
+    home/
+      default.nix             # explicit home module entrypoint/import list
+      ...                     # shell, editor, desktop
 
   dotfiles/
     desktop/                  # hyprland, waybar, wofi, rofi, wlogout
