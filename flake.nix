@@ -75,7 +75,7 @@
         ruff
         black
         mypy
-        ipython
+        python3Packages.ipython
       ];
 
       shellHook = ''
@@ -115,7 +115,7 @@
         ruff
         black
         mypy
-        ipython
+        python3Packages.ipython
         rustup
         cargo
         rustc
