@@ -9,7 +9,7 @@ This repository provides lightweight, modular, **micro:bit-specific** dev shells
 Enter:
 
 ```bash
-nix flake develop .#microbit-python
+nix develop .#microbit-python
 ```
 
 Includes:
@@ -33,7 +33,7 @@ pip install -r requirements.txt
 Enter:
 
 ```bash
-nix flake develop .#microbit-rust
+nix develop .#microbit-rust
 ```
 
 Includes:
@@ -57,7 +57,7 @@ cargo watch -x check
 Enter:
 
 ```bash
-nix flake develop .#microbit
+nix develop .#microbit
 ```
 
 Includes both `microbit-python` and `microbit-rust` toolsets.
