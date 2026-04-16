@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -38,7 +38,7 @@
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks."*" = {
-      identityFile = [ "~/.ssh/id_ed25519" ];
+      identityFile = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
     };
   };
 }
