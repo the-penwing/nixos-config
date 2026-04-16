@@ -23,6 +23,7 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    mkDevShell = import ./lib/mkDevShell.nix { inherit pkgs; };
     mkMicrobitShell = import ./lib/mkMicrobitShell.nix { inherit pkgs; };
   in {
     nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
@@ -48,7 +49,7 @@
         }
       ];
     };
-    devShells.x86_64-linux.pawn-appetit = pkgs.mkShell {
+    devShells.x86_64-linux.pawn-appetit = mkDevShell {
       buildInputs = with pkgs; [
         cargo
         rustc
