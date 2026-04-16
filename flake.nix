@@ -90,7 +90,6 @@
         rustc
         rust-analyzer
         cargo-watch
-        cargo-embed
         probe-rs
         openocd
         rustfmt
@@ -121,7 +120,6 @@
         rustc
         rust-analyzer
         cargo-watch
-        cargo-embed
         probe-rs
         openocd
         rustfmt
