@@ -6,6 +6,7 @@ nixos-config/
   home.nix                    # home-manager entry; imports ./modules/home
   ARCHITECTURE.md             # high-level architecture and design decisions
   lib/
+    mkDevShell.nix            # shared dev-shell zsh/common-tool wrapper
     mkMicrobitShell.nix       # shared helper for micro:bit dev shells
 
   hosts/nixos-laptop/

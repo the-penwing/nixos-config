@@ -30,7 +30,10 @@ Current dotfile areas:
 
 ## Development shells
 
-Micro:bit shells are defined in `flake.nix` using `lib/mkMicrobitShell.nix` to avoid duplication:
+Dev shells are defined in `flake.nix` using:
+
+- `lib/mkDevShell.nix` for shared shell behavior (zsh login shell + common tooling)
+- `lib/mkMicrobitShell.nix` for micro:bit-specific composition
 
 - `microbit-python`
 - `microbit-rust`

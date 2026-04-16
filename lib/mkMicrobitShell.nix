@@ -1,4 +1,7 @@
 { pkgs }:
+let
+  mkDevShell = import ./mkDevShell.nix { inherit pkgs; };
+in
 {
   python ? false,
   rust ? false,
@@ -37,7 +40,7 @@ let
     cargo-bloat
   ];
 in
-pkgs.mkShell {
+mkDevShell {
   buildInputs =
     (if python then pythonInputs else [ ])
     ++ (if rust then rustInputs else [ ]);

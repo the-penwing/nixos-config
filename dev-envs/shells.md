@@ -1,5 +1,9 @@
 # Available shells
 
+All dev shells launch `zsh -l` for interactive sessions, so your regular `~/.zshrc` setup (Oh My Zsh, plugins, aliases, Starship prompt) is loaded automatically.
+
+Shared shell QoL tools available in every shell: `starship`, `fzf`, `ripgrep`, `fd`, `bat`, `eza`, `direnv`, `zoxide`.
+
 ## `microbit-python`
 
 Enter:
