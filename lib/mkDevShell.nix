@@ -19,11 +19,11 @@ let
 in
 pkgs.mkShell {
   buildInputs = buildInputs ++ commonInputs;
+
   shellHook = ''
     ${shellHook}
   
-    export SHELL=${pkgs.zsh}/bin/zsh
     export STARSHIP_CONFIG="${starshipConfig}"
-    exec ${pkgs.zsh}/bin/zsh
+    eval "$(${pkgs.starship}/bin/starship init bash)"
   '';
 }
