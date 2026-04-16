@@ -1,6 +1,6 @@
 # Development environments
 
-This repository provides **micro:bit-specific** dev shells for Rust, Python, and a combined workflow.
+This repository provides lightweight, modular, **micro:bit-specific** dev shells for Rust, Python, and a combined workflow.
 
 ## Available shells
 
@@ -109,7 +109,7 @@ nix develop .#microbit-python
 esptool.py --chip <chip-id> --port /dev/ttyUSB0 --baud 460800 write_flash 0x1000 firmware.bin
 ```
 
-Adjust chip, serial port, baud rate, and flash offset for your board.  
+Adjust chip, serial port, baud rate, and flash offset for your board.
 Use this flow for esptool-compatible targets in your microcontroller workflow.
 
 ### Debug serial output (`minicom` / `screen`)
