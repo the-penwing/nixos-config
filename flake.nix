@@ -63,5 +63,46 @@
         echo "Pawn-Appetit dev shell loaded"
       '';
     };
+    devShells.x86_64-linux.microbit-python = pkgs.mkShell {
+      buildInputs = with pkgs; [
+        python3
+        python3Packages.pip
+        uv
+      ];
+
+      shellHook = ''
+        echo "micro:bit Python dev shell loaded"
+        echo "Use: python3 -m venv .venv && source .venv/bin/activate"
+      '';
+    };
+    devShells.x86_64-linux.microbit-rust = pkgs.mkShell {
+      buildInputs = with pkgs; [
+        rustup
+        cargo
+        rustc
+        rust-analyzer
+        cargo-watch
+      ];
+
+      shellHook = ''
+        echo "micro:bit Rust dev shell loaded"
+      '';
+    };
+    devShells.x86_64-linux.microbit = pkgs.mkShell {
+      buildInputs = with pkgs; [
+        python3
+        python3Packages.pip
+        uv
+        rustup
+        cargo
+        rustc
+        rust-analyzer
+        cargo-watch
+      ];
+
+      shellHook = ''
+        echo "micro:bit combined Python + Rust dev shell loaded"
+      '';
+    };
   };
 }
