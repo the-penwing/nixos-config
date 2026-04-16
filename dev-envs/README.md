@@ -133,7 +133,7 @@ mkdir -p ~/dev/hardware/microbit/blink-rust
 cd ~/dev/hardware/microbit/blink-rust
 # create flake.nix from one of the examples above
 nix develop
-# ("nix flake develop" is often used informally, but `nix develop` is the valid command)
+# (If you see `nix flake develop` in older examples, use `nix develop` instead.)
 ```
 
 Customize dependencies per project by editing only that project's `packages` list in `flake.nix`.
