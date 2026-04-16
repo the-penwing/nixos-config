@@ -12,6 +12,9 @@ Includes:
 - `python3`
 - `pip`
 - `uv`
+- `micropython` (includes `mpy-cross`)
+- `mpremote`
+- `gcc`, `gnumake`, `pkg-config`
 - `esptool`
 - `minicom`, `screen`, `picocom`
 - `black`, `ruff`, `mypy`
