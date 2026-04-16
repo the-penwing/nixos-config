@@ -1,6 +1,6 @@
 # Development environments
 
-This repository provides lightweight, modular, **micro:bit-specific** dev shells.
+This repository provides **micro:bit-specific** dev shells for Rust, Python, and a combined workflow.
 
 ## Available shells
 
@@ -16,6 +16,10 @@ Includes:
 - `python3`
 - `pip`
 - `uv`
+- `esptool`
+- `minicom`, `screen`, `picocom`
+- `black`, `ruff`, `mypy`
+- `ipython`
 - `venv` support via `python3 -m venv`
 
 Example:
@@ -42,6 +46,10 @@ Includes:
 - `rustc`
 - `rust-analyzer`
 - `cargo-watch`
+- `cargo-embed`, `probe-rs`, `openocd`
+- `rustfmt`
+- `cargo-expand`, `cargo-bloat`
+- `clippy` (installed via `rustup component add clippy` in shell hook)
 
 Example:
 
@@ -60,104 +68,100 @@ Enter:
 nix develop .#microbit
 ```
 
-Includes both `microbit-python` and `microbit-rust` toolsets.
+Includes all tools from both `microbit-python` and `microbit-rust`.
 
-## Adding project-specific dependencies
+## Flashing code
 
-Keep these base shells lightweight. For project-specific tools, create a local `flake.nix` in your project directory and extend only what that project needs.
-
-### 1) Rust micro:bit project (`cargo-embed`, `probe-rs`)
-
-Create `/path/to/your/project/flake.nix`:
-
-```nix
-{
-  description = "micro:bit Rust project shell";
-
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    main-config.url = "github:the-penwing/nixos-config";
-  };
-
-  outputs = { self, nixpkgs, main-config, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-      base = main-config.devShells.${system}.microbit-rust;
-    in {
-      devShells.${system}.default = pkgs.mkShell {
-        inputsFrom = [ base ];
-        packages = with pkgs; [
-          cargo-embed
-          probe-rs
-        ];
-      };
-    };
-}
-```
-
-### 2) Python micro:bit project (`esptool`, `minicom`)
-
-Create `/path/to/your/project/flake.nix`:
-
-```nix
-{
-  description = "micro:bit Python project shell";
-
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    main-config.url = "github:the-penwing/nixos-config";
-  };
-
-  outputs = { self, nixpkgs, main-config, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-      base = main-config.devShells.${system}.microbit-python;
-    in {
-      devShells.${system}.default = pkgs.mkShell {
-        inputsFrom = [ base ];
-        packages = with pkgs; [
-          esptool
-          minicom
-        ];
-      };
-    };
-}
-```
-
-### 3) Usage from an external project directory
+### Rust: flash with `cargo-embed`
 
 ```bash
-mkdir -p ~/dev/hardware/microbit/blink-rust
-cd ~/dev/hardware/microbit/blink-rust
-# create flake.nix from one of the examples above
-nix develop
-# (If you see `nix flake develop` in older examples, use `nix develop` instead.)
+nix develop .#microbit-rust
+cargo build
+cargo embed
 ```
 
-Customize dependencies per project by editing only that project's `packages` list in `flake.nix`.
+If your project needs a specific chip/target, configure `Embed.toml` in your Rust project and re-run `cargo embed`.
 
-### 4) Recommended structure for multiple projects
+### Rust: flash/debug with `probe-rs`
 
-```text
-~/dev/hardware/microbit/
-├── blink-rust/
-│   ├── flake.nix      # extends microbit-rust + cargo-embed/probe-rs
-│   ├── Cargo.toml
-│   └── src/
-├── sensor-python/
-│   ├── flake.nix      # extends microbit-python + esptool/minicom
-│   └── main.py
-└── shared-notes/
-    └── README.md
+```bash
+nix develop .#microbit-rust
+probe-rs list
+probe-rs run --chip <your-chip> target/thumbv7em-none-eabihf/debug/<your-binary>
 ```
 
-This keeps each project self-contained and the main NixOS config in this repository untouched.
+### Python: upload with `esptool`
 
-### Common setup patterns / best practices
+```bash
+nix develop .#microbit-python
+esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash 0x1000 firmware.bin
+```
 
-- Keep `dev-envs` shells in this repo minimal and reusable.
-- Put project-specific tools in each project's own `flake.nix`.
-- Use `inputsFrom = [ base ];` to inherit from `microbit-python` or `microbit-rust`.
-- Pin/update dependencies per project (`nix flake lock --update-input nixpkgs`) without affecting other projects.
+Adjust chip, serial port, baud rate, and flash offset for your board.
+
+### Debug serial output (`minicom` / `screen`)
+
+```bash
+# minicom
+minicom -D /dev/ttyUSB0 -b 115200
+
+# screen
+screen /dev/ttyUSB0 115200
+```
+
+`picocom` is also available:
+
+```bash
+picocom /dev/ttyUSB0 -b 115200
+```
+
+## Linting & formatting
+
+### Rust
+
+```bash
+nix develop .#microbit-rust
+cargo fmt --all
+cargo clippy --all-targets --all-features -- -D warnings
+```
+
+### Python
+
+```bash
+nix develop .#microbit-python
+black .
+ruff check .
+```
+
+Editor integration for Rust is already covered by `rust-analyzer` in the shell.
+
+## Troubleshooting
+
+- **USB permissions**: if flashing tools cannot access the device, confirm udev rules/group membership and reconnect the board.
+- **Serial port access**: ensure your user can access `/dev/ttyUSB*` or `/dev/ttyACM*` (often via `dialout` group).
+- **Device detection**: use `probe-rs list` for debug probes and `ls /dev/ttyUSB* /dev/ttyACM*` for serial devices.
+
+## Example workflows
+
+### Edit → lint → build → flash → test
+
+```bash
+# Rust
+cargo fmt --all
+cargo clippy --all-targets --all-features -- -D warnings
+cargo build
+cargo embed
+
+# Python
+black .
+ruff check .
+# build/package as needed
+esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash 0x1000 firmware.bin
+```
+
+### Auto-rebuild on save with `cargo-watch`
+
+```bash
+nix develop .#microbit-rust
+cargo watch -x check -x test
+```
