@@ -15,6 +15,7 @@ let
     uv
     micropython
     gcc
+    gcc-arm-embedded
     gnumake
     pkg-config
     esptool
