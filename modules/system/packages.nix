@@ -43,6 +43,8 @@
     ghostty         # Terminal emulator
     neovim          # Primary editor
     micro           # Fallback terminal editor
+    arduino-ide     # Open-source electronics prototyping platform
+    arduino-cli     # Arduino from the command line
 
     # ── Games ──────────────────────────────────────────────────
     prismlauncher   # Minecraft launcher
