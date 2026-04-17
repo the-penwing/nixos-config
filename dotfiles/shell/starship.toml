@@ -98,9 +98,9 @@ style = 'fg1'
 version_format = "v${raw}"
 
 [nix_shell]
-symbol = '[ ](brightgreen)'
+symbol = '[](brightgreen)'
 style = 'fg1'
 impure_msg = '[impure](brightred)'
 pure_msg = '[pure](brightgreen)'
 unknown_msg = '[unknown](yellow)'
-format = '[\[](fg1)[via ](brightblue)${symbol}${name}(brightgreen)[\]](fg1) '
+format = '[\[](fg1)[via](brightblue)${symbol}[${name}](brightblue)[\]](fg1) '
