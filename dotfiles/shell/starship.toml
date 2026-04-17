@@ -4,7 +4,7 @@ add_newline = true
 
 format = '''
 [┌─╼](brightred)$directory$username$hostname$git_branch$git_status
-[├─╼](brightred)$python
+[├─╼](brightred)$nix_shell$python
 $character'''
 
 [palettes.gruvbox_dark_soft]
@@ -92,7 +92,15 @@ deleted = "[✘](red)"
 conflicted = "[~](red)"
 
 [python]
-format = '\[[${symbol}${version}](yellow)\][(\[$virtualenv\])]($style)'
-symbol = '[ ](yellow)'
+format = '\[[${symbol}${version}](brightyellow)\][(\[$virtualenv\])]($style)'
+symbol = '[󰌠](brightyellow)'
 style = 'fg1'
 version_format = "v${raw}"
+
+[nix_shell]
+symbol = '[](brightblue)'
+style = 'fg1'
+impure_msg = '[impure](brightred)'
+pure_msg = '[pure](brightgreen)'
+unknown_msg = '[unknown](yellow)'
+format = '[\[](fg1)[via ](brightblue)${symbol}${state}[@](brightblue)${name}[\]](fg1) '
