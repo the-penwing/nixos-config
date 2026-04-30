@@ -17,7 +17,6 @@
   environment.systemPackages = with pkgs; [
 
     # ── Creative ───────────────────────────────────────────────
-    inkscape        # Vector graphics (occasional use)
     aseprite        # Pixel art editor
     oculante        # Fast image viewer
     feh             # Minimal image viewer / wallpaper setter
@@ -26,7 +25,6 @@
     mpv             # Video player
     vlc             # Media player
     kdePackages.k3b # CD/DVD burner (occasional)
-    tuxguitar       # Guitar tablature editor
 
     # ── Productivity & Office ──────────────────────────────────
     libreoffice     # Office suite (school essential)
@@ -38,11 +36,14 @@
 
     # ── AI & Misc Utilities ────────────────────────────────────
     ollama          # Local LLM inference
+    github-copilot-cli # GitHub Cloud AI
+    copilot-language-server # GitHub copilot language server
 
     # ── Terminal & Editor ──────────────────────────────────────
     ghostty         # Terminal emulator
     neovim          # Primary editor
     micro           # Fallback terminal editor
+    vim              # Fallback terminal editor for when i feel like sufffering
     arduino-ide     # Open-source electronics prototyping platform
     arduino-cli     # Arduino from the command line
 
@@ -71,7 +72,6 @@
     fzf             # Fuzzy finder
     fd              # Fast find replacement
     btop            # System monitor (also aliased as ps)
-    screenfetch     # System info
     fastfetch       # Fast system info
     tree            # Directory tree viewer
     ripgrep         # Fast grep replacement
