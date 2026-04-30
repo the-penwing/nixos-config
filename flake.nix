@@ -25,17 +25,9 @@
     pkgs = nixpkgs.legacyPackages.${system};
     mkDevShell = import ./lib/mkDevShell.nix { inherit pkgs; };
     mkMicrobitShell = import ./lib/mkMicrobitShell.nix { inherit pkgs; };
-
-    # Overlay for custom packages
-    customOverlay = final: prev: {
-      devpod = final.callPackage ./pkgs/devpod { };
-    };
-
-    pkgsWithOverlay = nixpkgs.legacyPackages.${system}.extend customOverlay;
   in {
     nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit pkgsWithOverlay; };
       modules = [
         ./hosts/nixos-laptop/configuration.nix
         solaar.nixosModules.default
@@ -49,12 +41,10 @@
   		  };
 		}
         {
-          nixpkgs.overlays = [ customOverlay ];
           environment.systemPackages = [
             plank-reloaded.packages.${system}.default
             naviterm.packages.${system}.default
             iloader.packages.${system}.default
-            pkgsWithOverlay.devpod.devpod
           ];
         }
       ];
