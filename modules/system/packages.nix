@@ -30,7 +30,9 @@
     libreoffice     # Office suite (school essential)
     obsidian        # Note-taking (essential)
     bitwarden-desktop # Password manager (security backup)
-
+    kdePackages.ghostwriter
+    zettlr
+    
     # ── Communication & Social ─────────────────────────────────
     discord
 
@@ -83,6 +85,8 @@
     jq              # JSON processor
     imagemagick     # Image manipulation
     tmux            # Terminal multiplexer
+    glow            # Render markdown on the cli with pizazzz
+    graphviz
 
     # ── Screenshot (Hyprland / Wayland) ────────────────────────
     grim            # Screenshot tool

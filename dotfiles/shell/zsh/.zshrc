@@ -51,7 +51,7 @@ alias tlp-save='sudo tlp bat'
 
 # Better CLI tools (interactive shell only — use \cmd to call the original)
 alias cat='bat --paging=never'
-alias ls='eza --icons'
+alias ls='eza'
 alias ll='eza --icons -l'
 alias la='eza --icons -la'
 alias grep='rg'
