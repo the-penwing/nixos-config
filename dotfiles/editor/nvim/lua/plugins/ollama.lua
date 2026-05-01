@@ -1,5 +1,5 @@
 return {
-  -- 1. The Chat/Agent Plugin (CodeCompanion)
+  -- 1. CodeCompanion (Chat & Inline)
   {
     "olimorris/codecompanion.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
@@ -12,47 +12,40 @@ return {
         adapters = {
           ollama = function()
             return require("codecompanion.adapters").extend("ollama", {
-              schema = { model = { default = "qwen3.5:9b-q4_K_M" } },
+              schema = { model = { default = "qwen3.5:9b" } },
             })
           end,
           ollama_fast = function()
             return require("codecompanion.adapters").extend("ollama", {
-              schema = { model = { default = "qwen3.5:2b-q8_0" } },
+              schema = { model = { default = "qwen3.5:2b" } },
             })
           end,
         },
       })
     end,
-    keys = {
-      { "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", desc = "AI Chat" },
-      { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "AI Actions" },
-    },
   },
 
-  -- 2. The Autocomplete/Ghost Text Plugin (cmp-ai)
-  {
-    "tzachar/cmp-ai",
-    dependencies = "hrsh7th/nvim-cmp",
-    config = function()
-      local cmp_ai = require("cmp_ai.config")
-      cmp_ai:setup({
-        max_lines = 100,
-        provider = "Ollama",
-        provider_options = {
-          model = "qwen3.5:2b-q8_0", -- Using your lightning-fast 2B model
-        },
-        notify = false,
-      })
-    end,
-  },
-
-  -- 3. Integrating it into LazyVim's Completion
+  -- 2. Autocomplete Integration (The Fix for your error)
   {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "tzachar/cmp-ai",
+        config = function()
+          require("cmp_ai.config"):setup({
+            max_lines = 100,
+            provider = "Ollama",
+            provider_options = { model = "qwen3.5:2b" },
+            notify = false,
+          })
+        end,
+      },
+    },
     opts = function(_, opts)
+      -- This adds cmp-ai to the list of sources
       table.insert(opts.sources, { name = "cmp_ai" })
       
-      -- Optional: Styling the ghost text to look like Copilot
+      -- Enable ghost text (Copilot style)
       opts.experimental = opts.experimental or {}
       opts.experimental.ghost_text = true
     end,
