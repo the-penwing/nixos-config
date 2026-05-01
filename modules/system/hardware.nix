@@ -1,10 +1,5 @@
 { pkgs, ... }:
 {
-  # Disable broken touchscreen
-  services.udev.extraRules = ''
-    SUBSYSTEM=="input", ATTRS{name}=="ELAN2513:00 04F3:23E9", ENV{LIBINPUT_IGNORE_DEVICE}="1"
-  '';
-
   # Audio
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -55,11 +50,28 @@
     max-jobs = 2;   # Limit parallel builds
   };
 
-  # Auto process priority management
+# Auto process priority management
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
     rulesProvider = pkgs.ananicy-cpp;
     settings.apply_nice = true;
+  };
+
+  # ============================================================
+  # FINGERPRINT READER
+  # ============================================================
+  services.fprintd.enable = true;
+
+  # PAM integration for fingerprint auth
+  security.pam.services = {
+    sudo = {
+      fprintAuth = true;
+      unixAuth = true;    # Fallback to password
+    };
+    login = {
+      fprintAuth = true;
+      unixAuth = true;    # Fallback to password
+    };
   };
 }
