@@ -10,9 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
-      #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.7.tar.gz"; # uncomment line for solaar version 1.1.19
-      #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     iloader.url = "github:nab138/iloader";
@@ -47,37 +45,54 @@
         }
       ];
     };
-    devShells.x86_64-linux.pawn-appetit = mkDevShell {
-      buildInputs = with pkgs; [
-        cargo
-        rustc
-        pnpm
-        nodejs
-        pkg-config
-        gtk3
-        webkitgtk_4_1
-        libsoup_3
-      ];
-      
-      shellHook = ''
-        echo "Pawn-Appetit dev shell loaded"
-      '';
-    };
-    devShells.x86_64-linux.microbit-python = mkMicrobitShell {
-      python = true;
-      rust = false;
-      shellMessage = "micro:bit MicroPython dev shell loaded";
-      includeVenvHint = true;
-    };
-    devShells.x86_64-linux.microbit-rust = mkMicrobitShell {
-      rust = true;
-      shellMessage = "micro:bit Rust dev shell loaded";
-    };
-    devShells.x86_64-linux.microbit = mkMicrobitShell {
-      python = true;
-      rust = true;
-      shellMessage = "micro:bit combined Python + Rust dev shell loaded";
-      includeVenvHint = true;
+
+    devShells.x86_64-linux = {
+      default = mkDevShell {
+        buildInputs = with pkgs; [
+          git
+          rsync
+        ];
+        
+        shellHook = ''
+          echo "nixos-config shell loaded"
+        '';
+      };
+
+      pawn-appetit = mkDevShell {
+        buildInputs = with pkgs; [
+          cargo
+          rustc
+          pnpm
+          nodejs
+          pkg-config
+          gtk3
+          webkitgtk_4_1
+          libsoup_3
+        ];
+        
+        shellHook = ''
+          echo "Pawn-Appetit dev shell loaded"
+        '';
+      };
+
+      microbit-python = mkMicrobitShell {
+        python = true;
+        rust = false;
+        shellMessage = "micro:bit MicroPython dev shell loaded";
+        includeVenvHint = true;
+      };
+
+      microbit-rust = mkMicrobitShell {
+        rust = true;
+        shellMessage = "micro:bit Rust dev shell loaded";
+      };
+
+      microbit = mkMicrobitShell {
+        python = true;
+        rust = true;
+        shellMessage = "micro:bit combined Python + Rust dev shell loaded";
+        includeVenvHint = true;
+      };
     };
   };
 }
