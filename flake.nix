@@ -5,7 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    plank-reloaded.url = "github:zquestz/plank-reloaded";
     naviterm = {
       url = "gitlab:detoxify92/naviterm";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +18,7 @@
     iloader.url = "github:nab138/iloader";
   };
 
-  outputs = { self, nixpkgs, home-manager, plank-reloaded, naviterm, solaar, iloader, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, naviterm, solaar, iloader, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -42,7 +41,6 @@
 		}
         {
           environment.systemPackages = [
-            plank-reloaded.packages.${system}.default
             naviterm.packages.${system}.default
             iloader.packages.${system}.default
           ];
