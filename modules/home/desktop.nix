@@ -1,57 +1,47 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  # Hyprland - Wayland Compositor
-  xdg.configFile."hypr/hyprland.conf".source = ../../dotfiles/desktop/hyprland/hyprland.conf;
-  xdg.configFile."hypr/hyprpaper.conf".source = ../../dotfiles/desktop/hyprland/hyprpaper.conf;
-  xdg.configFile."hypr/hyprlock.conf".source = ../../dotfiles/desktop/hyprland/hyprlock.conf;
-  xdg.configFile."hypr/hypridle.conf".source = ../../dotfiles/desktop/hyprland/hypridle.conf;
-
-  # Waybar - Status Bar
-  xdg.configFile."waybar/config.jsonc".source = ../../dotfiles/desktop/waybar/config.jsonc;
-  xdg.configFile."waybar/style.css".source   = ../../dotfiles/desktop/waybar/style.css;
-
-  # Wofi - Application Launcher
-  xdg.configFile."wofi/style.css".source = ../../dotfiles/desktop/wofi/style.css;
-  xdg.configFile."wofi/config".source    = ../../dotfiles/desktop/wofi/config;
-
-  # Dunst - Notification Daemon
-  xdg.configFile."dunst/dunstrc".source = ../../dotfiles/theme/dunst/dunstrc;
-
-  # Wlogout - Session Management
-  xdg.configFile."wlogout/style.css".source = ../../dotfiles/desktop/wlogout/style.css;
-
-  # Ghostty - Terminal Emulator
-  xdg.configFile."ghostty/config".source = ../../dotfiles/apps/ghostty/config;
-
-  # GTK - GUI Toolkit Theme
-  xdg.configFile."gtk-3.0/settings.ini".source = ../../dotfiles/theme/gtk-3.0/settings.ini;
-
-  # NetworkManager Dmenu - Network Control
-  xdg.configFile."networkmanager-dmenu/config.ini".source = ../../dotfiles/apps/networkmanager-dmenu/config.ini;
-
-  # Rofi - Application Launcher & Menu
-  xdg.configFile."rofi/config.rasi".source = ../../dotfiles/desktop/rofi/config.rasi;
-
-  # Fastfetch - System Information
-  xdg.configFile."fastfetch/config.jsonc".source = ../../dotfiles/apps/fastfetch/config.jsonc;
-
-  # Waypaper - Wallpaper Manager
-  xdg.configFile."waypaper/config.ini".source = ../../dotfiles/apps/waypaper/config.ini;
-
-  # Btop - System Monitor
-  xdg.configFile."btop/btop.conf".source = ../../dotfiles/apps/btop/btop.conf;
+  # Initial setup: copy desktop configs on first run
+  home.activation.setupDesktopConfigs = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    for dir in hypr waybar wofi rofi ghostty; do
+      config_dir="$HOME/.config/$dir"
+      mkdir -p "$config_dir"
+      
+      ${pkgs.rsync}/bin/rsync -av \
+        ${../../dotfiles/desktop}/$dir/ \
+        "$config_dir/" 2>/dev/null || true
+      
+      chmod -R u+w "$config_dir"
+    done
+    
+    # Theme configs
+    for theme_dir in gtk-3.0 dunst; do
+      config_dir="$HOME/.config/$theme_dir"
+      mkdir -p "$config_dir"
+      
+      ${pkgs.rsync}/bin/rsync -av \
+        ${../../dotfiles/theme}/$theme_dir/ \
+        "$config_dir/" 2>/dev/null || true
+      
+      chmod -R u+w "$config_dir"
+    done
+    
+    # App configs
+    for app_dir in btop fastfetch waypaper lazygit; do
+      config_dir="$HOME/.config/$app_dir"
+      mkdir -p "$config_dir"
+      
+      ${pkgs.rsync}/bin/rsync -av \
+        ${../../dotfiles/apps}/$app_dir/ \
+        "$config_dir/" 2>/dev/null || true
+      
+      chmod -R u+w "$config_dir"
+    done
+  '';
 
   # ============================================================
   # SYSTEMD USER SERVICES
   # ============================================================
-  # mpris-scrobbler listens to MPRIS events (VLC and others) and scrobbles to ListenBrainz.
-  # Offline scrobble cache is stored in ~/.local/share/mpris-scrobbler/
-  #
-  # Before first use, manually create your token file:
-  #   mkdir -p ~/.config/mpris-scrobbler
-  #   echo "your-listenbrainz-token" > ~/.config/mpris-scrobbler/token
-  # Get your token from: https://listenbrainz.org/profile/
   home.packages = [ pkgs.mpris-scrobbler ];
 
   systemd.user.services = {

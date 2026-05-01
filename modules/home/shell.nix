@@ -1,4 +1,3 @@
-
 { config, pkgs, lib, ... }:
 
 {
@@ -24,14 +23,27 @@
     prefix=$HOME/.npm-global
   '';
 
-  # Zsh - Shell Configuration
-  home.file.".zshrc".source = ../../dotfiles/shell/zsh/.zshrc;
-
-  # Tmux - Terminal Multiplexer
-  home.file.".tmux.conf".source = ../../dotfiles/shell/tmux/.tmux.conf;
-
-  # Starship - Shell Prompt
-  xdg.configFile."starship.toml".source = ../../dotfiles/shell/starship.toml;
+  # Copy shell configs from dotfiles (repo is source of truth)
+  home.activation.setupShellConfigs = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    # Zsh
+    ${pkgs.rsync}/bin/rsync -av \
+      ${../../dotfiles/shell/zsh/.zshrc} \
+      $HOME/.zshrc
+    chmod u+w $HOME/.zshrc
+    
+    # Tmux
+    ${pkgs.rsync}/bin/rsync -av \
+      ${../../dotfiles/shell/tmux/.tmux.conf} \
+      $HOME/.tmux.conf
+    chmod u+w $HOME/.tmux.conf
+    
+    # Starship
+    mkdir -p $HOME/.config
+    ${pkgs.rsync}/bin/rsync -av \
+      ${../../dotfiles/shell/starship.toml} \
+      $HOME/.config/starship.toml
+    chmod u+w $HOME/.config/starship.toml
+  '';
 
   # SSH - Cache key passphrases via ssh-agent
   services.ssh-agent.enable = true;

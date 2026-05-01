@@ -1,8 +1,17 @@
-{ ... }:
+{ config, pkgs, ... }:
 
 {
-  xdg.configFile."nvim/init.lua".source = ../../dotfiles/editor/nvim/init.lua;
-  xdg.configFile."nvim/lazyvim.json".source = ../../dotfiles/editor/nvim/lazyvim.json;
-  xdg.configFile."nvim/stylua.toml".source = ../../dotfiles/editor/nvim/stylua.toml;
-  xdg.configFile."nvim/lua".source = ../../dotfiles/editor/nvim/lua;
+  # Initial setup: copy nvim configs to ~/.config/nvim on first run
+  home.activation.setupNvimConfig = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    nvim_config="$HOME/.config/nvim"
+    mkdir -p "$nvim_config"
+    
+    # Copy from dotfiles (repo is source of truth, preserve local files)
+    ${pkgs.rsync}/bin/rsync -av \
+      ${../../dotfiles/editor/nvim}/ \
+      "$nvim_config/"
+    
+    # Make editable
+    chmod -R u+w "$nvim_config"
+  '';
 }
