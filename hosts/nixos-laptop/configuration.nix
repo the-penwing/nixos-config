@@ -11,11 +11,15 @@
   # ============================================================
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.gc.automatic = true;
-  # systemd calendar syntax: run every Sunday at 03:00
-  nix.gc.dates = "Sun *-*-* 03:00:00";
-  nix.gc.options = "--delete-generations +30";
-
+  nix.optimise = {
+  	automatic = true;
+  	dates = "*-*-* 10:00:00";
+  };
+  nix.gc = {
+  	automatic = true;
+  	dates = "*-*-* 10:00:00";
+    options = "--delete-older-than 3d";
+  };
   security.pki.certificateFiles = [ ./secrets/root.crt ];
 
   # ============================================================

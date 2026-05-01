@@ -40,6 +40,7 @@
     ollama          # Local LLM inference
     github-copilot-cli # GitHub Cloud AI
     copilot-language-server # GitHub copilot language server
+    opencode
 
     # ── Terminal & Editor ──────────────────────────────────────
     ghostty         # Terminal emulator
@@ -87,6 +88,9 @@
     tmux            # Terminal multiplexer
     glow            # Render markdown on the cli with pizazzz
     graphviz
+    libfprint
+ #   libfprint-2
+    usbutils  # Provides lsusb to check for fingerprint reader
 
     # ── Screenshot (Hyprland / Wayland) ────────────────────────
     grim            # Screenshot tool
