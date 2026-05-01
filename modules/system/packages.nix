@@ -36,7 +36,6 @@
     discord
 
     # ── AI & Misc Utilities ────────────────────────────────────
-    ollama          # Local LLM inference
     github-copilot-cli # GitHub Cloud AI
     copilot-language-server # GitHub copilot language server
     opencode
