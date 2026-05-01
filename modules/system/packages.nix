@@ -25,13 +25,12 @@
     mpv             # Video player
     vlc             # Media player
     kdePackages.k3b # CD/DVD burner (occasional)
+    ffmpeg          # Audio Tools
 
     # ── Productivity & Office ──────────────────────────────────
     libreoffice     # Office suite (school essential)
     obsidian        # Note-taking (essential)
     bitwarden-desktop # Password manager (security backup)
-    kdePackages.ghostwriter
-    zettlr
     
     # ── Communication & Social ─────────────────────────────────
     discord
@@ -46,7 +45,7 @@
     ghostty         # Terminal emulator
     neovim          # Primary editor
     micro           # Fallback terminal editor
-    vim              # Fallback terminal editor for when i feel like sufffering
+    vim             # Fallback terminal editor for fancier quick edits
     arduino-ide     # Open-source electronics prototyping platform
     arduino-cli     # Arduino from the command line
 
@@ -54,7 +53,6 @@
     prismlauncher   # Minecraft launcher
 
     # ── File Managers ──────────────────────────────────────────
-    kdePackages.dolphin # Primary GUI file manager
     thunar          # Lightweight GTK file manager
     yazi            # Terminal file manager
     ffmpegthumbnailer # Yazi video thumbnails
@@ -89,8 +87,8 @@
     glow            # Render markdown on the cli with pizazzz
     graphviz
     libfprint
- #   libfprint-2
-    usbutils  # Provides lsusb to check for fingerprint reader
+    usbutils        # Provides lsusb to check for fingerprint reader
+    cloc            # Count Lines Of Code
 
     # ── Screenshot (Hyprland / Wayland) ────────────────────────
     grim            # Screenshot tool
