@@ -18,7 +18,7 @@
   nix.gc = {
   	automatic = true;
   	dates = "*-*-* 10:00:00";
-    options = "--delete-older-than 3d";
+    options = "--delete-older-than 2d";
   };
   security.pki.certificateFiles = [ ./secrets/root.crt ];
 
