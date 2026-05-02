@@ -13,10 +13,10 @@
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    iloader.url = "github:nab138/iloader";
+#    iloader.url = "github:nab138/iloader";
   };
 
-  outputs = { self, nixpkgs, home-manager, naviterm, solaar, iloader, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, naviterm, solaar, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -40,7 +40,7 @@
         {
           environment.systemPackages = [
             naviterm.packages.${system}.default
-            iloader.packages.${system}.default
+#            iloader.packages.${system}.default
           ];
         }
       ];
