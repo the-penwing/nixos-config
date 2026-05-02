@@ -29,6 +29,7 @@
     sunshine        # Screen Mirroring Host for Moonlight  
     
     # ── Productivity & Office ──────────────────────────────────
+    floorp-bin      # Firefox fork, (more lightweight??)
     libreoffice     # Office suite (school essential)
     obsidian        # Note-taking (essential)
     bitwarden-desktop # Password manager (security backup)
@@ -89,6 +90,8 @@
     libfprint
     usbutils        # Provides lsusb to check for fingerprint reader
     cloc            # Count Lines Of Code
+    scowl           # Spell checker word lists (for code comments, commit messages, etc)
+    miscfiles       # Misc non important files for sysadmins
 
     # ── Screenshot (Hyprland / Wayland) ────────────────────────
     grim            # Screenshot tool

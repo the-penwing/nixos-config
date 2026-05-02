@@ -8,7 +8,7 @@
     # Port 8000 removed — unused
     firewall.allowedTCPPorts = [ 47984 47989 47990 48010 ];
     firewall.allowedUDPPortRanges = [
-      { from = 47998; to = 48000; }
+      { from = 47900; to = 48000; }
       { from = 8000; to = 8010; }
     ];  
   };
