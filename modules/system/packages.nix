@@ -26,7 +26,8 @@
     vlc             # Media player
     kdePackages.k3b # CD/DVD burner (occasional)
     ffmpeg          # Audio Tools
-
+    sunshine        # Screen Mirroring Host for Moonlight  
+    
     # ── Productivity & Office ──────────────────────────────────
     libreoffice     # Office suite (school essential)
     obsidian        # Note-taking (essential)
@@ -107,6 +108,7 @@
     hypridle        # Idle / DPMS daemon
     hyprpolkitagent # Polkit authentication dialogs
     nwg-displays    # Display configuration GUI
+    wlr-randr       # Wayland output management
     nwg-look        # GTK theme manager
     wlogout         # Logout / power menu
     playerctl       # MPRIS media control
