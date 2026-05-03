@@ -14,7 +14,6 @@ declare -a SYNC_PAIRS=(
   "dotfiles/apps/btop:~/.config/btop"
   "dotfiles/apps/fastfetch:~/.config/fastfetch"
   "dotfiles/apps/waypaper:~/.config/waypaper"
-  "dotfiles/apps/lazygit:~/.config/lazygit"
   "dotfiles/shell/zsh/.zshrc:~/.zshrc"
   "dotfiles/shell/tmux/.tmux.conf:~/.tmux.conf"
   "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
@@ -26,19 +25,19 @@ ACTION="${1:-pull}"
 sync_pair() {
   local src="$1"
   local dst="$2"
-  
+
   # Expand ~ to actual home
   dst="${dst/#\~/$HOME}"
-  
+
   # Make src absolute
   src="${REPO_ROOT}/${src}"
-  
+
   # Skip if source doesn't exist
   if [ ! -e "$src" ]; then
     echo "  ⚠️  Source does not exist: $src"
     return
   fi
-  
+
   if [ "$ACTION" = "pull" ]; then
     # dotfiles → ~/.config (repo is source of truth, but preserve local files)
     mkdir -p "$(dirname "$dst")"
@@ -59,7 +58,7 @@ sync_pair() {
 
 echo "=== Config Sync: $ACTION ==="
 for pair in "${SYNC_PAIRS[@]}"; do
-  IFS=: read -r src dst <<< "$pair"
+  IFS=: read -r src dst <<<"$pair"
   sync_pair "$src" "$dst"
 done
 
