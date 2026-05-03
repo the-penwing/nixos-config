@@ -1,53 +1,43 @@
 return {
-  -- 1. CodeCompanion (Chat & Inline)
+  -- CodeCompanion (Chat & Inline) with Ollama + Copilot
   {
     "olimorris/codecompanion.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
     config = function()
+      -- Model configuration
+      local ollama_model = "qwen3.5:2b"
+
       require("codecompanion").setup({
+        display = {
+          action_palette = {
+            width = 95,
+            height = 7,
+          },
+          chat = {
+            window = {
+              layout = "vertical",
+              width = 0.5,
+            },
+          },
+        },
         strategies = {
-          chat = { adapter = "ollama" },
-          inline = { adapter = "ollama_fast" },
+          inline = { adapter = "ollama" },
         },
         adapters = {
           ollama = function()
             return require("codecompanion.adapters").extend("ollama", {
-              schema = { model = { default = "qwen3.5:9b" } },
-            })
-          end,
-          ollama_fast = function()
-            return require("codecompanion.adapters").extend("ollama", {
-              schema = { model = { default = "qwen3.5:2b" } },
+              schema = { model = { default = ollama_model } },
             })
           end,
         },
       })
-    end,
-  },
 
-  -- 2. Autocomplete Integration (The Fix for your error)
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "tzachar/cmp-ai",
-        config = function()
-          require("cmp_ai.config"):setup({
-            max_lines = 100,
-            provider = "Ollama",
-            provider_options = { model = "qwen3.5:2b" },
-            notify = false,
-          })
-        end,
-      },
-    },
-    opts = function(_, opts)
-      -- This adds cmp-ai to the list of sources
-      table.insert(opts.sources, { name = "cmp_ai" })
-      
-      -- Enable ghost text (Copilot style)
-      opts.experimental = opts.experimental or {}
-      opts.experimental.ghost_text = true
+      -- Ghost text with Ollama (Ctrl+L)
+      vim.keymap.set("i", "<C-l>", function()
+        require("codecompanion").inline({
+          config = { adapter = "ollama" },
+        })
+      end, { noremap = true, silent = true, desc = "Ollama inline" })
     end,
   },
 }
