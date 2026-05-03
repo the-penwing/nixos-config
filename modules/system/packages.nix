@@ -48,6 +48,7 @@
     arduino-ide     # Open-source electronics prototyping platform
     arduino-cli     # Arduino from the command line
     drawio          # Diagramming tool (for ideas, flowcharts, etc)
+    mermaid-cli     # CLI tool for generating diagrams from Mermaid syntax
 
     # ── File Managers ──────────────────────────────────────────
     thunar          # Lightweight GTK file manager
