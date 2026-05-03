@@ -14,9 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 #    iloader.url = "github:nab138/iloader";
+     cherri.url = "github:electrikmilk/cherri";
   };
 
-  outputs = { self, nixpkgs, home-manager, naviterm, solaar, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -41,6 +42,7 @@
           environment.systemPackages = [
             naviterm.packages.${system}.default
 #            iloader.packages.${system}.default
+            cherri.packages.${system}.default
           ];
         }
       ];
