@@ -22,9 +22,7 @@
     feh             # Minimal image viewer / wallpaper setter
 
     # ── Audio & Video ──────────────────────────────────────────
-    mpv             # Video player
     vlc             # Media player
-    kdePackages.k3b # CD/DVD burner (occasional)
     ffmpeg          # Audio Tools
     sunshine        # Screen Mirroring Host for Moonlight  
     
@@ -49,9 +47,7 @@
     vim             # Fallback terminal editor for fancier quick edits
     arduino-ide     # Open-source electronics prototyping platform
     arduino-cli     # Arduino from the command line
-
-    # ── Games ──────────────────────────────────────────────────
-    prismlauncher   # Minecraft launcher
+    drawio          # Diagramming tool (for ideas, flowcharts, etc)
 
     # ── File Managers ──────────────────────────────────────────
     thunar          # Lightweight GTK file manager
@@ -64,7 +60,6 @@
     git             # Version control (essential)
     sqlitebrowser   # SQLite GUI (handy when needed)
     starship        # Shell prompt
-    filezilla       # FTP/SFTP client (home server access)
 
     # ── CLI Utilities ──────────────────────────────────────────
     wget            # File downloader
@@ -90,8 +85,6 @@
     libfprint
     usbutils        # Provides lsusb to check for fingerprint reader
     cloc            # Count Lines Of Code
-    scowl           # Spell checker word lists (for code comments, commit messages, etc)
-    miscfiles       # Misc non important files for sysadmins
 
     # ── Screenshot (Hyprland / Wayland) ────────────────────────
     grim            # Screenshot tool

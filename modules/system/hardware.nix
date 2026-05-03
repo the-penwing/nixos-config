@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   # Audio
   services.pulseaudio.enable = false;
@@ -28,7 +28,7 @@
   # Performance: Compressed RAM-based swap, faster than disk
   zramSwap = {
     enable = true;
-    memoryPercent = 150;  # 1.5x RAM as virtual memory
+    memoryPercent = 125;  # 1.25x RAM as virtual memory
     algorithm = "zstd";    # Best compression ratio
     priority = 100;        # Prefer zram over disk swap
   };
@@ -46,7 +46,7 @@
 
   # Nix builder tuning: leave cores for UI
   nix.settings = {
-    cores = 4;      # Don't max out all 8
+    cores = 4;      # Don't max out all 6
     max-jobs = 2;   # Limit parallel builds
   };
 

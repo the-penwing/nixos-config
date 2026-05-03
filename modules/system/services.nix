@@ -83,15 +83,14 @@
   };
   services.ollama = {
     enable = true;
-    # Use the specific CPU-only package as suggested by the error
     package = pkgs.ollama-cpu; 
     
     environmentVariables = {
       OLLAMA_HOST = "127.0.0.1:11434";
       OLLAMA_NUM_PARALLEL = "1";
       OLLAMA_MAX_LOADED_MODELS = "1";
-      OLLAMA_NUM_THREADS = "5";
-      OLLAMA_KEEP_ALIVE = "3m";
+      OLLAMA_NUM_THREADS = "8";
+      OLLAMA_KEEP_ALIVE = "1m";
     };
   };
   
