@@ -27,7 +27,7 @@
     done
     
     # App configs
-    for app_dir in btop fastfetch waypaper lazygit; do
+    for app_dir in btop fastfetch waypaper; do
       config_dir="$HOME/.config/$app_dir"
       mkdir -p "$config_dir"
       
