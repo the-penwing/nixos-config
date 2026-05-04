@@ -27,7 +27,7 @@
     nixosConfigurations."nixos-t14s" = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        ./hosts/nixos-laptop/configuration.nix
+        ./hosts/nixos-t14s/configuration.nix
         solaar.nixosModules.default
         home-manager.nixosModules.home-manager
 		{
