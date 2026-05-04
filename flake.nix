@@ -24,7 +24,7 @@
     mkDevShell = import ./lib/mkDevShell.nix { inherit pkgs; };
     mkMicrobitShell = import ./lib/mkMicrobitShell.nix { inherit pkgs; };
   in {
-    nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."nixos-t14s" = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         ./hosts/nixos-laptop/configuration.nix
