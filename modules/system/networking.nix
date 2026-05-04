@@ -2,7 +2,7 @@
 
 {
   networking = {
-    hostName = "nixos-laptop";
+    hostName = "nixos-t14s";
     networkmanager.enable = true;
     # Port 22 (SSH) removed — OpenSSH disabled, Tailscale SSH used instead
     # Port 8000 removed — unused
