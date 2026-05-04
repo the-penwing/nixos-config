@@ -28,7 +28,6 @@
     
     # ── Productivity & Office ──────────────────────────────────
     qutebrowser     # Keyboard-driven browser (try to switch regularly to avoid firefox's bloat)
-    libreoffice     # Office suite (school essential)
     obsidian        # Note-taking (essential)
     bitwarden-desktop # Password manager (security backup)
     
@@ -52,10 +51,6 @@
 
     # ── File Managers ──────────────────────────────────────────
     thunar          # Lightweight GTK file manager
-    yazi            # Terminal file manager
-    ffmpegthumbnailer # Yazi video thumbnails
-    unar            # Yazi archive extraction
-    poppler-utils   # Yazi PDF previews
 
     # ── Dev Tools ──────────────────────────────────────────────
     git             # Version control (essential)
@@ -111,7 +106,6 @@
     playerctl       # MPRIS media control
     bibata-cursors  # Cursor theme
     rofi            # Alternative launcher
-    nwg-dock-hyprland # Dock
     networkmanager_dmenu # Network selection menu
     awww            # Animated wallpaper daemon
     waypaper        # Wallpaper picker GUI
@@ -142,7 +136,7 @@
     ifuse           # Mount iOS filesystems
 
     # ── Wayland / X11 Compatibility ────────────────────────────
-    xwayland        # X11 app compatibility layer
+    #    xwayland        # X11 app compatibility layer
   ];
 
   # ============================================================
