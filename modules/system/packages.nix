@@ -27,7 +27,6 @@
     sunshine        # Screen Mirroring Host for Moonlight  
     
     # ── Productivity & Office ──────────────────────────────────
-    floorp-bin      # Firefox fork, (more lightweight??)
     qutebrowser     # Keyboard-driven browser (try to switch regularly to avoid firefox's bloat)
     libreoffice     # Office suite (school essential)
     obsidian        # Note-taking (essential)
