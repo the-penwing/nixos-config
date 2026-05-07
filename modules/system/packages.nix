@@ -30,7 +30,8 @@
     qutebrowser     # Keyboard-driven browser (try to switch regularly to avoid firefox's bloat)
     obsidian        # Note-taking (essential)
     bitwarden-desktop # Password manager (security backup)
-    
+    gnome-characters # Character map
+
     # ── Communication & Social ─────────────────────────────────
     discord
 
