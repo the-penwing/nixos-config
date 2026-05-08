@@ -78,6 +78,7 @@
   # ============================================================
   programs.direnv.enable = true;
   programs.firefox.enable = true;
+  programs.zoxide.enable = true;
   programs.zsh = {
     enable = true;
   };
