@@ -43,8 +43,8 @@ eval "$(starship init zsh)"
 # oh-my-zsh — must be near end
 source $ZSH/oh-my-zsh.sh
 
-alias update-repo-dotfiles="~/nixos-config/scripts/sync-dotfiles.sh push"
-alias update-home-dotfiles="~/nixos-config/scripts/sync-dotfiles.sh pull"
+alias update-repo-dotfiles='~/nixos-config/scripts/sync-dotfiles.sh push'
+alias update-home-dotfiles='~/nixos-config/scripts/sync-dotfiles.sh pull'
 
 alias python3='python3.14'
 alias python='python3.14'
@@ -62,6 +62,8 @@ alias find='fd'
 alias du='dust'
 alias df='duf'
 alias ps='btop'
+alias cd='z'
+alias cdi='zi'
 
 # Auto-start Hyprland on TTY1 login (interactive shell only)
 if [[ -z $WAYLAND_DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
