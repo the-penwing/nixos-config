@@ -59,6 +59,9 @@ DISABLE_FZF_KEY_BINDINGS="false"
 # SSH & XDG
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent"
 
+# Make the time command look better
+TIMEFMT=$'\nreal %E\nuser %U\nsys %S\n'
+
 set +a
 
 
