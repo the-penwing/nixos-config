@@ -63,3 +63,4 @@ for pair in "${SYNC_PAIRS[@]}"; do
 done
 
 echo "✅ Sync complete"
+echo "Manually Copy over .zshrc cause this doesnt work for that right now"
