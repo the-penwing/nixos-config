@@ -82,6 +82,7 @@
     libfprint
     usbutils        # Provides lsusb to check for fingerprint reader
     cloc            # Count Lines Of Code
+    file            # Detect file types
 
     # ── Screenshot (Hyprland / Wayland) ────────────────────────
     grim            # Screenshot tool
