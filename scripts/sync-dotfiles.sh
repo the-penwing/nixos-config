@@ -10,12 +10,14 @@ declare -a SYNC_PAIRS=(
   "dotfiles/desktop/waybar:~/.config/waybar"
   "dotfiles/desktop/wofi:~/.config/wofi"
   "dotfiles/desktop/rofi:~/.config/rofi"
+  "dotfiles/desktop/caelestia:~/.config/caelestia"
   "dotfiles/apps/ghostty:~/.config/ghostty"
   "dotfiles/apps/btop:~/.config/btop"
   "dotfiles/apps/fastfetch:~/.config/fastfetch"
   "dotfiles/apps/waypaper:~/.config/waypaper"
   "dotfiles/shell/zsh/.zshrc:~/.zshrc"
   "dotfiles/shell/tmux/.tmux.conf:~/.tmux.conf"
+  "dotfiles/shell/starship.toml:~/.config/starship.toml"
   "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
   "dotfiles/theme/dunst:~/.config/dunst"
 )
@@ -39,10 +41,16 @@ sync_pair() {
   fi
 
   if [ "$ACTION" = "pull" ]; then
-    # dotfiles → ~/.config (repo is source of truth, but preserve local files)
+    # dotfiles → ~/.config (repo is source of truth)
     mkdir -p "$(dirname "$dst")"
-    echo "  ← $src"
-    rsync -av "$src/" "$dst/" 2>/dev/null || true
+    echo "  ← $src → $dst"
+    if [ -d "$src" ]; then
+      # Directory: copy contents
+      cp -r "$src"/* "$dst/" 2>/dev/null || true
+    else
+      # Single file: copy directly
+      cp "$src" "$dst"
+    fi
     chmod -R u+w "$dst" 2>/dev/null || true
   elif [ "$ACTION" = "push" ]; then
     # ~/.config → dotfiles (save your edits back)
@@ -51,8 +59,14 @@ sync_pair() {
       return
     fi
     mkdir -p "$(dirname "$src")"
-    echo "  → $dst"
-    rsync -av --delete "$dst/" "$src/" 2>/dev/null || true
+    echo "  → $dst → $src"
+    if [ -d "$dst" ]; then
+      # Directory: copy contents (overwrite)
+      cp -r "$dst"/* "$src/" 2>/dev/null || true
+    else
+      # Single file: copy directly
+      cp "$dst" "$src"
+    fi
   fi
 }
 
@@ -63,4 +77,3 @@ for pair in "${SYNC_PAIRS[@]}"; do
 done
 
 echo "✅ Sync complete"
-echo "Manually Copy over .zshrc cause this doesnt work for that right now"
