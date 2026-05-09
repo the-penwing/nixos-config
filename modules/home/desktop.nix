@@ -13,27 +13,6 @@
     # If not, you may need to add: inputs.caelestia.packages.${system}.default
   ];
 
-  # # ============================================================
-  # # PROGRAMS / CONFIGS
-  # # ============================================================
-  # # Caelestia shell configuration
-  # programs.caelestia = {
-  #   enable = true;
-  #   systemd = {
-  #     enable = true;
-  #     target = "graphical-session.target";
-  #   };
-  #   settings = {
-  #     # Custom shell.json settings
-  #     bar.status = {
-  #       showBattery = true;
-  #     };
-  #   };
-  #   cli = {
-  #     enable = true;
-  #   };
-  # };
-  #
   # ============================================================
   # SYSTEMD USER SERVICES
   # ============================================================

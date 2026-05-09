@@ -1,10 +1,27 @@
 {
     "appearance": {
+        "anim": {
+            "durations": {
+                "scale": 1
+            }
+        },
         "font": {
             "family": {
                 "mono": "CaskaydiaCove NF",
                 "sans": "Cantarell"
+            },
+            "size": {
+                "scale": 0.85
             }
+        },
+        "padding": {
+            "scale": 0.7
+        },
+        "rounding": {
+            "scale": 1
+        },
+        "spacing": {
+            "scale": 0.85
         },
         "transparency": {
             "enabled": false
@@ -13,12 +30,16 @@
     "background": {
         "desktopClock": {
             "background": {
-                "enabled": false
+                "enabled": true
             },
             "enabled": true,
             "shadow": {
                 "enabled": false
             }
+        },
+        "visualiser": {
+            "autoHide": true,
+            "enabled": true
         }
     },
     "bar": {
@@ -28,8 +49,11 @@
         },
         "clock": {
             "background": true,
-            "showDate": true
+            "showDate": true,
+            "showIcon": false
         },
+        "persistent": true,
+        "showOnHover": true,
         "status": {
             "showAudio": true,
             "showBattery": true,
@@ -44,12 +68,16 @@
         },
         "workspaces": {
             "activeIndicator": true,
-            "maxWindowIcons": 4,
-            "occupiedBg": false,
+            "maxWindowIcons": 5,
+            "occupiedBg": true,
             "perMonitorWorkspaces": true,
             "showWindows": false,
-            "shown": 4
+            "shown": 5
         }
+    },
+    "border": {
+        "rounding": 18,
+        "thickness": 8
     },
     "general": {
         "apps": {
@@ -69,8 +97,7 @@
     },
     "launcher": {
         "enableDangerousActions": false,
-        "favouriteApps": [
-        ],
+        "favouriteApps": [],
         "hiddenApps": [
             "nm-connection-editor",
             "blueman-adapters",
@@ -93,5 +120,17 @@
     },
     "notifs": {
         "openExpanded": false
+    },
+    "utilities": {
+        "vpn": {
+            "provider": [
+                {
+                    "displayName": "Tailscale",
+                    "enabled": true,
+                    "interface": "tailscale0",
+                    "name": "tailscale"
+                }
+            ]
+        }
     }
 }
