@@ -1,7 +1,7 @@
 # Keybindings
 
 > **Super** = Windows / Command key  
-> **Note:** `Super+L` is reserved for **lock screen**. Focus right is on `Super+→` or `Alt+Tab`.
+> **Note:** Focus right is on `Super+→` or `Alt+Tab`.
 
 ## Super layer — app launchers & window management
 
@@ -9,11 +9,10 @@
 |---|---|
 | `Super + Enter` | Open Ghostty terminal |
 | `Super + M` | Open Ghostty terminal |
-| `Super + B` | Open Firefox |
-| `Super + E` | Open Nautilus file manager |
+| `Super + B` | Open qutebrowser |
+| `Super + E` | Open Thunar file manager |
 | `Super + N` | Open Obsidian |
-| `Super + R` | Open app launcher (wofi drun) |
-| `Super + C` | Open clipboard history picker |
+| `Super + R` | Open Caelestia launcher |
 | `Super + Q` | Close active window |
 | `Super + Shift + Q` | Exit Hyprland |
 | `Super + F` | Toggle fullscreen |
@@ -21,8 +20,6 @@
 | `Super + V` | Toggle floating |
 | `Super + T` | Toggle split direction |
 | `Super + P` | Pin window (keep on top across workspaces) |
-| `Super + L` | Lock screen (hyprlock) |
-| `Super + \`` | Session menu (wlogout) |
 | `Super + S` | Toggle special workspace |
 | `Super + Shift + S` | Move window to special workspace (silently) |
 
@@ -30,11 +27,11 @@
 
 | Shortcut | Action |
 |---|---|
-| `Super + H / J / K` | Move focus left / down / up |
+| `Super + H / J / K / L` | Move focus left / down / up / right |
 | `Super + ← / → / ↑ / ↓` | Move focus (arrow keys, all directions incl. right) |
-| `Super + Shift + H / J / K` | Move window left / down / up |
+| `Super + Shift + H / J / K / L` | Move window left / down / up / right |
 | `Super + Shift + ← / → / ↑ / ↓` | Move window (arrow keys) |
-| `Super + Alt + H / J / K` | Resize window left / down / up |
+| `Super + Alt + H / J / K / L` | Resize window left / down / up / right |
 | `Super + Alt + ← / → / ↑ / ↓` | Resize window (arrow keys) |
 | `Alt + Tab` | Cycle windows forward |
 | `Alt + Shift + Tab` | Cycle windows backward |

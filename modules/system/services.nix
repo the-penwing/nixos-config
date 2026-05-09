@@ -23,9 +23,7 @@
     xwayland.enable = true;
   };
 
-  # Hyprlock & Hypridle — declarative
-  programs.hyprlock.enable = true;
-  services.hypridle.enable = true;
+  # Idle/lock handling is provided by Caelestia
 
   # XDG desktop portals — Hyprland portal only (Wayland-only setup)
   xdg.portal = {

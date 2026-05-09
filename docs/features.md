@@ -2,14 +2,7 @@
 
 ## Desktop
 - **Hyprland** — tiling Wayland compositor with dwindle layout, smart split/resize
-- **Waybar** — status bar
-- **Wofi** — primary app launcher (drun mode)
-- **Rofi** — alternative launcher
-- **Dunst** — notifications (Gruvbox-themed)
-- **Hyprlock** — lock screen
-- **Hypridle** — automatic DPMS / screen lock on idle
-- **Waypaper** — wallpaper picker (restores wallpaper on login)
-- **wlogout** — graphical session / power menu
+- **Caelestia** — shell providing launcher, notifications, and idle/lock handling
 - **Bibata Modern Classic** — cursor theme
 
 ## Shell
@@ -41,11 +34,10 @@
 ## Productivity
 - **Obsidian** — note-taking
 - **Thunderbird** — email
-- **LibreOffice** — office suite
 - **Bitwarden** — password manager
 
 ## Developer tools
-- **Git**, **Lazygit** — version control
+- **Git** — version control
 - **Docker** — containers (socket-activated)
 - **Node.js**, **Python 3**, **Rust** (rustup), **GCC** — language toolchains
 - **fzf**, **ripgrep**, **fd**, **bat**, **eza**, **jq** — CLI utilities

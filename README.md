@@ -1,6 +1,6 @@
 # nixos-config
 
-Personal NixOS configuration for `nixos-t14s`* — a Wayland-only setup built on Hyprland, managed entirely with flakes and home-manager.
+Personal NixOS configuration for `nixos-t14s`* — a Wayland-only setup built on Hyprland + Caelestia, managed with flakes and home-manager.
 
 ## Documentation index
 
@@ -16,6 +16,4 @@ Personal NixOS configuration for `nixos-t14s`* — a Wayland-only setup built on
 
 ---
 *This config is only used on my Lenovo Thinkpad T14s Gen 2 Ryzen 5 Pro.
-Other devices are not confirmed to work, edits will probably need to be made to various files.
-
-Documentation is also not up to date, I am working on it but this is mainly a backup of my setup. It is designed with my hardware in mind.
+Other devices are not confirmed to work, and edits will likely be needed for different hardware.

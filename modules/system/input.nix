@@ -32,7 +32,7 @@
   #   Volume:      Left=vol-down      Right=vol-up
   #   Brightness:  Up=bright+         Down=bright-
   #   Terminal:    C=^C  D=^D  Z=^Z  L=^L  U=^U  A=^A  E=^E  K=^K  W=^W
-  #   Session:     Q → Super+` which Hyprland binds to wlogout
+  #   Session:     Q → Super+R which Hyprland binds to Caelestia launcher
   # ============================================================
   services.keyd = {
     enable = true;
@@ -79,8 +79,8 @@
             k = "C-k";   # Delete to end of line
             w = "C-w";   # Delete word back
 
-            # Session manager — sends Super+` which Hyprland maps to wlogout
-            q = "M-grave";
+            # Session launcher — sends Super+R which Hyprland maps to Caelestia launcher
+            q = "M-r";
           };
         };
       };
