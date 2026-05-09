@@ -7,16 +7,17 @@
 
 ## Shell
 - **Zsh** — default shell, launched from TTY autologin
+- **Ghostty** - terminal app of choice
 - **Starship** — shell prompt
 - **Tmux** — terminal multiplexer
 
 ## Editor
-- **Neovim** — primary editor configured with LazyVim
+- **Neovim** — primary editor configured with AstroNvim
 - **Micro** — fallback terminal editor
 
 ## Theme
-- **Gruvbox Dark** — GTK theme (`gruvbox-dark-gtk`)
-- **Gruvbox Plus** — icon pack
+- **Dracula** — GTK theme
+- **Dracula** — icon pack
 
 ## Audio
 - **Pipewire** — audio server (48 kHz, replaces PulseAudio)
@@ -37,7 +38,7 @@
 - **Bitwarden** — password manager
 
 ## Developer tools
-- **Git** — version control
+- **Git** + **Lazygit** — version control
 - **Docker** — containers (socket-activated)
 - **Node.js**, **Python 3**, **Rust** (rustup), **GCC** — language toolchains
 - **fzf**, **ripgrep**, **fd**, **bat**, **eza**, **jq** — CLI utilities
