@@ -58,6 +58,8 @@
   systemd.services.syncthing.wantedBy = lib.mkForce [ ];
   
   services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
+
   # Polkit (needed for auth dialogs in Hyprland)
   security.polkit.enable = true;
 
