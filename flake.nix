@@ -5,6 +5,14 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     naviterm = {
       url = "gitlab:detoxify92/naviterm";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +25,7 @@
      cherri.url = "github:electrikmilk/cherri";
   };
 
-  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, caelestia-shell, caelestia-cli, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -34,6 +42,9 @@
   		  home-manager.useGlobalPkgs = true;
 		  home-manager.useUserPackages = true;
 		  home-manager.backupFileExtension = "bak";
+      home-manager.sharedModules = [
+        caelestia-shell.homeManagerModules.default
+      ];
 		  home-manager.users.benvl = import ./home.nix {
 		    inherit pkgs;
   		  };
@@ -43,6 +54,8 @@
             naviterm.packages.${system}.default
 #            iloader.packages.${system}.default
             cherri.packages.${system}.default
+            caelestia-shell.packages.${system}.default
+            caelestia-cli.packages.${system}.default
           ];
         }
       ];
@@ -59,6 +72,7 @@
           echo "nixos-config shell loaded"
         '';
       };
+
 
       pawn-appetit = mkDevShell {
         buildInputs = with pkgs; [

@@ -1,56 +1,53 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-palette = "gruvbox_dark_soft"
+"$schema" = "https://starship.rs/config-schema.json"
+palette = "dracula"
 add_newline = true
 
 format = '''
-[┌─╼](brightred)$directory$username$hostname$git_branch$git_status
-[├─╼](brightred)$nix_shell$python
+[┌─╼](brightyellow)$directory$username$hostname$git_branch$git_status
+[├─╼](brightyellow)$nix_shell$python
 $character'''
 
-[palettes.gruvbox_dark_soft]
+[palettes.dracula]
 # Backgrounds and Foregrounds
-dark0hard = '#1d2021'
-dark0 = '#282828'
-dark0soft = '#32302f'
-dark1 = '#3c3836'
-dark2 = '#504945'
-dark3 = '#665c54'
-dark4 = '#7c6f64'
-dark4256 = '#7c6f64'
-gray245 = '#928374'
-gray244 = '#928374'
-light0hard = '#f9f5d7'
-light0 = '#fbf1c7'
-light0soft = '#f2e5bc'
-light1 = '#ebdbb2'
-light2 = '#d5c4a1'
-light3 = '#bdae93'
-light4 = '#a89984'
-light4256 = '#a89984'
-# Bright Colours
-brightred = '#fb4934'
-brightgreen = '#b8bb26'
-brightyellow = '#fabd2f'
-brightblue = '#83a598'
-brightpurple = '#d3869b'
-brightaqua = '#8ec07c'
-brightorange = '#fe8019'
+background = "#282a36"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+
+# Bright Colours (main accent colors)
+brightred = "#ff5555"
+brightgreen = "#50fa7b"
+brightyellow = "#f1fa8c"
+brightblue = "#bd93f9"
+brightpurple = "#bd93f9"
+brightaqua = "#8be9fd"
+brightorange = "#ffb86c"
+
 # Neutral Colours
-red = '#cc241d'
-green = '#98971a'
-yellow = '#d79921'
-blue = '#458588'
-purple = '#b16286'
-aqua = '#689d6a'
-orange = '#d65d0e'
+red = "#ff5555"
+green = "#50fa7b"
+yellow = "#f1fa8c"
+blue = "#bd93f9"
+purple = "#bd93f9"
+aqua = "#8be9fd"
+orange = "#ffb86c"
+
 # Dim Colours
-dimred = '#9d0006'
-dimgreen = '#79740e'
-dimyellow = '#b57614'
-dimblue = '#076678'
-dimpurple = '#8f3f71'
-dimaqua = '#427b58'
-dimorange = '#af3a03'
+dimred = "#ff5555"
+dimgreen = "#50fa7b"
+dimyellow = "#f1fa8c"
+dimblue = "#bd93f9"
+dimpurple = "#bd93f9"
+dimaqua = "#8be9fd"
+dimorange = "#ffb86c"
+
+# Light shades for text
+light0 = "#f8f8f2"
+light1 = "#f8f8f2"
+light2 = "#e0e0e0"
+light3 = "#c0c0c0"
+light4 = "#6272a4"
+fg1 = "#f8f8f2"
+
 [directory]
 style = "fg1"
 format = '\[[$path]($style)\]'
@@ -71,7 +68,7 @@ format = '[@$hostname]($style)\]'
 disabled = false
 
 [character]
-success_symbol = "[└────╼](brightred)"
+success_symbol = "[└────╼](brightyellow)"
 error_symbol = "[└╼](brightorange)"
 
 [git_branch]
@@ -93,14 +90,14 @@ conflicted = "[~](red)"
 
 [python]
 format = '\[[${symbol}${version}](brightyellow)\][(\[$virtualenv\])]($style)'
-symbol = '[󰌠](brightyellow)'
-style = 'fg1'
+symbol = "[󰌠](brightyellow)"
+style = "fg1"
 version_format = "v${raw}"
 
 [nix_shell]
-symbol = '[](brightgreen)'
-style = 'fg1'
-impure_msg = '[impure](brightred)'
-pure_msg = '[pure](brightgreen)'
-unknown_msg = '[unknown](yellow)'
-format = '[\[](fg1)[via](brightblue)${symbol}[${name}](brightblue)[\]](fg1)'
+symbol = "[](brightgreen)"
+style = "fg1"
+impure_msg = "[impure](red)"
+pure_msg = "[pure](brightgreen)"
+unknown_msg = "[unknown](yellow)"
+format = '[\[](fg1)[via](blue)${symbol}[${name}](blue)[\]](fg1)'
