@@ -97,7 +97,8 @@
     },
     "launcher": {
         "enableDangerousActions": false,
-        "favouriteApps": [],
+        "favouriteApps": [
+        ],
         "hiddenApps": [
             "nm-connection-editor",
             "blueman-adapters",
@@ -107,16 +108,24 @@
             "org.pulseaudio.pavucontrol",
             "vim",
             "syncthing-ui",
-            "qt6ct",
             "nvim",
             "micro",
             "cups",
             "kvantummanager",
             "gvim",
-            "nwg-look",
             "nwg-displays",
-            "thunar-settings"
-        ]
+            "thunar-settings",
+            "qt6ct",
+            "nwg-look"
+        ],
+        "showOnHover": false,
+        "useFuzzy": {
+            "actions": true,
+            "apps": true,
+            "schemes": false,
+            "variants": false,
+            "wallpapers": false
+        }
     },
     "notifs": {
         "openExpanded": false
