@@ -1,118 +1,117 @@
-// Inspired by Catnap
+// Compact boxed layout with consistent key widths and Nerd Font icons.
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "nixos", // Path to your logo file
-        "type": "auto",                    // 'auto' detects the best protocol for your terminal
-        "width": 12,                       // Adjust width (in characters)
+        "source": "nixos",
+        "type": "auto",
+        "width": 13,
         "padding": {
             "top": 1,
-            "right": 4,
-            "left": 3
+            "right": 5,
+            "left": 2
         }
     },
     "display": {
-        "separator": " "
+        "separator": "  "
     },
     "modules": [
         {
-            "key": "╭─────────────╮",
+            "key": "╭────────────────────╮",
             "type": "custom"
         },
         {
-            "key": "│ {#31} user       {#keys}│",
+            "key": "│ {#39}󰀄 user         {#keys}│",
             "type": "title",
             "format": "{user-name}"
         },
         {
-            "key": "│ {#32}󰇅 hname     {#keys}│",
+            "key": "│ {#81}󰒋 host         {#keys}│",
             "type": "title",
             "format": "{host-name}"
         },
         {
             "type": "command",
-            "key": "│ {#33}󱦟 os age    {#keys}│",
-            "keyColor": "magenta",
-            "text": "printf \"\\e[0m%s days\\e[0m\" \"$(( ($(date +%s) - $(stat -c %W /)) / 86400 ))\""
+            "key": "│ {#117}󱦟 os age       {#keys}│",
+            "text": "printf \"%s days\" \"$(( ($(date +%s) - $(stat -c %W /)) / 86400 ))\""
         },
         {
-            "key": "│ {#34}󰅐 uptime    {#keys}│",
+            "key": "│ {#153}󰅐 uptime       {#keys}│",
             "type": "uptime"
         },
         {
-            "key": "│ {#34}{icon} distro    {#keys}│",
+            "key": "│ {#212} distro       {#keys}│",
             "type": "os"
         },
         {
-            "key": "│ {#35} kernel     {#keys}│",
+            "key": "│ {#219}󰒔 kernel       {#keys}│",
             "type": "kernel"
         },
         {
-            "key": "│ {#36} wm         {#keys}│",
+            "key": "│ {#183} wm           {#keys}│",
             "type": "wm"
         },
         {
-            "key": "│ {#36}󰇄 desktop   {#keys}│",
+            "key": "│ {#147}󰇄 desktop      {#keys}│",
             "type": "de"
         },
         {
-            "key": "│ {#31} term       {#keys}│",
+            "key": "│ {#111} terminal     {#keys}│",
             "type": "terminal"
         },
         {
-            "key": "│ {#32} shell      {#keys}│",
+            "key": "│ {#75}󱆃 shell        {#keys}│",
             "type": "shell"
         },
         {
-            "key": "│ {#33}󰍛 cpu       {#keys}│",
+            "key": "│ {#39}󰍛 cpu          {#keys}│",
             "type": "cpu",
             "showPeCoreCount": true
         },
         {
-            "key": "│ {#34}󰉉 disk      {#keys}│",
+            "key": "│ {#81}󰾲 memory       {#keys}│",
+            "type": "memory"
+        },
+        {
+            "key": "│ {#117}󰉉 disk         {#keys}│",
             "type": "disk",
             "folders": "/"
         },
         {
-            "key": "│ {#36} memory     {#keys}│",
-            "type": "memory"
-        },
-        {
-            "key": "│ {#35}󰍹 gpu       {#keys}│",
+            "key": "│ {#153}󰢮 gpu          {#keys}│",
             "type": "gpu"
         },
         {
-            "key": "│ {#34} battery    {#keys}│",
+            "key": "│ {#183}󰁹 battery      {#keys}│",
             "type": "battery"
         },
         {
-            "key": "│ {#32}󰤨 local ip  {#keys}│",
+            "key": "│ {#212}󰖟 local ip     {#keys}│",
             "type": "localip"
         },
         {
-            "key": "│ {#33} theme      {#keys}│",
+            "key": "│ {#219}󰌨 theme        {#keys}│",
             "type": "gtk3"
         },
         {
-            "key": "│ {#36} icons      {#keys}│",
+            "key": "│ {#147}󰀻 icons        {#keys}│",
             "type": "icons"
         },
         {
-            "key": "│ {#31}󰛖 packages  {#keys}│",
+            "key": "│ {#111}󰏗 packages     {#keys}│",
             "type": "packages"
         },
         {
-            "key": "├─────────────┤",
+            "key": "├────────────────────┤",
             "type": "custom"
         },
         {
-            "key": "│ {#39} colors     {#keys}│",
+            "key": "│ {#75}󰏘 palette      {#keys}│",
             "type": "colors",
             "symbol": "circle"
         },
-                {
-            "key": "╰─────────────╯",
+        {
+            "key": "╰────────────────────╯",
             "type": "custom"
-        },
+        }
     ]
 }

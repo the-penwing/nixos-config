@@ -12,6 +12,7 @@ Personal NixOS configuration for `nixos-t14s`* — a Wayland-only setup built on
 - [Caps Lock layer (keyd)](./docs/caps-lock-layer.md)
 - [Features](./docs/features.md)
 - [Flake inputs](./docs/flake-inputs.md)
+- [Performance improvement notes](./docs/performance-improvements.md)
 - [Development environments](./dev-envs/README.md)
 
 ---

@@ -1,8 +1,8 @@
 # Available shells
 
-All dev shells launch `zsh -l` for interactive sessions, so your regular `~/.zshrc` setup (Oh My Zsh, plugins, aliases, Starship prompt) is loaded automatically.
+All dev shells use bash with Starship prompt and shared QoL tooling.
 
-Shared shell QoL tools available in every shell: `starship`, `fzf`, `ripgrep`, `fd`, `bat`, `eza`, `direnv`, `zoxide`.
+Shared QoL tools available in every shell: `starship`, `fzf`, `ripgrep`, `fd`, `bat`, `eza`, `direnv`, `zoxide`.
 
 ## `microbit-python`
 
@@ -48,7 +48,7 @@ Includes:
 - `rustc`
 - `rust-analyzer`
 - `cargo-watch`
-- `cargo-embed`, `probe-rs`, `openocd`
+- `cargo-embed`, `probe-rs-tools`, `openocd`
 - `rustfmt`
 - `cargo-expand`, `cargo-bloat`
 - `clippy` (installed via `rustup component add clippy` in shell hook)
@@ -71,3 +71,27 @@ nix develop .#microbit
 ```
 
 Includes all tools from both `microbit-python` and `microbit-rust`.
+
+---
+
+## `bash-scripting`
+
+Enter:
+
+```bash
+nix develop .#bash-scripting
+```
+
+Includes:
+- `bashInteractive`
+- `bash-completion`
+- `shellcheck`
+- `shfmt`
+- `bats`
+- `bash-language-server`
+- `jq`, `yq-go`
+
+QoL behavior in shell hook:
+- Starship prompt
+- `zoxide` init for smart directory jumps (`cd` aliased to `z`)
+- Modern CLI aliases (`ls/eza`, `cat/bat`, `grep/rg`, etc.)

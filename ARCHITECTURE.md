@@ -23,7 +23,9 @@ This keeps host/user entry files short while making the module graph easy to sca
 Current dotfile areas:
 
 - `dotfiles/desktop`: compositor and desktop UI config
+  - `hyprland/hyprland.conf` is now a small entrypoint that sources `hyprland/conf.d/*.conf`.
 - `dotfiles/shell`: zsh, tmux, starship
+  - `.zshrc` is now a small entrypoint that sources `~/.config/zsh/zshrc.d/*.zsh`.
 - `dotfiles/editor`: Neovim config
 - `dotfiles/apps`: per-app configs
 - `dotfiles/theme`: GTK theme files
@@ -32,11 +34,14 @@ Current dotfile areas:
 
 Dev shells are defined in `flake.nix` using:
 
-- `lib/mkDevShell.nix` for shared shell behavior (zsh login shell + common tooling)
+- `lib/mkDevShell.nix` for shared shell behavior (starship + common CLI QoL tooling)
 - `lib/mkMicrobitShell.nix` for micro:bit-specific composition
 
+Defined shells:
+
+- `default`
+- `pawn-appetit`
 - `microbit-python`
 - `microbit-rust`
 - `microbit` (combined Python + Rust)
-
-This centralizes shared tooling while keeping shell-specific behavior explicit.
+- `bash-scripting`

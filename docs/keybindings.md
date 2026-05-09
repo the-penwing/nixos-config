@@ -1,7 +1,8 @@
 # Keybindings
 
-> **Super** = Windows / Command key  
-> **Note:** Focus right is on `Super+→` or `Alt+Tab`.
+> **Super** = Windows / Command key
+
+Directional bindings are normalized so `Super+H/J/K/L` gets translated by keyd into `Super+←/↓/↑/→` before Hyprland handles focus movement.
 
 ## Super layer — app launchers & window management
 
@@ -28,7 +29,7 @@
 | Shortcut | Action |
 |---|---|
 | `Super + H / J / K / L` | Move focus left / down / up / right |
-| `Super + ← / → / ↑ / ↓` | Move focus (arrow keys, all directions incl. right) |
+| `Super + ← / → / ↑ / ↓` | Move focus left / right / up / down |
 | `Super + Shift + H / J / K / L` | Move window left / down / up / right |
 | `Super + Shift + ← / → / ↑ / ↓` | Move window (arrow keys) |
 | `Super + Alt + H / J / K / L` | Resize window left / down / up / right |

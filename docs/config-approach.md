@@ -12,8 +12,11 @@
 
 Key remapping is split between **keyd** (kernel level) and **Hyprland** (compositor level) to keep concerns separated:
 
-- **keyd** (`modules/system/input.nix`) handles universal remaps that should work in every app regardless of focus — Caps Lock layer, `Super+Z/X/A` editing shortcuts.
-- **Hyprland** (`dotfiles/desktop/hyprland/hyprland.conf`) handles everything compositor-specific — launching apps, window management, workspace switching.
+- **keyd** (`modules/system/input.nix`) handles universal remaps that should work in every app regardless of focus:
+  - Caps Lock layer
+  - `Super+Z/X/A` editing shortcuts
+  - `Super+H/J/K/L` translated into `Super+Arrow` for directional nav consistency
+- **Hyprland** (`dotfiles/desktop/hyprland/hyprland.conf` + `conf.d/*.conf`) handles compositor-specific actions — app launching, workspace/window behavior, and rules.
 
 ## Desktop session
 

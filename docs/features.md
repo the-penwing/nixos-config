@@ -1,7 +1,7 @@
 # Features
 
 ## Desktop
-- **Hyprland** — tiling Wayland compositor with dwindle layout, smart split/resize
+- **Hyprland** — tiling Wayland compositor with modular `conf.d` configuration
 - **Caelestia** — shell providing launcher, notifications, and idle/lock handling
 - **Bibata Modern Classic** — cursor theme
 
@@ -29,7 +29,7 @@
 ## Networking
 - **NetworkManager** — network management + tray applet
 - **Tailscale** — VPN / remote access (replaces SSH on open ports)
-- **Syncthing** — file sync (socket-activated, not started at boot)
+- **Syncthing** — socket-activated, not started at boot
 - **Blueman** — Bluetooth manager
 
 ## Productivity
@@ -43,3 +43,4 @@
 - **Node.js**, **Python 3**, **Rust** (rustup), **GCC** — language toolchains
 - **fzf**, **ripgrep**, **fd**, **bat**, **eza**, **jq** — CLI utilities
 - **Solaar** — Logitech peripheral manager (Logi Pebble 2 support)
+- **Dev shells** — `microbit-python`, `microbit-rust`, `microbit`, `bash-scripting`

@@ -12,6 +12,7 @@ declare -a SYNC_PAIRS=(
   "dotfiles/apps/btop:~/.config/btop"
   "dotfiles/apps/fastfetch:~/.config/fastfetch"
   "dotfiles/shell/zsh/.zshrc:~/.zshrc"
+  "dotfiles/shell/zsh/zshrc.d:~/.config/zsh/zshrc.d"
   "dotfiles/shell/tmux/.tmux.conf:~/.tmux.conf"
   "dotfiles/shell/starship.toml:~/.config/starship.toml"
   "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"

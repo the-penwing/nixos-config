@@ -6,7 +6,7 @@ nixos-config/
   home.nix                    # home-manager entry; imports ./modules/home
   ARCHITECTURE.md             # high-level architecture and design decisions
   lib/
-    mkDevShell.nix            # shared dev-shell zsh/common-tool wrapper
+    mkDevShell.nix            # shared dev-shell wrapper (bash + starship/common tooling)
     mkMicrobitShell.nix       # shared helper for micro:bit dev shells
 
   hosts/nixos-t14s/
@@ -22,9 +22,21 @@ nixos-config/
       ...                     # shell, desktop
 
   dotfiles/
-    desktop/                  # hyprland, caelestia
-    shell/                    # zsh, starship, tmux
+    desktop/
+      hyprland/
+        hyprland.conf         # small source-only entrypoint
+        conf.d/*.conf         # modular Hyprland sections
+      caelestia/
+    shell/
+      zsh/
+        .zshrc                # small source-only entrypoint
+        zshrc.d/*.zsh         # modular zsh sections
+      tmux/
+      starship.toml
     editor/                   # nvim (LazyVim)
     apps/                     # ghostty, btop, fastfetch
     theme/                    # gtk
+
+  docs/
+    performance-improvements.md # tracked performance opportunities/review checklist
 ```
