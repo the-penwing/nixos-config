@@ -58,7 +58,8 @@
   };
   # Remove syncthing from boot targets so it only starts when manually triggered
   systemd.services.syncthing.wantedBy = lib.mkForce [ ];
-
+  
+  services.upower.enable = true;
   # Polkit (needed for auth dialogs in Hyprland)
   security.polkit.enable = true;
 
@@ -68,7 +69,7 @@
     package = pkgs.usbmuxd2;
   };
 
-  services.tlp.enable = true;
+  #  services.tlp.enable = true;
 
   # Printing (CUPS) — socket activated, loads on first print job
   services.printing.enable = true;
