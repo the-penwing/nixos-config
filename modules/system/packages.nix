@@ -30,7 +30,6 @@
     qutebrowser     # Keyboard-driven browser (try to switch regularly to avoid firefox's bloat)
     obsidian        # Note-taking (essential)
     bitwarden-desktop # Password manager (security backup)
-    gucharmap       # Character map
 
     # ── Communication & Social ─────────────────────────────────
     discord
@@ -57,6 +56,7 @@
     git             # Version control (essential)
     sqlitebrowser   # SQLite GUI (handy when needed)
     starship        # Shell prompt
+    gucharmap       # Character map useful for designing UIs
 
     # ── CLI Utilities ──────────────────────────────────────────
     wget            # File downloader
@@ -106,21 +106,23 @@
     # ── Qt Theming ─────────────────────────────────────────────
     qt6Packages.qt6ct                  # Qt theme configuration tool
     qt6Packages.qtstyleplugin-kvantum  # Kvantum style engine
+    dracula-qt5-theme
 
     # ── Brightness & Audio Controls ────────────────────────────
     brightnessctl   # Backlight control
     pamixer         # PulseAudio CLI mixer
     pavucontrol     # PulseAudio GUI mixer
 
-    # ── GTK / Icon Themes (Gruvbox) ────────────────────────────
+    # ── GTK / Icon Themes (Dracula) ────────────────────────────
     gruvbox-dark-gtk   # GTK theme
     gruvbox-plus-icons # Icon pack
+    dracula-theme      # GTK theme
+    dracula-icon-theme # Icon pack
 
     # ── Polkit Agent ───────────────────────────────────────────
     polkit_gnome    # Auth agent for Hyprland
 
     # ── System / Misc ──────────────────────────────────────────
-    networkmanagerapplet # Network tray applet
     bamf            # Window matcher (for docks)
     blueman         # Bluetooth manager
     libheif         # HEIF/HEIC image codec
@@ -128,8 +130,6 @@
     libimobiledevice # iOS device support
     ifuse           # Mount iOS filesystems
 
-    # ── Wayland / X11 Compatibility ────────────────────────────
-    #    xwayland        # X11 app compatibility layer
   ];
 
   # ============================================================
