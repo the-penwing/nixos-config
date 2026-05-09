@@ -3,8 +3,8 @@ palette = "dracula"
 add_newline = true
 
 format = '''
-[┌─╼](brightyellow)$directory$username$hostname$git_branch$git_status
-[├─╼](brightyellow)$nix_shell$python
+[┌─╼](brightyellow)$directory$git_branch$git_status
+[├─╼](brightyellow)$username$hostname$nix_shell$python
 $character'''
 
 [palettes.dracula]
@@ -51,8 +51,9 @@ fg1 = "#f8f8f2"
 [directory]
 style = "fg1"
 format = '\[[$path]($style)\]'
-truncation_length = 0
-truncate_to_repo = false
+truncate_to_repo = true
+truncation_length = 3
+fish_style_pwd_dir_length = 1
 
 [username]
 style_user = "green"

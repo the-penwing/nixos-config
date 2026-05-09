@@ -1,5 +1,3 @@
-# Hardware-specific config (varies per machine)
-
 # Lock file (auto-generated, causes merge conflicts)
 flake.lock
 
@@ -23,3 +21,6 @@ secrets.nix
 # Temporary files
 *.tmp
 *.log
+
+# Backup files
+*.bak
