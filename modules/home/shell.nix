@@ -13,7 +13,6 @@
     tea
     pyenv
     uv
-    zoxide
   ];
 
   home.sessionPath = [
