@@ -5,7 +5,7 @@
   # PACKAGES
   # ============================================================
   home.packages = with pkgs; [
-    # Removed waybar, added caelestia dependencies
+    # Desktop helpers used alongside Caelestia
     brightnessctl
     playerctl
     mpris-scrobbler

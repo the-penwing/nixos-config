@@ -14,6 +14,10 @@
         "desktopClock": {
             "background": {
                 "enabled": false
+            },
+            "enabled": true,
+            "shadow": {
+                "enabled": false
             }
         }
     },
@@ -73,14 +77,10 @@
             "blueman-manager",
             "thunar-bulk-rename",
             "btop",
-            "waypaper",
             "org.pulseaudio.pavucontrol",
             "vim",
             "syncthing-ui",
-            "rofi-theme-selector",
-            "rofi",
             "qt6ct",
-            "networkmanager_dmenu",
             "nvim",
             "micro",
             "cups",

@@ -3,8 +3,8 @@
 | Layer | Tool | Description |
 |---|---|---|
 | System | NixOS flake | Declarative OS config — bootloader, kernel, services, system packages |
-| Home | home-manager | Per-user dotfiles, shell, editor, desktop app config |
-| Dotfiles | Plain config files | Symlinked by home-manager into `~/.config/` |
+| Home | home-manager | Per-user shell/desktop packages and user services |
+| Dotfiles | Plain config files | Synced into `~/.config/` via `scripts/sync-dotfiles.sh` |
 | Key remapping | keyd | Kernel-level remapping applied before Hyprland sees any key event |
 | Wayland compositor | Hyprland | Application keybindings, window rules, workspace management |
 

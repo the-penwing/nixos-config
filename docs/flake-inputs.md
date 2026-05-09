@@ -4,7 +4,8 @@
 |---|---|
 | `nixpkgs` | `nixos-unstable` |
 | `home-manager` | `master` (follows nixpkgs) |
+| `caelestia-shell` | `github:caelestia-dots/shell` |
+| `caelestia-cli` | `github:caelestia-dots/cli` |
 | `naviterm` | `gitlab:detoxify92/naviterm` |
-| `plank-reloaded` | `github:zquestz/plank-reloaded` |
 | `solaar` | FlakeHub stable |
-| `iloader` | `github:nab138/iloader` |
+| `cherri` | `github:electrikmilk/cherri` |

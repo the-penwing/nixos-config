@@ -94,25 +94,14 @@
     cliphist        # Clipboard history daemon
 
     # ── Hyprland Ecosystem ─────────────────────────────────────
-    waybar          # Status bar
     upower
     power-profiles-daemon
-    wofi            # App launcher
-    hyprpaper       # Wallpaper daemon
-    hyprlock        # Lock screen
-    dunst           # Notification daemon
-    hypridle        # Idle / DPMS daemon
     hyprpolkitagent # Polkit authentication dialogs
     nwg-displays    # Display configuration GUI
     wlr-randr       # Wayland output management
     nwg-look        # GTK theme manager
-    wlogout         # Logout / power menu
     playerctl       # MPRIS media control
     bibata-cursors  # Cursor theme
-    rofi            # Alternative launcher
-    networkmanager_dmenu # Network selection menu
-    awww            # Animated wallpaper daemon
-    waypaper        # Wallpaper picker GUI
 
     # ── Qt Theming ─────────────────────────────────────────────
     qt6Packages.qt6ct                  # Qt theme configuration tool
@@ -159,4 +148,3 @@
   ];
 
 }
-
