@@ -25,26 +25,6 @@
   '';
 
   # Copy shell configs from dotfiles (repo is source of truth)
-  home.activation.setupShellConfigs = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-    # Zsh
-    ${pkgs.rsync}/bin/rsync -av \
-      ${../../dotfiles/shell/zsh/.zshrc} \
-      $HOME/.zshrc
-    chmod u+w $HOME/.zshrc
-    
-    # Tmux
-    ${pkgs.rsync}/bin/rsync -av \
-      ${../../dotfiles/shell/tmux/.tmux.conf} \
-      $HOME/.tmux.conf
-    chmod u+w $HOME/.tmux.conf
-    
-    # Starship
-    mkdir -p $HOME/.config
-    ${pkgs.rsync}/bin/rsync -av \
-      ${../../dotfiles/shell/starship.toml} \
-      $HOME/.config/starship.toml
-    chmod u+w $HOME/.config/starship.toml
-  '';
 
   # SSH - Cache key passphrases via ssh-agent
   services.ssh-agent.enable = true;
