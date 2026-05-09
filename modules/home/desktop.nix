@@ -1,9 +1,43 @@
 { config, pkgs, ... }:
 
 {
-  # Initial setup: copy desktop configs on first run
+  # ============================================================
+  # PACKAGES
+  # ============================================================
+  home.packages = with pkgs; [
+    # Removed waybar, added caelestia dependencies
+    brightnessctl
+    playerctl
+    mpris-scrobbler
+    # Assuming caelestia-shell is available via overlays or nix-community/nix-index
+    # If not, you may need to add: inputs.caelestia.packages.${system}.default
+  ];
+
+  # ============================================================
+  # PROGRAMS / CONFIGS
+  # ============================================================
+  # Caelestia shell configuration
+  programs.caelestia = {
+    enable = true;
+    systemd = {
+      enable = true;
+      target = "graphical-session.target";
+    };
+    settings = {
+      # Custom shell.json settings
+      bar.status = {
+        showBattery = true;
+      };
+    };
+    cli = {
+      enable = true;
+    };
+  };
+
+  # Activation script for dotfiles
   home.activation.setupDesktopConfigs = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-    for dir in hypr waybar wofi rofi ghostty; do
+    # Remove waybar from here
+    for dir in hypr ghostty; do
       config_dir="$HOME/.config/$dir"
       mkdir -p "$config_dir"
       
@@ -14,7 +48,7 @@
       chmod -R u+w "$config_dir"
     done
     
-    # Theme configs
+    # Theme configs (keep these)
     for theme_dir in gtk-3.0 dunst; do
       config_dir="$HOME/.config/$theme_dir"
       mkdir -p "$config_dir"
@@ -26,7 +60,7 @@
       chmod -R u+w "$config_dir"
     done
     
-    # App configs
+    # App configs (keep these)
     for app_dir in btop fastfetch waypaper; do
       config_dir="$HOME/.config/$app_dir"
       mkdir -p "$config_dir"
@@ -42,8 +76,6 @@
   # ============================================================
   # SYSTEMD USER SERVICES
   # ============================================================
-  home.packages = [ pkgs.mpris-scrobbler ];
-
   systemd.user.services = {
     mpris-scrobbler = {
       Unit = {

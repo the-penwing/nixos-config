@@ -95,6 +95,8 @@
 
     # ── Hyprland Ecosystem ─────────────────────────────────────
     waybar          # Status bar
+    upower
+    power-profiles-daemon
     wofi            # App launcher
     hyprpaper       # Wallpaper daemon
     hyprlock        # Lock screen
