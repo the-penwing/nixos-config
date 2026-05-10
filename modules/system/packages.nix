@@ -67,6 +67,7 @@
     fd              # Fast find replacement
     btop            # System monitor (also aliased as ps)
     fastfetch       # Fast system info
+    cmatix          # Small Command for when I wanna feel like a hacker
     tree            # Directory tree viewer
     ripgrep         # Fast grep replacement
     bat             # Better cat with syntax highlighting
