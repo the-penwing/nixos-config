@@ -2,7 +2,7 @@
 
 > **Super** = Windows / Command key
 
-Directional bindings are normalized so `Super+H/J/K/L` gets translated by keyd into `Super+←/↓/↑/→` before Hyprland handles focus movement.
+Focus movement is bound to `Super+←/→/↑/↓` in Hyprland.
 
 ## Super layer — app launchers & window management
 
@@ -28,7 +28,6 @@ Directional bindings are normalized so `Super+H/J/K/L` gets translated by keyd i
 
 | Shortcut | Action |
 |---|---|
-| `Super + H / J / K / L` | Move focus left / down / up / right |
 | `Super + ← / → / ↑ / ↓` | Move focus left / right / up / down |
 | `Super + Shift + H / J / K / L` | Move window left / down / up / right |
 | `Super + Shift + ← / → / ↑ / ↓` | Move window (arrow keys) |
