@@ -86,6 +86,8 @@
     usbutils        # Provides lsusb to check for fingerprint reader
     cloc            # Count Lines Of Code
     file            # Detect file types
+    gdu             # Disk usage analyzer with console interface
+    bottom          # A customizable cross-platform graphical process/system monitor for the terminal.
 
     # ── Screenshot (Hyprland / Wayland) ────────────────────────
     grim            # Screenshot tool
