@@ -6,6 +6,8 @@
   # ============================================================
   home.packages = with pkgs; [
     # Desktop helpers used alongside Caelestia
+    brightnessctl
+    playerctl
     mpris-scrobbler
     # Assuming caelestia-shell is available via overlays or nix-community/nix-index
     # If not, you may need to add: inputs.caelestia.packages.${system}.default

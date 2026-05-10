@@ -22,7 +22,6 @@
   #     Super+Z → Ctrl+Z  (undo — universal in every app)
   #     Super+X → Ctrl+X  (cut  — universal in every app)
   #     Super+A → Ctrl+A  (select-all — universal in every app)
-  #     Super+H/J/K/L → Super+arrow keys (single source for directional nav)
   #
   # Caps Lock layer
   # ──────────────
@@ -51,10 +50,6 @@
             "super+z" = "C-z";   # Undo
             "super+x" = "C-x";   # Cut
             "super+a" = "C-a";   # Select all
-            "super+h" = "M-left";
-            "super+j" = "M-down";
-            "super+k" = "M-up";
-            "super+l" = "M-right";
           };
 
           # ── Caps Lock held layer ──────────────────────────────
