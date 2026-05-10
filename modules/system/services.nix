@@ -72,8 +72,19 @@
   #  services.tlp.enable = true;
 
   # Printing (CUPS) — socket activated, loads on first print job
-  services.printing.enable = true;
-
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
+  # Enable automatic discovery of printers
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
   # ============================================================
   # PROGRAMS
   # ============================================================
