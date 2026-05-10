@@ -35,4 +35,3 @@ These work in any focused app, system-wide:
 | `Super + Z` | Undo (`Ctrl+Z`) |
 | `Super + X` | Cut (`Ctrl+X`) |
 | `Super + A` | Select all (`Ctrl+A`) |
-| `Super + H / J / K / L` | Send `Super + ← / ↓ / ↑ / →` |
