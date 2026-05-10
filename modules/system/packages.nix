@@ -27,8 +27,9 @@
     sunshine        # Screen Mirroring Host for Moonlight  
     
     # ── Productivity & Office ──────────────────────────────────
-    qutebrowser     # Keyboard-driven browser (try to switch regularly to avoid firefox's bloat)
+    qutebrowser     # Keyboard-driven browser 
     obsidian        # Note-taking (essential)
+    libreoffice-fresh # Microsoft Office Equivilant
     bitwarden-desktop # Password manager (security backup)
     zathura         # PDF Viewer and Extention
     zathuraPkgs.zathura_pdf_poppler
@@ -39,7 +40,6 @@
     # ── AI & Misc Utilities ────────────────────────────────────
     github-copilot-cli # GitHub Cloud AI
     copilot-language-server # GitHub copilot language server
-    opencode
 
     # ── Terminal & Editor ──────────────────────────────────────
     ghostty         # Terminal emulator
@@ -117,8 +117,6 @@
     pavucontrol     # PulseAudio GUI mixer
 
     # ── GTK / Icon Themes (Dracula) ────────────────────────────
-    gruvbox-dark-gtk   # GTK theme
-    gruvbox-plus-icons # Icon pack
     dracula-theme      # GTK theme
     dracula-icon-theme # Icon pack
 
@@ -140,7 +138,6 @@
   # ============================================================
   fonts.packages = with pkgs; [
     nerd-fonts._0xproto
-    nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     nerd-fonts.envy-code-r
     cantarell-fonts           # GTK default font
