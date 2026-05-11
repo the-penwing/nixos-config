@@ -24,7 +24,9 @@
             "scale": 0.85
         },
         "transparency": {
-            "enabled": false
+            "base": 0.65,
+            "enabled": false,
+            "layers": 0.5
         }
     },
     "background": {
@@ -110,13 +112,12 @@
             "syncthing-ui",
             "nvim",
             "micro",
-            "cups",
             "kvantummanager",
             "gvim",
             "nwg-displays",
             "thunar-settings",
-            "qt6ct",
-            "nwg-look"
+            "nwg-look",
+            "qt6ct"
         ],
         "showOnHover": false,
         "useFuzzy": {

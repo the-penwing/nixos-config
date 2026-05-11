@@ -7,11 +7,11 @@ ZSH_THEME=""
 ENABLE_CORRECTION="true"
 
 plugins=(
-    zsh-autosuggestions
     git
-    zsh-syntax-highlighting
     fzf
-    zsh-interactive-cd
+    fzf-tab
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh

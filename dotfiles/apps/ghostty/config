@@ -28,7 +28,7 @@ selection-foreground = f8f8f2
 
 # Font
 font-family = 0xProto Nerd Font
-font-size = 13
+font-size = 12
 font-feature = -calt
 adjust-cell-height = 3
 
