@@ -24,7 +24,7 @@ alias tlp-save='sudo tlp bat'
 # Aliases: Modern CLI Tool Replacements
 # ============================================================================
 # (interactive shell only — use \cmd to call the original)
-alias cat='bat --paging=never'
+alias cat='bat'
 alias ls='eza'
 alias ll='eza --icons -l'
 alias la='eza --icons -la'
