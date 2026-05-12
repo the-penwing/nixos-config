@@ -1,6 +1,6 @@
 # nixos-config
 
-Personal NixOS configuration for `nixos-t14s`* — a Wayland-only setup built on Hyprland + Caelestia, managed with flakes and home-manager.
+Personal NixOS configuration for `nixos-t14s`* — a Wayland-only setup built on Hyprland + Caelestia, managed with flakes and home-manager, with a curated ethical-hacking lab toolset in `modules/system/packages.nix`.
 
 ## Documentation index
 
