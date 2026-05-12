@@ -60,6 +60,8 @@
     starship        # Shell prompt
     gucharmap       # Character map useful for designing UIs
     filezilla       # FTP client
+    samba           # SMB Client
+    smbclient-ng
 
     # ── Security / Ethical Hacking Lab ───────────────────────────
     # Core networking + isolated lab infra
