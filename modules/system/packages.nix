@@ -64,6 +64,7 @@
     nmap
     netcat
     openvpn
+    inetutils
 
     # ── CLI Utilities ──────────────────────────────────────────
     wget            # File downloader
