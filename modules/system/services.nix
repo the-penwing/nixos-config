@@ -69,8 +69,6 @@
     package = pkgs.usbmuxd2;
   };
 
-  #  services.tlp.enable = true;
-
   # Printing (CUPS) — socket activated, loads on first print job
   services.printing = {
     enable = true;
@@ -79,12 +77,14 @@
       cups-browsed
     ];
   };
+
   # Enable automatic discovery of printers
   services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
   };
+
   # ============================================================
   # PROGRAMS
   # ============================================================
@@ -102,6 +102,9 @@
   virtualisation.docker.enable = true;
   # Disable docker daemon at boot; docker.socket activates it on demand
   virtualisation.docker.enableOnBoot = false;
+  # QEMU/KVM for virtual machines
+  virtualisation.libvirtd.enable = true;
 
   programs.nix-ld.enable = true;
+
 }
