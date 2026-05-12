@@ -59,6 +59,7 @@
     sqlitebrowser   # SQLite GUI (handy when needed)
     starship        # Shell prompt
     gucharmap       # Character map useful for designing UIs
+    filezilla       # FTP client
 
     # ── Security / Ethical Hacking Lab ───────────────────────────
     # Core networking + isolated lab infra
