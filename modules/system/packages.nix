@@ -60,6 +60,11 @@
     starship        # Shell prompt
     gucharmap       # Character map useful for designing UIs
 
+    # Ethical Hacking
+    nmap
+    netcat
+    openvpn
+
     # ── CLI Utilities ──────────────────────────────────────────
     wget            # File downloader
     curl            # HTTP client
