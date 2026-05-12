@@ -65,6 +65,7 @@
     netcat
     openvpn
     inetutils
+    virt-manager  # includes virt-install
 
     # ── CLI Utilities ──────────────────────────────────────────
     wget            # File downloader
