@@ -44,3 +44,10 @@
 - **fzf**, **ripgrep**, **fd**, **bat**, **eza**, **jq** — CLI utilities
 - **Solaar** — Logitech peripheral manager (Logi Pebble 2 support)
 - **Dev shells** — `microbit-python`, `microbit-rust`, `microbit`, `bash-scripting`
+
+## Security lab tooling
+- **Recon & discovery** — nmap, rustscan, masscan, amass, subfinder, dnsrecon, nuclei, feroxbuster, gobuster, ffuf, whatweb, theharvester
+- **Web testing** — Burp Suite, sqlmap, nikto, wpscan, wfuzz
+- **AD/internal testing** — bloodhound-py, certipy, responder, smbmap, enum4linux-ng, netexec, impacket, evil-winrm, chisel
+- **Traffic/wireless** — wireshark, tcpdump, bettercap, mitmproxy, aircrack-ng, hcxdumptool, hcxtools
+- **Exploitation/reversing/forensics** — metasploit, exploitdb, john, hashcat, hydra, yara, volatility3, ghidra, binwalk, radare2
