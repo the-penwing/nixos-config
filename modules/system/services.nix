@@ -104,6 +104,7 @@
   virtualisation.docker.enableOnBoot = false;
   # QEMU/KVM for virtual machines
   virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.qemu.runAsRoot = false;
 
   programs.nix-ld.enable = true;
 
