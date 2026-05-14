@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-current=$(caelestia shell brightness get)
-new=$(awk "BEGIN {print ($current - 0.05 < 0) ? 0 : $current - 0.05}")
-caelestia shell brightness set "$new"
