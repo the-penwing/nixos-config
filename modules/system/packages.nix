@@ -33,7 +33,6 @@
     bitwarden-desktop # Password manager (security backup)
     zathura         # PDF Viewer and Extention
     zathuraPkgs.zathura_pdf_poppler
-    birdtray        # Thunderbird tray extention
 
     # ── Communication & Social ─────────────────────────────────
     discord
