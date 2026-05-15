@@ -62,6 +62,8 @@
     filezilla       # FTP client
     samba           # SMB Client
     smbclient-ng
+    rustup          # Rust toolchain manager
+    rust-analyzer  # LSP for editor support
 
     # ── Security / Ethical Hacking Lab ───────────────────────────
     # Core networking + isolated lab infra
