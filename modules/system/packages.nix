@@ -59,7 +59,8 @@
     sqlitebrowser   # SQLite GUI (handy when needed)
     starship        # Shell prompt
     gucharmap       # Character map useful for designing UIs
-    filezilla       # FTP client
+    filezilla       # GUI FTP client
+    lftp            # CLI FTP client
     samba           # SMB Client
     smbclient-ng
     rustup          # Rust toolchain manager
