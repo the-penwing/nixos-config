@@ -7,7 +7,8 @@
         },
         "font": {
             "family": {
-                "mono": "CaskaydiaCove NF",
+                "material": "Material Symbols Sharp",
+                "mono": "0xProto Nerd Font Mono",
                 "sans": "Cantarell"
             },
             "size": {
@@ -35,37 +36,44 @@
                 "enabled": true
             },
             "enabled": true,
+            "invertColors": false,
             "shadow": {
                 "enabled": false
             }
         },
         "visualiser": {
             "autoHide": true,
-            "enabled": true
+            "enabled": true,
+            "rounding": 1
         }
     },
     "bar": {
         "activeWindow": {
-            "compact": false,
+            "compact": true,
             "inverted": false
         },
         "clock": {
             "background": true,
             "showDate": true,
-            "showIcon": false
+            "showIcon": true
         },
+        "excludedScreens": [
+        ],
         "persistent": true,
         "showOnHover": true,
         "status": {
             "showAudio": true,
             "showBattery": true,
+            "showBluetooth": true,
+            "showKbLayout": true,
             "showLockStatus": false,
+            "showMicrophone": false,
             "showNetwork": true,
             "showWifi": true
         },
         "tray": {
             "background": true,
-            "compact": false,
+            "compact": true,
             "recolour": false
         },
         "workspaces": {
@@ -80,6 +88,11 @@
     "border": {
         "rounding": 18,
         "thickness": 8
+    },
+    "dashboard": {
+        "performance": {
+            "showGpu": true
+        }
     },
     "general": {
         "apps": {
@@ -100,6 +113,7 @@
     "launcher": {
         "enableDangerousActions": false,
         "favouriteApps": [
+            "nixos-manual"
         ],
         "hiddenApps": [
             "nm-connection-editor",
@@ -116,7 +130,8 @@
             "nwg-displays",
             "thunar-settings",
             "nwg-look",
-            "qt6ct"
+            "qt6ct",
+            "bottom"
         ],
         "showOnHover": false,
         "useFuzzy": {
@@ -131,6 +146,9 @@
         "openExpanded": false
     },
     "utilities": {
+        "toasts": {
+            "nowPlaying": true
+        },
         "vpn": {
             "provider": [
                 {
