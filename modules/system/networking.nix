@@ -6,11 +6,14 @@
     networkmanager.enable = true;
     # Port 22 (SSH) removed — OpenSSH disabled, Tailscale SSH used instead
     # Port 8000 removed — unused
-    firewall.allowedTCPPorts = [ 47984 47989 47990 48010 8000 ];
+    firewall.allowedTCPPorts = [ 47984 47989 47990 48010 8000 443 80 445 ];
     firewall.allowedUDPPortRanges = [
       { from = 47900; to = 48000; }
       { from = 8000; to = 8010; }
-    ];  
+    ];
+    extraHosts = ''
+       10.129.193.240 unika.htb
+    '';
   };
 
   time.timeZone = "Australia/Sydney";
