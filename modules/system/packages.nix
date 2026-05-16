@@ -126,6 +126,7 @@
     ghidra
     binwalk
     radare2
+    awscli2
     # Security wordlists and helpers
     seclists
     assetfinder
