@@ -105,7 +105,6 @@
     snmpcheck
     # netexec        # managed via git — new modules/fixes drop constantly
     python312Packages.impacket
-    evil-winrm
     chisel
     # Wireless and traffic analysis
     aircrack-ng

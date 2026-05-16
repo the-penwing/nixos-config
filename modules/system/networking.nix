@@ -11,9 +11,9 @@
       { from = 47900; to = 48000; }
       { from = 8000; to = 8010; }
     ];
-    extraHosts = ''
-       10.129.193.240 unika.htb
-    '';
+    # extraHosts = ''
+    #
+    # '';
   };
 
   time.timeZone = "Australia/Sydney";
