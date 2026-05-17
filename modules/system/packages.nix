@@ -63,10 +63,16 @@
     lftp            # CLI FTP client
     samba           # SMB Client
     smbclient-ng
-    rustup          # Rust toolchain manager
-    rust-analyzer  # LSP for editor support
 
-# ── Security / Ethical Hacking Lab ───────────────────────────
+    # ── Programming Languages & Toolchains ─────────────────────
+    rustup          # Rust toolchain manager
+    rust-analyzer   # LSP for editor support
+    lua54Packages.lua # Lua programming / scripting language
+    lua-language-server # LSP for Lua
+    stylua          # Code formatter for Lua
+    lua54Packages.luacheck # Linter for Lua
+
+    # ── Security / Ethical Hacking Lab ─────────────────────────
     # Core networking + isolated lab infra
     netcat
     openvpn
@@ -117,7 +123,7 @@
     # Exploitation, cracking, and reverse engineering
     metasploit
     exploitdb
-    john
+    # john
     hashcat
     thc-hydra
     jwt-cli
