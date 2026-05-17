@@ -73,7 +73,7 @@
         },
         "tray": {
             "background": true,
-            "compact": true,
+            "compact": false,
             "recolour": false
         },
         "workspaces": {
@@ -81,7 +81,7 @@
             "maxWindowIcons": 5,
             "occupiedBg": true,
             "perMonitorWorkspaces": true,
-            "showWindows": false,
+            "showWindows": true,
             "shown": 5
         }
     },
@@ -113,7 +113,6 @@
     "launcher": {
         "enableDangerousActions": false,
         "favouriteApps": [
-            "nixos-manual"
         ],
         "hiddenApps": [
             "nm-connection-editor",
@@ -131,7 +130,9 @@
             "thunar-settings",
             "nwg-look",
             "qt6ct",
-            "bottom"
+            "bottom",
+            "nixos-manual",
+            "startcenter"
         ],
         "showOnHover": false,
         "useFuzzy": {
