@@ -7,6 +7,10 @@ set -a
 PATH="$HOME/.local/bin:$PATH"
 PATH="$PATH:$HOME/.npm-global/bin"
 PATH="$PATH:$HOME/.cargo/bin"
+PATH="$HOME/dev/tools/nuclei:$PATH"
+
+# Common Paths / Variables
+smallWordlistGobuster=/home/benvl/dev/ethical-hacking/SecLists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-small.txt
 
 # Editor Configuration
 SUDO_EDITOR=$(which nvim)

@@ -11,7 +11,7 @@ alias update-home-dotfiles='~/nixos-config/scripts/sync-dotfiles.sh pull'
 alias python3='python3.14'
 alias python='python3.14'
 alias pip='uv pip'
-
+alias evil-winrm='evil-winrm-py'
 
 # ============================================================================
 # Aliases: Power Management
