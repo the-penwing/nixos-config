@@ -33,6 +33,8 @@
     bitwarden-desktop # Password manager (security backup)
     zathura         # PDF Viewer and Extention
     zathuraPkgs.zathura_pdf_poppler
+    yed # Graph Visualiser
+    gephi # ^
 
     # ── Communication & Social ─────────────────────────────────
     discord
