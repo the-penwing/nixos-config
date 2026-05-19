@@ -57,21 +57,4 @@
     rulesProvider = pkgs.ananicy-cpp;
     settings.apply_nice = true;
   };
-
-  # ============================================================
-  # FINGERPRINT READER
-  # ============================================================
-  services.fprintd.enable = true;
-
-  # PAM integration for fingerprint auth
-  security.pam.services = {
-    sudo = {
-      fprintAuth = true;
-      unixAuth = true;    # Fallback to password
-    };
-    login = {
-      fprintAuth = true;
-      unixAuth = true;    # Fallback to password
-    };
-  };
 }

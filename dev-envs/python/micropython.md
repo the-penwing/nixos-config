@@ -44,9 +44,10 @@ $EDITOR main.py
 mpy-cross main.py -o main.mpy
 
 # 3) Mount the board and copy the firmware
-sudo mount /dev/sda ~/mnt/microbit
+sudo mkdir -p ~/mnt/microbit
+sudo mount /dev/disk/by-label/MICROBIT ~/mnt/microbit
 cp firmware.hex ~/mnt/microbit/
-sudo umount /dev/sda
+sudo umount ~/mnt/microbit
 ```
 
 ---

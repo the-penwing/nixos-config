@@ -10,11 +10,12 @@
 
 ## Beginner Python workflow
 
-1. **Create**: write `main.py` with `from microbit import *`.
-2. **Test locally (logic only)**: validate pure-Python helpers on your machine (for example parsing/math/state code).
-3. **Build `.hex`**: use official editor download or `uflash main.py --output firmware.hex`.
-4. **Flash**: copy `.hex` to `MICROBIT` drive.
-5. **Debug**: monitor serial output with `minicom`, `screen`, or `picocom`.
+1. **Enter shell**: `nix develop .#microbit-python`.
+2. **Create**: write `main.py` with `from microbit import *`.
+3. **Test locally (logic only)**: validate pure-Python helpers on your machine (for example parsing/math/state code).
+4. **Build `.hex`**: use official editor download or `uflash main.py --output firmware.hex`.
+5. **Flash**: copy `.hex` to `MICROBIT` drive.
+6. **Debug**: monitor serial output with `minicom`, `screen`, or `picocom`.
 
 ## Troubleshooting
 

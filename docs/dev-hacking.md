@@ -12,20 +12,24 @@ This doc summarizes the daily development and ethical-hacking tooling available 
 
 ### Core languages and build toolchain
 - Node.js
-- Python 3
+- Python 3 (pip + uv + pyenv)
 - Rust (rustup)
-- GCC + make + pkg-config
+- GCC + gnumake + pkg-config
+- Lua tooling (lua, lua-language-server, luacheck, stylua)
 
 ### Dev workflow tools
 - Git + Lazygit
-- Neovim + Micro
+- Neovim + Vim
 - Docker (socket-activated)
-- sqlitebrowser
-- CLI utilities: ripgrep, fd, fzf, bat, eza, jq, tmux
+- Arduino CLI + IDE
+- Filezilla, lftp, samba clients (smbclient-ng)
+- lazysql, sqlitebrowser
+- tea (Gitea CLI)
+- CLI utilities: ripgrep, fd, fzf, bat, eza, jq, tmux, glow, tldr
 
 ### Task-specific dev shells
-- `nix develop .#default`
-- `nix develop .#pawn-appetit`
+- `nix develop .#default` (repo utilities)
+- `nix develop .#pawn-appetit` (project-specific shell)
 - `nix develop .#microbit-python`
 - `nix develop .#microbit-rust`
 - `nix develop .#microbit`
@@ -34,32 +38,28 @@ This doc summarizes the daily development and ethical-hacking tooling available 
 ## Ethical-hacking lab tooling
 
 ### Lab/network baseline
-- netcat, openvpn, inetutils, virt-manager, proxychains-ng, rlwrap
+- netcat, openvpn, openssl, inetutils, virt-manager, proxychains-ng, rlwrap
 
 ### Recon and enumeration
-- nmap, rustscan, masscan
-- amass, subfinder, dnsrecon
-- nuclei, feroxbuster, gobuster, ffuf, whatweb, theharvester
+- nmap, rustscan
+- feroxbuster, gobuster, ffuf, whatweb
 
 ### Web testing
-- burpsuite, sqlmap, nikto, wpscan, wfuzz
+- burpsuite, sqlmap, wpscan
 
 ### AD/internal network testing
-- bloodhound-py, certipy, responder
-- smbmap, enum4linux-ng, nbtscan, onesixtyone, snmpcheck
-- netexec, impacket, evil-winrm, chisel
+- bloodhound-py, enum4linux-ng
+- smbmap, smbclient-ng, impacket
 
-### Traffic/wireless analysis
-- wireshark, tcpdump, bettercap, mitmproxy
-- aircrack-ng, hcxdumptool, hcxtools
+### Traffic/tunneling analysis
+- wireshark, tcpdump, chisel
 
-### Exploitation, cracking, and reverse engineering
-- metasploit, exploitdb
-- john, hashcat, hydra, jwt-cli
-- yara, volatility3, ghidra, binwalk, radare2
+### Exploitation and cracking
+- metasploit
+- hashcat, thc-hydra, jwt-cli
 
 ### Wordlists/helpers
-- seclists, assetfinder
+- seclists
 
 ## Notes
 
