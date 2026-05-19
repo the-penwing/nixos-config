@@ -18,23 +18,30 @@
 
     # ── Creative ──────────────────────────────────────────────────────────────────────────────────
     aseprite                              # Pixel art editor
-    oculante                              # Fast image viewer
     feh                                   # Minimal image viewer / wallpaper setter
+    imagemagick                           # Image manipulation
+    oculante                              # Fast image viewer
 
     # ── Audio & Video ─────────────────────────────────────────────────────────────────────────────
-    vlc                                   # Media player
     ffmpeg                                # Audio Tools
-    sunshine                              # Screen Mirroring Host for Moonlight  
-    
+    sunshine                              # Screen Mirroring Host for Moonlight
+    vlc                                   # Media player
+
     # ── Productivity & Office ─────────────────────────────────────────────────────────────────────
-    qutebrowser                           # Keyboard-driven browser 
-    obsidian                              # Note-taking (essential)
+    bitwarden-desktop                     # Password manager
     libreoffice-fresh                     # Microsoft Office Equivilant
-    bitwarden-desktop                     # Password manager 
+    obsidian                              # Notes app
+    qutebrowser                           # Keyboard-driven browser
     zathura                               # PDF Viewer
     zathuraPkgs.zathura_pdf_poppler       # PDF Extention
-    yed                                   # Graph Visualiser
+
+    # ── Diagramming & Visualisation ───────────────────────────────────────────────────────────────
+    drawio                                # Diagramming tool (for ideas, flowcharts, etc)
     gephi                                 # Another graph visualisation tool
+    graphviz                              # Graph visualisation tools
+    mermaid-cli                           # CLI tool for generating diagrams from Mermaid syntax
+    yed                                   # Graph Visualiser
+
     # ── Communication & Social ────────────────────────────────────────────────────────────────────
     discord                               # Do I really need to explain this one
 
@@ -45,127 +52,55 @@
     # ── Terminal & Editor ─────────────────────────────────────────────────────────────────────────
     ghostty                               # Terminal emulator
     neovim                                # Primary editor
-    micro                                 # Fallback terminal editor
-    vim                                   # Fallback terminal editor for fancier quick edits
-    arduino-ide                           # Open-source electronics prototyping platform
-    arduino-cli                           # Arduino from the command line
-    drawio                                # Diagramming tool (for ideas, flowcharts, etc)
-    mermaid-cli                           # CLI tool for generating diagrams from Mermaid syntax
+    starship                              # Shell prompt
+    tmux                                  # Terminal multiplexer
+    vim                                   # Fallback terminal editor
 
     # ── File Managers ─────────────────────────────────────────────────────────────────────────────
     thunar                                # Lightweight GTK file manager
 
     # ── Dev Tools ─────────────────────────────────────────────────────────────────────────────────
-    git                                   # Version control (essential)
-    sqlitebrowser                         # SQLite GUI (handy when needed)
-    starship                              # Shell prompt
-    gucharmap                             # Character map useful for designing UIs
+    arduino-cli                           # Arduino from the command line
+    arduino-ide                           # Open-source electronics prototyping platform
     filezilla                             # GUI FTP client
+    git                                   # Version control (essential)
+    gucharmap                             # Character map useful for designing UIs
     lftp                                  # CLI FTP client
     samba                                 # SMB Client
     smbclient-ng                          # Better SMB client
+    sqlitebrowser                         # SQLite GUI
 
     # ── Programming Languages & Toolchains ────────────────────────────────────────────────────────
-    rustup                                # Rust toolchain manager
-    rust-analyzer                         # LSP for editor support
     lua54Packages.lua                     # Lua programming / scripting language
     lua-language-server                   # LSP for Lua
-    stylua                                # Code formatter for Lua
     lua54Packages.luacheck                # Linter for Lua
-
-    # ── Security / Ethical Hacking Lab ────────────────────────────────────────────────────────────
-    # Core networking + isolated lab infra
-    netcat
-    openvpn
-    openssl
-    inetutils
-    virt-manager
-    proxychains-ng
-    rlwrap
-    cacert
-    # Recon, scanning, and enumeration
-    nmap
-    rustscan
-    masscan
-    amass
-    subfinder
-    dnsrecon
-    # nuclei                              # managed via git — needs fresh templates
-    feroxbuster
-    gobuster
-    ffuf
-    whatweb
-    theharvester
-    # Web application testing
-    burpsuite
-    sqlmap
-    nikto
-    wpscan
-    wfuzz
-    # Active Directory / internal network ops
-    bloodhound-py
-    # certipy                             # managed via git — AD CS research moves fast
-    smbmap
-    enum4linux-ng
-    nbtscan
-    onesixtyone
-    snmpcheck
-    # netexec                             # managed via git — new modules/fixes drop constantly
-    python312Packages.impacket
-    chisel
-    # Wireless and traffic analysis
-    aircrack-ng
-    hcxdumptool
-    hcxtools
-    wireshark
-    tcpdump
-    bettercap
-    mitmproxy
-    # Exploitation, cracking, and reverse engineering
-    metasploit
-    exploitdb
-    # john
-    hashcat
-    thc-hydra
-    jwt-cli
-    yara
-    volatility3
-    ghidra
-    binwalk
-    radare2
-    awscli2
-    # Security wordlists and helpers
-    seclists
-    assetfinder
+    stylua                                # Code formatter for Lua
+    rust-analyzer                         # LSP for editor support
+    rustup                                # Rust toolchain manager
 
     # ── CLI Utilities ─────────────────────────────────────────────────────────────────────────────
-    wget                                  # File downloader
-    curl                                  # HTTP client
-    unzip                                 # Archive extraction
-    zip                                   # Archive creation
-    fzf                                   # Fuzzy finder
-    fd                                    # Fast find replacement
-    btop                                  # System monitor (also aliased as ps)
-    fastfetch                             # Fast system info
-    cmatrix                               # Small Command for when I wanna feel like a hacker
-    tree                                  # Directory tree viewer
-    ripgrep                               # Fast grep replacement
     bat                                   # Better cat with syntax highlighting
-    eza                                   # Better ls with icons/colours
+    bottom                                # A process/system monitor for neovim
+    btop                                  # System monitor (also aliased as ps)
+    cloc                                  # Count Lines Of Code
+    cmatrix                               # Small Command for when I wanna feel like a hacker
+    curl                                  # HTTP client
     duf                                   # Better df / disk usage overview
     dust                                  # Better du / directory size analyser
-    tldr                                  # Command cheatsheets
-    jq                                    # JSON processor
-    imagemagick                           # Image manipulation
-    tmux                                  # Terminal multiplexer
-    glow                                  # Render markdown on the cli with pizazzz
-    graphviz                              # Graph visualisation tools
-    libfprint                             # fingerprint reader libary
-    usbutils                              # Provides lsusb to check for fingerprint reader
-    cloc                                  # Count Lines Of Code
+    eza                                   # Better ls with icons/colours
+    fastfetch                             # Fast system info
+    fd                                    # Fast find replacement
     file                                  # Detect file types
+    fzf                                   # Fuzzy finder
     gdu                                   # Disk usage analyzer with console interface
-    bottom                                # A customizable cross-platform graphical process/system monitor for the terminal.
+    glow                                  # Render markdown on the cli with pizazzz
+    jq                                    # JSON processor
+    ripgrep                               # Fast grep replacement
+    tldr                                  # Command cheatsheets
+    tree                                  # Directory tree viewer
+    unzip                                 # Archive extraction
+    wget                                  # File downloader
+    zip                                   # Archive creation
 
     # ── Screenshot (Hyprland / Wayland) ───────────────────────────────────────────────────────────
     grim                                  # Screenshot tool
@@ -173,23 +108,23 @@
     swappy                                # Screenshot annotation/editor
 
     # ── Wayland Clipboard ─────────────────────────────────────────────────────────────────────────
-    wl-clipboard                          # Clipboard read/write
     cliphist                              # Clipboard history daemon
+    wl-clipboard                          # Clipboard read/write
 
     # ── Hyprland Ecosystem ────────────────────────────────────────────────────────────────────────
-    upower
-    power-profiles-daemon
+    bibata-cursors                        # Cursor theme
     hyprpolkitagent                       # Polkit authentication dialogs
     nwg-displays                          # Display configuration GUI
-    wlr-randr                             # Wayland output management
     nwg-look                              # GTK theme manager
     playerctl                             # MPRIS media control
-    bibata-cursors                        # Cursor theme
+    power-profiles-daemon
+    upower
+    wlr-randr                             # Wayland output management
 
     # ── Qt Theming ────────────────────────────────────────────────────────────────────────────────
+    dracula-qt5-theme                     # Dracula theme for Qt
     qt6Packages.qt6ct                     # Qt theme configuration tool
     qt6Packages.qtstyleplugin-kvantum     # Kvantum style engine
-    dracula-qt5-theme                     # Dracula theme for Qt
 
     # ── Brightness & Audio Controls ───────────────────────────────────────────────────────────────
     brightnessctl                         # Backlight control
@@ -197,8 +132,8 @@
     pavucontrol                           # PulseAudio GUI mixer
 
     # ── GTK / Icon Themes (Dracula) ───────────────────────────────────────────────────────────────
-    dracula-theme                         # GTK theme
     dracula-icon-theme                    # Icon pack
+    dracula-theme                         # GTK theme
 
     # ── Polkit Agent ──────────────────────────────────────────────────────────────────────────────
     polkit_gnome                          # Auth agent for Hyprland
@@ -206,10 +141,50 @@
     # ── System / Misc ─────────────────────────────────────────────────────────────────────────────
     bamf                                  # Window matcher (for docks)
     blueman                               # Bluetooth manager
-    libheif                               # HEIF/HEIC image codec
-    xdg-utils                             # XDG desktop integration helpers
-    libimobiledevice                      # iOS device support
     ifuse                                 # Mount iOS filesystems
+    libfprint                             # fingerprint reader libary
+    libheif                               # HEIF/HEIC image codec
+    libimobiledevice                      # iOS device support
+    usbutils                              # Provides lsusb to check for fingerprint reader
+    xdg-utils                             # XDG desktop integration helpers
+
+    # ── Security / Ethical Hacking Lab ────────────────────────────────────────────────────────────
+    # Core networking + isolated lab infra
+    cacert
+    inetutils
+    netcat
+    openvpn
+    openssl
+    proxychains-ng
+    rlwrap
+    virt-manager
+    # Recon, scanning, and enumeration
+    ffuf
+    feroxbuster
+    gobuster
+    nmap
+    rustscan
+    whatweb
+    # Web application testing
+    burpsuite
+    sqlmap
+    wpscan
+    # Active Directory / internal network ops
+    bloodhound-py
+    enum4linux-ng
+    python312Packages.impacket
+    smbmap
+    # Tunneling and traffic analysis
+    chisel
+    tcpdump
+    wireshark
+    # Exploitation and cracking
+    hashcat
+    jwt-cli
+    metasploit
+    thc-hydra
+    # Security wordlists and helpers
+    seclists
 
   ];
 
