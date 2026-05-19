@@ -13,6 +13,7 @@ cargo embed
 ```
 
 If your project needs a specific chip/target, configure `Embed.toml` in your Rust project and re-run `cargo embed`.
+`cargo embed` and `probe-rs` come from the `probe-rs-tools` package in the Rust shell.
 
 ## Rust: flash/debug with `probe-rs`
 
@@ -26,7 +27,23 @@ probe-rs list
 probe-rs run --chip <your-chip> target/thumbv7em-none-eabihf/debug/<your-binary>
 ```
 
-## Python: upload with `esptool`
+## Python: flash micro:bit with `uflash`
+
+1. Enter the Python shell.
+2. Install `uflash` into your venv.
+3. Flash directly from your source file.
+
+```bash
+nix develop .#microbit-python
+python3 -m venv .venv
+source .venv/bin/activate
+pip install uflash
+uflash main.py
+```
+
+If you already built a `.hex`, copy it to the mounted `MICROBIT` drive instead.
+
+## Python: upload with `esptool` (ESP-class boards)
 
 1. Enter the Python shell.
 2. Connect your board and identify its serial port.

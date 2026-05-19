@@ -15,9 +15,8 @@ Key remapping is split between **keyd** (kernel level) and **Hyprland** (composi
 - **keyd** (`modules/system/input.nix`) handles universal remaps that should work in every app regardless of focus:
   - Caps Lock layer
   - `Super+Z/X/A` editing shortcuts
-  - `Super+H/J/K/L` translated into `Super+Arrow` for directional nav consistency
-- **Hyprland** (`dotfiles/desktop/hyprland/hyprland.conf` + `conf.d/*.conf`) handles compositor-specific actions — app launching, workspace/window behavior, and rules.
+- **Hyprland** (`dotfiles/desktop/hyprland/hyprland.lua` + `supercoolconfig/*.lua`) handles compositor-specific actions — app launching, workspace/window behavior, and rules.
 
 ## Desktop session
 
-There is no display manager. TTY1 auto-logs in as `benvl` and `.zshrc` starts Hyprland automatically.
+There is no display manager. TTY1 auto-logs in as `benvl`, and `.zshrc` starts Hyprland via `start-hyprland`.

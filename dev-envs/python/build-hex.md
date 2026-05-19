@@ -14,6 +14,8 @@ This approach bundles your script with a compatible micro:bit MicroPython runtim
 
 ```bash
 nix develop .#microbit-python
+python3 -m venv .venv
+source .venv/bin/activate
 pip install uflash
 uflash main.py --output firmware.hex
 ```
@@ -26,7 +28,7 @@ uflash main.py
 
 ## Option 3: MicroPython compiler flow (`mpy-cross` + `uflash`)
 
-Use this when you want to precompile modules for larger projects:
+Use this when you want to precompile modules for larger projects (provided by the `micropython` package):
 
 ```bash
 # compile module(s) to .mpy

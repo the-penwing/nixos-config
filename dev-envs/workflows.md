@@ -3,17 +3,20 @@
 ## Edit → lint → build → flash → test
 
 ```bash
-# Rust
+# Rust (micro:bit)
+nix develop .#microbit-rust
 cargo fmt --all
 cargo clippy --all-targets --all-features -- -D warnings
-cargo build
+cargo build --release --target thumbv7em-none-eabihf
 cargo embed
 
-# Python
+# Python (micro:bit)
+nix develop .#microbit-python
 black .
 ruff check .
-# build/package as needed
-esptool.py --chip <chip-id> --port /dev/ttyUSB0 --baud 460800 write_flash 0x1000 firmware.bin
+pip install uflash
+uflash main.py --output firmware.hex
+uflash main.py
 ```
 
 ## Auto-rebuild on save with `cargo-watch`
