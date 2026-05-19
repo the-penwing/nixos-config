@@ -1,58 +1,65 @@
 { pkgs, ... }:
 
 {
-  # ============================================================
+  # ================================================================================================
   # USER
-  # ============================================================
+  # ================================================================================================
   users.users.benvl = {
-    isNormalUser = true;
-    description = "Ben van Leeuwen";
-    shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "video" "input" "docker" ];
+    isNormalUser = true;                  # Normal user account
+    description = "Ben van Leeuwen";      # User description
+    shell = pkgs.zsh;                     # Default shell
+    extraGroups = [                       # Supplementary groups
+      "docker"
+      "input"
+      "networkmanager"
+      "plugdev"
+      "video"
+      "wheel"
+    ];
   };
 
-  # ============================================================
+  # ================================================================================================
   # PACKAGES
-  # ============================================================
+  # ================================================================================================
   environment.systemPackages = with pkgs; [
 
     # ── Creative ──────────────────────────────────────────────────────────────────────────────────
     aseprite                              # Pixel art editor
-    feh                                   # Minimal image viewer / wallpaper setter
-    imagemagick                           # Image manipulation
+    feh                                   # Minimal image viewer and wallpaper setter
+    imagemagick                           # Image conversion and manipulation tools
     oculante                              # Fast image viewer
 
     # ── Audio & Video ─────────────────────────────────────────────────────────────────────────────
-    ffmpeg                                # Audio Tools
-    sunshine                              # Screen Mirroring Host for Moonlight
+    ffmpeg                                # Audio/video toolkit
+    sunshine                              # Game streaming host for Moonlight
     vlc                                   # Media player
 
     # ── Productivity & Office ─────────────────────────────────────────────────────────────────────
     bitwarden-desktop                     # Password manager
-    libreoffice-fresh                     # Microsoft Office Equivilant
-    obsidian                              # Notes app
+    libreoffice-fresh                     # Office suite
+    obsidian                              # Notes and knowledge base
     qutebrowser                           # Keyboard-driven browser
-    zathura                               # PDF Viewer
-    zathuraPkgs.zathura_pdf_poppler       # PDF Extention
+    zathura                               # PDF viewer
+    zathuraPkgs.zathura_pdf_poppler       # Zathura PDF backend (Poppler)
 
     # ── Diagramming & Visualisation ───────────────────────────────────────────────────────────────
-    drawio                                # Diagramming tool (for ideas, flowcharts, etc)
-    gephi                                 # Another graph visualisation tool
-    graphviz                              # Graph visualisation tools
-    mermaid-cli                           # CLI tool for generating diagrams from Mermaid syntax
-    yed                                   # Graph Visualiser
+    drawio                                # Diagramming tool
+    gephi                                 # Graph visualization tool
+    graphviz                              # Graph visualization suite
+    mermaid-cli                           # Mermaid diagram generator
+    yed                                   # Graph editor and visualizer
 
     # ── Communication & Social ────────────────────────────────────────────────────────────────────
-    discord                               # Do I really need to explain this one
+    discord                               # Chat and voice client
 
     # ── AI & Misc Utilities ───────────────────────────────────────────────────────────────────────
-    github-copilot-cli                    # GitHub Cloud AI
-    copilot-language-server               # GitHub copilot language server
+    github-copilot-cli                    # GitHub Copilot CLI
+    copilot-language-server               # Copilot language server
 
     # ── Terminal & Editor ─────────────────────────────────────────────────────────────────────────
     ghostty                               # Terminal emulator
     neovim                                # Primary editor
-    starship                              # Shell prompt
+    starship                              # Cross-shell prompt
     tmux                                  # Terminal multiplexer
     vim                                   # Fallback terminal editor
 
@@ -60,141 +67,142 @@
     thunar                                # Lightweight GTK file manager
 
     # ── Dev Tools ─────────────────────────────────────────────────────────────────────────────────
-    arduino-cli                           # Arduino from the command line
-    arduino-ide                           # Open-source electronics prototyping platform
+    arduino-cli                           # Arduino CLI
+    arduino-ide                           # Arduino IDE
     filezilla                             # GUI FTP client
-    git                                   # Version control (essential)
-    gucharmap                             # Character map useful for designing UIs
+    git                                   # Version control
+    gucharmap                             # Character map utility
     lftp                                  # CLI FTP client
-    samba                                 # SMB Client
-    smbclient-ng                          # Better SMB client
-    sqlitebrowser                         # SQLite GUI
+    samba                                 # SMB client utilities
+    smbclient-ng                          # SMB client with extras
+    sqlitebrowser                         # SQLite GUI browser
 
     # ── Programming Languages & Toolchains ────────────────────────────────────────────────────────
-    lua54Packages.lua                     # Lua programming / scripting language
-    lua-language-server                   # LSP for Lua
-    lua54Packages.luacheck                # Linter for Lua
-    stylua                                # Code formatter for Lua
-    rust-analyzer                         # LSP for editor support
+    lua54Packages.lua                     # Lua runtime
+    lua-language-server                   # Lua language server
+    lua54Packages.luacheck                # Lua linter
+    stylua                                # Lua formatter
+    rust-analyzer                         # Rust language server
     rustup                                # Rust toolchain manager
 
     # ── CLI Utilities ─────────────────────────────────────────────────────────────────────────────
-    bat                                   # Better cat with syntax highlighting
-    bottom                                # A process/system monitor for neovim
-    btop                                  # System monitor (also aliased as ps)
-    cloc                                  # Count Lines Of Code
-    cmatrix                               # Small Command for when I wanna feel like a hacker
+    bat                                   # Cat with syntax highlighting
+    bottom                                # TUI system monitor
+    btop                                  # System monitor (htop-like)
+    cloc                                  # Count lines of code
+    cmatrix                               # Matrix-style terminal effect
     curl                                  # HTTP client
-    duf                                   # Better df / disk usage overview
-    dust                                  # Better du / directory size analyser
-    eza                                   # Better ls with icons/colours
-    fastfetch                             # Fast system info
-    fd                                    # Fast find replacement
-    file                                  # Detect file types
+    duf                                   # Disk usage overview
+    dust                                  # Directory size analyzer
+    eza                                   # Enhanced ls with icons
+    fastfetch                             # System info summary
+    fd                                    # Find replacement
+    file                                  # File type identification
     fzf                                   # Fuzzy finder
-    gdu                                   # Disk usage analyzer with console interface
-    glow                                  # Render markdown on the cli with pizazzz
+    gdu                                   # Disk usage analyzer (TUI)
+    glow                                  # Markdown renderer
     jq                                    # JSON processor
-    ripgrep                               # Fast grep replacement
-    tldr                                  # Command cheatsheets
+    ripgrep                               # Fast grep
+    tldr                                  # Simplified man pages
     tree                                  # Directory tree viewer
-    unzip                                 # Archive extraction
+    unzip                                 # Extract zip archives
     wget                                  # File downloader
-    zip                                   # Archive creation
+    zip                                   # Create zip archives
 
     # ── Screenshot (Hyprland / Wayland) ───────────────────────────────────────────────────────────
     grim                                  # Screenshot tool
-    slurp                                 # Interactive region selector
-    swappy                                # Screenshot annotation/editor
+    slurp                                 # Region selector
+    swappy                                # Screenshot editor
 
     # ── Wayland Clipboard ─────────────────────────────────────────────────────────────────────────
-    cliphist                              # Clipboard history daemon
-    wl-clipboard                          # Clipboard read/write
+    cliphist                              # Clipboard history
+    wl-clipboard                          # Wayland clipboard tools
 
     # ── Hyprland Ecosystem ────────────────────────────────────────────────────────────────────────
     bibata-cursors                        # Cursor theme
-    hyprpolkitagent                       # Polkit authentication dialogs
+    hyprpolkitagent                       # Polkit authentication agent
     nwg-displays                          # Display configuration GUI
     nwg-look                              # GTK theme manager
-    playerctl                             # MPRIS media control
-    power-profiles-daemon
-    upower
+    playerctl                             # Media player control
+    power-profiles-daemon                 # Power profile manager
+    upower                                # Power management service
     wlr-randr                             # Wayland output management
 
     # ── Qt Theming ────────────────────────────────────────────────────────────────────────────────
-    dracula-qt5-theme                     # Dracula theme for Qt
-    qt6Packages.qt6ct                     # Qt theme configuration tool
+    dracula-qt5-theme                     # Dracula theme for Qt5
+    qt6Packages.qt6ct                     # Qt6 configuration tool
     qt6Packages.qtstyleplugin-kvantum     # Kvantum style engine
 
     # ── Brightness & Audio Controls ───────────────────────────────────────────────────────────────
     brightnessctl                         # Backlight control
     pamixer                               # PulseAudio CLI mixer
-    pavucontrol                           # PulseAudio GUI mixer
+    pavucontrol                           # PulseAudio volume control GUI
 
     # ── GTK / Icon Themes (Dracula) ───────────────────────────────────────────────────────────────
-    dracula-icon-theme                    # Icon pack
+    dracula-icon-theme                    # Dracula icon pack
     dracula-theme                         # GTK theme
 
     # ── Polkit Agent ──────────────────────────────────────────────────────────────────────────────
-    polkit_gnome                          # Auth agent for Hyprland
+    polkit_gnome                          # Polkit agent (GTK)
 
     # ── System / Misc ─────────────────────────────────────────────────────────────────────────────
-    bamf                                  # Window matcher (for docks)
+    bamf                                  # Window matcher for docks
     blueman                               # Bluetooth manager
-    ifuse                                 # Mount iOS filesystems
-    libfprint                             # fingerprint reader libary
-    libheif                               # HEIF/HEIC image codec
+    ifuse                                 # Mount iOS devices
+    libfprint                             # Fingerprint reader library
+    libheif                               # HEIF/HEIC codec library
     libimobiledevice                      # iOS device support
-    usbutils                              # Provides lsusb to check for fingerprint reader
-    xdg-utils                             # XDG desktop integration helpers
+    usbutils                              # USB utilities (lsusb)
+    xdg-utils                             # XDG desktop helpers
 
     # ── Security / Ethical Hacking Lab ────────────────────────────────────────────────────────────
     # Core networking + isolated lab infra
-    cacert
-    inetutils
-    netcat
-    openvpn
-    openssl
-    proxychains-ng
-    rlwrap
-    virt-manager
+    cacert                                # CA certificate bundle
+    inetutils                             # Basic network utilities
+    netcat                                # TCP/UDP networking tool
+    openvpn                               # VPN client and server
+    openssl                               # TLS/crypto toolkit
+    proxychains-ng                        # Proxy wrapper for apps
+    rlwrap                                # Readline wrapper for CLIs
+    virt-manager                          # Virtual machine manager
     # Recon, scanning, and enumeration
-    ffuf
-    feroxbuster
-    gobuster
-    nmap
-    rustscan
-    whatweb
+    ffuf                                  # Web fuzzing tool
+    feroxbuster                           # Web content discovery
+    gobuster                              # Directory/file brute force
+    nmap                                  # Network scanner
+    rustscan                              # Fast port scanner
+    whatweb                               # Web tech fingerprinting
     # Web application testing
-    burpsuite
-    sqlmap
-    wpscan
+    burpsuite                             # Web security testing suite
+    sqlmap                                # SQL injection testing
+    wpscan                                # WordPress scanner
     # Active Directory / internal network ops
-    bloodhound-py
-    enum4linux-ng
-    python312Packages.impacket
-    smbmap
+    bloodhound-py                         # BloodHound data collector
+    enum4linux-ng                         # SMB/AD enumeration
+    python312Packages.impacket            # Network protocol toolkit
+    smbmap                                # SMB share enumeration
     # Tunneling and traffic analysis
-    chisel
-    tcpdump
-    wireshark
+    chisel                                # TCP tunneling tool
+    tcpdump                               # Packet capture
+    wireshark                             # Packet analyzer
     # Exploitation and cracking
-    hashcat
-    jwt-cli
-    metasploit
-    thc-hydra
+    john                                  # John the Ripper password cracker
+    hashcat                               # Password hash cracker
+    jwt-cli                               # JWT utility
+    metasploit                            # Exploitation framework
+    thc-hydra                             # Password brute force
     # Security wordlists and helpers
-    seclists
+    seclists                              # Security wordlists
 
   ];
 
-  # ============================================================
+  # ================================================================================================
   # FONTS
-  # ============================================================
+  # ================================================================================================
   fonts.packages = with pkgs; [
-    nerd-fonts._0xproto
-    nerd-fonts.jetbrains-mono
-    cantarell-fonts                       # GTK default font
+    nerd-fonts._0xproto                   # Nerd Font: 0xProto
+    nerd-fonts.jetbrains-mono             # Nerd Font: JetBrains Mono
+    cantarell-fonts                       # GNOME/GTK default font
   ];
 
   nixpkgs.overlays = [
