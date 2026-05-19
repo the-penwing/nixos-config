@@ -75,7 +75,6 @@
     lftp                                  # CLI FTP client
     samba                                 # SMB client utilities
     smbclient-ng                          # SMB client with extras
-    visidata                               # Interactive terminal multitool for tabular data
     sqlitebrowser                         # SQLite GUI browser
 
     # ── Programming Languages & Toolchains ────────────────────────────────────────────────────────
