@@ -41,6 +41,7 @@
     qutebrowser                           # Keyboard-driven browser
     zathura                               # PDF viewer
     zathuraPkgs.zathura_pdf_poppler       # Zathura PDF backend (Poppler)
+    sc-im                                 # Ncurses spreadsheet program for terminal
 
     # ── Diagramming & Visualisation ───────────────────────────────────────────────────────────────
     drawio                                # Diagramming tool
