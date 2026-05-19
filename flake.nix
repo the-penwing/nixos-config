@@ -22,10 +22,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     cherri.url = "github:electrikmilk/cherri";
-    sheetsui.url = "github:zaphar/sheetsui";
   };
 
-  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, caelestia-shell, caelestia-cli, sheetsui, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, caelestia-shell, caelestia-cli, ... }@inputs:
 
   let
     system = "x86_64-linux";
@@ -56,7 +55,6 @@
             cherri.packages.${system}.default
             caelestia-shell.packages.${system}.default
             caelestia-cli.packages.${system}.default
-            sheetsui.packages.${system}.default
           ];
         }
       ];
