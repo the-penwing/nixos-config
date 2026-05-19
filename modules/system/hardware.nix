@@ -61,7 +61,10 @@
   # ============================================================
   # FINGERPRINT READER
   # ============================================================
-  services.fprintd.enable = true;
+  services.fprintd = {
+    enable = true;
+    tod.enable = false;  # Disable Touch-On-Display
+  };
 
   # PAM integration for fingerprint auth
   security.pam.services = {
