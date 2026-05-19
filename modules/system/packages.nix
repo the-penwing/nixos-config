@@ -186,7 +186,7 @@
     tcpdump                               # Packet capture
     wireshark                             # Packet analyzer
     # Exploitation and cracking
-    john                                  # John the Ripper password cracker
+    #john                                 # John the Ripper password cracker
     hashcat                               # Password hash cracker
     jwt-cli                               # JWT utility
     metasploit                            # Exploitation framework
