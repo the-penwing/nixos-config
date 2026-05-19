@@ -1,34 +1,36 @@
-# AstroNvim Template
+# Neovim (AstroNvim) configuration
 
-**NOTE:** This is for AstroNvim v6+
+This directory contains the AstroNvim v6 configuration used by this NixOS setup. It is synced into `~/.config/nvim` via `scripts/sync-dotfiles.sh`.
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+## Install/sync
 
-## 🛠️ Installation
+Back up any existing Neovim config:
 
-#### Make a backup of your current nvim and shared folder
-
-```shell
+```bash
 mv ~/.config/nvim ~/.config/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-#### Create a new user repository from this template
+Sync from this repo into your home directory:
 
-Press the "Use this template" button above to create a new repository to store your user configuration.
-
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
-
-#### Clone the repository
-
-```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+```bash
+./scripts/sync-dotfiles.sh pull
 ```
 
-#### Start Neovim
+Then launch Neovim to bootstrap plugins:
 
-```shell
+```bash
 nvim
 ```
+
+## Updating
+
+Edit files in this repo, then push your local `~/.config` changes back if needed:
+
+```bash
+./scripts/sync-dotfiles.sh push
+```
+
+The plugin lockfile is `lazy-lock.json`.

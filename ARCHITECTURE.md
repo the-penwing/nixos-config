@@ -23,11 +23,12 @@ This keeps host/user entry files short while making the module graph easy to sca
 Current dotfile areas:
 
 - `dotfiles/desktop`: compositor and desktop UI config
-  - `hyprland/hyprland.conf` is now a small entrypoint that sources `hyprland/conf.d/*.conf`.
+  - `hyprland/hyprland.lua` loads modular config from `hyprland/supercoolconfig/*.lua`
+  - `caelestia/` holds Caelestia shell config and monitor profiles
 - `dotfiles/shell`: zsh, tmux, starship
   - `.zshrc` is now a small entrypoint that sources `~/.config/zsh/zshrc.d/*.zsh`.
-- `dotfiles/editor`: Neovim config
-- `dotfiles/apps`: per-app configs
+- `dotfiles/editor`: AstroNvim config
+- `dotfiles/apps`: per-app configs (ghostty, btop, fastfetch)
 - `dotfiles/theme`: GTK theme files
 
 ## Development shells

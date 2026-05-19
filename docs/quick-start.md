@@ -7,6 +7,9 @@ sudo nixos-rebuild switch --flake .#nixos-t14s
 # Evaluate flake outputs without building
 nix flake check --no-build
 
-# One-time manual Nix generation cleanup (keep newest 30)
-nix-collect-garbage --delete-generations +30 && nix-collect-garbage -d
+# Enter the default dev shell for repo work
+nix develop .#default
+
+# Optional manual GC (matches configured policy)
+sudo nix-collect-garbage --delete-older-than 2d
 ```
