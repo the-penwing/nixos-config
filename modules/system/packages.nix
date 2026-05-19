@@ -75,6 +75,7 @@
     lftp                                  # CLI FTP client
     samba                                 # SMB client utilities
     smbclient-ng                          # SMB client with extras
+    lazysql                               # A cross-platform TUI database management tool
     sqlitebrowser                         # SQLite GUI browser
 
     # ── Programming Languages & Toolchains ────────────────────────────────────────────────────────
@@ -102,6 +103,7 @@
     gdu                                   # Disk usage analyzer (TUI)
     glow                                  # Markdown renderer
     jq                                    # JSON processor
+    plocate                               # Much faster locate 
     ripgrep                               # Fast grep
     tldr                                  # Simplified man pages
     tree                                  # Directory tree viewer
