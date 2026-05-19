@@ -75,7 +75,7 @@
     lftp                                  # CLI FTP client
     samba                                 # SMB client utilities
     smbclient-ng                          # SMB client with extras
-    lazysql                               # A cross-platform TUI database management tool
+    visidata                               # Interactive terminal multitool for tabular data
     sqlitebrowser                         # SQLite GUI browser
 
     # ── Programming Languages & Toolchains ────────────────────────────────────────────────────────
