@@ -21,11 +21,12 @@
       url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-#    iloader.url = "github:nab138/iloader";
-     cherri.url = "github:electrikmilk/cherri";
+    cherri.url = "github:electrikmilk/cherri";
+    sheetsui.url = "github:zaphar/sheetsui";
   };
 
-  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, caelestia-shell, caelestia-cli, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, caelestia-shell, caelestia-cli, sheetsui, ... }@inputs:
+
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -52,10 +53,10 @@
         {
           environment.systemPackages = [
             naviterm.packages.${system}.default
-#            iloader.packages.${system}.default
             cherri.packages.${system}.default
             caelestia-shell.packages.${system}.default
             caelestia-cli.packages.${system}.default
+            sheetsui.packages.${system}.default
           ];
         }
       ];
