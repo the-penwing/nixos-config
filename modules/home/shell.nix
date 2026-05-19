@@ -26,13 +26,15 @@
   # Copy shell configs from dotfiles (repo is source of truth)
 
   # SSH - Cache key passphrases via ssh-agent
-  services.ssh-agent.enable = true;
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks."*" = {
-      addKeysToAgent = "yes";
-      identityFile = "${config.home.homeDirectory}/.ssh/id_ed25519";
+    
+    settings = {
+      "*" = {
+        addKeysToAgent = "yes";
+        identityFile = "~/.ssh/id_ed25519";
+      };
     };
   };
 
