@@ -10,17 +10,18 @@ rustup target add thumbv7em-none-eabihf
 cargo build --release --target thumbv7em-none-eabihf
 ```
 
-## Generate `.hex` from `.elf` with `objcopy`
-
-```bash
-rust-objcopy -O ihex target/thumbv7em-none-eabihf/release/<your-binary> firmware.hex
-```
-
-## Optional: use `cargo-binutils`
+## Generate `.hex` from `.elf` with `cargo-binutils` (recommended)
 
 ```bash
 cargo install cargo-binutils
+rustup component add llvm-tools-preview
 cargo objcopy --release --target thumbv7em-none-eabihf -- -O ihex firmware.hex
+```
+
+## Optional: use `rust-objcopy` if already available
+
+```bash
+rust-objcopy -O ihex target/thumbv7em-none-eabihf/release/<your-binary> firmware.hex
 ```
 
 ## Example workflow

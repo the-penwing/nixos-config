@@ -14,6 +14,7 @@ cargo clippy --all-targets --all-features -- -D warnings
 nix develop .#microbit-python
 black .
 ruff check .
+mypy .
 ```
 
 Editor integration for Rust is already covered by `rust-analyzer` in the shell.

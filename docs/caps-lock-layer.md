@@ -24,7 +24,7 @@ Caps Lock is remapped at the kernel level via **keyd**:
 | `E` | `Ctrl+E` — jump to end of line |
 | `K` | `Ctrl+K` — delete to end of line |
 | `W` | `Ctrl+W` — delete word back |
-| `Q` | Open launcher (Caelestia) |
+| `Q` | Open launcher (sends `Super+R` for Caelestia) |
 
 ## keyd universal remaps (main layer)
 

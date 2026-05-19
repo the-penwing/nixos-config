@@ -4,6 +4,35 @@ All dev shells use bash with Starship prompt and shared QoL tooling.
 
 Shared QoL tools available in every shell: `starship`, `fzf`, `ripgrep`, `fd`, `bat`, `eza`, `direnv`, `zoxide`.
 
+## `default`
+
+Enter:
+
+```bash
+nix develop .#default
+```
+
+Includes:
+- `git`
+- `rsync`
+
+---
+
+## `pawn-appetit`
+
+Enter:
+
+```bash
+nix develop .#pawn-appetit
+```
+
+Includes:
+- `cargo`, `rustc`
+- `nodejs`, `pnpm`
+- `pkg-config`, `gtk3`, `webkitgtk_4_1`, `libsoup_3`
+
+---
+
 ## `microbit-python`
 
 Enter:
@@ -17,7 +46,7 @@ Includes:
 - `pip`
 - `uv`
 - `micropython` (includes `mpy-cross`)
-- `gcc`, `gnumake`, `pkg-config`
+- `gcc`, `gcc-arm-embedded`, `gnumake`, `pkg-config`
 - `esptool`
 - `minicom`, `screen`, `picocom`
 - `black`, `ruff`, `mypy`
@@ -48,7 +77,7 @@ Includes:
 - `rustc`
 - `rust-analyzer`
 - `cargo-watch`
-- `cargo-embed`, `probe-rs-tools`, `openocd`
+- `probe-rs-tools`, `openocd`
 - `rustfmt`
 - `cargo-expand`, `cargo-bloat`
 - `clippy` (installed via `rustup component add clippy` in shell hook)

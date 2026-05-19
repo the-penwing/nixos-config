@@ -1,23 +1,24 @@
 # Features
 
 ## Desktop
-- **Hyprland** — tiling Wayland compositor with modular `conf.d` configuration
+- **Hyprland** — Wayland compositor configured via `dotfiles/desktop/hyprland/hyprland.lua`
 - **Caelestia** — shell providing launcher, notifications, and idle/lock handling
 - **Bibata Modern Classic** — cursor theme
+- **Hyprland helpers** — hyprpolkitagent, cliphist, wl-clipboard, grim/slurp/swappy
 
 ## Shell
 - **Zsh** — default shell, launched from TTY autologin
-- **Ghostty** - terminal app of choice
+- **Ghostty** — terminal app of choice
 - **Starship** — shell prompt
 - **Tmux** — terminal multiplexer
 
 ## Editor
 - **Neovim** — primary editor configured with AstroNvim
-- **Micro** — fallback terminal editor
+- **Vim** — fallback terminal editor
 
 ## Theme
-- **Dracula** — GTK theme
-- **Dracula** — icon pack
+- **Dracula** — GTK theme + icon pack
+- **Qt theming** — qt6ct + Kvantum + Dracula Qt5
 
 ## Audio
 - **Pipewire** — audio server (48 kHz, replaces PulseAudio)
@@ -27,27 +28,45 @@
 - **mpris-scrobbler** — ListenBrainz scrobbling (systemd user service)
 
 ## Networking
-- **NetworkManager** — network management + tray applet
-- **Tailscale** — VPN / remote access (replaces SSH on open ports)
+- **NetworkManager** — network management
+- **Tailscale** — VPN / remote access
 - **Syncthing** — socket-activated, not started at boot
 - **Blueman** — Bluetooth manager
+
+## Browsers
+- **qutebrowser** — keyboard-driven browser
+- **Firefox** — general-purpose browser
 
 ## Productivity
 - **Obsidian** — note-taking
 - **Thunderbird** — email
 - **Bitwarden** — password manager
+- **LibreOffice** — office suite
+- **Zathura** — PDF viewer (Poppler backend)
+- **Diagramming** — draw.io, Gephi, Graphviz, Mermaid CLI, yEd
+
+## Media & creative
+- **Aseprite** — pixel art
+- **feh**, **oculante** — image viewing
+- **ImageMagick** — image conversion
+- **FFmpeg** + **VLC** — media tooling
+- **Sunshine** — game streaming host
 
 ## Developer tools
 - **Git** + **Lazygit** — version control
-- **Docker** — containers (socket-activated)
+- **Docker** + **libvirt/virt-manager** — containers and VMs
 - **Node.js**, **Python 3**, **Rust** (rustup), **GCC** — language toolchains
-- **fzf**, **ripgrep**, **fd**, **bat**, **eza**, **jq** — CLI utilities
-- **Solaar** — Logitech peripheral manager (Logi Pebble 2 support)
-- **Dev shells** — `microbit-python`, `microbit-rust`, `microbit`, `bash-scripting`
+- **Lua tooling** — lua, lua-language-server, luacheck, stylua
+- **CLI utilities** — fzf, ripgrep, fd, bat, eza, jq, glow, tldr, etc.
+- **GitHub Copilot CLI** + language server
+- **Solaar** — Logitech peripheral manager
+- **Dev shells** — `default`, `pawn-appetit`, `microbit-python`, `microbit-rust`, `microbit`, `bash-scripting`
 
 ## Security lab tooling
-- **Recon & discovery** — nmap, rustscan, masscan, amass, subfinder, dnsrecon, nuclei, feroxbuster, gobuster, ffuf, whatweb, theharvester
-- **Web testing** — Burp Suite, sqlmap, nikto, wpscan, wfuzz
-- **AD/internal testing** — bloodhound-py, certipy, responder, smbmap, enum4linux-ng, netexec, impacket, evil-winrm, chisel
-- **Traffic/wireless** — wireshark, tcpdump, bettercap, mitmproxy, aircrack-ng, hcxdumptool, hcxtools
-- **Exploitation/reversing/forensics** — metasploit, exploitdb, john, hashcat, hydra, yara, volatility3, ghidra, binwalk, radare2
+- **Baseline** — netcat, openvpn, openssl, proxychains-ng, rlwrap, virt-manager, inetutils
+- **Recon & discovery** — nmap, rustscan, ffuf, feroxbuster, gobuster, whatweb
+- **Web testing** — Burp Suite, sqlmap, wpscan
+- **AD/internal testing** — bloodhound-py, enum4linux-ng, impacket, smbmap, smbclient-ng
+- **Traffic & tunneling** — tcpdump, wireshark, chisel
+- **Exploitation & cracking** — metasploit, hashcat, thc-hydra, jwt-cli
+- **Wordlists** — seclists

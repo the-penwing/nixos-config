@@ -37,5 +37,5 @@ Run this quick review monthly:
 
 1. `nix flake check --no-build`
 2. Review `modules/system/packages.nix` and `modules/home/*.nix` for duplicates
-3. Review `dotfiles/desktop/hyprland/conf.d/*.conf` for stale binds/rules
+3. Review `dotfiles/desktop/hyprland/supercoolconfig/*.lua` for stale binds/rules
 4. Verify `docs/` still matches actual module and dotfile layout

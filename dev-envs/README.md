@@ -1,6 +1,6 @@
 # Development environments
 
-This repository provides lightweight, modular, **micro:bit-specific** dev shells for Rust, Python, and a combined workflow.
+This repository provides dev shells defined in `flake.nix`, including **micro:bit-specific** Rust/Python shells plus general-purpose shells for repo work and the Pawn-Appetit project.
 
 ## Documentation index
 
