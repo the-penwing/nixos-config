@@ -62,6 +62,14 @@
 
   # Polkit (needed for auth dialogs in Hyprland)
   security.polkit.enable = true;
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject)
+      if (action.id == "net.reactivated.fprint.device.enroll")
+      {
+        return polkit.Result.YES;
+      }
+    end);
+  '';
 
   # usbmuxd iOS compatibility
   services.usbmuxd = {
