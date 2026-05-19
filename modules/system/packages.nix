@@ -151,7 +151,6 @@
     bamf                                  # Window matcher for docks
     blueman                               # Bluetooth manager
     ifuse                                 # Mount iOS devices
-    libfprint                             # Fingerprint reader library
     libheif                               # HEIF/HEIC codec library
     libimobiledevice                      # iOS device support
     usbutils                              # USB utilities (lsusb)
