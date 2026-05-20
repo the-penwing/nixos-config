@@ -204,6 +204,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts._0xproto                   # Nerd Font: 0xProto
     nerd-fonts.jetbrains-mono             # Nerd Font: JetBrains Mono
+    nerd-fonts.meslo-lg.                  # Nerd Font: MesloLG - Based off apple Menlo
     cantarell-fonts                       # GNOME/GTK default font
   ];
 
