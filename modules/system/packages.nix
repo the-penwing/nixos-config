@@ -13,6 +13,7 @@
       "input"
       "networkmanager"
       "plugdev"
+      "plocate"
       "video"
       "wheel"
     ];
@@ -104,7 +105,6 @@
     gdu                                   # Disk usage analyzer (TUI)
     glow                                  # Markdown renderer
     jq                                    # JSON processor
-    plocate                               # Much faster locate 
     ripgrep                               # Fast grep
     tldr                                  # Simplified man pages
     tree                                  # Directory tree viewer
