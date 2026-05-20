@@ -77,6 +77,7 @@
     samba                                 # SMB client utilities
     smbclient-ng                          # SMB client with extras
     sqlitebrowser                         # SQLite GUI browser
+    sqlite                                # SQL database engine
 
     # ── Programming Languages & Toolchains ────────────────────────────────────────────────────────
     lua54Packages.lua                     # Lua runtime
