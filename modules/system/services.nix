@@ -23,8 +23,13 @@
     xwayland.enable = true;
   };
 
-  # Idle/lock handling is provided by Caelestia
-
+  xdg.mime.defaultApplications = {
+      "text/html" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+  };
   # XDG desktop portals — Hyprland portal only (Wayland-only setup)
   xdg.portal = {
     enable = true;
