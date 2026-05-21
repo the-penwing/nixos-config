@@ -82,6 +82,7 @@
 
     # ── Programming Languages & Toolchains ────────────────────────────────────────────────────────
     lua54Packages.lua                     # Lua runtime
+    lua54Packages.luarocks                # A package manager for Lua modules
     lua-language-server                   # Lua language server
     lua54Packages.luacheck                # Lua linter
     stylua                                # Lua formatter
