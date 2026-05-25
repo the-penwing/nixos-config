@@ -111,11 +111,6 @@
   virtualisation.docker.enable = true;
   # Disable docker daemon at boot; docker.socket activates it on demand
   virtualisation.docker.enableOnBoot = false;
-  # QEMU/KVM for virtual machines
-  programs.virt-manager.enable = true;
-  virtualisation.libvirtd.enable = true;
-  users.groups.libvirtd.members = ["benvl"];
-  virtualisation.libvirtd.qemu.runAsRoot = false;
 
   programs.nix-ld.enable = true;
 
