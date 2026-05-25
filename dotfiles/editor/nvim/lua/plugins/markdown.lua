@@ -20,11 +20,6 @@ return {
     end,
   },
   {
-    "lukas-reineke/headlines.nvim",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    config = true,
-  },
-  {
     "jakewvincent/mkdnflow.nvim",
     ft = { "markdown", "rmd" }, -- Add custom filetypes here if configured
     config = function()
@@ -32,28 +27,5 @@ return {
         -- Your config
       }
     end,
-  },
-  {
-    "obsidian-nvim/obsidian.nvim",
-    version = "*", -- use latest release, remove to use latest commit
-    ---@module 'obsidian'
-    ---@type obsidian.config
-    opts = {
-      legacy_commands = false, -- this will be removed in 4.0.0
-      workspaces = {
-        {
-          name = "personal-notes",
-          path = "~/notes/",
-        },
-        {
-          name = "school-notes",
-          path = "~/Documents/school-notes/",
-        },
-        {
-          name = "dnd",
-          path = "~/dnd-vault/",
-        },
-      },
-    },
   },
 }
