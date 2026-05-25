@@ -42,11 +42,9 @@
     qutebrowser                           # Keyboard-driven browser
     zathura                               # PDF viewer
     zathuraPkgs.zathura_pdf_poppler       # Zathura PDF backend (Poppler)
-    sc-im                                 # Ncurses spreadsheet program for terminal
 
     # ── Diagramming & Visualisation ───────────────────────────────────────────────────────────────
     drawio                                # Diagramming tool
-    gephi                                 # Graph visualization tool
     graphviz                              # Graph visualization suite
     mermaid-cli                           # Mermaid diagram generator
     yed                                   # Graph editor and visualizer
@@ -69,8 +67,6 @@
     thunar                                # Lightweight GTK file manager
 
     # ── Dev Tools ─────────────────────────────────────────────────────────────────────────────────
-    arduino-cli                           # Arduino CLI
-    arduino-ide                           # Arduino IDE
     filezilla                             # GUI FTP client
     git                                   # Version control
     gucharmap                             # Character map utility
@@ -165,24 +161,14 @@
     netcat                                # TCP/UDP networking tool
     openvpn                               # VPN client and server
     openssl                               # TLS/crypto toolkit
-    proxychains-ng                        # Proxy wrapper for apps
-    rlwrap                                # Readline wrapper for CLIs
-    virt-manager                          # Virtual machine manager
     # Recon, scanning, and enumeration
     ffuf                                  # Web fuzzing tool
-    feroxbuster                           # Web content discovery
     gobuster                              # Directory/file brute force
     nmap                                  # Network scanner
     rustscan                              # Fast port scanner
-    whatweb                               # Web tech fingerprinting
     # Web application testing
-    burpsuite                             # Web security testing suite
     sqlmap                                # SQL injection testing
-    wpscan                                # WordPress scanner
     # Active Directory / internal network ops
-    bloodhound-py                         # BloodHound data collector
-    enum4linux-ng                         # SMB/AD enumeration
-    python312Packages.impacket            # Network protocol toolkit
     smbmap                                # SMB share enumeration
     # Tunneling and traffic analysis
     chisel                                # TCP tunneling tool
@@ -191,12 +177,7 @@
     # Exploitation and cracking
     #john                                 # John the Ripper password cracker
     hashcat                               # Password hash cracker
-    jwt-cli                               # JWT utility
     metasploit                            # Exploitation framework
-    thc-hydra                             # Password brute force
-    # Security wordlists and helpers
-    seclists                              # Security wordlists
-
   ];
 
   # ================================================================================================
