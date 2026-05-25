@@ -132,7 +132,15 @@
             "qt6ct",
             "bottom",
             "nixos-manual",
-            "startcenter"
+            "startcenter",
+            "org.wireshark.Wireshark",
+            "lftp",
+            "org.pulseaudio.pavucontrol",
+            "cups",
+            "oculante",
+            "com.mitchellh.ghostty",
+            "draw",
+            "base"
         ],
         "showOnHover": false,
         "useFuzzy": {
@@ -145,6 +153,9 @@
     },
     "notifs": {
         "openExpanded": false
+    },
+    "services": {
+        "showLyrics": true
     },
     "utilities": {
         "toasts": {
