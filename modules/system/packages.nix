@@ -121,7 +121,6 @@
     # ── Hyprland Ecosystem ────────────────────────────────────────────────────────────────────────
     bibata-cursors                        # Cursor theme
     hyprpolkitagent                       # Polkit authentication agent
-    nwg-displays                          # Display configuration GUI
     nwg-look                              # GTK theme manager
     playerctl                             # Media player control
     power-profiles-daemon                 # Power profile manager
