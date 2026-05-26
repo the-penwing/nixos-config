@@ -1,18 +1,14 @@
-{ config, pkgs, lib, ... }:
+# Home shell/developer ergonomics module.
+#
+# Purpose:
+# - Keep per-user shell tooling and environment variables together
+# - Keep SSH agent behaviour explicit and auditable
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    nodejs
-    python3
-    pkg-config
-    gcc
-    gnumake
-    rustup
-    sassc
     lazygit
-    tea
-    pyenv
-    uv
+    sassc
   ];
 
   home.sessionPath = [
@@ -23,18 +19,12 @@
     prefix=$HOME/.npm-global
   '';
 
-  # Copy shell configs from dotfiles (repo is source of truth)
-
-  # SSH - Cache key passphrases via ssh-agent
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    
-    settings = {
-      "*" = {
-        addKeysToAgent = "yes";
-        identityFile = "~/.ssh/id_ed25519";
-      };
+    settings."*" = {
+      addKeysToAgent = "yes";
+      identityFile = "~/.ssh/id_ed25519";
     };
   };
 
@@ -43,7 +33,6 @@
   };
 
   programs.zsh.initExtra = ''
-    # Load SSH key into agent on shell startup
     ${pkgs.openssh}/bin/ssh-add ${config.home.homeDirectory}/.ssh/id_ed25519 2>/dev/null &
   '';
 }

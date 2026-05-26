@@ -1,9 +1,10 @@
 # ============================================================================
 # Aliases: Repository Management
 # ============================================================================
-alias update-repo-dotfiles='~/nixos-config/scripts/sync-dotfiles.sh push'
-alias update-home-dotfiles='~/nixos-config/scripts/sync-dotfiles.sh pull'
-
+alias update-repo-dotfiles='~/nixos-config/scripts/sync-dotfiles push'
+alias update-home-dotfiles='~/nixos-config/scripts/sync-dotfiles pull'
+alias rebuild='~/nixos-config/scripts/rebuild'
+alias rollback-system='~/nixos-config/scripts/rollback'
 
 # ============================================================================
 # Aliases: Python & Tools
@@ -13,12 +14,6 @@ alias python='python3.14'
 alias pip='uv pip'
 alias evil-winrm='evil-winrm-py'
 alias tree-no-docs='tree --gitignore -I "*.md" --prune'
-
-# ============================================================================
-# Aliases: Power Management
-# ============================================================================
-alias tlp-perf='sudo tlp ac'
-alias tlp-save='sudo tlp bat'
 
 # ============================================================================
 # Aliases: Modern CLI Tool Replacements
@@ -35,3 +30,4 @@ alias df='duf'
 alias ps='btop'
 alias cd='z'
 alias cdi='zi'
+alias fm='yy'

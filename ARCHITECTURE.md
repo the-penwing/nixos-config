@@ -1,48 +1,41 @@
 # Architecture
 
-This repository uses a layered Nix flake layout:
+## Entry points
 
-- `flake.nix` is the top-level entrypoint for both host configuration and development shells.
-- `hosts/nixos-t14s/configuration.nix` is the NixOS host entrypoint.
-- `home.nix` is the home-manager entrypoint for user-level configuration.
+- `flake.nix`: flake inputs, outputs, and dev shells.
+- `hosts/nixos-t14s/configuration.nix`: host-specific NixOS entry.
+- `home.nix`: Home Manager entry for user-level config.
 
-## Module entrypoints
+## System module graph
 
-To make module loading explicit:
+`modules/system/default.nix` composes:
 
-- `modules/system/default.nix` imports all system modules (`boot`, `networking`, `hardware`, `services`, `packages`, `input`).
-- `modules/home/default.nix` imports all home-manager modules (`shell`, `desktop`).
+- `boot.nix`
+- `desktop.nix`
+- `hardware.nix`
+- `input.nix`
+- `networking.nix`
+- `packages.nix`
+- `performance.nix`
+- `services.nix`
+- `users.nix`
 
-This keeps host/user entry files short while making the module graph easy to scan.
+## Package architecture
 
-## Dotfiles and home-manager
+`packages.nix` is the single package catalogue. It exports:
 
-`modules/home/*` own declarative home-manager settings and package selections.
-`dotfiles/*` store concrete app configuration files, synced with `scripts/sync-dotfiles.sh`.
+- package categories (`core`, `dev`, `gui`, `security`, etc.)
+- flattened `systemPackages`
+- `defaults` desktop IDs
+- `mimeDefaults` consumed by the desktop module
 
-Current dotfile areas:
+## Dotfile architecture
 
-- `dotfiles/desktop`: compositor and desktop UI config
-  - `hyprland/hyprland.lua` loads modular config from `hyprland/supercoolconfig/*.lua`
-  - `caelestia/` holds Caelestia shell config and monitor profiles
-- `dotfiles/shell`: zsh, tmux, starship
-  - `.zshrc` is now a small entrypoint that sources `~/.config/zsh/zshrc.d/*.zsh`.
-- `dotfiles/editor`: AstroNvim config
-- `dotfiles/apps`: per-app configs (ghostty, btop, fastfetch)
-- `dotfiles/theme`: GTK theme files
+`dotfiles/` keeps app config source-of-truth; `scripts/sync-dotfiles` synchronises to and from `$HOME`.
 
-## Development shells
+Notable paths:
 
-Dev shells are defined in `flake.nix` using:
-
-- `lib/mkDevShell.nix` for shared shell behavior (starship + common CLI QoL tooling)
-- `lib/mkMicrobitShell.nix` for micro:bit-specific composition
-
-Defined shells:
-
-- `default`
-- `pawn-appetit`
-- `microbit-python`
-- `microbit-rust`
-- `microbit` (combined Python + Rust)
-- `bash-scripting`
+- `dotfiles/apps/yazi/` (terminal file manager)
+- `dotfiles/desktop/hyprland/` (Wayland compositor)
+- `dotfiles/desktop/caelestia/` (shell UI layer)
+- `dotfiles/editor/nvim/` (AstroNvim profile)
