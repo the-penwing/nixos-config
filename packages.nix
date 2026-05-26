@@ -10,6 +10,7 @@ let
     core = with pkgs; [
       cacert
       curl
+      direnv
       fd
       file
       fzf
@@ -17,6 +18,7 @@ let
       jq
       ripgrep
       rsync
+      starship
       tree
       unzip
       wget

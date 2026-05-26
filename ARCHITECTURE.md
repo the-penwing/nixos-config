@@ -39,3 +39,27 @@ Notable paths:
 - `dotfiles/desktop/hyprland/` (Wayland compositor)
 - `dotfiles/desktop/caelestia/` (shell UI layer)
 - `dotfiles/editor/nvim/` (AstroNvim profile)
+
+## Security & Polkit
+
+Polkit is enabled for privilege escalation dialogs (for example mounting filesystems or changing power profiles).
+
+- `security.polkit.enable = true` in `modules/system/desktop.nix`
+- Polkit agent (GNOME agent) runs as user service via `polkit_gnome` in packages
+
+## Dotfile sync model
+
+The repository is the source of truth for user config:
+
+```text
+dotfiles/  ← source
+├── apps/yazi/
+├── desktop/hyprland/
+├── editor/nvim/
+└── shell/zsh/
+```
+
+`~/.config/` is the live user config synced from `dotfiles/`.
+
+- `./scripts/sync-dotfiles pull` copies repo -> home (safe to run anytime)
+- `./scripts/sync-dotfiles push` copies home -> repo (save local edits)

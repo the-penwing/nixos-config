@@ -6,6 +6,16 @@
 { pkgs, lib, ... }:
 
 {
+  # ============================================================
+  # Socket Activation Policy
+  # ============================================================
+  # Services listed below use systemd socket activation:
+  # - docker.socket (activates virtualisation.docker on first docker command)
+  # - syncthing (explicitly not in boot targets — manual start only)
+  # - printing (CUPS) — activates on first print job
+  # - avahi — multicast DNS discovery on demand
+  # ============================================================
+
   services.tailscale.enable = true;
   services.dbus.enable = true;
   services.solaar = {
@@ -53,7 +63,6 @@
     package = pkgs.plocate;
   };
 
-  programs.direnv.enable = true;
   programs.firefox.enable = true;
   programs.nix-ld.enable = true;
   programs.thunderbird.enable = true;

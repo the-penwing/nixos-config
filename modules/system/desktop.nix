@@ -23,6 +23,9 @@ in
     xwayland.enable = true;
   };
 
+  # Privilege escalation and privileged action authentication.
+  security.polkit.enable = true;
+
   xdg.mime.defaultApplications = packageSet.mimeDefaults;
 
   xdg.portal = {

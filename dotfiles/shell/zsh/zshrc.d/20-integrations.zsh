@@ -1,11 +1,6 @@
 # ============================================================================
-# Integrations: tools that extend shell behaviour
+# Integrations: custom shell extensions and tools
 # ============================================================================
-
-# Jump navigation
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
-fi
 
 # Yazi shell integration: change shell cwd to the directory selected in yazi.
 yy() {
