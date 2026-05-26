@@ -141,7 +141,7 @@
             bats
             jq
             yq-go
-            nodePackages.bash-language-server
+            bash-language-server
           ];
 
           shellHook = ''
