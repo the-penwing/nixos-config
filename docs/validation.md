@@ -7,7 +7,7 @@ Run these steps after rebuilding to verify all changes work correctly.
 ```bash
 # 1. Syntax and formatting
 nix flake check --no-build
-nix fmt --check
+nix fmt
 
 # 2. No Thunar references remain
 grep -r "thunar" . --exclude-dir=.git --exclude-dir=.direnv

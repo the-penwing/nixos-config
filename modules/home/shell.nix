@@ -41,7 +41,7 @@
 
   programs.zsh = {
     enable = true;
-    initExtra = ''
+    initContent = ''
       zstyle ':fzf-tab:*' fzf-min-height 6
     '';
   };
