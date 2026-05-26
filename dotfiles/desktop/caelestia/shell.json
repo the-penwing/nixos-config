@@ -60,6 +60,10 @@
         "excludedScreens": [
         ],
         "persistent": true,
+        "scrollActions": {
+            "volume": true,
+            "workspaces": true
+        },
         "showOnHover": true,
         "status": {
             "showAudio": true,
@@ -126,7 +130,6 @@
             "micro",
             "kvantummanager",
             "gvim",
-            "nwg-displays",
             "thunar-settings",
             "nwg-look",
             "qt6ct",
