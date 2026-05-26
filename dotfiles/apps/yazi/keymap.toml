@@ -1,0 +1,27 @@
+# Vim-forward keymap adjustments for Yazi.
+#
+# Uses hjkl and word motions to match terminal editor muscle memory.
+[[manager.prepend_keymap]]
+on = ["h"]
+run = "leave"
+desc = "Go to parent directory"
+
+[[manager.prepend_keymap]]
+on = ["l"]
+run = "enter"
+desc = "Enter child directory"
+
+[[manager.prepend_keymap]]
+on = ["w"]
+run = "plugin jump-to-char"
+desc = "Jump forward by word/character"
+
+[[manager.prepend_keymap]]
+on = ["b"]
+run = "plugin jump-to-char --args=backward"
+desc = "Jump backward by word/character"
+
+[[manager.prepend_keymap]]
+on = ["/"]
+run = "find --smart"
+desc = "Search in current directory"

@@ -1,3 +1,7 @@
+# Bootloader and kernel selection.
+#
+# Purpose:
+# - Keep host boot policy explicit and minimal
 { pkgs, ... }:
 
 {

@@ -1,0 +1,8 @@
+# Minimal Dracula-inspired accents for Yazi.
+[manager]
+cwd = { fg = "#bd93f9", bold = true }
+hovered = { fg = "#f8f8f2", bg = "#44475a" }
+preview_hovered = { fg = "#f8f8f2", bg = "#44475a" }
+find_keyword = { fg = "#ffb86c", bold = true }
+find_position = { fg = "#8be9fd", bg = "reset", bold = true }
+marker_selected = { fg = "#50fa7b", bg = "#44475a" }

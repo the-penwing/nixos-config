@@ -11,6 +11,7 @@ declare -a SYNC_PAIRS=(
   "dotfiles/apps/ghostty:~/.config/ghostty"
   "dotfiles/apps/btop:~/.config/btop"
   "dotfiles/apps/fastfetch:~/.config/fastfetch"
+  "dotfiles/apps/yazi:~/.config/yazi"
   "dotfiles/shell/zsh/.zshrc:~/.zshrc"
   "dotfiles/shell/zsh/zshrc.d:~/.config/zsh/zshrc.d"
   "dotfiles/shell/tmux/.tmux.conf:~/.tmux.conf"
@@ -24,32 +25,25 @@ sync_pair() {
   local src="$1"
   local dst="$2"
 
-  # Expand ~ to actual home
   dst="${dst/#\~/$HOME}"
-
-  # Make src absolute
   src="${REPO_ROOT}/${src}"
 
-  # Skip if source doesn't exist
   if [ ! -e "$src" ]; then
     echo "  ⚠️  Source does not exist: $src"
     return
   fi
 
   if [ "$ACTION" = "pull" ]; then
-    # dotfiles → ~/.config (repo is source of truth)
     mkdir -p "$(dirname "$dst")"
     echo "  ← $src → $dst"
     if [ -d "$src" ]; then
-      # Directory: copy contents
-      cp -r "$src"/* "$dst/" 2>/dev/null || true
+      mkdir -p "$dst"
+      rsync -a --delete "$src"/ "$dst"/
     else
-      # Single file: copy directly
       cp "$src" "$dst"
     fi
     chmod -R u+w "$dst" 2>/dev/null || true
   elif [ "$ACTION" = "push" ]; then
-    # ~/.config → dotfiles (save your edits back)
     if [ ! -e "$dst" ]; then
       echo "  ⚠️  Destination does not exist: $dst"
       return
@@ -57,10 +51,9 @@ sync_pair() {
     mkdir -p "$(dirname "$src")"
     echo "  → $dst → $src"
     if [ -d "$dst" ]; then
-      # Directory: copy contents (overwrite)
-      cp -r "$dst"/* "$src/" 2>/dev/null || true
+      mkdir -p "$src"
+      rsync -a --delete "$dst"/ "$src"/
     else
-      # Single file: copy directly
       cp "$dst" "$src"
     fi
   fi

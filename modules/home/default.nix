@@ -1,3 +1,7 @@
+# Home module entrypoint.
+#
+# Purpose:
+# - Keep module imports explicit and easy to audit
 { ... }:
 
 {

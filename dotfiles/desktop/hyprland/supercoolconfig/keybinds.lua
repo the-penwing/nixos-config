@@ -1,7 +1,7 @@
 local mainMod = "SUPER"
 
 local terminal = "ghostty"
-local fileManager = "thunar"
+local fileManager = "dolphin"
 local browser = "qutebrowser"
 local launcher = "caelestia shell drawers toggle launcher"
 local lockscreen = "caelestia shell lock lock"
