@@ -12,13 +12,13 @@ alias python3='python3.14'
 alias python='python3.14'
 alias pip='uv pip'
 alias evil-winrm='evil-winrm-py'
+alias tree-no-docs='tree --gitignore -I "*.md" --prune'
 
 # ============================================================================
 # Aliases: Power Management
 # ============================================================================
 alias tlp-perf='sudo tlp ac'
 alias tlp-save='sudo tlp bat'
-
 
 # ============================================================================
 # Aliases: Modern CLI Tool Replacements
