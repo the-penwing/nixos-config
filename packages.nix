@@ -134,7 +134,7 @@ let
       ffmpegthumbnailer
       libheif
       mediainfo
-      poppler_utils
+      poppler-utils
       p7zip
       sunshine
       unar
