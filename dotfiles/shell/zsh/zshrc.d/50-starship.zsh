@@ -1,11 +1,4 @@
 # ============================================================================
-# Environment Variables
+# Starship Prompt
 # ============================================================================
-set -a
-
-# PATH Configuration
-PATH="$HOME/.local/bin:$PATH"
-PATH="$PATH:$HOME/.npm-global/bin"
-PATH="$PATH:$HOME/.cargo/bin"
-
-set +a
+eval "$(starship init zsh)"
