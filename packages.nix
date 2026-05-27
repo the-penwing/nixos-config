@@ -53,6 +53,8 @@ let
       mermaid-cli
       nodejs
       pkg-config
+      pkgsCross.aarch64-multiplatform.stdenv.cc
+      pkgsCross.mingwW64.stdenv.cc
       pyenv
       python3
       rust-analyzer
@@ -62,6 +64,7 @@ let
       stylua
       tea
       uv
+      xxd
     ];
 
     gui = with pkgs; [
