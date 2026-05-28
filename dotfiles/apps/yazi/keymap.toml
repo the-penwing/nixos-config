@@ -1,27 +1,25 @@
-# Vim-forward keymap adjustments for Yazi.
-#
-# Uses hjkl and word motions to match terminal editor muscle memory.
-[[manager.prepend_keymap]]
-on = ["h"]
-run = "leave"
-desc = "Go to parent directory"
+# Minimal keymap for essential navigation and actions.
+#:schema https://yazi-rs.github.io/schemas/keymap.json
 
-[[manager.prepend_keymap]]
-on = ["l"]
-run = "enter"
-desc = "Enter child directory"
+[mgr]
+keymap = [
+  { on = "k", run = "arrow prev", desc = "Previous file" },
+  { on = "j", run = "arrow next", desc = "Next file" },
+  { on = "<Up>", run = "arrow prev", desc = "Previous file" },
+  { on = "<Down>", run = "arrow next", desc = "Next file" },
 
-[[manager.prepend_keymap]]
-on = ["w"]
-run = "plugin jump-to-char"
-desc = "Jump forward by word/character"
+  { on = "h", run = "leave", desc = "Parent directory" },
+  { on = "l", run = "enter", desc = "Enter directory" },
+  { on = "<Left>", run = "leave", desc = "Parent directory" },
+  { on = "<Right>", run = "enter", desc = "Enter directory" },
 
-[[manager.prepend_keymap]]
-on = ["b"]
-run = "plugin jump-to-char --args=backward"
-desc = "Jump backward by word/character"
+  { on = "<Enter>", run = "open", desc = "Open selected" },
+  { on = "o", run = "open", desc = "Open selected" },
 
-[[manager.prepend_keymap]]
-on = ["/"]
-run = "find --smart"
-desc = "Search in current directory"
+  { on = "d", run = "remove", desc = "Trash selected" },
+  { on = "D", run = "remove --permanently", desc = "Delete selected" },
+
+  { on = "/", run = "find --smart", desc = "Search files" },
+  { on = "<Esc>", run = "escape", desc = "Cancel" },
+  { on = "q", run = "quit", desc = "Quit" },
+]
