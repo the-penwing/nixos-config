@@ -2,125 +2,176 @@
 
 Production-oriented NixOS + Home Manager configuration for **ThinkPad T14s Gen 2 (Ryzen 5 Pro)**.
 
-## Quick start
+## Quick Start
 
 ```bash
+# Clone and enter directory
+git clone https://github.com/<your-repo>/nixos-config
+cd nixos-config
+
 # Apply dotfiles into ~/.config
-./scripts/sync-dotfiles pull
+./scripts/sync-config pull
 
 # Validate flake outputs (no build)
-nix flake check --no-build
+nix flake check
 
-# Rebuild host
-./scripts/rebuild
+# Rebuild system
+sudo nixos-rebuild switch
 
-# Roll back to previous generation
-./scripts/rollback
+# Roll back if needed
+sudo nixos-rebuild switch --rollback
 ```
 
-## Structure
+## Documentation
 
-```text
-.
-├── flake.nix                          # flake inputs/outputs + dev shells
-├── packages.nix                       # single source of truth for package categories + app defaults
-├── overlays/default.nix               # package overrides
-├── hosts/nixos-t14s/configuration.nix # host entrypoint
-├── modules/system/                    # system modules by concern
-│   ├── boot.nix
-│   ├── desktop.nix
-│   ├── hardware.nix
-│   ├── input.nix
-│   ├── networking.nix
-│   ├── packages.nix
-│   ├── performance.nix
-│   ├── services.nix
-│   └── users.nix
-├── modules/home/                      # home-manager modules
-├── dotfiles/                          # app/user config synced into $HOME
-└── scripts/                           # shell scripts (no extensions)
+Start here:
+
+- **[docs/SETUP.md](docs/SETUP.md)** – Initial setup and installation
+- **[docs/MAINTENANCE.md](docs/MAINTENANCE.md)** – How to edit configuration and add packages
+- **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)** – System design and philosophy
+- **[docs/README.md](docs/)** – Full documentation index
+
+## Repository Structure
+
+```
+nixos-config/
+├── flake.nix                    # Flake inputs/outputs + dev shells
+├── home.nix                     # Home-manager entrypoint
+├── nix/
+│   └── packages.nix            # Single source of truth for packages + defaults
+├── modules/
+│   ├── system/                 # System configuration modules
+│   │   ├── boot.nix           # Boot configuration
+│   │   ├── desktop.nix        # Desktop and services
+│   │   ├── hardware.nix       # Hardware settings
+│   │   ├── packages.nix       # Package wiring
+│   │   ├── services.nix       # System services
+│   │   └── ... (other modules)
+│   └── home/                   # User-level configuration (home-manager)
+│       ├── shell.nix          # Shell tools and environment
+│       └── desktop.nix        # User desktop settings
+├── scripts/
+│   ├── sync-config            # Sync dotfiles to/from home
+│   ├── rebuild                # Build and apply system config
+│   └── rollback               # Rollback to previous generation
+├── dotfiles/                   # Application configuration files
+│   ├── shell/zsh/             # Zsh configuration (split by concern)
+│   ├── editor/nvim/           # Neovim configuration
+│   ├── desktop/               # Desktop environment configs
+│   └── ... (other configs)
+├── docs/                       # Documentation
+│   ├── SETUP.md               # Setup guide
+│   ├── MAINTENANCE.md         # Maintenance and editing guide
+│   ├── ARCHITECTURE.md        # Design documentation
+│   └── ... (other docs)
+├── overlays/                   # Package overrides
+├── lib/                        # Nix utility functions
+└── hosts/                      # Machine-specific configurations
 ```
 
-## Package management
+## Package Management
 
-All package lists live in `packages.nix`.
+All packages are defined in `nix/packages.nix` with semantic grouping:
 
-- `categories.core`
-- `categories.cli`
-- `categories.dev`
-- `categories.gui`
-- `categories.desktop`
-- `categories.security`
-- `categories.media`
-- `categories.misc`
+- **System Utilities** – Core tools (curl, wget, git, etc.)
+- **Terminal & CLI** – Modern CLI tools (bat, eza, fzf, etc.)
+- **Development** – Compilers, LSPs, version managers
+- **GUI Applications** – Desktop apps (Discord, Firefox, etc.)
+- **Desktop Environment** – Themes, cursors, Wayland tools
+- **Security & Networking** – Penetration testing, network tools
+- **Media & Archives** – Video, audio, and archive utilities
+- **Miscellaneous** – Tools that don't fit elsewhere
 
-### Add/remove packages
+### Add/Remove Packages
 
-1. Edit the correct category in `packages.nix`.
-2. Rebuild with `./scripts/rebuild`.
-3. Verify the package resolves (`command -v <tool>` or app launcher search).
+See [docs/MAINTENANCE.md#adding-packages](docs/MAINTENANCE.md#adding-packages) for detailed instructions.
 
-## Default apps and MIME handlers
+Quick version:
 
-Default browser/editor/file manager/PDF handlers are declared in `packages.nix` (`defaults` + `mimeDefaults`) and consumed by `modules/system/desktop.nix`.
+1. Edit the appropriate category in `nix/packages.nix`
+2. Test with `nixos-rebuild dry-run`
+3. Apply with `sudo nixos-rebuild switch`
 
-This keeps package choice and default-association logic in one place.
+## Dotfiles Sync
 
-## Yazi + Dolphin workflow
-
-- **Yazi**: terminal-first, keyboard-driven navigation (`fm` alias / `yy` function).
-- **Dolphin**: GUI workflows, bulk file actions, service-menu integrations.
-
-See `YAZI_SETUP.md` for keybindings and shell integration details.
-
-## Common workflows
-
-### Update flake inputs
+Shell and application configuration is stored in `dotfiles/` and synced to `~/.config`, `~`, etc. using the sync script.
 
 ```bash
-nix flake update
-./scripts/rebuild
+# Sync from dotfiles to home directory
+./scripts/sync-config pull
+
+# Sync changes from home directory back to dotfiles
+./scripts/sync-config push
 ```
 
-### Apply local dotfile edits back into repo
+### Zsh Configuration
+
+Split into logical files under `dotfiles/shell/zsh/zshrc.d/`:
+
+- `00-oh-my-zsh.zsh` – Oh My Zsh setup and plugins
+- `10-environment.zsh` – Environment variables
+- `20-integrations.zsh` – Tool integrations (direnv, fzf, etc.)
+- `30-aliases.zsh` – Command aliases
+- `40-hyprland.zsh` – Hyprland-specific config
+- `50-starship.zsh` – Starship prompt configuration
+
+See [scripts/README.md](scripts/README.md) and [dotfiles/README.md](dotfiles/README.md) for details.
+
+## Common Workflows
+
+### Add a development tool
+
+1. Find it on https://search.nixos.org/packages
+2. Add to appropriate category in `nix/packages.nix`
+3. Rebuild: `sudo nixos-rebuild switch`
+
+### Update zsh aliases
+
+1. Edit `dotfiles/shell/zsh/zshrc.d/30-aliases.zsh`
+2. Sync: `./scripts/sync-config pull`
+3. Test: `zsh -i` and verify
+4. Commit: `git add dotfiles/ && git commit -m "shell: update aliases"`
+
+### Customize desktop environment
+
+1. Edit Hyprland config: `dotfiles/desktop/hyprland/`
+2. Or desktop settings: `modules/system/desktop.nix`
+3. Rebuild: `sudo nixos-rebuild switch`
+
+### Rebuild after changes
 
 ```bash
-./scripts/sync-dotfiles push
-```
+# Dry-run test (no apply)
+nixos-rebuild dry-run
 
-### Clean old generations/store data
+# Build and apply
+sudo nixos-rebuild switch
 
-```bash
-sudo nix-collect-garbage --delete-older-than 7d
+# With detailed output
+sudo nixos-rebuild switch -v
 ```
 
 ## Troubleshooting
 
-- **`nix: command not found`**: run commands on the NixOS host or inside a Nix-enabled shell.
-- **Yazi does not change directory after exit**: ensure shell is Zsh and `yy` function from `dotfiles/shell/zsh/zshrc.d/20-integrations.zsh` is loaded.
-- **Default app mismatch**: check desktop file IDs in `packages.nix -> defaults` and rebuild.
-- **Missing dotfile changes**: run `./scripts/sync-dotfiles pull` again to refresh target files.
+- **Packages not available**: Rebuild with `sudo nixos-rebuild switch`
+- **Dotfiles not syncing**: Run `./scripts/sync-config pull` and verify files exist
+- **Shell changes not taking effect**: Start a new shell or `exec zsh`
+- **Build fails**: Run with `--show-trace` and check error messages
+- **Need to rollback**: Use `sudo nixos-rebuild switch --rollback`
 
-## Validation checklist
+See [docs/MAINTENANCE.md](docs/MAINTENANCE.md) for more troubleshooting.
 
-```bash
-nix flake check --no-build
-nix fmt
-./scripts/rebuild --show-trace
-```
+## Reference Documentation
 
-## Changelog (overhaul)
+- [docs/SETUP.md](docs/SETUP.md) – Initial setup and first-time configuration
+- [docs/MAINTENANCE.md](docs/MAINTENANCE.md) – How to maintain and edit the config
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) – System design and philosophy
+- [scripts/README.md](scripts/README.md) – Sync script documentation
+- [dotfiles/README.md](dotfiles/README.md) – Dotfiles structure and workflow
 
-- Reorganized system modules by concern (desktop/services/performance/users).
-- Added `packages.nix` package catalogue + MIME/default app metadata.
-- Replaced Thunar with Dolphin + Yazi (including sync + shell integration).
-- Added no-extension workflow scripts: `rebuild`, `rollback`, `sync-dotfiles`.
-- Added performance audit and implementation notes in `OPTIMISATIONS.md`.
-
-## Reference docs
+## External References
 
 - NixOS manual: https://nixos.org/manual/nixos/stable/
 - Flakes wiki: https://nixos.wiki/wiki/Flakes
 - Home Manager manual: https://nix-community.github.io/home-manager/
-- XDG MIME docs (NixOS option reference): https://search.nixos.org/options
-- Yazi docs: https://yazi-rs.github.io/docs/
+- Nixpkgs search: https://search.nixos.org/packages

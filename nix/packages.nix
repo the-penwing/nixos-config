@@ -7,6 +7,10 @@
 { pkgs, lib }:
 let
   categories = {
+    # ========================================================================
+    # System Utilities
+    # Core tools: file, network, compression, utilities
+    # ========================================================================
     core = with pkgs; [
       cacert
       curl
@@ -26,6 +30,10 @@ let
       zip
     ];
 
+    # ========================================================================
+    # Terminal & CLI Tools
+    # Modern CLI utilities: file viewers, system monitors, file managers
+    # ========================================================================
     cli = with pkgs; [
       bat
       btop
@@ -41,6 +49,10 @@ let
       zoxide
     ];
 
+    # ========================================================================
+    # Development Tools
+    # Compilers, languages, LSPs, build tools, version managers, databases
+    # ========================================================================
     dev = with pkgs; [
       filezilla
       gcc
@@ -67,6 +79,10 @@ let
       xxd
     ];
 
+    # ========================================================================
+    # GUI Applications
+    # Desktop applications, terminals, media players, office tools
+    # ========================================================================
     gui = with pkgs; [
       aseprite
       bitwarden-desktop
@@ -88,6 +104,10 @@ let
       zathuraPkgs.zathura_pdf_poppler
     ];
 
+    # ========================================================================
+    # Desktop Environment
+    # Themes, cursors, desktop utilities, Wayland/Hyprland tools
+    # ========================================================================
     desktop = with pkgs; [
       bibata-cursors
       blueman
@@ -112,6 +132,10 @@ let
       wlr-randr
     ];
 
+    # ========================================================================
+    # Security & Networking
+    # Penetration testing, security tools, network analysis
+    # ========================================================================
     security = with pkgs; [
       chisel
       ffuf
@@ -132,6 +156,10 @@ let
       wireshark
     ];
 
+    # ========================================================================
+    # Media & Archives
+    # Video/audio processing, image tools, archive utilities
+    # ========================================================================
     media = with pkgs; [
       ffmpeg
       ffmpegthumbnailer
@@ -143,6 +171,10 @@ let
       unar
     ];
 
+    # ========================================================================
+    # Miscellaneous
+    # Editors, special tools, utilities that don't fit elsewhere
+    # ========================================================================
     misc = with pkgs; [
       bamf
       cmatrix
