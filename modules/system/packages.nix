@@ -1,11 +1,11 @@
 # System package wiring.
 #
 # Purpose:
-# - Pull all package categories from ../../packages.nix
+# - Pull all package categories from ../../nix/packages.nix
 # - Keep the package catalogue as a single source of truth
 { pkgs, lib, ... }:
 let
-  packageSet = import ../../packages.nix { inherit pkgs lib; };
+  packageSet = import ../../nix/packages.nix { inherit pkgs lib; };
 in
 {
   environment.systemPackages = packageSet.systemPackages;
