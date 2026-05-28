@@ -1,13 +1,13 @@
 # Desktop environment and default application behaviour.
 #
 # Dependencies:
-# - ../../packages.nix for MIME defaults and app desktop IDs
+# - ../../nix/packages.nix for MIME defaults and app desktop IDs
 #
 # Customisation notes:
 # - Keep default app handlers in packages.nix so package choices and handlers stay aligned.
 { pkgs, lib, ... }:
 let
-  packageSet = import ../../packages.nix { inherit pkgs lib; };
+  packageSet = import ../../nix/packages.nix { inherit pkgs lib; };
 in
 {
   services.xserver.enable = false;
