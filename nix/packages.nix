@@ -58,6 +58,7 @@ let
       gcc
       gnumake
       graphviz
+      act
       lua-language-server
       lua54Packages.lua
       lua54Packages.luacheck

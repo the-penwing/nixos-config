@@ -20,7 +20,7 @@ This doc summarizes the daily development and ethical-hacking tooling available 
 ### Dev workflow tools
 - Git + Lazygit
 - Neovim + Vim
-- Docker (socket-activated)
+- Podman (rootless, socket-activated) + act
 - Arduino CLI + IDE
 - Filezilla, lftp, samba clients (smbclient-ng)
 - lazysql, sqlitebrowser
