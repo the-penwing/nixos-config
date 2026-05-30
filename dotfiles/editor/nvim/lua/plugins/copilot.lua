@@ -5,8 +5,16 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     opts = {
+      nes = {
+        enabled = true,
+        keymap = {
+          accept_and_goto = "<M>a",
+          accept = false,
+          dismiss = "<Esc>",
+        },
+      },
       suggestion = {
-        enabled = false,
+        enabled = true,
         auto_trigger = true,
         debounce = 75,
         keymap = {
