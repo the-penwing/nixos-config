@@ -6,8 +6,10 @@
 { pkgs, ... }:
 
 {
+  users.groups.benvl = {};
   users.users.benvl = {
     isNormalUser = true;
+    group = "benvl";
     description = "Ben van Leeuwen";
     shell = pkgs.zsh;
     extraGroups = [
