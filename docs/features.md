@@ -54,7 +54,7 @@
 
 ## Developer tools
 - **Git** + **Lazygit** — version control
-- **Docker** + **libvirt/virt-manager** — containers and VMs
+- **Podman** + **act** + **libvirt/virt-manager** — containers, local CI, and VMs
 - **Node.js**, **Python 3**, **Rust** (rustup), **GCC** — language toolchains
 - **Lua tooling** — lua, lua-language-server, luacheck, stylua
 - **CLI utilities** — fzf, ripgrep, fd, bat, eza, jq, glow, tldr, etc.
