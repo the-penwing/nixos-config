@@ -13,7 +13,6 @@
     description = "Ben van Leeuwen";
     shell = pkgs.zsh;
     extraGroups = [
-      "docker"
       "input"
       "networkmanager"
       "plugdev"

@@ -10,7 +10,6 @@
   # Socket Activation Policy
   # ============================================================
   # Services listed below use systemd socket activation:
-  # - docker.socket (activates virtualisation.docker on first docker command)
   # - syncthing (explicitly not in boot targets — manual start only)
   # - printing (CUPS) — activates on first print job
   # - avahi — multicast DNS discovery on demand
@@ -69,6 +68,4 @@
   programs.zoxide.enable = true;
   programs.zsh.enable = true;
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableOnBoot = false;
 }
