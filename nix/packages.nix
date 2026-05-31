@@ -1,4 +1,4 @@
-# Package catalogue for nixos-t14s.
+# Package catalogue for nixos-p14s.
 #
 # Purpose:
 # - Keep package declarations in one place

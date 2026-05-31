@@ -56,10 +56,10 @@
       mkMicrobitShell = import ./lib/mkMicrobitShell.nix { inherit pkgs; };
     in
     {
-      nixosConfigurations."nixos-t14s" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/nixos-t14s/configuration.nix
+          ./hosts/nixos-p14s/configuration.nix
           solaar.nixosModules.default
           home-manager.nixosModules.home-manager
           {
