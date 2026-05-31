@@ -70,7 +70,6 @@
 
   programs.zsh = {
     enable = true;
-    shellInit = "autoload -Uz compinit && compinit";
   };
 
   virtualisation.podman = {
