@@ -1,4 +1,4 @@
-# Host entrypoint for nixos-t14s.
+# Host entrypoint for nixos-p14s.
 #
 # Dependencies:
 # - ../../modules/system (modular system config)

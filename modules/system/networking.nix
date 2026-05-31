@@ -1,4 +1,4 @@
-# Networking and locale defaults for nixos-t14s.
+# Networking and locale defaults for nixos-p14s.
 #
 # Security notes:
 # - Keep OpenSSH disabled (Tailscale SSH is preferred)
@@ -7,7 +7,7 @@
 
 {
   networking = {
-    hostName = "nixos-t14s";
+    hostName = "nixos-p14s";
     networkmanager.enable = true;
     firewall = {
       enable = true;

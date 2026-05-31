@@ -3,4 +3,4 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_DIR"
-sudo nixos-rebuild switch --flake .#nixos-t14s "$@"
+sudo nixos-rebuild switch --flake .#nixos-p14s "$@"
