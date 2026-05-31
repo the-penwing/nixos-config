@@ -67,7 +67,11 @@
   programs.nix-ld.enable = true;
   programs.thunderbird.enable = true;
   programs.zoxide.enable = true;
-  programs.zsh.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    shellInit = "autoload -Uz compinit && compinit";
+  };
 
   virtualisation.podman = {
     enable = true;
