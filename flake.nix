@@ -113,25 +113,6 @@
           '';
         };
 
-        microbit-python = mkMicrobitShell {
-          python = true;
-          rust = false;
-          shellMessage = "micro:bit MicroPython dev shell loaded";
-          includeVenvHint = true;
-        };
-
-        microbit-rust = mkMicrobitShell {
-          rust = true;
-          shellMessage = "micro:bit Rust dev shell loaded";
-        };
-
-        microbit = mkMicrobitShell {
-          python = true;
-          rust = true;
-          shellMessage = "micro:bit combined Python + Rust dev shell loaded";
-          includeVenvHint = true;
-        };
-
         bash-scripting = mkDevShell {
           buildInputs = with pkgs; [
             bashInteractive
