@@ -136,7 +136,6 @@
             "startcenter",
             "org.wireshark.Wireshark",
             "lftp",
-            "org.pulseaudio.pavucontrol",
             "cups",
             "oculante",
             "com.mitchellh.ghostty",
