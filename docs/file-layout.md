@@ -11,7 +11,7 @@ nixos-config/
     rebuild
     rollback
 
-  hosts/nixos-t14s/
+  hosts/nixos-p14s/
     configuration.nix
     hardware-configuration.nix
 

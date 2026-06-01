@@ -3,7 +3,7 @@
 ## Entry points
 
 - `flake.nix`: flake inputs, outputs, and dev shells.
-- `hosts/nixos-t14s/configuration.nix`: host-specific NixOS entry.
+- `hosts/nixos-p14s/configuration.nix`: host-specific NixOS entry.
 - `home.nix`: Home Manager entry for user-level config.
 
 ## System module graph

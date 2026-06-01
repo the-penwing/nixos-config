@@ -2,7 +2,7 @@
 
 ```bash
 # Full system rebuild (system + home)
-sudo nixos-rebuild switch --flake .#nixos-t14s
+sudo nixos-rebuild switch --flake .#nixos-p14s
 
 # Evaluate flake outputs without building
 nix flake check --no-build

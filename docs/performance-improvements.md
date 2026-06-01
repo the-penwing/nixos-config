@@ -5,7 +5,7 @@ This document tracks practical places to improve speed, responsiveness, and batt
 ## 1) Nix build/eval performance
 
 - **Pin and review heavy flake inputs regularly**: external flake inputs can increase evaluation time and closure size.
-- **Use targeted rebuilds while iterating**: prefer `nixos-rebuild test --flake .#nixos-t14s` for fast checks before full `switch`.
+- **Use targeted rebuilds while iterating**: prefer `nixos-rebuild test --flake .#nixos-p14s` for fast checks before full `switch`.
 - **Keep garbage collection tuned to usage**: current GC is aggressive (`--delete-older-than 2d`). If rollback churn is low, this is good for disk pressure; if churn grows, consider age+count hybrid retention.
 
 ## 2) Hyprland responsiveness
