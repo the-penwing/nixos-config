@@ -22,6 +22,7 @@ let
       jq
       ripgrep
       rsync
+      sd
       starship
       tree
       unzip
