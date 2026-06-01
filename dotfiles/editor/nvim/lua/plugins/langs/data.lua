@@ -1,4 +1,4 @@
--- lua/user/data_formats.lua
+-- lua/plugins/langs/data.lua
 return {
   {
     "williamboman/mason-lspconfig.nvim",
@@ -10,13 +10,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        jsonls = {
-          settings = {
-            json = {
-              schemas = vim.json.decode(vim.fn.readfile(vim.fn.expand "~/.config/nvim/schemas/json-schemas.json")),
-            },
-          },
-        },
+        jsonls = {},
         yamlls = {
           settings = {
             yaml = {
