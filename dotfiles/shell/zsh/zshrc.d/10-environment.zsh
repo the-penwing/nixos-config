@@ -34,5 +34,6 @@ FZF_DEFAULT_OPTS="--color=dark --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent"
 TIMEFMT=$'\nreal %*E\nuser %*U\nsys %*S\n'
 BAT_THEME="Dracula"
+DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
 
 set +a
