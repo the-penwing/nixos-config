@@ -132,7 +132,7 @@ sudo reboot
 nix profile history
 
 # Switch back to latest if needed
-sudo nixos-rebuild switch --flake .#nixos-t14s
+sudo nixos-rebuild switch --flake .#nixos-p14s
 ```
 
 ## Summary

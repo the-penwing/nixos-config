@@ -42,7 +42,7 @@ sudo nix-collect-garbage --delete-older-than 7d
 sudo nix-collect-garbage -d
 ```
 
-Settings are in `hosts/nixos-t14s/configuration.nix`:
+Settings are in `hosts/nixos-p14s/configuration.nix`:
 
 ```nix
 nix.gc = {
