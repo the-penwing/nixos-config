@@ -6,5 +6,7 @@
     rust-analyzer
     gcc
   ];
-  shellHook = "";
+  shellHook = ''
+    echo "Rust dev shell loaded"
+  '';
 }

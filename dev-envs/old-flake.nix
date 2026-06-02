@@ -33,7 +33,18 @@
     cherri.url = "github:electrikmilk/cherri";
   };
 
-  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, caelestia-shell, caelestia-cli, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      naviterm,
+      solaar,
+      cherri,
+      caelestia-shell,
+      caelestia-cli,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       overlays = import ./overlays/default.nix;
@@ -41,7 +52,7 @@
         inherit system overlays;
         config.allowUnfree = true;
       };
-      mkShell = import ./dev-envs/base-shell.nix { inherit pkgs; };
+      mkDevShell = import ./dev-envs/mkDevShell.nix { inherit pkgs; };
     in
     {
       nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
@@ -72,11 +83,64 @@
         ];
       };
 
-      devShells = let shells = (import ./dev-envs); in {
-        x86_64-linux = {
-          pawn-appetit = pkgs.mkShell (shells.pawn-appetit { inherit pkgs; });
-          bash-scripting = pkgs.mkShell (shells."bash-scripting" { inherit pkgs; });
-          rust = pkgs.mkShell (shells.rust { inherit pkgs; });
+      devShells.x86_64-linux = {
+        default = mkDevShell {
+          buildInputs = with pkgs; [
+            git
+            rsync
+          ];
+
+          shellHook = ''
+            echo "nixos-config shell loaded"
+          '';
+        };
+
+        pawn-appetit = mkDevShell {
+          buildInputs = with pkgs; [
+            cargo
+            rustc
+            pnpm
+            nodejs
+            pkg-config
+            gtk3
+            webkitgtk_4_1
+            libsoup_3
+          ];
+
+          shellHook = ''
+            echo "Pawn-Appetit dev shell loaded"
+          '';
+        };
+
+        bash-scripting = mkDevShell {
+          buildInputs = with pkgs; [
+            bashInteractive
+            bash-completion
+            shellcheck
+            shfmt
+            bats
+            jq
+            yq-go
+            bash-language-server
+          ];
+
+          shellHook = ''
+            eval "$(${pkgs.zoxide}/bin/zoxide init bash)"
+
+            alias cat='bat --paging=never'
+            alias ls='eza'
+            alias ll='eza --icons -l'
+            alias la='eza --icons -la'
+            alias grep='rg'
+            alias find='fd'
+            alias du='dust'
+            alias df='duf'
+            alias ps='btop'
+            alias cd='z'
+
+            echo "bash-scripting dev shell loaded"
+            echo "Tooling: shellcheck, shfmt, bats, bash-language-server"
+          '';
         };
       };
     };
