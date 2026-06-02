@@ -69,8 +69,6 @@ let
       pkg-config
       pyenv
       python3
-      rust-analyzer
-      rustup
       sqlite
       sqlitebrowser
       stylua
