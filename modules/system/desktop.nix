@@ -7,7 +7,7 @@
 # - Keep default app handlers in packages.nix so package choices and handlers stay aligned.
 { pkgs, lib, ... }:
 let
-  packageSet = import ../../nix/packages.nix { inherit pkgs lib; };
+  packageSet = import ./package-list.nix { inherit pkgs lib; };
 in
 {
   services.xserver.enable = false;
