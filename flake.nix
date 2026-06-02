@@ -74,10 +74,18 @@
 
       devShells = let shells = (import ./dev-envs); in {
         x86_64-linux = {
-          pawn-appetit = pkgs.mkShell (shells.pawn-appetit { inherit pkgs; });
-          bash-scripting = pkgs.mkShell (shells."bash-scripting" { inherit pkgs; });
-          rust = pkgs.mkShell (shells.rust { inherit pkgs; });
+          pawn-appetit = pkgs.mkShell {
+            buildInputs = [ shells.pawn-appetit.buildInputs ];
+            shellHook = [ shells.pawn-appetit.shellHook ];
+          };
+          bash-scripting = pkgs.mkShell {
+            buildInputs = [ shells.bash-scripting.buildInputs ];
+            shellHook = [ shells.bash-scripting.shellHook ];
+          };
+          rust = pkgs.mkShell {
+            buildInputs = [ shells.rust.buildInputs ];
+            shellHook = [ shells.rust.shellHook ];
+          };
         };
       };
-    };
 }
