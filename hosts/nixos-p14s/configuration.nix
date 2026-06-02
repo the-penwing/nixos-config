@@ -20,11 +20,16 @@
     automatic = true;
     dates = "*-*-* 10:00:00";
   };
+
   nix.gc = {
     automatic = true;
     dates = "*-*-* 10:00:00";
     options = "--delete-older-than 7d";
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
+  ];
 
   security.pki.certificateFiles = [ ./secrets/root.crt ];
 
