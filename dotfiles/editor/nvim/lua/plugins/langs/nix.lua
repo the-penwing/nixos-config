@@ -1,25 +1,9 @@
--- lua/user/nix.lua
+-- lua/plugins/langs/nix.lua
 return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { "nil_ls" },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        nil_ls = {
-          settings = {
-            nil_ls = {
-              formatting = {
-                command = { "nixpkgs-fmt" },
-              },
-            },
-          },
-        },
-      },
     },
   },
   {

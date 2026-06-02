@@ -7,25 +7,6 @@ return {
     },
   },
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        jsonls = {},
-        yamlls = {
-          settings = {
-            yaml = {
-              schemaStore = {
-                enable = true,
-                url = "https://www.schemastore.org/json/",
-              },
-            },
-          },
-        },
-        taplo = {},
-      },
-    },
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "json", "yaml", "toml" })

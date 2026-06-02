@@ -1,4 +1,11 @@
+-- lua/plugins/langs/markdown.lua
 return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "markdown" })
+    end,
+  },
   {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -11,9 +18,8 @@ return {
     dependencies = { "selimacerbas/live-server.nvim" },
     config = function()
       require("markdown_preview").setup {
-        -- all optional; sane defaults shown
-        instance_mode = "takeover", -- "takeover" (one tab) or "multi" (tab per instance)
-        port = 0, -- 0 = auto (8421 for takeover, OS-assigned for multi)
+        instance_mode = "takeover",
+        port = 0,
         open_browser = true,
         debounce_ms = 300,
       }
@@ -21,11 +27,13 @@ return {
   },
   {
     "jakewvincent/mkdnflow.nvim",
-    ft = { "markdown", "rmd" }, -- Add custom filetypes here if configured
-    config = function()
-      require("mkdnflow").setup {
-        -- Your config
-      }
-    end,
+    ft = { "markdown", "rmd" },
+    config = function() require("mkdnflow").setup {} end,
+  },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    opts = {
+      ensure_installed = { "markdownlint", "prettier" },
+    },
   },
 }

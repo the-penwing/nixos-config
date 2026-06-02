@@ -1,27 +1,9 @@
--- lua/user/python.lua
+-- lua/plugins/langs/python.lua
 return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "pylsp", "pyright" },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        pyright = {
-          settings = {
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                diagnosticMode = "workspace",
-                typeCheckingMode = "standard",
-              },
-            },
-          },
-        },
-      },
+      ensure_installed = { "pyright" },
     },
   },
   {

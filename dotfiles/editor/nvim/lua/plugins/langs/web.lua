@@ -1,35 +1,9 @@
--- lua/user/web.lua
+-- lua/plugins/langs/web.lua
 return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { "ts_ls", "html", "cssls", "tailwindcss" },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        ts_ls = {
-          settings = {
-            typescript = {
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayVariableTypeHints = true,
-              },
-            },
-          },
-        },
-        html = {},
-        cssls = {},
-        tailwindcss = {
-          settings = {
-            tailwindCSS = {
-              classAttributes = { "class", "className" },
-            },
-          },
-        },
-      },
     },
   },
   {

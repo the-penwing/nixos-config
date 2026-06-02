@@ -1,25 +1,9 @@
--- lua/user/shell.lua
+-- lua/plugins/langs/shell.lua
 return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { "bashls" },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        bashls = {
-          settings = {
-            bash = {
-              glob = {
-                follow = true,
-              },
-            },
-          },
-        },
-      },
     },
   },
   {
