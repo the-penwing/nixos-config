@@ -72,19 +72,19 @@
         ];
       };
 
-      devShells = let shells = (import ./dev-envs); in {
+      devShells = let shells = (import ./dev-envs { inherit pkgs; }); in {
         x86_64-linux = {
           pawn-appetit = mkShell {
-            buildInputs = [ shells.pawn-appetit.buildInputs ];
-            shellHook = [ shells.pawn-appetit.shellHook ];
+            buildInputs = shells.pawn-appetit.buildInputs;
+            shellHook = shells.pawn-appetit.shellHook;
           };
           bash-scripting = mkShell {
-            buildInputs = [ shells.bash-scripting.buildInputs ];
-            shellHook = [ shells.bash-scripting.shellHook ];
+            buildInputs = shells.bash-scripting.buildInputs;
+            shellHook = shells.bash-scripting.shellHook;
           };
           rust = mkShell {
-            buildInputs = [ shells.rust.buildInputs ];
-            shellHook = [ shells.rust.shellHook ];
+            buildInputs = shells.rust.buildInputs;
+            shellHook = shells.rust.shellHook;
           };
         };
       };
