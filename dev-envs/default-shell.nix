@@ -1,10 +1,29 @@
 { pkgs }:
 {
-  packages = with pkgs; [
+  buildInputs ? [ ],
+  shellHook ? "",
+  starshipConfig ? ../dotfiles/shell/starship.toml,
+}:
+
+let
+  commonInputs = with pkgs; [
     git
-    rsync
+    starship
+    fzf
+    ripgrep
+    fd
+    bat
+    eza
+    zoxide
   ];
+in
+
+pkgs.mkShell {
+  buildInputs = commonInputs ++ buildInputs;
+
   shellHook = ''
-    echo "nixos-config shell loaded"
+    ${shellHook}
+    export STARSHIP_CONFIG=${starshipConfig}
+    eval "$(${pkgs.starship}/bin/starship init bash)"
   '';
 }
