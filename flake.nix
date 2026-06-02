@@ -52,7 +52,7 @@
         inherit system overlays;
         config.allowUnfree = true;
       };
-      mkDevShell = import ./lib/mkDevShell.nix { inherit pkgs; };
+      mkDevShell = import ./dev-envs/mkDevShell.nix { inherit pkgs; };
     in
     {
       nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
