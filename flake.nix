@@ -53,7 +53,6 @@
         config.allowUnfree = true;
       };
       mkDevShell = import ./lib/mkDevShell.nix { inherit pkgs; };
-      mkMicrobitShell = import ./lib/mkMicrobitShell.nix { inherit pkgs; };
     in
     {
       nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
