@@ -140,7 +140,8 @@
             "oculante",
             "com.mitchellh.ghostty",
             "draw",
-            "base"
+            "base",
+            "yazi"
         ],
         "showOnHover": false,
         "useFuzzy": {
