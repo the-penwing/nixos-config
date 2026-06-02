@@ -1,27 +1,9 @@
--- lua/user/c_cpp.lua
+-- lua/plugins/langs/c_cpp.lua
 return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { "clangd" },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        clangd = {
-          capabilities = {
-            offsetEncoding = "utf-8",
-          },
-          cmd = {
-            "clangd",
-            "--background-index",
-            "--clang-tidy",
-            "--header-insertion=iwyu",
-          },
-        },
-      },
     },
   },
   {

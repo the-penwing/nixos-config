@@ -1,3 +1,4 @@
+-- lua/plugins/langs/csv.lua
 return {
   {
     "hat0uma/csvview.nvim",
