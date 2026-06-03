@@ -39,9 +39,4 @@
     [github.com]
     target=dev/github
   '';
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-curses; # Forces a TTY prompt that works safely in the background
-  };
 }
