@@ -9,20 +9,8 @@
 {
   home.packages = with pkgs; [
     lazygit
-    sassc
-    zsh-autosuggestions
-    zsh-syntax-highlighting
+    pass-git-helper
   ];
-
-  home.sessionPath = [
-    "$HOME/.npm-global/bin"
-    "$HOME/.cargo/bin"
-    "$HOME/.local/bin"
-  ];
-
-  programs.direnv = {
-    enable = true;
-  };
 
   programs.starship = {
     enable = true;
@@ -40,6 +28,20 @@
       identityFile = "~/.ssh/id_ed25519";
     };
   };
-
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    extraConfig = {
+      credential.helper = "!pass-git-helper $@";
+    };
+  };
+  # Define how Git hosts map to entries inside your password-store (~/.password-store/)
+  xdg.configFile."pass-git-helper/git-pass-mapping.ini".text = ''
+    [github.com]
+    target=dev/github
+  '';
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-curses; # Forces a TTY prompt that works safely in the background
+  };
 }
