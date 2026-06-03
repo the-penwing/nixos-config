@@ -30,7 +30,7 @@
   };
   programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       credential.helper = "!pass-git-helper $@";
     };
   };
