@@ -61,6 +61,7 @@ let
       gcc
       rustc
       cargo
+      clippy
       rust-analyzer
       gnumake
       graphviz
