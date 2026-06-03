@@ -61,6 +61,9 @@ let
       gcc
       gnumake
       graphviz
+      ghostty
+      copilot-language-server
+      github-copilot-cli
       act
       lua-language-server
       lua54Packages.lua
@@ -68,6 +71,7 @@ let
       lua54Packages.luarocks
       mermaid-cli
       nodejs
+      neovim
       pkg-config
       pyenv
       python3
@@ -75,14 +79,17 @@ let
       sqlitebrowser
       stylua
       tea
+      tmux
       uv
+      vim
       xxd
       zig
+      zellij
     ];
 
     # ========================================================================
     # GUI Applications
-    # Desktop applications, terminals, media players, office tools
+    # Desktop applications, media players, office tools
     # ========================================================================
     gui = with pkgs; [
       aseprite
@@ -90,7 +97,6 @@ let
       discord
       drawio
       feh
-      ghostty
       imagemagick
       kdePackages.dolphin
       kdePackages.dolphin-plugins
@@ -99,7 +105,6 @@ let
       oculante
       pavucontrol
       qutebrowser
-      tmux
       vlc
       zathura
       zathuraPkgs.zathura_pdf_poppler
@@ -174,20 +179,16 @@ let
 
     # ========================================================================
     # Miscellaneous
-    # Editors, special tools, utilities that don't fit elsewhere
+    # Special tools and utilities that don't fit elsewhere
     # ========================================================================
     misc = with pkgs; [
       bamf
       cmatrix
-      copilot-language-server
-      github-copilot-cli
       gucharmap
       ifuse
       libimobiledevice
       lftp
-      neovim
       usbutils
-      vim
       yed
     ];
   };
