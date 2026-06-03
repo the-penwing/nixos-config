@@ -15,6 +15,7 @@ declare -a SYNC_PAIRS=(
   "dotfiles/shell/zsh/.zshrc:~/.zshrc"
   "dotfiles/shell/zsh/zshrc.d:~/.config/zsh/zshrc.d"
   "dotfiles/shell/tmux/.tmux.conf:~/.tmux.conf"
+  "dotfiles/shell/zellij:~/.config/zellij"
   "dotfiles/shell/starship.toml:~/.config/starship.toml"
   "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
 )
