@@ -68,6 +68,12 @@
   programs.thunderbird.enable = true;
   programs.zoxide.enable = true;
 
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-curses; # Forces a TTY prompt that works safely in the background
+  };
+
   programs.zsh = {
     enable = true;
   };
