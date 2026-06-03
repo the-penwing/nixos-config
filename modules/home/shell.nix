@@ -34,9 +34,4 @@
       credential.helper = "!pass-git-helper $@";
     };
   };
-  # Define how Git hosts map to entries inside your password-store (~/.password-store/)
-  xdg.configFile."pass-git-helper/git-pass-mapping.ini".text = ''
-    [github.com]
-    target=dev/github
-  '';
 }
