@@ -19,9 +19,11 @@ let
       file
       fzf
       git
+      gnunpg
       jq
       ripgrep
       rsync
+      pass
       sd
       starship
       tree
