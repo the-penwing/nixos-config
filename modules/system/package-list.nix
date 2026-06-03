@@ -59,6 +59,9 @@ let
     dev = with pkgs; [
       filezilla
       gcc
+      rustc
+      cargo
+      rust-analyzer
       gnumake
       graphviz
       ghostty
