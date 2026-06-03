@@ -19,7 +19,7 @@ let
       file
       fzf
       git
-      gnunpg
+      gnupg
       jq
       ripgrep
       rsync
