@@ -1,21 +1,25 @@
--- lua/plugins/langs/python.lua
+-- lua/plugins/langs/rust.lua
 return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "pyright" },
+      ensure_installed = { "rust_analyzer" },
     },
   },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "python" })
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "rust" })
     end,
   },
   {
     "jay-babu/mason-null-ls.nvim",
     opts = {
-      ensure_installed = { "black", "isort", "pylint", "flake8" },
+      ensure_installed = { "rustfmt" },
     },
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    ft = { "rust" },
   },
 }
