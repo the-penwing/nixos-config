@@ -18,6 +18,7 @@ let
       fd
       file
       fzf
+      lazygit
       git
       gnupg
       jq
