@@ -35,40 +35,61 @@ Start here:
 
 ```
 nixos-config/
-├── flake.nix                    # Flake inputs/outputs + dev shells
-├── home.nix                     # Home-manager entrypoint
-├── nix/
-│   └── packages.nix            # Single source of truth for packages + defaults
+├── dev-envs/
+│   ├── base-shell.nix
+│   ├── bash-scripting.nix
+│   ├── default.nix
+│   ├── pawn-appetit.nix
+│   └── rust.nix
+├── docs/
+├── dotfiles/
+│   ├── apps/
+│   │   ├── btop/
+│   │   ├── fastfetch/
+│   │   ├── ghostty/
+│   │   └── yazi/
+│   ├── desktop/
+│   │   ├── caelestia/
+│   │   └── hyprland/
+│   ├── editor/
+│   │   └── nvim/
+│   ├── shell/
+│   │   ├── starship.toml
+│   │   ├── tmux/
+│   │   ├── zellij/
+│   │   └── zsh/
+│   │       └── zshrc.d/
+│   └── theme/
+│       └── gtk-3.0/
+├── flake.lock
+├── flake.nix
+├── home.nix
+├── hosts/
 ├── modules/
-│   ├── system/                 # System configuration modules
-│   │   ├── boot.nix           # Boot configuration
-│   │   ├── desktop.nix        # Desktop and services
-│   │   ├── hardware.nix       # Hardware settings
-│   │   ├── packages.nix       # Package wiring
-│   │   ├── services.nix       # System services
-│   │   └── ... (other modules)
-│   └── home/                   # User-level configuration (home-manager)
-│       ├── shell.nix          # Shell tools and environment
-│       └── desktop.nix        # User desktop settings
-├── scripts/
-│   ├── sync-config            # Sync dotfiles to/from home
-│   ├── rebuild                # Build and apply system config
-│   └── rollback               # Rollback to previous generation
-├── dotfiles/                   # Application configuration files
-│   ├── shell/zsh/             # Zsh configuration (split by concern)
-│   ├── editor/nvim/           # Neovim configuration
-│   ├── desktop/               # Desktop environment configs
-│   └── ... (other configs)
-├── docs/                       # Documentation
-│   ├── SETUP.md               # Setup guide
-│   ├── MAINTENANCE.md         # Maintenance and editing guide
-│   ├── ARCHITECTURE.md        # Design documentation
-│   └── ... (other docs)
-├── overlays/                   # Package overrides
-├── lib/                        # Nix utility functions
-└── hosts/                      # Machine-specific configurations
+│   ├── home/
+│   │   ├── default.nix
+│   │   ├── desktop.nix
+│   │   └── shell.nix
+│   └── system/
+│       ├── boot.nix
+│       ├── default.nix
+│       ├── desktop.nix
+│       ├── hardware.nix
+│       ├── input.nix
+│       ├── networking.nix
+│       ├── package-list.nix
+│       ├── packages.nix
+│       ├── performance.nix
+│       ├── services.nix
+│       └── users.nix
+├── overlays/
+│   └── default.nix
+├── README.md
+└── scripts/
+    ├── rebuild
+    ├── rollback
+    └── sync-dotfiles
 ```
-
 ## Package Management
 
 All packages are defined in `nix/packages.nix` with semantic grouping:
