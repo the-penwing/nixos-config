@@ -18,7 +18,6 @@ alias tree-no-docs='tree --gitignore -I "*.md" --prune'
 # ============================================================================
 # Aliases: Modern CLI Tool Replacements
 # ============================================================================
-# (interactive shell only — use \cmd to call the original)
 alias cat='bat'
 alias ls='eza'
 alias ll='eza --icons -l'

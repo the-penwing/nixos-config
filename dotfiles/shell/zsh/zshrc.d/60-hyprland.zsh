@@ -1,6 +1,4 @@
 # ============================================================================
-# Auto-start Hyprland
+# Auto-start Hyprland (must be last — exec terminates shell)
 # ============================================================================
-if [[ -z $WAYLAND_DISPLAY ]] && [[ $(tty) == /dev/tty1 ]]; then
-  exec start-hyprland
-fi
+[[ -z "$WAYLAND_DISPLAY" && "$(tty)" == "/dev/tty1" ]] && exec start-hyprland
