@@ -1,6 +1,6 @@
 # nixos-config
 
-Production-oriented NixOS + Home Manager configuration for **ThinkPad T14s Gen 2 (Ryzen 5 Pro)**.
+Production-oriented NixOS + Home Manager configuration for **ThinkPad P14s Gen 2 (Ryzen 5 Pro)**.
 
 ## Quick Start
 
