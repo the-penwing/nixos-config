@@ -23,4 +23,5 @@ secrets.nix
 *.log
 
 # Backup files
+*.bak*
 *.bak
