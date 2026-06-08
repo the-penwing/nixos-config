@@ -60,6 +60,7 @@ let
     dev = with pkgs; [
       filezilla
       gcc
+      clang
       rustc
       cargo
       clippy
@@ -74,15 +75,16 @@ let
       lua54Packages.lua
       lua54Packages.luacheck
       lua54Packages.luarocks
+      stylua
       mermaid-cli
       nodejs
       neovim
       pkg-config
       pyenv
       python3
+      black
       sqlite
       sqlitebrowser
-      stylua
       tea
       tmux
       uv
