@@ -11,6 +11,9 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,10 +36,21 @@
     cherri.url = "github:electrikmilk/cherri";
   };
 
-  outputs = { self, nixpkgs, home-manager, naviterm, solaar, cherri, caelestia-shell, caelestia-cli, ... }@inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , naviterm
+    , solaar
+    , cherri
+    , caelestia-shell
+    , caelestia-cli
+    , rust-overlay
+    , ...
+    }@inputs:
     let
       system = "x86_64-linux";
-      overlays = import ./overlays/default.nix;
+      overlays = (import ./overlays/default.nix) ++ [ rust-overlay.overlays.default ];
       pkgs = import nixpkgs {
         inherit system overlays;
         config.allowUnfree = true;
@@ -67,26 +81,37 @@
               cherri.packages.${system}.default
               caelestia-shell.packages.${system}.default
               caelestia-cli.packages.${system}.default
+              # Rust toolchain with rust-src for rust-analyzer
+              (pkgs.rust-bin.stable.latest.default.override {
+                extensions = [
+                  "rust-src"
+                  "rust-analyzer"
+                ];
+              })
             ];
           }
         ];
       };
 
-      devShells = let shells = (import ./dev-envs { inherit pkgs; }); in {
-        x86_64-linux = {
-          pawn-appetit = mkShell {
-            buildInputs = shells.pawn-appetit.buildInputs;
-            shellHook = shells.pawn-appetit.shellHook;
-          };
-          bash-scripting = mkShell {
-            buildInputs = shells.bash-scripting.buildInputs;
-            shellHook = shells.bash-scripting.shellHook;
-          };
-          rust = mkShell {
-            buildInputs = shells.rust.buildInputs;
-            shellHook = shells.rust.shellHook;
+      devShells =
+        let
+          shells = (import ./dev-envs { inherit pkgs; });
+        in
+        {
+          x86_64-linux = {
+            pawn-appetit = mkShell {
+              buildInputs = shells.pawn-appetit.buildInputs;
+              shellHook = shells.pawn-appetit.shellHook;
+            };
+            bash-scripting = mkShell {
+              buildInputs = shells.bash-scripting.buildInputs;
+              shellHook = shells.bash-scripting.shellHook;
+            };
+            rust = mkShell {
+              buildInputs = shells.rust.buildInputs;
+              shellHook = shells.rust.shellHook;
+            };
           };
         };
-      };
     };
 }
