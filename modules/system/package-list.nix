@@ -61,6 +61,8 @@ let
       filezilla
       gcc
       clang
+      clang-tools
+      libclang
       rustc
       cargo
       clippy
