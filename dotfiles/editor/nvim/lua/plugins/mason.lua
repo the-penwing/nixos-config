@@ -1,26 +1,37 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- Customize Mason
+-- lua/plugins/mason.lua
+-- Comprehensive Mason tool installer matching langs/ directory structure
 
 ---@type LazySpec
 return {
-  -- use mason-tool-installer for automatically installing Mason packages
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    -- overrides `require("mason-tool-installer").setup(...)`
     opts = {
-      -- Make sure to use the names found in `:Mason`
       ensure_installed = {
-        -- install language servers
+        -- Language Servers (these handle their own diagnostics)
         "lua-language-server",
+        "rust-analyzer",
+        "python-lsp-server",
+        "bash-language-server",
+        "marksman",
+        "clangd",
+        "rnix-lsp",
+        "html-lsp",
+        "typescript-language-server",
+        "yaml-language-server",
 
-        -- install formatters
+        -- Formatters only
         "stylua",
+        "black",
+        "shfmt",
+        "prettier",
+        "nixfmt",
+        "clang-format",
 
-        -- install debuggers
+        -- Debuggers
         "debugpy",
+        "codelldb",
 
-        -- install any other package
+        -- Tree-sitter
         "tree-sitter-cli",
       },
     },

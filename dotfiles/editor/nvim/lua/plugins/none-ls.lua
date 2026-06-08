@@ -8,6 +8,19 @@ return {
       nls.builtins.formatting.shfmt.with {
         args = { "-i", "2", "--case-indent" },
       },
+      -- Python
+      nls.builtins.formatting.black,
+      nls.builtins.diagnostics.pylint,
+      -- Lua
+      nls.builtins.diagnostics.selene,
+      -- Markdown
+      nls.builtins.diagnostics.markdownlint,
+      -- YAML
+      nls.builtins.diagnostics.yamllint,
+      -- JSON
+      nls.builtins.formatting.prettier.with {
+        filetypes = { "json" },
+      },
     })
   end,
 }
