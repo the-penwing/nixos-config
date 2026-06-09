@@ -76,6 +76,7 @@
         },
         "workspaces": {
             "activeIndicator": true,
+            "activeTrail": true,
             "maxWindowIcons": 5,
             "occupiedBg": true,
             "perMonitorWorkspaces": true,
@@ -152,6 +153,7 @@
     "services": {
         "audioIncrement": 0.05,
         "brightnessIncrement": 0.05,
+        "defaultPlayer": "naviterm",
         "smartScheme": false,
         "useTwelveHourClock": false
     },
