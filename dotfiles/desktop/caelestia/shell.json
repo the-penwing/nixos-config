@@ -1,163 +1,173 @@
 {
-  "appearance": {
-    "anim": {
-      "durations": {
-        "scale": 1
-      }
-    },
-    "font": {
-      "scale": 0.85
-    },
-    "padding": {
-      "scale": 0.6
-    },
-    "rounding": {
-      "scale": 1
-    },
-    "spacing": {
-      "scale": 0.85
-    },
-    "transparency": {
-      "base": 0.65,
-      "enabled": false,
-      "layers": 0.5
-    }
-  },
-  "background": {
-    "desktopClock": {
-      "background": {
-        "enabled": true
-      },
-      "enabled": true,
-      "invertColors": false,
-      "shadow": {
-        "enabled": false
-      }
-    },
-    "visualiser": {
-      "autoHide": true,
-      "enabled": true,
-      "rounding": 1
-    }
-  },
-  "bar": {
-    "activeWindow": {
-      "compact": false,
-      "inverted": false
-    },
-    "clock": {
-      "background": true,
-      "showDate": true,
-      "showIcon": true
-    },
-    "dragThreshold": 20,
-    "excludedScreens": [],
-    "persistent": true,
-    "scrollActions": {
-      "volume": true,
-      "workspaces": true
-    },
-    "showOnHover": true,
-    "status": {
-      "showAudio": true,
-      "showBattery": true,
-      "showBluetooth": true,
-      "showKbLayout": true,
-      "showLockStatus": false,
-      "showMicrophone": false,
-      "showNetwork": true,
-      "showWifi": true
-    },
-    "tray": {
-      "background": true,
-      "compact": false,
-      "recolour": false
-    },
-    "workspaces": {
-      "activeIndicator": true,
-      "maxWindowIcons": 5,
-      "occupiedBg": true,
-      "perMonitorWorkspaces": true,
-      "showWindows": true,
-      "shown": 5
-    }
-  },
-  "border": {
-    "rounding": 18,
-    "thickness": 8
-  },
-  "dashboard": {
-    "performance": {
-      "showGpu": true
-    }
-  },
-  "general": {
-    "apps": {
-      "audio": ["pavucontrol"],
-      "explorer": ["dolphin"],
-      "playback": ["mpv"],
-      "terminal": ["ghostty"]
-    }
-  },
-  "launcher": {
-    "enableDangerousActions": false,
-    "favouriteApps": [],
-    "hiddenApps": [
-      "nm-connection-editor",
-      "blueman-adapters",
-      "blueman-manager",
-      "btop",
-      "vim",
-      "syncthing-ui",
-      "nvim",
-      "micro",
-      "kvantummanager",
-      "gvim",
-      "nwg-look",
-      "qt6ct",
-      "bottom",
-      "nixos-manual",
-      "startcenter",
-      "org.wireshark.Wireshark",
-      "lftp",
-      "cups",
-      "oculante",
-      "com.mitchellh.ghostty",
-      "draw",
-      "base",
-      "yazi"
-    ],
-    "showOnHover": false,
-    "useFuzzy": {
-      "actions": true,
-      "apps": true,
-      "schemes": false,
-      "variants": false,
-      "wallpapers": false
-    }
-  },
-  "notifs": {
-    "openExpanded": false
-  },
-  "services": {
-    "audioIncrement": 0.05,
-    "brightnessIncrement": 0.05,
-    "smartScheme": false,
-    "useTwelveHourClock": false
-  },
-  "utilities": {
-    "toasts": {
-      "nowPlaying": true
-    },
-    "vpn": {
-      "provider": [
-        {
-          "displayName": "Tailscale",
-          "enabled": true,
-          "interface": "tailscale0",
-          "name": "tailscale"
+    "appearance": {
+        "anim": {
+            "durations": {
+                "scale": 1
+            }
+        },
+        "font": {
+            "scale": 0.85
+        },
+        "padding": {
+            "scale": 0.6
+        },
+        "rounding": {
+            "scale": 1
+        },
+        "spacing": {
+            "scale": 0.85
+        },
+        "transparency": {
+            "base": 0.65,
+            "enabled": false,
+            "layers": 0.5
         }
-      ]
+    },
+    "background": {
+        "desktopClock": {
+            "background": {
+                "enabled": true
+            },
+            "enabled": true,
+            "invertColors": false,
+            "shadow": {
+                "enabled": false
+            }
+        },
+        "visualiser": {
+            "autoHide": true,
+            "enabled": true,
+            "rounding": 1
+        }
+    },
+    "bar": {
+        "activeWindow": {
+            "compact": false,
+            "inverted": false
+        },
+        "clock": {
+            "background": true,
+            "showDate": true,
+            "showIcon": true
+        },
+        "dragThreshold": 20,
+        "excludedScreens": [
+        ],
+        "persistent": true,
+        "scrollActions": {
+            "volume": true,
+            "workspaces": true
+        },
+        "showOnHover": true,
+        "status": {
+            "showAudio": true,
+            "showBattery": true,
+            "showBluetooth": true,
+            "showKbLayout": true,
+            "showLockStatus": false,
+            "showMicrophone": false,
+            "showNetwork": true,
+            "showWifi": true
+        },
+        "tray": {
+            "background": true,
+            "compact": false,
+            "recolour": false
+        },
+        "workspaces": {
+            "activeIndicator": true,
+            "maxWindowIcons": 5,
+            "occupiedBg": true,
+            "perMonitorWorkspaces": true,
+            "showWindows": true,
+            "shown": 5
+        }
+    },
+    "border": {
+        "rounding": 18,
+        "thickness": 8
+    },
+    "dashboard": {
+        "performance": {
+            "showGpu": true
+        }
+    },
+    "general": {
+        "apps": {
+            "audio": [
+                "pavucontrol"
+            ],
+            "explorer": [
+                "dolphin"
+            ],
+            "playback": [
+                "mpv"
+            ],
+            "terminal": [
+                "ghostty"
+            ]
+        }
+    },
+    "launcher": {
+        "enableDangerousActions": false,
+        "favouriteApps": [
+        ],
+        "hiddenApps": [
+            "nm-connection-editor",
+            "blueman-adapters",
+            "blueman-manager",
+            "btop",
+            "vim",
+            "syncthing-ui",
+            "nvim",
+            "micro",
+            "kvantummanager",
+            "gvim",
+            "nwg-look",
+            "qt6ct",
+            "bottom",
+            "nixos-manual",
+            "startcenter",
+            "org.wireshark.Wireshark",
+            "lftp",
+            "cups",
+            "oculante",
+            "com.mitchellh.ghostty",
+            "draw",
+            "base",
+            "yazi"
+        ],
+        "showOnHover": false,
+        "useFuzzy": {
+            "actions": true,
+            "apps": true,
+            "schemes": false,
+            "variants": false,
+            "wallpapers": false
+        }
+    },
+    "notifs": {
+        "openExpanded": false
+    },
+    "services": {
+        "audioIncrement": 0.05,
+        "brightnessIncrement": 0.05,
+        "smartScheme": false,
+        "useTwelveHourClock": false
+    },
+    "utilities": {
+        "toasts": {
+            "nowPlaying": true
+        },
+        "vpn": {
+            "provider": [
+                {
+                    "displayName": "Tailscale",
+                    "enabled": true,
+                    "interface": "tailscale0",
+                    "name": "tailscale"
+                }
+            ]
+        }
     }
-  }
 }
