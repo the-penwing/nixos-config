@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-# Use -fuse-ld=lld to force the correct Clang linking engine
-exec zig cc -target i686-linux-musl -fuse-ld=lld "$@"
