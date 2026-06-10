@@ -92,6 +92,8 @@
                   "aarch64-unknown-linux-gnu" # gnu arm64 Linux - RPi
                   "aarch64-unknown-linux-musl" # musl arm64 - my Alpine RPi3B
                   "x86_64-pc-windows-gnu" # 64 bit windows
+                  "aarch64-apple-darwin"   # Apple Silicon
+                  "x86_64-apple-darwin"    # Intel Mac
                 ];
               })
             ];
