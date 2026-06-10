@@ -30,15 +30,3 @@ alias ps='btop'
 alias cd='z'
 alias cdi='zi'
 alias fm='yy'
-
-# ============================================================================
-# Aliases: Zig Linkers
-# ============================================================================
-alias zig-linker-i686-musl='~/nixos-config/scripts/zig-linker-i686-musl'
-alias zig-linker-aarch64-musl='~/nixos-config/scripts/zig-linker-aarch64-musl'
-alias zig-linker-aarch64-gnu='~/nixos-config/scripts/zig-linker-aarch64-gnu'
-alias zig-linker-aarch64-macos='~/nixos-config/scripts/zig-linker-aarch64-macos'
-alias zig-linker-x86_64-macos='~/nixos-config/scripts/zig-linker-x86_64-macos'
-alias zig-linker-x86_64-windows='~/nixos-config/scripts/zig-linker-x86_64-windows'
-alias zig-linker-x86_64-gnu='~/nixos-config/scripts/zig-linker-x86_64-gnu'
-alias zig-linker-x86_64-musl='~/nixos-config/scripts/zig-linker-x86_64-musl'

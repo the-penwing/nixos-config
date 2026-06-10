@@ -65,6 +65,7 @@ let
       libclang
       rustc
       cargo
+      cargo-zigbuild
       clippy
       rust-analyzer
       gnumake
