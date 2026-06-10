@@ -34,3 +34,9 @@ export CARGO_TARGET_AARCH64_APPLE_DARWIN_LINKER="zig-linker-aarch64-macos"
 # x86_64 macOS (Intel)
 export CARGO_TARGET_X86_64_APPLE_DARWIN_LINKER="zig-linker-x86_64-macos"
 
+# x86_64 Linux (Standard glibc)
+export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER="zig-linker-x86_64-gnu"
+
+# x86_64 Linux (Static musl)
+export CARGO_TARGET_X86_64_UNKNOWN_LINUX_MUSL_LINKER="zig-linker-x86_64-musl"
+
