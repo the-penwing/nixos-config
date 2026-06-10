@@ -88,12 +88,17 @@
                   "rust-analyzer"
                 ];
                 targets = [
-                  "i686-unknown-linux-musl" # x86 linux musl - iSH shell
-                  "aarch64-unknown-linux-gnu" # gnu arm64 Linux - RPi
-                  "aarch64-unknown-linux-musl" # musl arm64 - my Alpine RPi3B
-                  "x86_64-pc-windows-gnu" # 64 bit windows
-                  "aarch64-apple-darwin"   # Apple Silicon
-                  "x86_64-apple-darwin"    # Intel Mac
+                  # --- Personal Deployment Targets ---
+                  "i686-unknown-linux-musl"     # iSH Shell
+                  "aarch64-unknown-linux-gnu"   # Raspberry Pi (Standard)
+                  "aarch64-unknown-linux-musl"  # Raspberry Pi (Alpine)
+
+                  # --- Common Desktop Targets ---
+                  "x86_64-pc-windows-gnu"       # Windows 64-bit
+                  "aarch64-apple-darwin"        # Apple Silicon Mac
+                  "x86_64-apple-darwin"         # Intel Mac
+                  "x86_64-unknown-linux-gnu"    # Standard Desktop Linux (glibc)
+                  "x86_64-unknown-linux-musl"   # Static Desktop Linux (musl)
                 ];
               })
             ];
