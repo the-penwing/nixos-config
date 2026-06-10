@@ -17,17 +17,13 @@ export BAT_THEME="Dracula"
 export DOCKER_HOST="unix:///run/user/1000/podman/podman.sock"
 
 # i686 Musl Linux (iSH)
-export CARGO_TARGET_I686_UNKNOWN_LINUX_MUSL_LINKER="zig"
-export CARGO_TARGET_I686_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-C link-arg=cc -C link-arg=-target -C link-arg=i686-linux-musl"
+export CARGO_TARGET_I686_UNKNOWN_LINUX_MUSL_LINKER="zig-linker-i686-musl"
 
 # aarch64 GNU Linux (RPi)
-export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER="zig"
-export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_RUSTFLAGS="-C link-arg=cc -C link-arg=-target -C link-arg=aarch64-linux-gnu"
+export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER="zig-linker-aarch64-gnu"
 
 # aarch64 Musl Linux (Alpine RPi)
-export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_LINKER="zig"
-export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-C link-arg=cc -C link-arg=-target -C link-arg=aarch64-linux-musl"
+export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_LINKER="zig-linker-aarch64-musl"
 
 # x86_64 Windows GNU
-export CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER="zig"
-export CARGO_TARGET_X86_64_PC_WINDOWS_GNU_RUSTFLAGS="-C link-arg=cc -C link-arg=-target -C link-arg=x86_64-windows-gnu"
+export CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER="zig-linker-x86_64-windows"
