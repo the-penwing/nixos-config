@@ -27,3 +27,10 @@ export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_LINKER="zig-linker-aarch64-musl"
 
 # x86_64 Windows GNU
 export CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER="zig-linker-x86_64-windows"
+
+# aarch64 macOS (Apple Silicon)
+export CARGO_TARGET_AARCH64_APPLE_DARWIN_LINKER="zig-linker-aarch64-macos"
+
+# x86_64 macOS (Intel)
+export CARGO_TARGET_X86_64_APPLE_DARWIN_LINKER="zig-linker-x86_64-macos"
+
