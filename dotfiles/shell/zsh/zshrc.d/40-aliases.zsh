@@ -14,6 +14,8 @@ alias python='python3.14'
 alias pip='uv pip'
 alias evil-winrm='evil-winrm-py'
 alias tree-no-docs='tree --gitignore -I "*.md" --prune'
+alias czb='cargo zigbuild'
+alias czbr='cargo zigbuild --release'
 
 # ============================================================================
 # Aliases: Modern CLI Tool Replacements
