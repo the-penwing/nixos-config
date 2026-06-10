@@ -17,6 +17,8 @@
         { from = 47900; to = 48000; }
       ];
     };
+    nameservers = [ "192.168.50.117" "1.1.1.1" ];
+    search = [ "homelab" ];
   };
 
   services.openssh.enable = false;
