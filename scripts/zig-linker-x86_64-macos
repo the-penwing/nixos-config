@@ -1,0 +1,2 @@
+#!/bin/sh
+exec zig cc -target x86_64-macos --sysroot /home/benvl/dev/resources/SDKs/MacOSX26.1.sdk "$@"
