@@ -87,6 +87,12 @@
                   "rust-src"
                   "rust-analyzer"
                 ];
+                targets = [
+                  "i686-unknown-linux-musl" # x86 linux musl - iSH shell
+                  "aarch64-unknown-linux-gnu" # gnu arm64 Linux - RPi
+                  "aarch64-unknown-linux-musl" # musl arm64 - my Alpine RPi3B
+                  "x86_64-pc-windows-gnu" # 64 bit windows
+                ];
               })
             ];
           }
