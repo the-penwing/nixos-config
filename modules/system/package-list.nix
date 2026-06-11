@@ -199,6 +199,7 @@ let
       libimobiledevice
       lftp
       usbutils
+      rclone
       yed
     ];
   };
