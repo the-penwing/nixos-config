@@ -38,7 +38,7 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
-  systemd.services.rclone-mount = {
+systemd.services.rclone-mount = {
     description = "Auto Mount Rclone iCloud Drive";
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
@@ -48,17 +48,25 @@
       Type = "simple";
 
       ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p /home/benvl/icloud/";
-      ExecStart = "${pkgs.rclone}/bin/rclone mount iCloud:my-files/ /home/benvl/icloud/ --file-perms=0777 --vfs-cache-mode=full --umask=0000 --allow-other";
-      ExecStop = "${pkgs.fuse}/bin/fusermount -uz /home/benvl/icloud/";
+      ExecStart = "${pkgs.rclone}/bin/rclone mount iCloud:my-files/ /home/benvl/icloud/ --file-perms=0777 --vfs-cache-mode=full --umask=0000";
+      ExecStopPost = "${pkgs.bash}/bin/bash -c '${pkgs.fuse3}/bin/fusermount3 -uz /home/benvl/icloud/ 2>/dev/null; ${pkgs.coreutils}/bin/rm -rf /home/benvl/icloud/'";
 
       Restart = "on-failure";
       RestartSec = "10s";
       User = "benvl";
       Group = "benvl";
 
-      Enviroment = [ "PATH=/run/wrappers/bin/:$PATH"];
+      Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
+      
+      # Allow FUSE operations
+      PrivateDevices = false;
+      PrivateTmp = false;
+      
+      # Optional: add systemd hardening if needed later
+      # NoNewPrivileges = false;
     };
   };
+
   services.usbmuxd = {
     enable = true;
     package = pkgs.usbmuxd2;

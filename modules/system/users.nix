@@ -19,6 +19,7 @@
       "plocate"
       "video"
       "wheel"
+      "fuse"
     ];
   };
 }
