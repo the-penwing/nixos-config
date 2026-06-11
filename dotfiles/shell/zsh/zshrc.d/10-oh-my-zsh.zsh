@@ -12,6 +12,7 @@ plugins=(
     fzf-tab
     zsh-autosuggestions
     zsh-syntax-highlighting
+    rust
 )
 
 source $ZSH/oh-my-zsh.sh

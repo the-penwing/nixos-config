@@ -19,3 +19,5 @@ yy() {
   fi
   rm -f "$tmp"
 }
+
+compdef _cargo cargo-zigbuild
