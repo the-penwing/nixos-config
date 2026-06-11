@@ -9,4 +9,5 @@ return {
       { "<leader>z", "<cmd>lua require('undotree').toggle()<cr>" },
     },
   },
+  { import = "astrocommunity.color.transparent-nvim" },
 }

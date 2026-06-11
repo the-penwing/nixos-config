@@ -1,30 +1,9 @@
 # ============================================================
-# GHOSTTY — GRUVBOX SOFT DARK
+# GHOSTTY — Dracula
 # ============================================================
 
 # Theme - Dracula
-palette = 0=#282a36
-palette = 1=#ff5555
-palette = 2=#50fa7b
-palette = 3=#f1fa8c
-palette = 4=#bd93f9
-palette = 5=#ff79c6
-palette = 6=#8be9fd
-palette = 7=#f8f8f2
-palette = 8=#6272a4
-palette = 9=#ff6e6e
-palette = 10=#69ff94
-palette = 11=#ffffa5
-palette = 12=#d6acff
-palette = 13=#ff92df
-palette = 14=#a4ffff
-palette = 15=#ffffff
-
-background = 282a36
-foreground = f8f8f2
-cursor-color = bd93f9
-selection-background = 44475a
-selection-foreground = f8f8f2
+theme = Dracula
 
 # Font
 # font-family = 0xProto Nerd Font
@@ -39,7 +18,7 @@ adjust-cell-height = 3
 window-padding-x = 12
 window-padding-y = 10
 window-decoration = none
-background-opacity = 0.94
+background-opacity = 0.85
 window-save-state = always
 
 # Behaviour

@@ -19,7 +19,7 @@
         },
         "transparency": {
             "base": 0.65,
-            "enabled": false,
+            "enabled": true,
             "layers": 0.5
         }
     },
@@ -154,8 +154,11 @@
         "audioIncrement": 0.05,
         "brightnessIncrement": 0.05,
         "defaultPlayer": "naviterm",
+        "gpuType": "",
+        "lyricsBackend": "LyricsBackend::Auto",
         "smartScheme": false,
-        "useTwelveHourClock": false
+        "useTwelveHourClock": false,
+        "visualiserBars": 60
     },
     "utilities": {
         "toasts": {
