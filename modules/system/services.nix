@@ -38,6 +38,27 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
+  systemd.services.rclone-mount = {
+    description = "Auto Mount Rclone iCloud Drive";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network-online.target" ];
+    requires = [ "network-online.target" ];
+
+    serviceConfig = {
+      Type = "simple";
+
+      ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p /home/benvl/icloud/";
+      ExecStart = "${pkgs.rclone}/bin/rclone mount iCloud:my-files/ /home/benvl/icloud/ --file-perms=0777 --vfs-cache-mode=full --umask=0000 --allow-other";
+      ExecStop = "${pkgs.fuse}/bin/fusermount -uz /home/benvl/icloud/";
+
+      Restart = "on-failure";
+      RestartSec = "10s";
+      User = "benvl";
+      Group = "benvl";
+
+      Enviroment = [ "PATH=/run/wrappers/bin/:$PATH"];
+    };
+  };
   services.usbmuxd = {
     enable = true;
     package = pkgs.usbmuxd2;
