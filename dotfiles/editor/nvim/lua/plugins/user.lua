@@ -10,4 +10,7 @@ return {
     },
   },
   { import = "astrocommunity.color.transparent-nvim" },
+  {
+    "editorconfig/editorconfig-vim",
+  },
 }
