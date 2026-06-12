@@ -156,7 +156,7 @@ let
       chisel
       ffuf
       gobuster
-      hashcat
+      john
       inetutils
       metasploit
       netcat
@@ -201,6 +201,7 @@ let
       usbutils
       rclone
       yed
+      speedtest-cli
     ];
   };
 in
