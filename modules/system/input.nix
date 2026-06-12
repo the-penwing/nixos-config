@@ -34,6 +34,12 @@
   #   Terminal:    C=^C  D=^D  Z=^Z  L=^L  U=^U  A=^A  E=^E  K=^K  W=^W
   #   Session:     Q → Super+R which Hyprland binds to Caelestia launcher
   # ============================================================
+  environment.etc."keymaps/disable-alt-arrows.map".text = ''
+    alt keycode 105 = nul
+    alt keycode 106 = nul
+  '';
+  console.keyMap = "disable-alt-arrows";
+
   services.keyd = {
     enable = true;
     keyboards = {
