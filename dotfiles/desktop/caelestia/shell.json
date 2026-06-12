@@ -18,7 +18,7 @@
             "scale": 0.85
         },
         "transparency": {
-            "base": 0.65,
+            "base": 0.85,
             "enabled": true,
             "layers": 0.5
         }
@@ -26,12 +26,14 @@
     "background": {
         "desktopClock": {
             "background": {
-                "enabled": true
+                "enabled": true,
+                "opacity": 0.35
             },
             "enabled": true,
             "invertColors": false,
+            "position": "bottom-right",
             "shadow": {
-                "enabled": false
+                "enabled": true
             }
         },
         "visualiser": {
