@@ -3,7 +3,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "ts_ls", "html", "cssls", "tailwindcss" },
+      ensure_installed = { "typescript-language-server", "html-lsp", "css-lsp", "tailwindcss-language-server" },
     },
   },
   {
@@ -11,7 +11,7 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(
         opts.ensure_installed,
-        { "html", "css", "javascript", "typescript", "tsx" }
+        { "html-lsp", "css", "javascript", "typescript", "tsx" }
       )
     end,
   },
@@ -20,5 +20,14 @@ return {
     opts = {
       ensure_installed = { "prettier", "eslint_d" },
     },
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(
+        opts.ensure_installed,
+        { "typescript-language-server", "html-lsp", "css-lsp", "tailwindcss-language-server", "prettier", "eslint_d" }
+      )
+    end,
   },
 }

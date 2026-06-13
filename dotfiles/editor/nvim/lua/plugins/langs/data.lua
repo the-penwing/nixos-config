@@ -3,7 +3,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "jsonls", "yamlls", "taplo" },
+      ensure_installed = { "json-lsp", "yaml-language-server", "taplo" },
     },
   },
   {
@@ -17,5 +17,14 @@ return {
     opts = {
       ensure_installed = { "prettier", "yamllint" },
     },
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(
+        opts.ensure_installed,
+        { "json-lsp", "yaml-language-server", "taplo", "prettier", "yamllint" }
+      )
+    end,
   },
 }
