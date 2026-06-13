@@ -137,6 +137,7 @@ let
       dracula-theme
       grim
       hyprpolkitagent
+      fuzzel
       nwg-look
       pamixer
       playerctl
