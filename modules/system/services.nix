@@ -54,7 +54,7 @@ systemd.services.rclone-mount = {
       Type = "simple";
 
       ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p /home/benvl/icloud/";
-      ExecStart = "${pkgs.rclone}/bin/rclone mount iCloud:my-files/ /home/benvl/icloud/ --file-perms=0777 --vfs-cache-mode=full --umask=0000";
+      ExecStart = "${pkgs.rclone}/bin/rclone mount iCloud:my-files/ /home/benvl/icloud/ --file-perms=0777 --vfs-cache-mode=full --umask=0000 --dir-cache-time=1m --attr-timeout 1m";
       ExecStopPost = "${pkgs.bash}/bin/bash -c '${pkgs.fuse3}/bin/fusermount3 -uz /home/benvl/icloud/ 2>/dev/null; ${pkgs.coreutils}/bin/rm -rf /home/benvl/icloud/'";
 
       Restart = "on-failure";
