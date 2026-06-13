@@ -28,6 +28,8 @@ let
       sd
       starship
       tree
+      man-pages
+      man-pages-posix
       unzip
       wget
       xdg-utils
