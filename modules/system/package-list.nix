@@ -77,9 +77,9 @@ let
       github-copilot-cli
       act
       lua-language-server
-      lua54Packages.lua
-      lua54Packages.luacheck
-      lua54Packages.luarocks
+      lua55Packages.lua
+      lua55Packages.luacheck
+      lua55Packages.luarocks
       stylua
       selene
       mermaid-cli
