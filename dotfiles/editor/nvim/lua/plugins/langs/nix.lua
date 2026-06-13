@@ -3,7 +3,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "nil_ls" },
+      ensure_installed = { "nil" },
     },
   },
   {
@@ -15,7 +15,13 @@ return {
   {
     "jay-babu/mason-null-ls.nvim",
     opts = {
-      ensure_installed = { "nixpkgs-fmt", "statix" },
+      ensure_installed = { "nixpkgs-fmt" },
     },
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "nil", "nixpkgs-fmt" })
+    end,
   },
 }
