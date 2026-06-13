@@ -81,6 +81,7 @@ let
       lua54Packages.luacheck
       lua54Packages.luarocks
       stylua
+      selene
       mermaid-cli
       nodejs
       neovim
