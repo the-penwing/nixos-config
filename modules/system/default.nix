@@ -9,6 +9,7 @@
   imports = [
     ./boot.nix
     ./desktop.nix
+    ./env-vars.nix
     ./hardware.nix
     ./input.nix
     ./networking.nix
