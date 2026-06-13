@@ -182,7 +182,6 @@ let
     media = with pkgs; [
       ffmpeg
       ffmpegthumbnailer
-      kdePackages.kdenlive
       libheif
       mediainfo
       poppler-utils

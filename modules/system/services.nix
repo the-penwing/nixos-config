@@ -44,7 +44,7 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
-systemd.services.rclone-mount = {
+  systemd.services.rclone-mount = {
     description = "Auto Mount Rclone iCloud Drive";
     wantedBy = [ "multi-user.target" ];
     after = [ "network-online.target" ];
@@ -63,11 +63,11 @@ systemd.services.rclone-mount = {
       Group = "benvl";
 
       Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
-      
+
       # Allow FUSE operations
       PrivateDevices = false;
       PrivateTmp = false;
-      
+
       # Optional: add systemd hardening if needed later
       # NoNewPrivileges = false;
     };
@@ -97,6 +97,7 @@ systemd.services.rclone-mount = {
     enable = true;
     package = pkgs.plocate;
   };
+  services.flatpak.enable = true;
 
   programs.firefox.enable = true;
   programs.nix-ld.enable = true;
