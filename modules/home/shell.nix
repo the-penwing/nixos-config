@@ -35,6 +35,7 @@
     clock24 = true;
     mouse = true;
     historyLimit = 20000;
+    terminal = "tmux-256color";
 
     plugins = with pkgs; [
       tmuxPlugins.cpu
