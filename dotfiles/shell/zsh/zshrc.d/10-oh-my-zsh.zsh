@@ -13,6 +13,7 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     rust
+    zsh-cargo-completion
 )
 
 source $ZSH/oh-my-zsh.sh

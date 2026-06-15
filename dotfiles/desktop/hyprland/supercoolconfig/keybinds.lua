@@ -34,11 +34,21 @@ local core_binds = {
 		key = "F",
 		dispatcher = hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }),
 	},
-	{ mods = mainMod, key = "V", dispatcher = hl.dsp.window.float({ action = "toggle" }) },
-	{ mods = "CTRL + SHIFT", key = "L", dispatcher = hl.dsp.exec_cmd(lockscreen) },
+	{ mods = mainMod, key = "SHIFT + V", dispatcher = hl.dsp.window.float({ action = "toggle" }) },
+	{ mods = mainMod, key = "ALT + L", dispatcher = hl.dsp.exec_cmd(lockscreen) },
 }
 
 for _, item in ipairs(core_binds) do
+	bind(item.mods, item.key, item.dispatcher, item.opts)
+end
+
+local clipboard_binds = {
+	{ mods = mainMod, key = "V", dispatcher = hl.dsp.exec_cmd("caelestia clipboard") },
+	{ mods = mainMod, key = "ALT + V", dispatcher = hl.dsp.exec_cmd("caelestia clipboard -d") },
+	{ mods = mainMod, key = "Period", dispatcher = hl.dsp.exec_cmd("caelestia emoji -p") },
+}
+
+for _, item in ipairs(clipboard_binds) do
 	bind(item.mods, item.key, item.dispatcher, item.opts)
 end
 
