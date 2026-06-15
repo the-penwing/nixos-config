@@ -34,12 +34,6 @@
   #   Terminal:    C=^C  D=^D  Z=^Z  L=^L  U=^U  A=^A  E=^E  K=^K  W=^W
   #   Session:     Q → Super+R which Hyprland binds to Caelestia launcher
   # ============================================================
-  environment.etc."keymaps/disable-alt-arrows.map".text = ''
-    alt keycode 105 = nul
-    alt keycode 106 = nul
-  '';
-  console.keyMap = "disable-alt-arrows";
-
   services.keyd = {
     enable = true;
     keyboards = {
@@ -50,12 +44,6 @@
           main = {
             # Caps Lock: tap = Escape, hold = caps lock layer
             capslock = "overload(capslock, esc)";
-
-            # Universal edits — remapped before Hyprland sees them,
-            # so they work in any focused app (terminal, browser, etc.)
-            "super+z" = "C-z";   # Undo
-            "super+x" = "C-x";   # Cut
-            "super+a" = "C-a";   # Select all
           };
 
           # ── Caps Lock held layer ──────────────────────────────
@@ -75,15 +63,15 @@
             down = "brightnessdown";
 
             # Terminal shortcuts
-            c = "C-c";   # Interrupt
-            d = "C-d";   # EOF / logout shell
-            z = "C-z";   # Suspend process
-            l = "C-l";   # Clear screen
-            u = "C-u";   # Clear line
-            a = "C-a";   # Jump to start of line
-            e = "C-e";   # Jump to end of line
-            k = "C-k";   # Delete to end of line
-            w = "C-w";   # Delete word back
+            c = "C-c"; # Interrupt
+            d = "C-d"; # EOF / logout shell
+            z = "C-z"; # Suspend process
+            l = "C-l"; # Clear screen
+            u = "C-u"; # Clear line
+            a = "C-a"; # Jump to start of line
+            e = "C-e"; # Jump to end of line
+            k = "C-k"; # Delete to end of line
+            w = "C-w"; # Delete word back
 
             # Session launcher — sends Super+R which Hyprland maps to Caelestia launcher
             q = "M-r";
