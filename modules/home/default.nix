@@ -7,6 +7,7 @@
 {
   imports = [
     ./shell.nix
+    ./tmux.nix
     ./desktop.nix
   ];
 }
