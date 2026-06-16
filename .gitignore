@@ -13,6 +13,7 @@ result-*
 *.swo
 *~
 .DS_Store
+.luarc.json
 
 # Secrets/sensitive files (if you add any)
 secrets.nix
