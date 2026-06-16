@@ -20,15 +20,11 @@ alias czbr='cargo zigbuild --release'
 # ============================================================================
 # Aliases: Modern CLI Tool Replacements
 # ============================================================================
-alias cat='bat'
 alias ls='eza'
 alias ll='eza --icons -l'
 alias la='eza --icons -la'
-alias grep='rg'
-alias find='fd'
 alias du='dust'
 alias df='duf'
-alias ps='btop'
 alias cd='z'
 alias cdi='zi'
 alias fm='yy'
