@@ -10,6 +10,9 @@
   home.packages = with pkgs; [
     lazygit
     pass-git-helper
+    (writeShellScriptBin "harpoon" ''
+      exec ${pkgs.tmuxPlugins.harpoon}/share/tmux-plugins/harpoon/harpoon "$@"
+    '')
   ];
 
   programs.starship = {
