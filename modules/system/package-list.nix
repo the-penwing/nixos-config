@@ -21,6 +21,7 @@ let
       lazygit
       git
       gnupg
+      openssl
       jq
       ripgrep
       rsync
@@ -65,6 +66,8 @@ let
       clang
       clang-tools
       libclang
+      osslsigncode
+      nsis
       rustc
       cargo
       cargo-zigbuild
@@ -166,8 +169,6 @@ let
       netcat
       nmap
       openvpn
-      openssl
-      osslsigncode
       rustscan
       samba
       smbclient-ng
