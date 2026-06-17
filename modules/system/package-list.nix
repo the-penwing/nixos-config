@@ -167,6 +167,7 @@ let
       nmap
       openvpn
       openssl
+      osslsigncode
       rustscan
       samba
       smbclient-ng
