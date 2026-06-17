@@ -216,8 +216,6 @@ rec {
 
   fonts = with pkgs; [
     cantarell-fonts
-    nerd-fonts._0xproto
-    nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     nerd-fonts.meslo-lg
   ];
