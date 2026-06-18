@@ -135,6 +135,7 @@ let
       blueman
       brightnessctl
       cliphist
+      ddcutil
       dracula-icon-theme
       dracula-qt5-theme
       dracula-theme
@@ -160,11 +161,13 @@ let
     # Penetration testing, security tools, network analysis
     # ========================================================================
     security = with pkgs; [
+      aircrack-ng
       chisel
       ffuf
       gobuster
       john
       inetutils
+      iw
       metasploit
       netcat
       nmap
