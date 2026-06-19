@@ -6,6 +6,7 @@ local modules = {
 	"supercoolconfig/gestures",
 	"supercoolconfig/keybinds",
 	"supercoolconfig/window-rules",
+	"supercoolconfig/kando",
 }
 
 for _, module in ipairs(modules) do

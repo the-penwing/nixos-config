@@ -143,6 +143,7 @@ let
       hyprpolkitagent
       fuzzel
       nwg-look
+      kando
       pamixer
       playerctl
       polkit_gnome
@@ -161,6 +162,8 @@ let
     # Penetration testing, security tools, network analysis
     # ========================================================================
     security = with pkgs; [
+      hcxtools
+      hashcat
       aircrack-ng
       chisel
       ffuf
