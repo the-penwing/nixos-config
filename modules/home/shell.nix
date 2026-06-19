@@ -30,6 +30,24 @@
       addKeysToAgent = "yes";
       identityFile = "~/.ssh/id_ed25519";
     };
+    extraConfig = ''
+      Host homelab-ts
+        Hostname 100.99.179.98
+        Port 22
+        User benvl
+      Host alpine-ts
+        Hostname 100.68.51.33
+        Port 22
+        User root
+      Host homelab
+        Hostname 192.168.50.117
+        Port 22
+        User benvl
+      Host alpine
+        Hostname 192.168.50.222
+        Port 22
+        User root
+    '';
   };
 
   programs.git = {
