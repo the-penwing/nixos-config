@@ -69,11 +69,7 @@ let
       cdrkit
       osslsigncode
       nsis
-      rustc
-      cargo
       cargo-zigbuild
-      clippy
-      rust-analyzer
       gnumake
       graphviz
       ghostty
