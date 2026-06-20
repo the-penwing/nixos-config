@@ -29,6 +29,7 @@
     ];
 
     extraConfig = ''
+      set -g renumber-windows on
     '';
   };
 }
