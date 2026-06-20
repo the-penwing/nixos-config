@@ -66,6 +66,7 @@ let
       clang
       clang-tools
       libclang
+      cdrkit
       osslsigncode
       nsis
       rustc
