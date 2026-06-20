@@ -1,6 +1,24 @@
 -- lua/plugins/langs/nix.lua
 return {
   {
+    "AstroNvim/astrolsp",
+    ---@type AstroLSPOpts
+    opts = {
+      config = {
+        nil_ls = {
+          settings = {
+            ["nil"] = {
+              nix = {
+                autoArchive = true,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
+  {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { "nil" },
@@ -11,12 +29,6 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "nix" })
     end,
-  },
-  {
-    "jay-babu/mason-null-ls.nvim",
-    opts = {
-      ensure_installed = { "nixpkgs-fmt" },
-    },
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
