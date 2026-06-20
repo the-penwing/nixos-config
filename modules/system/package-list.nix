@@ -8,209 +8,300 @@
 let
   categories = {
     # ========================================================================
-    # System Utilities
-    # Core tools: file, network, compression, utilities
+    # Core System Utilities
+    # Fundamental tooling for files, networks, encryption, and basic operations
     # ========================================================================
     core = with pkgs; [
-      cacert
-      curl
+      # Compression & Archiving
+      unzip
+      zip
+
+      # Environment, Shell & Prompts
       direnv
-      fd
-      file
-      fzf
-      lazygit
-      git
+      starship
+
+      # Networking & Data Transfer
+      curl
+      wget
+
+      # Security, Keys & Certificates
+      cacert
       gnupg
       openssl
-      jq
-      ripgrep
-      rsync
-      pass
-      sd
-      starship
-      tree
+
+      # System Information & Documentation
+      file
       man-pages
       man-pages-posix
-      unzip
-      wget
+      pass
+      rsync
+      tree
       xdg-utils
-      zip
+
+      # Text and File Search + Structural Transformation
+      fd
+      fzf
+      jq
+      ripgrep
+      sd
+
+      # Version Control Systems
+      git
+      lazygit
     ];
 
     # ========================================================================
-    # Terminal & CLI Tools
-    # Modern CLI utilities: file viewers, system monitors, file managers
+    # Terminal-Based User Interfaces (TUI) & CLI
+    # Interactive command-line monitors, file managers, and text viewers
     # ========================================================================
     cli = with pkgs; [
-      bat
-      btop
+      # Analysis & Metrics
       cloc
-      duf
-      dust
+
+      # Interactive File & Navigation Managers
       eza
-      fastfetch
-      gdu
-      glow
-      tldr
       yazi
       zoxide
+
+      # System Health, Disk & Resource Monitors
+      btop
+      duf
+      dust
+      fastfetch
+      gdu
+
+      # Text Rendering & Document Inspection
+      bat
+      glow
+      tldr
     ];
 
     # ========================================================================
-    # Development Tools
-    # Compilers, languages, LSPs, build tools, version managers, databases
+    # Development Stack
+    # Languages, specialized LSPs, compilation chains, and editors
     # ========================================================================
     dev = with pkgs; [
-      filezilla
-      gcc
-      clang
-      clang-tools
-      libclang
-      cdrkit
-      osslsigncode
-      nsis
-      cargo-zigbuild
-      gnumake
-      graphviz
-      ghostty
+      # Artificial Intelligence & Prototyping
       copilot-language-server
       github-copilot-cli
-      act
+
+      # Assembly & Low-Level Processing
+      asm-lsp
+      binutils
+      nasm
+
+      # C/C++ Ecosystem & Tooling
+      clang
+      clang-tools
+      gcc
+      gnumake
+      libclang
+      pkg-config
+      xxd
+
+      # Diagramming & Technical Graphics
+      graphviz
+      mermaid-cli
+
+      # Editors & Multiplexers
+      ghostty
+      neovim
+      tmux
+      vim
+      zellij
+
+      # Remote File Management
+      filezilla
+
+      # Lua Language Runtime & Formatting
       lua-language-server
       lua55Packages.lua
       lua55Packages.luacheck
       lua55Packages.luarocks
-      stylua
       selene
-      mermaid-cli
-      nodejs
-      neovim
-      pkg-config
+      stylua
+
+      # Python Runtime & Code Standards
+      black
       pyenv
       python3
-      black
+      uv
+
+      # Structural Formats & Databases
       sqlite
       sqlitebrowser
-      tea
-      tmux
-      uv
-      vim
-      xxd
+
+      # Target Compilation & Execution
+      act
+      cargo-zigbuild
+      cdrkit
+      nsis
+      nodejs
+      osslsigncode
       zig
-      zellij
     ];
 
     # ========================================================================
-    # GUI Applications
-    # Desktop applications, media players, office tools
+    # Graphical User Interface (GUI) Applications
+    # Heavyweight standalone client programs, web tools, and asset managers
     # ========================================================================
     gui = with pkgs; [
-      aseprite
-      bitwarden-desktop
+      # Communications & Messaging
       discord
+
+      # Digital Art & Image Compositing
+      aseprite
       drawio
-      feh
       imagemagick
+
+      # Host File System Shells
       kdePackages.dolphin
       kdePackages.dolphin-plugins
+
+      # Media Playback & Visual Rendering
+      feh
+      oculante
+      vlc
+
+      # Office Productivity & Knowledge Bases
       libreoffice-fresh
       obsidian
-      oculante
-      pavucontrol
-      qutebrowser
-      vlc
       zathura
       zathuraPkgs.zathura_pdf_poppler
+
+      # Password Storage
+      bitwarden-desktop
+
+      # Web Navigation
+      qutebrowser
+
     ];
 
     # ========================================================================
-    # Desktop Environment
-    # Themes, cursors, desktop utilities, Wayland/Hyprland tools
+    # Desktop Environment & Hardware Controls
+    # Wayland protocols, styling assets, volume mixers, and window hooks
     # ========================================================================
     desktop = with pkgs; [
-      bibata-cursors
+      # Application Orchestration & Launchers
+      fuzzel
+      kando
+
+      # Audio Backends, Sinks & Mixers
+      pamixer
+      pavucontrol
+      playerctl
+
+      # Hardware Integration & Radios
       blueman
+
+      # Layout Capture & Display Managers
+      grim
+      slurp
+      swappy
+      wlr-randr
+
+      # Policy Agents & Privilege Scalers
+      hyprpolkitagent
+      polkit_gnome
+
+      # Power Topologies & Backlights
       brightnessctl
-      cliphist
       ddcutil
+      power-profiles-daemon
+      upower
+
+      # System Theming, Icons & Engine Rules
+      bibata-cursors
       dracula-icon-theme
       dracula-qt5-theme
       dracula-theme
-      grim
-      hyprpolkitagent
-      fuzzel
       nwg-look
-      kando
-      pamixer
-      playerctl
-      polkit_gnome
-      power-profiles-daemon
       qt6Packages.qt6ct
       qt6Packages.qtstyleplugin-kvantum
-      slurp
-      swappy
-      upower
+
+      # Clipboard Intermediaries
+      cliphist
       wl-clipboard
-      wlr-randr
     ];
 
     # ========================================================================
-    # Security & Networking
-    # Penetration testing, security tools, network analysis
+    # Penetration Testing & Networking
+    # Security auditing stacks, fuzzer arrays, and protocol scrapers
     # ========================================================================
     security = with pkgs; [
-      hcxtools
-      hashcat
-      aircrack-ng
+      # Host Exploration & Network Mapping
       chisel
-      ffuf
-      gobuster
-      john
       inetutils
-      iw
-      metasploit
       netcat
       nmap
       openvpn
       rustscan
+      tcpdump
+      wireshark
+
+      # Inter-process Transport & Protocol Exploits
       samba
       smbclient-ng
       smbmap
+
+      # Payload Deployment & Exploitation
+      metasploit
       sqlmap
-      tcpdump
-      wireshark
+
+      # Signatures & Local Cryptanalysis
+      hashcat
+      john
+
+      # Web Scanning & Endpoint Fuzzing
+      ffuf
+      gobuster
+
+      # Wireless Layer Auditing
+      aircrack-ng
+      hcxtools
+      iw
     ];
 
     # ========================================================================
-    # Media & Archives
-    # Video/audio processing, image tools, archive utilities
+    # System Infrastructure & Media Backends
+    # Low-level system interfaces, archive layers, and media codecs
     # ========================================================================
-    media = with pkgs; [
+    system-infra = with pkgs; [
+      # Archive Handling & Unpacking
+      p7zip
+      unar
+
+      # Hardware Diagnostics & Speed Benches
+      speedtest-cli
+      usbutils
+
+      # iOS System Subsystem Interoperability
+      ifuse
+      libimobiledevice
+
+      # Network Pipelines & Sync Bridges
+      lftp
+      rclone
+
+      # Processing Pipemaps & AV Codecs
       ffmpeg
       ffmpegthumbnailer
       libheif
       mediainfo
       poppler-utils
-      p7zip
-      sunshine
-      unar
-    ];
 
-    # ========================================================================
-    # Miscellaneous
-    # Special tools and utilities that don't fit elsewhere
-    # ========================================================================
-    misc = with pkgs; [
-      bamf
+      # Terminal Screensavers & Overlays
       cmatrix
-      gucharmap
-      ifuse
-      libimobiledevice
-      lftp
-      usbutils
-      rclone
+
+      # Video Frame Streaming Host
+      sunshine
+
+      # Vector Schematics
       yed
-      speedtest-cli
+
+      # Window Matchers
+      bamf
+      gucharmap
     ];
   };
 in
