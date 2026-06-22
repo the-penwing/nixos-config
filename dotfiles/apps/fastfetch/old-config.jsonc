@@ -1,0 +1,117 @@
+// Compact boxed layout with consistent key widths and Nerd Font icons.
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "nixos",
+        "type": "auto",
+        "width": 13,
+        "padding": {
+            "top": 1,
+            "right": 5,
+            "left": 2,
+        },
+    },
+    "display": {
+        "separator": "  ",
+    },
+    "modules": [
+        {
+            "key": "╭────────────────╮",
+            "type": "custom",
+        },
+        {
+            "key": "│ {#39}󰀄 user         {#keys}│",
+            "type": "title",
+            "format": "{user-name}",
+        },
+        {
+            "key": "│ {#81}󰒋 host         {#keys}│",
+            "type": "title",
+            "format": "{host-name}",
+        },
+        {
+            "type": "command",
+            "key": "│ {#117}󱦟 os age       {#keys}│",
+            "text": "printf \"%s days\" \"$(( ($(date +%s) - $(stat -c %W /)) / 86400 ))\"",
+        },
+        {
+            "key": "│ {#153}󰅐 uptime       {#keys}│",
+            "type": "uptime",
+        },
+        {
+            "key": "│ {#212} distro       {#keys}│",
+            "type": "os",
+        },
+        {
+            "key": "│ {#219}󰒔 kernel       {#keys}│",
+            "type": "kernel",
+        },
+        {
+            "key": "│ {#183} wm           {#keys}│",
+            "type": "wm",
+        },
+        {
+            "key": "│ {#147}󰇄 desktop      {#keys}│",
+            "type": "de",
+        },
+        {
+            "key": "│ {#111} terminal     {#keys}│",
+            "type": "terminal",
+        },
+        {
+            "key": "│ {#75}󱆃 shell        {#keys}│",
+            "type": "shell",
+        },
+        {
+            "key": "│ {#39}󰍛 cpu          {#keys}│",
+            "type": "cpu",
+            "showPeCoreCount": true,
+        },
+        {
+            "key": "│ {#81}󰾲 memory       {#keys}│",
+            "type": "memory",
+        },
+        {
+            "key": "│ {#117}󰉉 disk         {#keys}│",
+            "type": "disk",
+            "folders": "/",
+        },
+        {
+            "key": "│ {#153}󰢮 gpu          {#keys}│",
+            "type": "gpu",
+        },
+        {
+            "key": "│ {#183}󰁹 battery      {#keys}│",
+            "type": "battery",
+        },
+        {
+            "key": "│ {#212}󰖟 local ip     {#keys}│",
+            "type": "localip",
+        },
+        {
+            "key": "│ {#219}󰌨 theme        {#keys}│",
+            "type": "gtk3",
+        },
+        {
+            "key": "│ {#147}󰀻 icons        {#keys}│",
+            "type": "icons",
+        },
+        {
+            "key": "│ {#111}󰏗 packages     {#keys}│",
+            "type": "packages",
+        },
+        {
+            "key": "├────────────────┤",
+            "type": "custom",
+        },
+        {
+            "key": "│ {#75}󰏘 palette      {#keys}│",
+            "type": "colors",
+            "symbol": "circle",
+        },
+        {
+            "key": "╰────────────────╯",
+            "type": "custom",
+        },
+    ],
+}
