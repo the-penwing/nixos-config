@@ -158,12 +158,18 @@
         "defaultPlayer": "naviterm",
         "gpuType": "",
         "lyricsBackend": "LyricsBackend::Auto",
+        "maxVolume": 1,
         "smartScheme": false,
         "useTwelveHourClock": false,
         "visualiserBars": 60
     },
     "utilities": {
+        "maxToasts": 3,
         "toasts": {
+            "capsLockChanged": true,
+            "fullscreen": "all",
+            "gameModeChanged": true,
+            "kbLayoutChanged": true,
             "nowPlaying": true
         },
         "vpn": {
