@@ -135,6 +135,7 @@ let
       act
       cargo-zigbuild
       cdrkit
+      nixd
       nsis
       nodejs
       osslsigncode
