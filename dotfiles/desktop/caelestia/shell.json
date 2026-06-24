@@ -53,8 +53,7 @@
             "showIcon": true
         },
         "dragThreshold": 20,
-        "excludedScreens": [
-        ],
+        "excludedScreens": [],
         "persistent": true,
         "scrollActions": {
             "volume": true,
@@ -104,7 +103,8 @@
                 "dolphin"
             ],
             "playback": [
-                "mpv"
+                "/nix/store/4nzrm1d8kxr626ifyxksbv760w05kkkm-vlc-3.0.23-2/bin/vlc",
+                "--started-from-file"
             ],
             "terminal": [
                 "ghostty"
@@ -113,8 +113,7 @@
     },
     "launcher": {
         "enableDangerousActions": false,
-        "favouriteApps": [
-        ],
+        "favouriteApps": [],
         "hiddenApps": [
             "nm-connection-editor",
             "blueman-adapters",
