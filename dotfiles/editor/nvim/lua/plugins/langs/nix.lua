@@ -4,12 +4,45 @@ return {
     "AstroNvim/astrolsp",
     ---@type AstroLSPOpts
     opts = {
+      servers = { "nixd" },
       config = {
+        nixd = {
+          cmd = { "nixd" },
+          filetypes = { "nix" },
+          root_markers = { "flake.nix", ".git" },
+          settings = {
+            nixd = {
+              -- FIX: Tell nixd to pre-evaluate nixpkgs packages for derivation signatures
+              installables = {
+                nixpkgs = {
+                  expr = [[import (let flake = builtins.getFlake "/home/benvl/nixos-config"; in if flake ? inputs then flake.inputs.nixpkgs else <nixpkgs>) { }]],
+                },
+              },
+              options = {
+                nixos = {
+                  expr = [[(builtins.getFlake "/home/benvl/nixos-config").nixosConfigurations."nixos-p14s".options]],
+                },
+                ["home-manager"] = {
+                  expr = [[(builtins.getFlake "/home/benvl/nixos-config").homeConfigurations."benvl".options]],
+                },
+              },
+              nixpkgs = {
+                expr = [[import (let flake = builtins.getFlake "/home/benvl/nixos-config"; in if flake ? inputs then flake.inputs.nixpkgs else <nixpkgs>) { }]],
+              },
+              formatting = {
+                command = { "nixpkgs-fmt" },
+              },
+            },
+          },
+        },
         nil_ls = {
           settings = {
             ["nil"] = {
               nix = {
                 autoArchive = true,
+                flake = {
+                  autoEval = true,
+                },
               },
             },
           },
