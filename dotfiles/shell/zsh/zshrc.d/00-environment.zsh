@@ -13,3 +13,5 @@ export FZF_DEFAULT_OPTS="--color=dark \
 export TIMEFMT=$'\nreal %*E\nuser %*U\nsys %*S\n'
 export BAT_THEME="Dracula"
 export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX26.1.sdk"
+export GPG_TTY=$(tty)
+export PATH="$PATH:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/nixos-config/scripts"

@@ -13,6 +13,8 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-cargo-completion
+    zig-shell-completions
+    custom-comp
 )
 
 source $ZSH/oh-my-zsh.sh
