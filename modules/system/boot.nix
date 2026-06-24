@@ -8,5 +8,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  hardware.graphics.extraPackages = [ pkgs.rocmPackages.clr.icd ];
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = [
+      pkgs.mesa.opencl
+    ];
+  };
+
+  environment.sessionVariables = {
+    RUSTICL_ENABLE = "radeonsi";
+  };
 }
