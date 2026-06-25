@@ -6,7 +6,7 @@
 { pkgs, ... }:
 
 {
-  users.groups.benvl = {};
+  users.groups.benvl = { };
   users.users.benvl = {
     isNormalUser = true;
     group = "benvl";
@@ -20,6 +20,8 @@
       "video"
       "wheel"
       "fuse"
+      "seat"
+      "users"
     ];
   };
 }
