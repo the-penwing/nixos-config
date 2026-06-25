@@ -94,6 +94,7 @@ let
       clang-tools
       gcc
       gnumake
+      glibc
       libclang
       pkg-config
       xxd
