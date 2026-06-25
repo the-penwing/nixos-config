@@ -27,16 +27,13 @@ let
       # Security, Keys & Certificates
       cacert
       gnupg
+      pass
       openssl
 
-      # System Information & Documentation
-      file
+      # Docs
       man-pages
       man-pages-posix
-      pass
-      rsync
-      tree
-      xdg-utils
+      tldr
 
       # Text and File Search + Structural Transformation
       fd
@@ -48,6 +45,7 @@ let
       # Version Control Systems
       git
       lazygit
+      rsync
     ];
 
     # ========================================================================
@@ -60,6 +58,8 @@ let
 
       # Interactive File & Navigation Managers
       eza
+      file
+      tree
       yazi
       zoxide
 
@@ -73,7 +73,6 @@ let
       # Text Rendering & Document Inspection
       bat
       glow
-      tldr
     ];
 
     # ========================================================================
@@ -107,6 +106,7 @@ let
       ghostty
       neovim
       tmux
+      sesh
       vim
       zellij
 
@@ -204,6 +204,7 @@ let
       # Policy Agents & Privilege Scalers
       hyprpolkitagent
       polkit_gnome
+      xdg-utils
 
       # Power Topologies & Backlights
       brightnessctl
