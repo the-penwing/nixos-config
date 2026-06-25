@@ -1,12 +1,6 @@
 -- lua/plugins/langs/c.lua
 return {
   {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = { "clangd" },
-    },
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "c" })
@@ -21,8 +15,18 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = function(_, opts)
-      opts.ensure_installed =
-        require("astrocore").list_insert_unique(opts.ensure_installed, { "clangd", "clang-format" })
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "clang-format" })
     end,
+  },
+  {
+    "AstroNvim/astrolsp",
+    opts = {
+      servers = { "clangd" },
+      config = {
+        clangd = {
+          cmd = { "/run/current-system/sw/bin/clangd" },
+        },
+      },
+    },
   },
 }

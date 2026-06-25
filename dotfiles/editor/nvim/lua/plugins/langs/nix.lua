@@ -12,7 +12,6 @@ return {
           root_markers = { "flake.nix", ".git" },
           settings = {
             nixd = {
-              -- FIX: Tell nixd to pre-evaluate nixpkgs packages for derivation signatures
               installables = {
                 nixpkgs = {
                   expr = [[import (let flake = builtins.getFlake "/home/benvl/nixos-config"; in if flake ? inputs then flake.inputs.nixpkgs else <nixpkgs>) { }]],
