@@ -53,7 +53,8 @@
             "showIcon": true
         },
         "dragThreshold": 20,
-        "excludedScreens": [],
+        "excludedScreens": [
+        ],
         "persistent": true,
         "scrollActions": {
             "volume": true,
@@ -113,7 +114,8 @@
     },
     "launcher": {
         "enableDangerousActions": false,
-        "favouriteApps": [],
+        "favouriteApps": [
+        ],
         "hiddenApps": [
             "nm-connection-editor",
             "blueman-adapters",
