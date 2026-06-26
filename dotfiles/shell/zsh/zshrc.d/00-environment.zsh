@@ -1,5 +1,5 @@
 # ============================================================================
-# Environment Variables — Minimal exports only
+# Environment Variables - Minimal exports only
 # ============================================================================
 export FZF_BASE="$HOME/.fzf"
 export FZF_DEFAULT_COMMAND="fd"
@@ -15,3 +15,19 @@ export BAT_THEME="Dracula"
 export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX26.1.sdk"
 export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/nixos-config/scripts"
+
+# ============================================================================
+# History Management - Env Vars and Opts 
+# ============================================================================
+# Size Settings
+export HISTSIZE=50000          # Lines loaded into memory per session
+export SAVEHIST=50000          # Lines saved to the history file on disk
+export HISTFILE=~/.zsh_history
+
+# Smart Trimming & Sharing
+setopt HIST_IGNORE_DUPS        # Don't record a command if it was just run
+setopt HIST_IGNORE_ALL_DUPS    # Don't Record ANY dupes
+setopt HIST_IGNORE_SPACE       # Don't record lines starting with a space
+setopt HIST_EXPIRE_DUPS_FIRST  # Expire duplicate entries first when trimming
+setopt INC_APPEND_HISTORY      # Write to history file immediately, not on exit
+setopt SHARE_HISTORY           # Share history across all active terminals

@@ -1,5 +1,5 @@
 # ============================================================================
-# Oh My Zsh Configuration — Full Framework
+# Oh My Zsh Configuration - Full Framework
 # ============================================================================
 export ZSH="$HOME/.oh-my-zsh"
 
