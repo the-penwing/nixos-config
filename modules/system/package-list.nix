@@ -89,7 +89,7 @@ let
       binutils
       nasm
 
-      # C/C++ Ecosystem & Tooling
+      # C Ecosystem & Tooling
       clang
       clang-tools
       gcc
@@ -100,8 +100,12 @@ let
       xxd
 
       # Diagramming & Technical Graphics
+      drawio
       graphviz
       mermaid-cli
+
+      # UI Design / Resources
+      gucharmap
 
       # Editors & Multiplexers
       ghostty
@@ -153,7 +157,6 @@ let
 
       # Digital Art & Image Compositing
       aseprite
-      drawio
       imagemagick
 
       # Host File System Shells
@@ -162,7 +165,6 @@ let
 
       # Media Playback & Visual Rendering
       feh
-      oculante
       vlc
 
       # Office Productivity & Knowledge Bases
@@ -174,9 +176,8 @@ let
       # Password Storage
       bitwarden-desktop
 
-      # Web Navigation
+      # Web Browser
       qutebrowser
-
     ];
 
     # ========================================================================
@@ -299,12 +300,8 @@ let
       # Video Frame Streaming Host
       sunshine
 
-      # Vector Schematics
-      yed
-
       # Window Matchers
       bamf
-      gucharmap
     ];
   };
 in
@@ -314,8 +311,6 @@ rec {
   systemPackages = lib.unique (lib.flatten (builtins.attrValues categories));
 
   fonts = with pkgs; [
-    cantarell-fonts
-    nerd-fonts.jetbrains-mono
     nerd-fonts.meslo-lg
   ];
 
