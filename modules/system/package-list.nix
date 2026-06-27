@@ -142,7 +142,6 @@
       act
       cargo-zigbuild
       cdrkit
-      nil
       nixd
       nsis
       nodejs

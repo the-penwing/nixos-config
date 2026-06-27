@@ -3,9 +3,11 @@
 # Purpose:
 # - Keep service declarations readable
 # - Prefer socket activation/on-demand startup where practical
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   documentation = {
     enable = true;
     man.enable = true;
@@ -39,16 +41,16 @@
     openDefaultPorts = true;
   };
   # Start syncthing only when explicitly triggered.
-  systemd.services.syncthing.wantedBy = lib.mkForce [ ];
+  systemd.services.syncthing.wantedBy = lib.mkForce [];
 
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
   systemd.services.rclone-mount = {
     description = "Auto Mount Rclone iCloud Drive";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network-online.target" ];
-    requires = [ "network-online.target" ];
+    wantedBy = ["multi-user.target"];
+    after = ["network-online.target"];
+    requires = ["network-online.target"];
 
     serviceConfig = {
       Type = "simple";
@@ -62,14 +64,30 @@
       User = "benvl";
       Group = "benvl";
 
-      Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
+      Environment = ["PATH=/run/wrappers/bin/:$PATH"];
 
-      # Allow FUSE operations
       PrivateDevices = false;
       PrivateTmp = false;
+    };
+  };
 
-      # Optional: add systemd hardening if needed later
-      # NoNewPrivileges = false;
+  systemd.user.services.tmux-server = {
+    description = "Auto start tmux server on boot";
+    wantedBy = ["default.target"];
+    serviceConfig = {
+      Type = "simple";
+
+      ExecStart = "${pkgs.tmux}/bin/tmux start-server";
+
+      Restart = "on-failure";
+      RestartSec = "2s";
+      User = "benvl";
+      Group = "benvl";
+
+      Environment = ["PATH=/run/wrappers/bin/:$PATH"];
+
+      PrivateDevices = false;
+      PrivateTmp = false;
     };
   };
 

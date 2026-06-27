@@ -31,19 +31,9 @@ return {
               formatting = {
                 command = { "alejandra" },
               },
-            },
-          },
-        },
-        nil_ls = {
-          cmd = { "nil" },
-          filetypes = { "nix" },
-          settings = {
-            ["nil"] = {
-              nix = {
-                flake = {
-                  autoEvalInputs = false,
-                  autoArchive = true,
-                },
+              -- KEY: This is in 2.9.1+
+              diagnostic = {
+                suppress = { "EvalError" }, -- Don't crash on eval errors
               },
             },
           },
