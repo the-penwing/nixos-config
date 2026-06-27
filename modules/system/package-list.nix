@@ -4,8 +4,10 @@
 # - Keep package declarations in one place
 # - Provide default application metadata used by MIME defaults
 # - Make category-based cleanup easier over time
-{ pkgs, lib }:
-let
+{
+  pkgs,
+  lib,
+}: let
   categories = {
     # ========================================================================
     # Core System Utilities
@@ -140,6 +142,7 @@ let
       act
       cargo-zigbuild
       cdrkit
+      nil
       nixd
       nsis
       nodejs
@@ -304,8 +307,7 @@ let
       bamf
     ];
   };
-in
-rec {
+in rec {
   inherit categories;
 
   systemPackages = lib.unique (lib.flatten (builtins.attrValues categories));
