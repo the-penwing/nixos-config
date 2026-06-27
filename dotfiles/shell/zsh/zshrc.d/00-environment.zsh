@@ -18,7 +18,7 @@ export PATH="$PATH:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/nixos-config/scr
 export XDG_DATA_DIRS="$HOME/.local/share:$XDG_DATA_DIRS"
 
 # ============================================================================
-# History Management - Env Vars and Opts 
+# History Management 
 # ============================================================================
 # Size Settings
 export HISTSIZE=50000          # Lines loaded into memory per session

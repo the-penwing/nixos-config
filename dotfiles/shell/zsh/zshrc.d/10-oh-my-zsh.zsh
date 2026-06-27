@@ -3,14 +3,10 @@
 # ============================================================================
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME=""
-
 plugins=(
-    # Compleations
+    # Comp
     git
     rust
-    zsh-cargo-completion
-    zig-shell-completions
     custom-comp
 
     # QOL
@@ -19,5 +15,7 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+
+compdef _cargo cargo-zigbuild
 
 source $ZSH/oh-my-zsh.sh
