@@ -20,15 +20,13 @@ export XDG_DATA_DIRS="$HOME/.local/share:$XDG_DATA_DIRS"
 # ============================================================================
 # History Management 
 # ============================================================================
-# Size Settings
-export HISTSIZE=50000          # Lines loaded into memory per session
-export SAVEHIST=50000          # Lines saved to the history file on disk
+export HISTSIZE=50000
+export SAVEHIST=50000
 export HISTFILE=~/.zsh_history
 
-# Smart Trimming & Sharing
-setopt HIST_IGNORE_DUPS        # Don't record a command if it was just run
-setopt HIST_IGNORE_ALL_DUPS    # Don't Record ANY dupes
-setopt HIST_IGNORE_SPACE       # Don't record lines starting with a space
-setopt HIST_EXPIRE_DUPS_FIRST  # Expire duplicate entries first when trimming
-setopt INC_APPEND_HISTORY      # Write to history file immediately, not on exit
-setopt SHARE_HISTORY           # Share history across all active terminals
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
