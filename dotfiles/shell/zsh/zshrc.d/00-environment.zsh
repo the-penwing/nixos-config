@@ -15,6 +15,7 @@ export BAT_THEME="Dracula"
 export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX26.1.sdk"
 export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/nixos-config/scripts"
+export XDG_DATA_DIRS="$HOME/.local/share:$XDG_DATA_DIRS"
 
 # ============================================================================
 # History Management - Env Vars and Opts 

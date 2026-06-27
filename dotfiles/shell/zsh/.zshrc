@@ -2,4 +2,3 @@
 for zshrc_part in ~/.config/zsh/zshrc.d/*.zsh; do
   [ -r "$zshrc_part" ] && source "$zshrc_part"
 done
-export XDG_DATA_DIRS="$HOME/.local/share:$XDG_DATA_DIRS"
