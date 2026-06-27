@@ -2,7 +2,7 @@ local mainMod = "SUPER"
 
 local terminal = "ghostty"
 local fileManager = "dolphin"
-local browser = "qutebrowser"
+local browser = "firefox"
 local launcher = "caelestia shell drawers toggle launcher"
 local lockscreen = "caelestia shell lock lock"
 

@@ -315,7 +315,7 @@ rec {
   ];
 
   defaults = {
-    browserDesktop = "org.qutebrowser.qutebrowser.desktop";
+    browserDesktop = "firefox.desktop";
     terminalDesktop = "com.mitchellh.ghostty.desktop";
     fileManagerDesktop = "org.kde.dolphin.desktop";
     editorDesktop = "nvim.desktop";
