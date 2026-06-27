@@ -1,5 +1,5 @@
 # ============================================================================
-# Environment Variables - Minimal exports only
+# Environment Variables
 # ============================================================================
 export FZF_BASE="$HOME/.fzf"
 export FZF_DEFAULT_COMMAND="fd"

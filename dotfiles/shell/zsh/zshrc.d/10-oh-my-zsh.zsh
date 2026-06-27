@@ -6,15 +6,18 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 
 plugins=(
+    # Compleations
     git
     rust
+    zsh-cargo-completion
+    zig-shell-completions
+    custom-comp
+
+    # QOL
     fzf
     fzf-tab
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh-cargo-completion
-    zig-shell-completions
-    custom-comp
 )
 
 source $ZSH/oh-my-zsh.sh
