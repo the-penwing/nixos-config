@@ -4,7 +4,7 @@ return {
     formatters_by_ft = {
       rust = { "rustfmt" },
       zig = { "zigfmt" },
-      nix = { "nixpkgs_fmt" },
+      nix = { "alejandra" },
     },
     formatters = {
       shfmt = {

@@ -29,31 +29,26 @@ return {
                 expr = [[import (let flake = builtins.getFlake "/home/benvl/nixos-config"; in if flake ? inputs then flake.inputs.nixpkgs else <nixpkgs>) { }]],
               },
               formatting = {
-                command = { "nixpkgs-fmt" },
+                command = { "alejandra" },
               },
             },
           },
         },
         nil_ls = {
+          cmd = { "nil" },
+          filetypes = { "nix" },
           settings = {
             ["nil"] = {
               nix = {
-                autoArchive = true,
                 flake = {
-                  autoEval = true,
+                  autoEvalInputs = false,
+                  autoArchive = true,
                 },
               },
             },
           },
         },
       },
-    },
-  },
-
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = { "nil" },
     },
   },
   {
@@ -65,7 +60,7 @@ return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "nil", "nixpkgs-fmt" })
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "alejandra" })
     end,
   },
 }
