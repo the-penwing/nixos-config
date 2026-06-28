@@ -93,7 +93,6 @@
 
       # C Ecosystem
       clang
-      clang-format
       clang-tools
       gcc
       gnumake
@@ -112,9 +111,7 @@
 
       # Language Servers (LSP)
       bash-language-server
-      cssls
-      html-lsp
-      jsonls
+      vscode-langservers-extracted
       lua-language-server
       lua55Packages.luacheck
       pyright
@@ -126,7 +123,6 @@
 
       # Formatters & Linters
       black
-      clang-format
       eslint_d
       prettier
       selene
