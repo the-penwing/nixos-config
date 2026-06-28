@@ -82,17 +82,18 @@
     # Languages, specialized LSPs, compilation chains, and editors
     # ========================================================================
     dev = with pkgs; [
-      # Artificial Intelligence & Prototyping
+      # AI & Prototyping
       copilot-language-server
       github-copilot-cli
 
-      # Assembly & Low-Level Processing
+      # Assembly & Low-Level
       asm-lsp
       binutils
       nasm
 
-      # C Ecosystem & Tooling
+      # C Ecosystem
       clang
+      clang-format
       clang-tools
       gcc
       gnumake
@@ -101,54 +102,76 @@
       pkg-config
       xxd
 
-      # Diagramming & Technical Graphics
-      drawio
-      graphviz
-      mermaid-cli
+      # Languages & Runtimes
+      lua55Packages.lua
+      lua55Packages.luarocks
+      nodejs
+      python3
+      pyenv
+      zig
 
-      # UI Design / Resources
-      gucharmap
+      # Language Servers (LSP)
+      bash-language-server
+      cssls
+      html-lsp
+      jsonls
+      lua-language-server
+      lua55Packages.luacheck
+      pyright
+      tailwindcss-language-server
+      taplo
+      typescript-language-server
+      yaml-language-server
+      zls
+
+      # Formatters & Linters
+      black
+      clang-format
+      eslint_d
+      prettier
+      selene
+      shellcheck
+      shfmt
+      stylua
 
       # Editors & Multiplexers
       ghostty
       neovim
-      tmux
       sesh
+      tmux
       vim
       zellij
 
-      # Remote File Management
-      filezilla
-
-      # Lua Language Runtime & Formatting
-      lua-language-server
-      lua55Packages.lua
-      lua55Packages.luacheck
-      lua55Packages.luarocks
-      selene
-      stylua
-
-      # Python Runtime & Code Standards
-      black
-      pyenv
-      python3
-      uv
-
-      # Structural Formats & Databases
-      sqlite
-      sqlitebrowser
-
-      # Target Compilation & Execution
+      # Build & Compilation
       act
       cargo-zigbuild
       cdrkit
-      nixd
+      gnumake
       nsis
-      nodejs
       osslsigncode
-      zig
-    ];
 
+      # Nix Tooling
+      nil
+      nixd
+
+      # Data & Databases
+      sqlite
+      sqlitebrowser
+
+      # Diagramming & Graphics
+      drawio
+      graphviz
+      mermaid-cli
+
+      # Python Tools
+      uv
+
+      # UI & Resources
+      gucharmap
+
+      # File Management
+      filezilla
+    ];
     # ========================================================================
     # Graphical User Interface (GUI) Applications
     # Heavyweight standalone client programs, web tools, and asset managers

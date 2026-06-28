@@ -71,7 +71,7 @@
     };
   };
 
-  systemd.user.services.tmux-server = {
+  systemd.services.tmux-server = {
     description = "Auto start tmux server on boot";
     wantedBy = ["default.target"];
     serviceConfig = {
