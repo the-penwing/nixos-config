@@ -85,6 +85,8 @@
       # AI & Prototyping
       copilot-language-server
       github-copilot-cli
+      github-cli
+      github-desktop
 
       # Assembly & Low-Level
       asm-lsp
@@ -122,6 +124,8 @@
       zls
 
       # Formatters & Linters
+      markdownlint-cli2
+      marksman
       black
       eslint_d
       prettier
