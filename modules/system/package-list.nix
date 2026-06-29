@@ -86,7 +86,6 @@
       copilot-language-server
       github-copilot-cli
       github-cli
-      github-desktop
 
       # Assembly & Low-Level
       asm-lsp
@@ -149,6 +148,7 @@
       gnumake
       nsis
       osslsigncode
+      rcodesign
 
       # Nix Tooling
       nil

@@ -75,7 +75,7 @@
     description = "Auto start tmux server on boot";
     wantedBy = ["default.target"];
     serviceConfig = {
-      Type = "simple";
+      Type = "forking";
 
       ExecStart = "${pkgs.tmux}/bin/tmux start-server";
 
