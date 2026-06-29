@@ -1,11 +1,15 @@
 -- lua/plugins/langs/markdown.lua
 return {
+  -- Syntax Highlighting
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "markdown" })
+      opts.ensure_installed =
+        require("astrocore").list_insert_unique(opts.ensure_installed, { "markdown", "markdown_inline" })
     end,
   },
+
+  -- UI Rendering
   {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -13,6 +17,8 @@ return {
     ---@type render.md.UserConfig
     opts = {},
   },
+
+  -- Live Preview
   {
     "selimacerbas/markdown-preview.nvim",
     dependencies = { "selimacerbas/live-server.nvim" },
@@ -25,22 +31,21 @@ return {
       }
     end,
   },
+
+  -- Navigation & Links
   {
     "jakewvincent/mkdnflow.nvim",
     ft = { "markdown", "rmd" },
     config = function() require("mkdnflow").setup {} end,
   },
+
+  -- Native LSP Registration (AstroNvim Base)
   {
-    "jay-babu/mason-null-ls.nvim",
-    opts = {
-      ensure_installed = { "markdownlint", "prettier" },
-    },
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "AstroNvim/astrocore",
     opts = function(_, opts)
-      opts.ensure_installed =
-        require("astrocore").list_insert_unique(opts.ensure_installed, { "markdownlint", "prettier" })
+      opts.lsp = opts.lsp or {}
+      opts.lsp.servers = opts.lsp.servers or {}
+      opts.lsp.servers = require("astrocore").list_insert_unique(opts.lsp.servers, { "marksman" })
     end,
   },
 }

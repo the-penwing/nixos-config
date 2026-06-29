@@ -13,8 +13,6 @@ return {
       nls.builtins.diagnostics.pylint,
       -- Lua
       nls.builtins.diagnostics.selene,
-      -- Markdown
-      nls.builtins.diagnostics.markdownlint,
       -- YAML
       nls.builtins.diagnostics.yamllint,
       -- JSON

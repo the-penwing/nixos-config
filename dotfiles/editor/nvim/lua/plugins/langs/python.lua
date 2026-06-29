@@ -1,11 +1,4 @@
--- lua/plugins/langs/python.lua
 return {
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = { "pyright" },
-    },
-  },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
@@ -13,18 +6,9 @@ return {
     end,
   },
   {
-    "jay-babu/mason-null-ls.nvim",
+    "AstroNvim/astrolsp",
     opts = {
-      ensure_installed = { "black", "isort", "pylint", "flake8" },
+      servers = { "pyright" },
     },
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(
-        opts.ensure_installed,
-        { "pyright", "black", "isort", "pylint", "flake8" }
-      )
-    end,
   },
 }

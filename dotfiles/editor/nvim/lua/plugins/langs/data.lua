@@ -1,11 +1,4 @@
--- lua/plugins/langs/data.lua
 return {
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = { "json-lsp", "yaml-language-server", "taplo" },
-    },
-  },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
@@ -13,18 +6,9 @@ return {
     end,
   },
   {
-    "jay-babu/mason-null-ls.nvim",
+    "AstroNvim/astrolsp",
     opts = {
-      ensure_installed = { "prettier", "yamllint" },
+      servers = { "jsonls", "yamlls", "taplo" },
     },
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(
-        opts.ensure_installed,
-        { "json-lsp", "yaml-language-server", "taplo", "prettier", "yamllint" }
-      )
-    end,
   },
 }

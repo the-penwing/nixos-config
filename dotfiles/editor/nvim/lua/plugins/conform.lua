@@ -5,6 +5,7 @@ return {
       rust = { "rustfmt" },
       zig = { "zigfmt" },
       nix = { "alejandra" },
+      markdown = { "prettier" },
     },
     formatters = {
       shfmt = {
