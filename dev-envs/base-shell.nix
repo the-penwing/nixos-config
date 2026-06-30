@@ -1,11 +1,8 @@
-{ pkgs }:
-{
-  buildInputs ? [ ],
+{pkgs}: {
+  buildInputs ? [],
   shellHook ? "",
   starshipConfig ? ../dotfiles/shell/starship.toml,
-}:
-
-let
+}: let
   commonInputs = with pkgs; [
     git
     starship
@@ -18,27 +15,20 @@ let
     zoxide
   ];
 in
+  pkgs.mkShell {
+    buildInputs = commonInputs ++ buildInputs;
 
-pkgs.mkShell {
-  buildInputs = commonInputs ++ buildInputs;
+    shellHook = ''
+      ${shellHook}
+      eval "$(${pkgs.zoxide}/bin/zoxide init bash)"
 
-  shellHook = ''
-    ${shellHook}
-    eval "$(${pkgs.zoxide}/bin/zoxide init bash)"
+      alias ls='eza'
+      alias ll='eza --icons -l'
+      alias la='eza --icons -la'
+      alias cd='z'
+      alias cdi='zi'
 
-    alias cat='bat'
-    alias ls='eza'
-    alias ll='eza --icons -l'
-    alias la='eza --icons -la'
-    alias grep='rg'
-    alias find='fd'
-    alias du='dust'
-    alias df='duf'
-    alias ps='btop'
-    alias cd='z'
-    alias cdi='zi'
-
-    export STARSHIP_CONFIG=${starshipConfig}
-    eval "$(${pkgs.starship}/bin/starship init bash)"
-  '';
-}
+      export STARSHIP_CONFIG=${starshipConfig}
+      eval "$(${pkgs.starship}/bin/starship init bash)"
+    '';
+  }
