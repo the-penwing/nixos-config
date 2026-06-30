@@ -91,6 +91,10 @@
                 "aarch64-unknown-linux-gnu" # Raspberry Pi (Standard)
                 "aarch64-unknown-linux-musl" # Raspberry Pi (Alpine)
 
+                # --- RP2350 ---
+                "thumbv8m.main-none-eabihf"
+                "riscv32imac-unknown-none-elf"
+
                 # --- Common Desktop Targets ---
                 "x86_64-pc-windows-gnu" # Windows 64-bit
                 "aarch64-apple-darwin" # Apple Silicon Mac
