@@ -96,6 +96,30 @@
     package = pkgs.usbmuxd2;
   };
 
+  services.pcscd = {
+    enable = true;
+    plugins = [pkgs.ccid];
+  };
+
+  # Add PIN caching for OpenSC
+  environment.etc."opensc/opensc.conf".text = ''
+    app default {
+      # Enable PIN caching
+      pin_cache_type = "user";
+      pin_cache_ignore_user_consent = false;
+
+      # 5-minute PIN cache timeout
+      pin_cache_min_lifetime = 300;
+      pin_cache_max_lifetime = 300;
+    }
+  '';
+
+  systemd.tmpfiles.rules = [
+    "d /var/lib/pcsc 0755 pcscd pcscd - -"
+    "d /var/lib/pcsc/drivers 0755 pcscd pcscd - -"
+    "L /var/lib/pcsc/drivers/ifd-ccid.bundle - - - - ${pkgs.ccid}/pcsc/drivers/ifd-ccid.bundle"
+  ];
+
   services.printing = {
     enable = true;
     drivers = with pkgs; [

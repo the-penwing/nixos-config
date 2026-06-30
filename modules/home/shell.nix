@@ -27,9 +27,21 @@
     enableDefaultConfig = false;
     settings."*" = {
       addKeysToAgent = "yes";
-      identityFile = "~/.ssh/id_ed25519";
+      identitiesOnly = "yes";
+      identityFile = "~/.ssh/nixos-ssh-key.pub";
     };
     extraConfig = ''
+      # Global PKCS11Provider for all hosts
+      PKCS11Provider /run/current-system/sw/lib/opensc-pkcs11.so
+
+      Host github.com
+        HostName github.com
+        User git
+
+      Host gitea.taile9a1d6.ts.net
+        HostName gitea.taile9a1d6.ts.net
+        User git
+
       Host homelab-ts
         Hostname 100.99.179.98
         Port 22

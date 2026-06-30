@@ -24,8 +24,8 @@
   hardware.bluetooth.enable = true;
 
   services.udev.extraRules = ''
-    # RP2350 Bootloader & Runtime Access
-    # Allow user access to RP2350 devices without sudo
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000f", MODE="0666"
+    # Pico HSM Device Access
+    # Allow user access to Pico HSM without sudo
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="10fd", MODE="0666"
   '';
 }
