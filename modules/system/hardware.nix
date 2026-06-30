@@ -22,11 +22,10 @@
   };
 
   hardware.bluetooth.enable = true;
-  services.udev.rules = [
+
+  services.udev.extraRules = ''
     # RP2350 Bootloader & Runtime Access
     # Allow user access to RP2350 devices without sudo
-    ''
-      SUBSYSTEMS=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000f", MODE="0666"
-    ''
-  ];
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000f", MODE="0666"
+  '';
 }
