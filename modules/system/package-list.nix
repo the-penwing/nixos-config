@@ -147,6 +147,7 @@
       cargo-zigbuild
       cdrkit
       gnumake
+      cmake
       nsis
       osslsigncode
       rcodesign
@@ -177,6 +178,7 @@
       # RP2350
       pico-sdk
       picotool
+      gcc-arm-embedded
     ];
     # ========================================================================
     # Graphical User Interface (GUI) Applications
