@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   # ============================================================
   # INPUT — keyd kernel-level key remapping
   # Works on all connected keyboards (built-in + Logi Pebble 2)
@@ -39,7 +37,7 @@
     keyboards = {
       default = {
         # Apply to every connected keyboard (built-in + Logi Pebble 2)
-        ids = [ "*" ];
+        ids = ["*"];
         settings = {
           main = {
             # Caps Lock: tap = Escape, hold = caps lock layer

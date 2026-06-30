@@ -3,9 +3,7 @@
 # Purpose:
 # - Prioritise interactive responsiveness on laptop hardware
 # - Keep memory pressure and build pressure predictable
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   zramSwap = {
     enable = true;
     memoryPercent = 100;

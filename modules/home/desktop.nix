@@ -3,9 +3,7 @@
 # Purpose:
 # - Keep user-level desktop helpers and user services in one place
 # - Avoid duplicate package declarations already managed system-wide
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.file.".config/hypr/.luarc.json" = {
     text = builtins.toJSON {
       workspace = {
@@ -14,7 +12,7 @@
         ];
       };
       diagnostics = {
-        globals = [ "hl" ];
+        globals = ["hl"];
       };
     };
   };
@@ -26,7 +24,7 @@
   systemd.user.services.mpris-scrobbler = {
     Unit = {
       Description = "mpris-scrobbler - ListenBrainz scrobbler via MPRIS";
-      After = [ "graphical-session.target" ];
+      After = ["graphical-session.target"];
     };
     Service = {
       Type = "simple";
@@ -34,6 +32,6 @@
       Restart = "on-failure";
       RestartSec = 5;
     };
-    Install.WantedBy = [ "default.target" ];
+    Install.WantedBy = ["default.target"];
   };
 }

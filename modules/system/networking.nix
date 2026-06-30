@@ -3,22 +3,26 @@
 # Security notes:
 # - Keep OpenSSH disabled (Tailscale SSH is preferred)
 # - Keep firewall explicitly enabled and only open ports required for known tools
-{ ... }:
-
-{
+{...}: {
   networking = {
     hostName = "nixos-p14s";
     networkmanager.enable = true;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 80 443 1337 8000 22000 47984 47989 47990 48010 ];
+      allowedTCPPorts = [80 443 1337 8000 22000 47984 47989 47990 48010];
       allowedUDPPortRanges = [
-        { from = 8000; to = 8010; }
-        { from = 47900; to = 48000; }
+        {
+          from = 8000;
+          to = 8010;
+        }
+        {
+          from = 47900;
+          to = 48000;
+        }
       ];
     };
-    nameservers = [ "192.168.50.117" "1.1.1.1" ];
-    search = [ "homelab" ];
+    nameservers = ["192.168.50.117" "1.1.1.1"];
+    search = ["homelab"];
   };
 
   services.openssh.enable = false;

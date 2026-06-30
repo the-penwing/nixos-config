@@ -3,9 +3,7 @@
 # Purpose:
 # - Keep host configuration modular and predictable
 # - Separate desktop, networking, hardware, services, and performance concerns
-{ ... }:
-
-{
+{...}: {
   imports = [
     ./boot.nix
     ./desktop.nix

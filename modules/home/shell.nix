@@ -4,9 +4,7 @@
 # - Keep per-user shell tooling and environment variables together
 # - Manage direnv, starship, and fzf declaratively via home-manager
 # - Keep SSH agent behaviour explicit and auditable
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     lazygit
     pass-git-helper

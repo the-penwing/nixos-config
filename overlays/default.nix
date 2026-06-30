@@ -4,6 +4,6 @@
 # Keep this list minimal — prefer declarative home-manager config when possible.
 [
   (final: prev: {
-    qutebrowser = prev.qutebrowser.override { enableWideVine = true; };
+    qutebrowser = prev.qutebrowser.override {enableWideVine = true;};
   })
 ]

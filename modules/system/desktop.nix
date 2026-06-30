@@ -5,11 +5,13 @@
 #
 # Customisation notes:
 # - Keep default app handlers in packages.nix so package choices and handlers stay aligned.
-{ pkgs, lib, ... }:
-let
-  packageSet = import ./package-list.nix { inherit pkgs lib; };
-in
 {
+  pkgs,
+  lib,
+  ...
+}: let
+  packageSet = import ./package-list.nix {inherit pkgs lib;};
+in {
   services.xserver.enable = false;
   services.xserver.xkb = {
     layout = "au";
@@ -34,6 +36,6 @@ in
       xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
     ];
-    config.common.default = [ "hyprland" "gtk" ];
+    config.common.default = ["hyprland" "gtk"];
   };
 }

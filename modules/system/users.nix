@@ -3,10 +3,8 @@
 # Customisation:
 # - Add user-specific groups here
 # - Keep account metadata separate from package definitions
-{ pkgs, ... }:
-
-{
-  users.groups.benvl = { };
+{pkgs, ...}: {
+  users.groups.benvl = {};
   users.users.benvl = {
     isNormalUser = true;
     group = "benvl";

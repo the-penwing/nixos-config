@@ -3,9 +3,7 @@
 # Purpose:
 # - Keep home-manager concerns separate from system modules
 # - Compose user shell and desktop modules from ./modules/home
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.stateVersion = "25.11";
 
   imports = [

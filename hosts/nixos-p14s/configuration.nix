@@ -6,16 +6,14 @@
 #
 # Customisation notes:
 # - Keep machine-specific certificates and stateVersion here.
-{ ... }:
-
-{
+{...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/system
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.optimise = {
     automatic = true;
     dates = "*-*-* 10:00:00";
@@ -31,7 +29,7 @@
     "electron-39.8.10"
   ];
 
-  security.pki.certificateFiles = [ ./secrets/root.crt ];
+  security.pki.certificateFiles = [./secrets/root.crt];
 
   system.stateVersion = "25.11";
 }

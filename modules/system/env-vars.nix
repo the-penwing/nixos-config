@@ -1,9 +1,7 @@
 # ============================================================================
 # Environment Variables — Safe declarative environment mapping
 # ============================================================================
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   environment.localBinInPath = true;
 
   environment.sessionVariables = {
