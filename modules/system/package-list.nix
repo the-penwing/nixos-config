@@ -29,6 +29,7 @@
       # Security, Keys & Certificates
       cacert
       gnupg
+      gnupg-pkcs11-scd
       pass
       openssl
       opensc
