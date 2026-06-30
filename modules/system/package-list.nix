@@ -31,6 +31,7 @@
       gnupg
       pass
       openssl
+      opensc
 
       # Docs
       man-pages
@@ -304,6 +305,7 @@
       # Hardware Diagnostics & Speed Benches
       speedtest-cli
       usbutils
+      libusb1
 
       # iOS System Subsystem Interoperability
       ifuse
