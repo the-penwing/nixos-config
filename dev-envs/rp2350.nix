@@ -2,8 +2,8 @@
   packages = with pkgs; [
     # Rust
     (pkgs.rust-bin.stable.latest.default.override {
-      extentions = ["rust-src" "rust-analyzer"];
-      targets = ["thumbv8m.base-none-eabihf"];
+      extensions = ["rust-src" "rust-analyzer"];
+      targets = ["thumbv8m.main-none-eabihf" "riscv32imac-unknown-none-elf"];
     })
 
     # C toolchain for ARM Cortex
