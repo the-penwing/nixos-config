@@ -173,6 +173,10 @@
 
       # File Management
       filezilla
+
+      # RP2350
+      pico-sdk
+      picotool
     ];
     # ========================================================================
     # Graphical User Interface (GUI) Applications
