@@ -153,6 +153,7 @@
       # Nix Tooling
       nil
       nixd
+      nix-search-tv
 
       # Data & Databases
       sqlite
