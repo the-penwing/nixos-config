@@ -48,6 +48,8 @@
 
       # Version Control Systems
       git
+      github-cli
+      tea
       lazygit
       rsync
     ];
@@ -84,103 +86,103 @@
     # Languages, specialized LSPs, compilation chains, and editors
     # ========================================================================
     dev = with pkgs; [
-      # AI & Prototyping
-      copilot-language-server
-      github-copilot-cli
-      github-cli
+      # ---  Core Editors, Terminals & Multiplexers ---
+      neovim
+      vim
+      ghostty
+      tmux
+      zellij
+      sesh
 
-      # Assembly & Low-Level
-      asm-lsp
-      binutils
+      # --- Low-Level, C & Zig Ecosystems ---
+      # Assembly
       nasm
-
-      # C Ecosystem
-      clang
-      clang-tools
+      asm-lsp
+      nasmfmt
+      binutils
+      # C / C++
       gcc
-      gnumake
       glibc
+      clang
       libclang
+      clang-tools
+      cmake
+      gnumake
       pkg-config
       xxd
-
-      # Languages & Runtimes
-      lua55Packages.lua
-      lua55Packages.luarocks
-      nodejs
-      python3
-      pyenv
+      # Zig
       zig
-
-      # Language Servers (LSP)
-      bash-language-server
-      vscode-langservers-extracted
-      lua-language-server
-      lua55Packages.luacheck
-      pyright
-      tailwindcss-language-server
-      taplo
-      typescript-language-server
-      yaml-language-server
       zls
 
-      # Formatters & Linters
-      markdownlint-cli2
-      marksman
+      # --- Managed Languages & Runtimes ---
+      # Python
+      python3
+      pyenv
+      uv
+      pyright
       black
-      eslint_d
-      prettier
+      # Lua
+      lua55Packages.lua
+      lua55Packages.luarocks
+      lua55Packages.luacheck
+      lua-language-server
       selene
+      stylua
+      # Shell
+      bash-language-server
       shellcheck
       shfmt
-      stylua
 
-      # Editors & Multiplexers
-      ghostty
-      neovim
-      sesh
-      tmux
-      vim
-      zellij
+      # --- Web & Frontend Stack ---
+      nodejs
+      typescript-language-server
+      vscode-langservers-extracted # HTML/CSS/JSON/ESLint
+      tailwindcss-language-server
+      eslint_d
 
-      # Build & Compilation
-      act
-      cargo-zigbuild
-      cdrkit
-      gnumake
-      cmake
-      nsis
-      osslsigncode
-      rcodesign
-
-      # Nix Tooling
-      nil
+      # --- Nix Infrastructure & Tooling ---
       nixd
+      nil
+      alejandra
       nix-search-tv
 
-      # Data & Databases
+      # --- Data, Serialization & Documentation ---
+      # Databases & Formats
       sqlite
       sqlitebrowser
+      taplo # TOML
+      yaml-language-server
+      # Markdown & Formatting
+      marksman
+      markdownlint-cli2
+      prettier
 
-      # Diagramming & Graphics
+      # --- Build, Automation & CI/CD ---
+      act # Local GitHub Actions
+      cargo-zigbuild
+
+      # --- Code Signing & Deployment Packaging ---
+      rcodesign
+      osslsigncode
+      nsis # Windows Installer
+      cdrkit # ISO/CD-ROM imaging
+      filezilla # File Transfer
+
+      # --- Hardware & Embedded Development (RP2350 / ARM) ---
+      gcc-arm-embedded
+      pico-sdk
+      picotool
+      probe-rs-tools
+
+      # --- AI, Diagrams & Utilities ---
+      # AI Assistance
+      github-copilot-cli
+      copilot-language-server
+      # Visuals & Graphics
       drawio
       graphviz
       mermaid-cli
-
-      # Python Tools
-      uv
-
-      # UI & Resources
-      gucharmap
-
-      # File Management
-      filezilla
-
-      # RP2350
-      pico-sdk
-      picotool
-      gcc-arm-embedded
-      probe-rs-tools
+      gucharmap # Unicode character map
     ];
     # ========================================================================
     # Graphical User Interface (GUI) Applications
