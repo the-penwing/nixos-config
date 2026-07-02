@@ -6,10 +6,10 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     opts = {
-      nes = {
+      panel = {
         enabled = true,
         keymap = {
-          accept_and_goto = "<M>a",
+          accept_and_goto = "<C-M-a>",
           accept = false,
           dismiss = "<Esc>",
         },

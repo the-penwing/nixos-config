@@ -41,7 +41,6 @@ return {
               return util.root_pattern(".git", "init.lua", "selene.toml", "stylua.toml")(filename)
                 or vim.fs.dirname(filename)
             end,
-
             settings = {
               Lua = {
                 runtime = {
@@ -51,19 +50,13 @@ return {
                 workspace = {
                   checkThirdParty = false,
                   library = {},
-                  ignoreDir = {
-                    ".git",
-                    "node_modules",
-                    "build",
-                    ".cache",
-                    "target",
-                    "dist",
-                  },
-                  maxPreload = 2000,
+                  inheritedCollection = false,
+                  maxPreload = 1000,
                   preloadFileSize = 150,
                 },
                 diagnostics = {
                   enable = true,
+                  globals = {},
                   neededFileStatus = {
                     ["codestyle-check"] = "None",
                   },
@@ -71,6 +64,8 @@ return {
                 completion = {
                   enable = true,
                   callSnippet = "Replace",
+                  workspaceWord = false,
+                  showWord = "Disable",
                 },
                 telemetry = { enable = false },
                 codeLens = { enable = false },
