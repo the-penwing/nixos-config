@@ -180,6 +180,7 @@
       pico-sdk
       picotool
       gcc-arm-embedded
+      probe-rs-tools
     ];
     # ========================================================================
     # Graphical User Interface (GUI) Applications

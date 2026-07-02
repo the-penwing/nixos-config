@@ -11,6 +11,7 @@
     description = "Ben van Leeuwen";
     shell = pkgs.zsh;
     extraGroups = [
+      "pcscd"
       "input"
       "networkmanager"
       "plugdev"

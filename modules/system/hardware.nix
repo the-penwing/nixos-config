@@ -24,8 +24,6 @@
   hardware.bluetooth.enable = true;
 
   services.udev.extraRules = ''
-    # Pico HSM Device Access
-    # Allow user access to Pico HSM without sudo
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="10fd", MODE="0666"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2e8a", MODE="0666", TAG+="uaccess"
   '';
 }
