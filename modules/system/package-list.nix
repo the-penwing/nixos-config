@@ -128,6 +128,9 @@
       lua-language-server
       selene
       stylua
+      # Swift
+      sourcekit-lsp
+      swift-format
       # Shell
       bash-language-server
       shellcheck
