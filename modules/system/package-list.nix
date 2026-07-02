@@ -314,6 +314,7 @@
       speedtest-cli
       usbutils
       libusb1
+      exfatprogs
 
       # iOS System Subsystem Interoperability
       ifuse
