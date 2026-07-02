@@ -13,6 +13,7 @@ export FZF_DEFAULT_OPTS="--color=dark \
 export TIMEFMT=$'\nreal %*E\nuser %*U\nsys %*S\n'
 export BAT_THEME="Dracula"
 export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX26.1.sdk"
+export PICO_SDK_PATH="/home/benvl/dev/hardware/pico2/cc/pico-sdk"
 export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/nixos-config/scripts"
 export XDG_DATA_DIRS="$HOME/.local/share:$XDG_DATA_DIRS"
