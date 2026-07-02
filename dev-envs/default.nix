@@ -3,6 +3,7 @@
   bash = import ./bash-scripting.nix {inherit pkgs;};
   rust = import ./rust.nix {inherit pkgs;};
   rp2350 = import ./rp2350.nix {inherit pkgs;};
+  swift = import ./swift.nix {inherit pkgs;};
 in {
   "pawn-appetit" = {
     buildInputs = pawn.packages;
@@ -19,5 +20,9 @@ in {
   "rp2350" = {
     buildInputs = rp2350.packages;
     shellHook = rp2350.shellHook;
+  };
+  "swift" = {
+    buildInputs = swift.packages;
+    shellHook = swift.shellHook;
   };
 }
