@@ -19,6 +19,8 @@ return {
       nls.builtins.formatting.prettier.with {
         filetypes = { "json" },
       },
+      -- Swift
+      nls.builtins.formatting.swift_format,
     })
   end,
 }
