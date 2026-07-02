@@ -46,7 +46,7 @@
     settings."*" = {
       addKeysToAgent = "yes";
       identitiesOnly = "yes";
-      identityFile = "~/.ssh/nixos-ssh-key.pub";
+      identityFile = "~/.ssh/id_ed25519.pub";
     };
     extraConfig = ''
       # Global PKCS11Provider for all hosts
