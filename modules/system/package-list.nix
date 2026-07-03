@@ -155,6 +155,7 @@
       sqlitebrowser
       taplo # TOML
       yaml-language-server
+      yamllint
       # Markdown & Formatting
       marksman
       markdownlint-cli2
@@ -195,6 +196,9 @@
     # ========================================================================
     gui = with pkgs; [
       # Communications & Messaging
+      element-desktop
+      iamb
+      gomuks
       discord
 
       # Digital Art & Image Compositing
