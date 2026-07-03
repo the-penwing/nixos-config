@@ -128,10 +128,6 @@
           buildInputs = shells.rp2350.buildInputs;
           shellHook = shells.rp2350.shellHook;
         };
-        swift = mkShell {
-          buildInputs = shells.swift.buildInputs;
-          shellHook = shells.swift.shellHook;
-        };
       };
     };
   };
