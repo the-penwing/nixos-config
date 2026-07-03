@@ -184,6 +184,8 @@
       # Visuals & Graphics
       drawio
       graphviz
+      gimp
+      krita
       mermaid-cli
       gucharmap # Unicode character map
     ];
