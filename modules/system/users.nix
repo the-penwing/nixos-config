@@ -21,6 +21,8 @@
       "fuse"
       "seat"
       "users"
+      "libvirtd"
+      "kvm"
     ];
   };
 }
