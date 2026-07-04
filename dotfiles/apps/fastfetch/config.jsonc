@@ -30,7 +30,8 @@
         },
         {
             "type": "packages",
-            "format": "{} (nixpkgs)",
+            "format": "{nix-all} (nixpkgs)",
+            //"format": "{nix-all} (nixpkgs), {flatpak-all} (flatpak)",
             "key": " ",
             "keyColor": "33",
         },
