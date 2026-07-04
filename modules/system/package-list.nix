@@ -198,7 +198,6 @@
       # Communications & Messaging
       element-desktop
       iamb
-      gomuks
       discord
 
       # Digital Art & Image Compositing
