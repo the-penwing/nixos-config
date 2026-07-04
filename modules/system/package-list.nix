@@ -332,6 +332,7 @@
 
       # Network Pipelines & Sync Bridges
       lftp
+      sshfs
       rclone
 
       # Processing Pipemaps & AV Codecs
