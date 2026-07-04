@@ -122,6 +122,8 @@
     openFirewall = true;
   };
 
+  programs.fuse.userAllowOther = true;
+
   services.locate = {
     enable = true;
     package = pkgs.plocate;
