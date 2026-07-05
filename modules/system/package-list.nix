@@ -185,8 +185,6 @@
       # Visuals & Graphics
       drawio
       graphviz
-      gimp
-      krita
       mermaid-cli
       gucharmap # Unicode character map
     ];
@@ -203,6 +201,9 @@
       # Digital Art & Image Compositing
       aseprite
       imagemagick
+      gimp
+      krita
+      kdePackages.wacomtablet
 
       # Host File System Shells
       kdePackages.dolphin
