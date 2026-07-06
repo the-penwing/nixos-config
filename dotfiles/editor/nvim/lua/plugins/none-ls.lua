@@ -10,7 +10,6 @@ return {
       },
       -- Python
       nls.builtins.formatting.black,
-      nls.builtins.diagnostics.pylint,
       -- Lua
       nls.builtins.diagnostics.selene,
       -- YAML
@@ -21,6 +20,9 @@ return {
       },
       -- Swift
       nls.builtins.formatting.swift_format,
+      -- Kotlin
+      nls.builtins.formatting.ktlint,
+      nls.builtins.diagnostics.detekt,
     })
   end,
 }

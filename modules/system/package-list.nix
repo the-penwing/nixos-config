@@ -128,6 +128,10 @@
       lua-language-server
       selene
       stylua
+      # Kotlin
+      ktlint
+      detekt
+      kotlin-language-server
       # Swift
       sourcekit-lsp
       swift-format
