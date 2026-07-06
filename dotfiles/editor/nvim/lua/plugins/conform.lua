@@ -6,6 +6,7 @@ return {
       zig = { "zigfmt" },
       nix = { "alejandra" },
       markdown = { "prettier" },
+      lua = {"stylua"},
     },
     formatters = {
       shfmt = {
