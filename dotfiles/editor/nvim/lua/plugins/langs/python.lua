@@ -8,7 +8,15 @@ return {
   {
     "AstroNvim/astrolsp",
     opts = {
-      servers = { "pyright" },
+      servers = { "pyright", "ruff" },
     },
+  },
+  {
+    "jim-at-jibba/micropython.nvim",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function() require("micropython_nvim").setup() end,
   },
 }
