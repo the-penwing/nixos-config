@@ -261,7 +261,6 @@
       # Power Topologies & Backlights
       brightnessctl
       ddcutil
-      power-profiles-daemon
       upower
 
       # System Theming, Icons & Engine Rules

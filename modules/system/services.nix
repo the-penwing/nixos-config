@@ -44,7 +44,6 @@
   systemd.services.syncthing.wantedBy = lib.mkForce [];
 
   services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
 
   systemd.services.icloud = {
     description = "Auto Mount Rclone iCloud Drive";

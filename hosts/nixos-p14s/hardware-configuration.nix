@@ -17,6 +17,12 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
+  powerManagement.scsiLinkPolicy = "med_power_with_dipm";
+
+  hardware.amdgpu = {
+    initrd.enable = true;
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/68c3bbf6-1dc0-461e-b105-fecc0ef537ea";
     fsType = "ext4";

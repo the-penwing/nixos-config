@@ -7,6 +7,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.kernelParams = [
+    "amd_pstate=active"
+    "amdgpu.dcfeaturemask=0x2"
+    "amdgpu.backlight=0"
+  ];
   boot.supportedFilesystems = [
     "exfat"
     "ntfs"
