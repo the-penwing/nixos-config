@@ -17,8 +17,6 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
-  powerManagement.scsiLinkPolicy = "med_power_with_dipm";
-
   hardware.amdgpu = {
     initrd.enable = true;
   };
