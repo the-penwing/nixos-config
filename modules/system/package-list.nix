@@ -107,6 +107,7 @@
       glibc
       clang
       libclang
+      lldb
       clang-tools
       cmake
       gnumake
