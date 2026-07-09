@@ -122,6 +122,7 @@
       pyenv
       uv
       pyright
+      ruff
       black
       # Lua
       lua55Packages.lua
