@@ -38,6 +38,7 @@
       man-pages
       man-pages-posix
       tldr
+      zeal
 
       # Text and File Search + Structural Transformation
       fd
@@ -89,6 +90,7 @@
       # ---  Core Editors, Terminals & Multiplexers ---
       neovim
       vim
+      helix
       ghostty
       tmux
       zellij
