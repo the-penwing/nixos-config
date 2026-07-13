@@ -9,7 +9,6 @@ declare -a SYNC_PAIRS=(
   "dotfiles/desktop/hyprland:~/.config/hypr"
   "dotfiles/desktop/caelestia:~/.config/caelestia"
   "dotfiles/apps/ghostty:~/.config/ghostty"
-  "dotfiles/apps/btop:~/.config/btop"
   "dotfiles/apps/fastfetch:~/.config/fastfetch"
   "dotfiles/apps/yazi:~/.config/yazi"
   "dotfiles/shell/zsh/.zshrc:~/.zshrc"
