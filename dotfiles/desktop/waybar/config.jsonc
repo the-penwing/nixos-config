@@ -1,0 +1,37 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "battery"
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %B %d, %Y}"
+  },
+  "pulseaudio": {
+    "format": "󰕾 {volume}%",
+    "format-muted": "󰖁 "
+  },
+  "backlight": {
+    "format": "󰳲 "
+  },
+  "battery": {
+    "format": "󰁹 {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "full-at": 80,
+    "full": "󱟦 ",
+    "full-at-plugged": "󱟢 "
+  }
+}
