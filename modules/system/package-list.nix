@@ -242,6 +242,8 @@
       # Application Orchestration & Launchers
       fuzzel
       kando
+      waybar
+      rofi
 
       # Audio Backends, Sinks & Mixers
       pamixer
