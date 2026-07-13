@@ -14,15 +14,6 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     naviterm = {
       url = "gitlab:detoxify92/naviterm";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,8 +34,6 @@
     naviterm,
     solaar,
     cherri,
-    caelestia-shell,
-    caelestia-cli,
     rust-overlay,
     ...
   } @ inputs: let
@@ -68,17 +57,12 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "bak";
-          home-manager.sharedModules = [
-            caelestia-shell.homeManagerModules.default
-          ];
           home-manager.users.benvl = import ./home.nix {inherit pkgs;};
         }
         {
           environment.systemPackages = [
             naviterm.packages.${system}.default
             cherri.packages.${system}.default
-            caelestia-shell.packages.${system}.default
-            caelestia-cli.packages.${system}.default
             # Rust toolchain with rust-src for rust-analyzer
             (pkgs.rust-bin.stable.latest.default.override {
               extensions = [
