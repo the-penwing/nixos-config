@@ -3,7 +3,7 @@ local mainMod = "SUPER"
 local terminal = "ghostty"
 local fileManager = "dolphin"
 local browser = "firefox"
-local launcher = "caelestia shell drawers toggle launcher"
+local launcher = "fuzzel"
 local lockscreen = "caelestia shell lock lock"
 local docs = "zeal"
 
