@@ -119,7 +119,6 @@
         "hiddenApps": [
             "nm-connection-editor",
             "blueman-adapters",
-            "blueman-manager",
             "btop",
             "vim",
             "syncthing-ui",
