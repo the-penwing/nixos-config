@@ -4,6 +4,7 @@ local exec_once_commands = {
 	"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
 	"solaar --window=hide -w hide",
 	"kando",
+	"hyprpaper",
 	"waybar",
 }
 
