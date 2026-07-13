@@ -249,6 +249,7 @@
       blueman
 
       # Layout Capture & Display Managers
+      hyprlock
       grim
       slurp
       swappy
