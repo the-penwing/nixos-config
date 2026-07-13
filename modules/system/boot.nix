@@ -10,8 +10,6 @@
   boot.kernelParams = [
     "amd_pstate=active"
     "amdgpu.dcfeaturemask=0x2"
-    "amdgpu.backlight=0"
-    "acpi_backlight=vendor"
   ];
   boot.supportedFilesystems = [
     "exfat"
