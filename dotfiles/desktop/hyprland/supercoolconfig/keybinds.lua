@@ -5,6 +5,7 @@ local fileManager = "dolphin"
 local browser = "firefox"
 local launcher = "caelestia shell drawers toggle launcher"
 local lockscreen = "caelestia shell lock lock"
+local docs = "zeal"
 
 local function bind(mods, key, dispatcher, opts)
 	if mods == "" then
@@ -21,6 +22,8 @@ local core_binds = {
 	{ mods = mainMod, key = "E", dispatcher = hl.dsp.exec_cmd(fileManager) },
 	{ mods = mainMod, key = "N", dispatcher = hl.dsp.exec_cmd("obsidian") },
 	{ mods = mainMod, key = "M", dispatcher = hl.dsp.exec_cmd(terminal) },
+	{ mods = mainMod, key = "D", dispatcher = hl.dsp.exec_cmd(docs) },
+
 	{ mods = mainMod, key = "R", dispatcher = hl.dsp.exec_cmd(launcher) },
 	{ mods = mainMod, key = "Q", dispatcher = hl.dsp.window.close() },
 	{ mods = mainMod .. " + SHIFT", key = "Q", dispatcher = hl.dsp.exit() },
@@ -74,8 +77,8 @@ local media_binds = {
 	{ key = "XF86AudioRaiseVolume", dispatcher = hl.dsp.exec_cmd("pamixer -i 5"), repeating = true },
 	{ key = "XF86AudioLowerVolume", dispatcher = hl.dsp.exec_cmd("pamixer -d 5"), repeating = true },
 	{ key = "XF86AudioMute", dispatcher = hl.dsp.exec_cmd("pamixer -t"), repeating = true },
-	{ key = "XF86MonBrightnessUp", dispatcher = hl.dsp.global("caelestia:brightnessUp"), repeating = true },
-	{ key = "XF86MonBrightnessDown", dispatcher = hl.dsp.global("caelestia:brightnessDown"), repeating = true },
+	{ key = "XF86MonBrightnessUp", dispatcher = hl.dsp.exec_cmd("brightnessctl set +5%"), repeating = true },
+	{ key = "XF86MonBrightnessDown", dispatcher = hl.dsp.exec_cmd("brightnessctl set 5%-"), repeating = true },
 	{ key = "XF86AudioPlay", dispatcher = hl.dsp.exec_cmd("playerctl play-pause") },
 	{ key = "XF86AudioNext", dispatcher = hl.dsp.exec_cmd("playerctl next") },
 	{ key = "XF86AudioPrev", dispatcher = hl.dsp.exec_cmd("playerctl previous") },
