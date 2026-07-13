@@ -4,7 +4,7 @@ local terminal = "ghostty"
 local fileManager = "dolphin"
 local browser = "firefox"
 local launcher = "fuzzel"
-local lockscreen = "caelestia shell lock lock"
+local lockscreen = "hyprlock"
 local docs = "zeal"
 
 local function bind(mods, key, dispatcher, opts)
