@@ -235,6 +235,7 @@
     # ========================================================================
     desktop = with pkgs; [
       # Application Orchestration & Launchers
+      bemoji
       fuzzel
       kando
       waybar
