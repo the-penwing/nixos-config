@@ -30,6 +30,7 @@ function plugin.config()
   lint.linters_by_ft = {
     markdown = { "markdownlint-cli2" },
     lua = { "selene" },
+    kotlin = {"detekt"}
   }
   
   vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {

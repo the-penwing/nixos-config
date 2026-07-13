@@ -22,7 +22,6 @@ return {
       nls.builtins.formatting.swift_format,
       -- Kotlin
       nls.builtins.formatting.ktlint,
-      nls.builtins.diagnostics.detekt,
     })
   end,
 }
