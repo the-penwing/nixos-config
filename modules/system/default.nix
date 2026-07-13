@@ -13,7 +13,10 @@
     ./networking.nix
     ./packages.nix
     ./performance.nix
+    ./programs.nix
     ./services.nix
+    ./systemd.nix
     ./users.nix
+    ./virtualisation.nix
   ];
 }
