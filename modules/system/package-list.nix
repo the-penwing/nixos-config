@@ -266,6 +266,7 @@
       upower
 
       # System Theming, Icons & Engine Rules
+      hyprpaper
       bibata-cursors
       dracula-icon-theme
       dracula-qt5-theme
