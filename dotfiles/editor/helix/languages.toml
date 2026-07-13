@@ -1,0 +1,54 @@
+# ==============================================================================
+# HELIX LANGUAGE SERVERS DEFINITIONS & OVERRIDES
+# ==============================================================================
+
+# C (NixOS Global Store Path Fix - Keep this!)
+[language-server.clangd]
+command = "/run/current-system/sw/bin/clangd"
+
+# Nix LSP definition
+[language-server.nixd]
+command = "nixd"
+
+# Kotlin Server custom linting
+[language-server.kotlin-language-server]
+command = "kotlin-language-server"
+[language-server.kotlin-language-server.config.kotlin.linting]
+enabled = true
+
+# Lua Language Server Optimization
+[language-server.lua-language-server]
+command = "lua-language-server"
+[language-server.lua-language-server.config.Lua]
+telemetry = { enable = false }
+codeLens = { enable = false }
+hint = { enable = true }
+workspace = { checkThirdParty = false, maxPreload = 1000, preloadFileSize = 150 }
+completion = { callSnippet = "Replace", workspaceWord = false, showWord = "Disable" }
+diagnostics = { enable = true, neededFileStatus = { "codestyle-check" = "None" } }
+
+# ==============================================================================
+# LANGUAGE OVERRIDES (ONLY WHAT IS TRULY CUSTOM)
+# ==============================================================================
+
+[[language]]
+name = "c"
+language-servers = [ "clangd" ]
+
+[[language]]
+name = "kotlin"
+language-servers = [ "kotlin-language-server" ]
+
+[[language]]
+name = "lua"
+language-servers = [ "lua-language-server" ]
+
+[[language]]
+name = "nix"
+language-servers = [ "nixd" ]
+formatter = { command = "alejandra" }
+
+# Stacking Pyright + Ruff requires an override
+[[language]]
+name = "python"
+language-servers = [ "pyright", "ruff" ]
