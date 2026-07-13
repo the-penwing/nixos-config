@@ -93,7 +93,6 @@
       helix
       ghostty
       tmux
-      zellij
       sesh
 
       # --- Low-Level, C & Zig Ecosystems ---
@@ -136,9 +135,6 @@
       ktlint
       detekt
       kotlin-language-server
-      # Swift
-      sourcekit-lsp
-      swift-format
       # Shell
       bash-language-server
       shellcheck
@@ -211,7 +207,6 @@
       imagemagick
       gimp
       krita
-      kdePackages.wacomtablet
 
       # Host File System Shells
       kdePackages.dolphin
