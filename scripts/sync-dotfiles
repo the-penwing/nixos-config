@@ -5,9 +5,11 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 # Define sync pairs: (dotfiles_path, config_path)
 declare -a SYNC_PAIRS=(
+  "dotfiles/editor/helix:~/.config/helix"
   "dotfiles/editor/nvim:~/.config/nvim"
   "dotfiles/desktop/hyprland:~/.config/hypr"
-  "dotfiles/desktop/caelestia:~/.config/caelestia"
+  "dotfiles/desktop/waybar:~/.config/waybar"
+  "dotfiles/desktop/fuzzel:~/.config/fuzzel"
   "dotfiles/apps/ghostty:~/.config/ghostty"
   "dotfiles/apps/fastfetch:~/.config/fastfetch"
   "dotfiles/apps/yazi:~/.config/yazi"
