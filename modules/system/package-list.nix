@@ -245,6 +245,7 @@
       pamixer
       pavucontrol
       playerctl
+      portaudio
 
       # Hardware Integration & Radios
       blueman
