@@ -1,28 +1,14 @@
-# Lock file (auto-generated, causes merge conflicts)
-flake.lock
-
 # Nix build artifacts
 result
 result-*
 *.drv
-
-# Editor/IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
 .luarc.json
-
 # Secrets/sensitive files (if you add any)
 secrets.nix
 .env
-
 # Temporary files
 *.tmp
 *.log
-
 # Backup files
 *.bak*
 *.bak
