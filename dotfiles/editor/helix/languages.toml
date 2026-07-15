@@ -1,54 +1,143 @@
-# ==============================================================================
-# HELIX LANGUAGE SERVERS DEFINITIONS & OVERRIDES
-# ==============================================================================
+[language-server]
+bash-language-server = { command = "bash-language-server", args = ["start"] }
+clangd = { command = "clangd" }
+kotlin-language-server = { command = "kotlin-language-server" }
+lua-language-server = { command = "lua-language-server" }
+nil = { command = "nil" }
+nixd = { command = "nixd" }
+pyright = { command = "pyright-langserver", args = ["--stdio"] }
+ruff = { command = "ruff", args = ["server"] }
+rust-analyzer = { command = "rust-analyzer" }
+typescript-language-server = { command = "typescript-language-server", args = [
+  "--stdio",
+] }
+zls = { command = "zls" }
+vscode-html-language-server = { command = "vscode-html-language-server", args = [
+  "--stdio",
+], config = { provideFormatter = true } }
+vscode-css-language-server = { command = "vscode-css-language-server", args = [
+  "--stdio",
+], config = { provideFormatter = true } }
+vscode-json-language-server = { command = "vscode-json-language-server", args = [
+  "--stdio",
+], config = { provideFormatter = true } }
+yaml-language-server = { command = "yaml-language-server", args = ["--stdio"] }
+marksman = { command = "marksman", args = ["server"] }
 
-# C (NixOS Global Store Path Fix - Keep this!)
-[language-server.clangd]
-command = "/run/current-system/sw/bin/clangd"
-
-# Nix LSP definition
-[language-server.nixd]
-command = "nixd"
-
-# Kotlin Server custom linting
-[language-server.kotlin-language-server]
-command = "kotlin-language-server"
-[language-server.kotlin-language-server.config.kotlin.linting]
-enabled = true
-
-# Lua Language Server Optimization
-[language-server.lua-language-server]
-command = "lua-language-server"
-[language-server.lua-language-server.config.Lua]
-telemetry = { enable = false }
-codeLens = { enable = false }
-hint = { enable = true }
-workspace = { checkThirdParty = false, maxPreload = 1000, preloadFileSize = 150 }
-completion = { callSnippet = "Replace", workspaceWord = false, showWord = "Disable" }
-diagnostics = { enable = true, neededFileStatus = { "codestyle-check" = "None" } }
-
-# ==============================================================================
-# LANGUAGE OVERRIDES (ONLY WHAT IS TRULY CUSTOM)
-# ==============================================================================
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
+formatter = { command = "rustfmt" }
+auto-format = true
 
 [[language]]
 name = "c"
-language-servers = [ "clangd" ]
+language-servers = ["clangd"]
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
+name = "cpp"
+language-servers = ["clangd"]
+formatter = { command = "clang-format" }
+auto-format = true
 
 [[language]]
 name = "kotlin"
-language-servers = [ "kotlin-language-server" ]
+language-servers = ["kotlin-language-server"]
+formatter = { command = "ktlint", args = ["-"] }
+auto-format = true
 
 [[language]]
 name = "lua"
-language-servers = [ "lua-language-server" ]
+language-servers = ["lua-language-server"]
+formatter = { command = "stylua", args = ["-"] }
+auto-format = true
 
 [[language]]
 name = "nix"
-language-servers = [ "nixd" ]
+language-servers = ["nil", "nixd"]
 formatter = { command = "alejandra" }
+auto-format = true
 
-# Stacking Pyright + Ruff requires an override
 [[language]]
 name = "python"
-language-servers = [ "pyright", "ruff" ]
+language-servers = ["pyright", "ruff"]
+formatter = { command = "black", args = ["-"] }
+auto-format = true
+
+[[language]]
+name = "bash"
+language-servers = ["bash-language-server"]
+formatter = { command = "shfmt" }
+auto-format = true
+
+[[language]]
+name = "zig"
+language-servers = ["zls"]
+formatter = { command = "zig", args = ["fmt", "--stdin"] }
+auto-format = true
+
+# Web stack
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server"]
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server"]
+auto-format = true
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]
+auto-format = true
+
+[[language]]
+name = "jsonc"
+language-servers = ["vscode-json-language-server"]
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--parser", "babel"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--parser", "babel"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["format", "-"] }
+auto-format = true
+
+[[language]]
+name = "yaml"
+language-servers = ["yaml-language-server"]
+formatter = { command = "yamlfmt", args = ["-"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman"]
+
+[[language]]
+name = "dockerfile"
+file-types = ["Dockerfile", "dockerfile"]
