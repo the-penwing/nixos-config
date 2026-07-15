@@ -1,6 +1,7 @@
 theme = "transparent_dracula"
 
 [editor]
+auto-format = true
 line-number = "relative"
 mouse = true
 cursorline = true
