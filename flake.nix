@@ -24,7 +24,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    cherri.url = "github:electrikmilk/cherri";
   };
 
   outputs = {
@@ -33,7 +32,6 @@
     home-manager,
     naviterm,
     solaar,
-    cherri,
     rust-overlay,
     ...
   } @ inputs: let
@@ -62,7 +60,6 @@
         {
           environment.systemPackages = [
             naviterm.packages.${system}.default
-            cherri.packages.${system}.default
             # Rust toolchain with rust-src for rust-analyzer
             (pkgs.rust-bin.stable.latest.default.override {
               extensions = [
