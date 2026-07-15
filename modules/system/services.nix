@@ -33,7 +33,6 @@
 
   services.upower.enable = true;
 
-
   services.usbmuxd = {
     enable = true;
     package = pkgs.usbmuxd2;
@@ -43,7 +42,6 @@
     enable = true;
     plugins = [pkgs.ccid];
   };
-
 
   services.printing = {
     enable = true;
@@ -59,7 +57,6 @@
     nssmdns4 = true;
     openFirewall = true;
   };
-
 
   services.locate = {
     enable = true;

@@ -1,5 +1,8 @@
-{pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   # Only start syncthing when explicitly requested
   systemd.services.syncthing.wantedBy = lib.mkForce [];
 
