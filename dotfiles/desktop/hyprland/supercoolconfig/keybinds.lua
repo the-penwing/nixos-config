@@ -6,6 +6,8 @@ local browser = "firefox"
 local launcher = "fuzzel"
 local lockscreen = "hyprlock"
 local docs = "zeal"
+local notifs = "swaync-client -t"
+local notes = "obsidian"
 
 local function bind(mods, key, dispatcher, opts)
 	if mods == "" then
@@ -20,11 +22,12 @@ local core_binds = {
 	{ mods = mainMod, key = "Return", dispatcher = hl.dsp.exec_cmd(terminal) },
 	{ mods = mainMod, key = "B", dispatcher = hl.dsp.exec_cmd(browser) },
 	{ mods = mainMod, key = "E", dispatcher = hl.dsp.exec_cmd(fileManager) },
-	{ mods = mainMod, key = "N", dispatcher = hl.dsp.exec_cmd("obsidian") },
+	{ mods = mainMod, key = "N", dispatcher = hl.dsp.exec_cmd(notifs) },
 	{ mods = mainMod, key = "M", dispatcher = hl.dsp.exec_cmd(terminal) },
 	{ mods = mainMod, key = "D", dispatcher = hl.dsp.exec_cmd(docs) },
 
 	{ mods = mainMod, key = "R", dispatcher = hl.dsp.exec_cmd(launcher) },
+	{ mods = mainMod .. " + SHIFT", key = "N", dispatcher = hl.dsp.exec_cmd(notes) },
 	{ mods = mainMod, key = "Q", dispatcher = hl.dsp.window.close() },
 	{ mods = mainMod .. " + SHIFT", key = "Q", dispatcher = hl.dsp.exit() },
 	{
