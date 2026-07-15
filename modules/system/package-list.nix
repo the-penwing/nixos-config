@@ -227,6 +227,7 @@
 
       # Web Browser
       qutebrowser
+      chromium # Only for Bluetooth Cubing
     ];
 
     # ========================================================================
@@ -251,6 +252,7 @@
       blueman
 
       # Layout Capture & Display Managers
+      swaynotificationcenter
       hyprlock
       grim
       slurp
