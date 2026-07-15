@@ -12,3 +12,5 @@ secrets.nix
 # Backup files
 *.bak*
 *.bak
+# zsh config artifacts
+*.zcompdump
