@@ -16,6 +16,7 @@ alias evil-winrm='evil-winrm-py'
 alias tree-no-docs='tree --gitignore -I "*.md" --prune'
 alias czb='cargo zigbuild'
 alias czbr='cargo zigbuild --release'
+alias rust-docs='xdg-open "$(rustc --print sysroot)/share/doc/rust/html/index.html"'
 alias ns="nix-search-tv print | fzf \
   --preview 'nix-search-tv preview {}' \
   --scheme history"
