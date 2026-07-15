@@ -253,6 +253,7 @@
 
       # Layout Capture & Display Managers
       swaynotificationcenter
+      libnotify
       hyprlock
       grim
       slurp
