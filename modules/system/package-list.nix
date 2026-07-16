@@ -191,6 +191,8 @@
       # AI Assistance
       github-copilot-cli
       copilot-language-server
+      llama-cpp-vulkan
+      lsp-ai
       # Visuals & Graphics
       drawio
       graphviz
