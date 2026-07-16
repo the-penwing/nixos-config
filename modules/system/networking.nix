@@ -17,6 +17,18 @@
         8000
         3000
       ];
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
     };
     nameservers = ["192.168.50.117" "1.1.1.1"];
     search = ["homelab"];

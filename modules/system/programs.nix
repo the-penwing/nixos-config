@@ -25,6 +25,10 @@
     pinentryPackage = pkgs.pinentry-curses;
   };
 
+  programs.kdeconnect = {
+    enable = true;
+  };
+
   programs.zsh = {
     enable = true;
   };
