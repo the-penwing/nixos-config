@@ -11,27 +11,32 @@
   "modules-right": [
     "pulseaudio",
     "backlight",
-    "battery"
+    "battery",
   ],
   "hyprland/workspaces": {
     "format": "{name}"
   },
   "clock": {
-    "format": "{:%H:%M}",
-    "tooltip-format": "{:%A, %B %d, %Y}"
+    "tooltip": true,
+    "format": "{:%H:%M}  ",
+    "tooltip-format": "{:%A, %B %d, %Y} 󰃰 ",
   },
   "pulseaudio": {
     "format": "󰕾 {volume}%",
-    "format-muted": "󰖁 "
+    "format-muted": "󰖁"
   },
   "backlight": {
-    "format": "󰳲 "
+    "format": "󰳲"
   },
   "battery": {
     "format": "󰁹 {capacity}%",
     "format-charging": "󰂄 {capacity}%",
     "full-at": 80,
-    "full": "󱟦 ",
-    "full-at-plugged": "󱟢 "
-  }
+    "full": "󱟦",
+    "full-at-plugged": "󱟢"
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 6,
+  },
 }
