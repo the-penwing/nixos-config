@@ -5,65 +5,70 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 # Define sync pairs: (dotfiles_path, config_path)
 declare -a SYNC_PAIRS=(
-  "dotfiles/editor/helix:~/.config/helix"
-  "dotfiles/editor/nvim:~/.config/nvim"
-  "dotfiles/desktop/hyprland:~/.config/hypr"
-  "dotfiles/desktop/waybar:~/.config/waybar"
-  "dotfiles/desktop/fuzzel:~/.config/fuzzel"
-  "dotfiles/apps/ghostty:~/.config/ghostty"
-  "dotfiles/apps/fastfetch:~/.config/fastfetch"
-  "dotfiles/apps/yazi:~/.config/yazi"
-  "dotfiles/shell/zsh/.zshrc:~/.zshrc"
-  "dotfiles/shell/zsh/config-dir/:~/.config/zsh/"
-  "dotfiles/shell/zellij:~/.config/zellij"
-  "dotfiles/shell/starship.toml:~/.config/starship.toml"
-  "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
+	"dotfiles/editor/helix:~/.config/helix"
+	"dotfiles/editor/nvim:~/.config/nvim"
+	"dotfiles/desktop/hyprland:~/.config/hypr"
+	"dotfiles/desktop/waybar:~/.config/waybar"
+	"dotfiles/desktop/fuzzel:~/.config/fuzzel"
+	"dotfiles/apps/ghostty:~/.config/ghostty"
+	"dotfiles/apps/fastfetch:~/.config/fastfetch"
+	"dotfiles/apps/yazi:~/.config/yazi"
+	"dotfiles/shell/zsh/.zshrc:~/.zshrc"
+	"dotfiles/shell/zsh/config-dir/:~/.config/zsh/"
+	"dotfiles/shell/zellij:~/.config/zellij"
+	"dotfiles/shell/starship.toml:~/.config/starship.toml"
+	"dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
 )
 
 ACTION="${1:-pull}"
 
 sync_pair() {
-  local src="$1"
-  local dst="$2"
+	local src="$1"
+	local dst="$2"
 
-  dst="${dst/#\~/$HOME}"
-  src="${REPO_ROOT}/${src}"
+	dst="${dst/#\~/$HOME}"
+	src="${REPO_ROOT}/${src}"
 
-  if [ ! -e "$src" ]; then
-    echo "  ⚠️  Source does not exist: $src"
-    return
-  fi
+	if [ ! -e "$src" ]; then
+		echo "  ⚠️  Source does not exist: $src"
+		return
+	fi
 
-  if [ "$ACTION" = "pull" ]; then
-    mkdir -p "$(dirname "$dst")"
-    echo "  ← $src → $dst"
-    if [ -d "$src" ]; then
-      mkdir -p "$dst"
-      rsync -a --delete "$src"/ "$dst"/
-    else
-      cp "$src" "$dst"
-    fi
-    chmod -R u+w "$dst" 2>/dev/null || true
-  elif [ "$ACTION" = "push" ]; then
-    if [ ! -e "$dst" ]; then
-      echo "  ⚠️  Destination does not exist: $dst"
-      return
-    fi
-    mkdir -p "$(dirname "$src")"
-    echo "  → $dst → $src"
-    if [ -d "$dst" ]; then
-      mkdir -p "$src"
-      rsync -a --delete "$dst"/ "$src"/
-    else
-      cp "$dst" "$src"
-    fi
-  fi
+	if [ "$ACTION" = "pull" ]; then
+		mkdir -p "$(dirname "$dst")"
+		echo "  ← $src → $dst"
+		if [ -d "$src" ]; then
+			mkdir -p "$dst"
+			rsync -a --delete "$src"/ "$dst"/
+		else
+			cp "$src" "$dst"
+		fi
+		chmod -R u+w "$dst" 2>/dev/null || true
+	elif [ "$ACTION" = "push" ]; then
+		if [ ! -e "$dst" ]; then
+			echo "  ⚠️  Destination does not exist: $dst"
+			return
+		fi
+		mkdir -p "$(dirname "$src")"
+		echo "  → $dst → $src"
+		if [ -d "$dst" ]; then
+			mkdir -p "$src"
+			rsync -a --delete \
+				--exclude=".git/" \
+				--exclude=".gitfiles" \
+				--exclude="*.zcompdump*" \
+				--exclude=".gitignore" \
+				"$dst"/ "$src"/
+		else
+			cp "$dst" "$src"
+		fi
+	fi
 }
 
 echo "=== Config Sync: $ACTION ==="
 for pair in "${SYNC_PAIRS[@]}"; do
-  IFS=: read -r src dst <<<"$pair"
-  sync_pair "$src" "$dst"
+	IFS=: read -r src dst <<<"$pair"
+	sync_pair "$src" "$dst"
 done
 
 echo "✅ Sync complete"
