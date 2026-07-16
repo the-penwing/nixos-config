@@ -25,6 +25,7 @@
       # Networking & Data Transfer
       curl
       wget
+      cloudflared
 
       # Security, Keys & Certificates
       cacert
@@ -141,6 +142,7 @@
       shfmt
 
       # --- Web & Frontend Stack ---
+      browser-sync
       nodejs
       pnpm
       typescript-language-server
@@ -170,6 +172,7 @@
       # --- Build, Automation & CI/CD ---
       act # Local GitHub Actions
       cargo-zigbuild
+      docker-compose
 
       # --- Code Signing & Deployment Packaging ---
       rcodesign
