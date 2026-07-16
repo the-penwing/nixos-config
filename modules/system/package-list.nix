@@ -142,8 +142,9 @@
 
       # --- Web & Frontend Stack ---
       nodejs
+      pnpm
       typescript-language-server
-      vscode-langservers-extracted # HTML/CSS/JSON/ESLint
+      vscode-langservers-extracted
       tailwindcss-language-server
       eslint_d
 
@@ -160,6 +161,7 @@
       taplo # TOML
       yaml-language-server
       yamllint
+      yamlfmt
       # Markdown & Formatting
       marksman
       markdownlint-cli2
