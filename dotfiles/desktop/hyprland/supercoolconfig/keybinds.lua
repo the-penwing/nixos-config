@@ -49,7 +49,11 @@ for _, item in ipairs(core_binds) do
 end
 
 local clipboard_binds = {
-	{ mods = mainMod, key = "V", dispatcher = hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu | cliphist decode | wl-copy") },
+	{
+		mods = mainMod,
+		key = "V",
+		dispatcher = hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"),
+	},
 	{ mods = mainMod, key = "ALT + V", dispatcher = hl.dsp.exec_cmd("cliphist delete-query") },
 	{ mods = mainMod, key = "Period", dispatcher = hl.dsp.exec_cmd("bemoji -n") },
 }
@@ -80,8 +84,16 @@ local media_binds = {
 	{ key = "XF86AudioRaiseVolume", dispatcher = hl.dsp.exec_cmd("pamixer -i 5"), repeating = true },
 	{ key = "XF86AudioLowerVolume", dispatcher = hl.dsp.exec_cmd("pamixer -d 5"), repeating = true },
 	{ key = "XF86AudioMute", dispatcher = hl.dsp.exec_cmd("pamixer -t"), repeating = true },
-	{ key = "XF86MonBrightnessUp", dispatcher = hl.dsp.exec_cmd("/run/current-system/sw/bin/brightnessctl set +5% > /tmp/brightness_up.log 2>&1"), repeating = true },
-	{ key = "XF86MonBrightnessDown", dispatcher = hl.dsp.exec_cmd("/run/current-system/sw/bin/brightnessctl set 5%- > /tmp/brightness_down.log 2>&1"), repeating = true },
+	{
+		key = "XF86MonBrightnessUp",
+		dispatcher = hl.dsp.exec_cmd("brightnessctl set +5%"),
+		repeating = true,
+	},
+	{
+		key = "XF86MonBrightnessDown",
+		dispatcher = hl.dsp.exec_cmd("brightnessctl set 5%-"),
+		repeating = true,
+	},
 	{ key = "XF86AudioPlay", dispatcher = hl.dsp.exec_cmd("playerctl play-pause") },
 	{ key = "XF86AudioNext", dispatcher = hl.dsp.exec_cmd("playerctl next") },
 	{ key = "XF86AudioPrev", dispatcher = hl.dsp.exec_cmd("playerctl previous") },
