@@ -1,6 +1,8 @@
+# ========================================================================
+# Language Servers Configuration
+# ========================================================================
 [language-server]
 bash-language-server = { command = "bash-language-server", args = ["start"] }
-clangd = { command = "clangd" }
 kotlin-language-server = { command = "kotlin-language-server" }
 lua-language-server = { command = "lua-language-server" }
 nil = { command = "nil" }
@@ -8,21 +10,34 @@ nixd = { command = "nixd" }
 pyright = { command = "pyright-langserver", args = ["--stdio"] }
 ruff = { command = "ruff", args = ["server"] }
 rust-analyzer = { command = "rust-analyzer" }
+zls = { command = "zls" }
+yaml-language-server = { command = "yaml-language-server", args = ["--stdio"] }
+marksman = { command = "marksman", args = ["server"] }
+
+clangd = { command = "sh", args = [
+  "-c",
+  "exec clangd --query-driver=/run/current-system/sw/bin/gcc,/run/current-system/sw/bin/clang",
+] }
+# Modern Web Stack LSPs
 typescript-language-server = { command = "typescript-language-server", args = [
   "--stdio",
 ] }
-zls = { command = "zls" }
+tailwindcss-language-server = { command = "tailwindcss-language-server", args = [
+  "--stdio",
+] }
 vscode-html-language-server = { command = "vscode-html-language-server", args = [
   "--stdio",
-], config = { provideFormatter = true } }
+] }
 vscode-css-language-server = { command = "vscode-css-language-server", args = [
   "--stdio",
-], config = { provideFormatter = true } }
+] }
 vscode-json-language-server = { command = "vscode-json-language-server", args = [
   "--stdio",
-], config = { provideFormatter = true } }
-yaml-language-server = { command = "yaml-language-server", args = ["--stdio"] }
-marksman = { command = "marksman", args = ["server"] }
+] }
+
+# ========================================================================
+# Language Configurations
+# ========================================================================
 
 [[language]]
 name = "rust"
@@ -78,25 +93,33 @@ language-servers = ["zls"]
 formatter = { command = "zig", args = ["fmt", "--stdin"] }
 auto-format = true
 
-# Web stack
+# --- Web & Frontend Stack ---
+
 [[language]]
 name = "html"
-language-servers = ["vscode-html-language-server"]
+language-servers = [
+  "vscode-html-language-server",
+  "tailwindcss-language-server",
+]
+formatter = { command = "prettier", args = ["--parser", "html"] }
 auto-format = true
 
 [[language]]
 name = "css"
-language-servers = ["vscode-css-language-server"]
+language-servers = ["vscode-css-language-server", "tailwindcss-language-server"]
+formatter = { command = "prettier", args = ["--parser", "css"] }
 auto-format = true
 
 [[language]]
 name = "json"
 language-servers = ["vscode-json-language-server"]
+formatter = { command = "prettier", args = ["--parser", "json"] }
 auto-format = true
 
 [[language]]
 name = "jsonc"
 language-servers = ["vscode-json-language-server"]
+formatter = { command = "prettier", args = ["--parser", "json"] }
 auto-format = true
 
 [[language]]
@@ -107,7 +130,7 @@ auto-format = true
 
 [[language]]
 name = "jsx"
-language-servers = ["typescript-language-server"]
+language-servers = ["typescript-language-server", "tailwindcss-language-server"]
 formatter = { command = "prettier", args = ["--parser", "babel"] }
 auto-format = true
 
@@ -119,9 +142,11 @@ auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = ["typescript-language-server"]
+language-servers = ["typescript-language-server", "tailwindcss-language-server"]
 formatter = { command = "prettier", args = ["--parser", "typescript"] }
 auto-format = true
+
+# --- Serialization & Docs ---
 
 [[language]]
 name = "toml"

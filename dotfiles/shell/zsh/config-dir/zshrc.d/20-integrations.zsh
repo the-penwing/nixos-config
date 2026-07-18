@@ -4,6 +4,9 @@
 
 # Force Emacs mode early so plugins/configs don't put us in Vi mode
 bindkey -e
+# Fix the Delete key producing a tilde
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
 
 ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
 
