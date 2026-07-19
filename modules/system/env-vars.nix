@@ -6,8 +6,8 @@
 
   environment.sessionVariables = {
     # Preferred Default Editors
-    EDITOR = "nvim";
-    SUDO_EDITOR = "nvim";
+    EDITOR = "hx";
+    SUDO_EDITOR = "hx";
 
     # Graphics overrides for Hashcat and Wayland / Hyprland mapping
     RUSTICL_ENABLE = "radeonsi";
