@@ -90,13 +90,13 @@
     dev = with pkgs; [
       # ---  Core Editors, Terminals & Multiplexers ---
       neovim
-      vim
       helix
       ghostty
       tmux
       sesh
 
       # --- Low-Level, C & Zig Ecosystems ---
+      binary # Convert Numbers Between Bases
       # Assembly
       nasm
       asm-lsp
@@ -192,10 +192,10 @@
       github-copilot-cli
       copilot-language-server
       llama-cpp-vulkan
-      lsp-ai
       # Visuals & Graphics
       drawio
       graphviz
+      gnome-graphs
       mermaid-cli
       gucharmap # Unicode character map
     ];
@@ -205,7 +205,6 @@
     # ========================================================================
     gui = with pkgs; [
       # Communications & Messaging
-      element-desktop
       iamb
       discord
 
@@ -214,6 +213,7 @@
       imagemagick
       gimp
       krita
+      xournalpp
 
       # Host File System Shells
       kdePackages.dolphin
