@@ -47,7 +47,7 @@
       AMD_ENERGY_PERF_POLICY_ON_AC = "performance";
       PLATFORM_PROFILE_ON_AC = "performance";
       CPU_BOOST_ON_AC = 1;
-      START_CHARGE_THRESH_BAT0 = 40;
+      START_CHARGE_THRESH_BAT0 = 75;
       STOP_CHARGE_THRESH_BAT0 = 80;
 
       USB_AUTOSUSPEND = 1;
