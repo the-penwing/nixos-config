@@ -10,6 +10,7 @@ bufferline = "always"
 color-modes = true
 idle-timeout = 0
 completion-trigger-len = 1
+default-yank-register = '+'
 
 [editor.auto-save]
 focus-lost = true
