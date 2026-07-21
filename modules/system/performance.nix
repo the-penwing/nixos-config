@@ -22,7 +22,7 @@
 
   # Keep UI responsive during local Nix builds.
   nix.settings = {
-    cores = 4;
+    cores = 10;
     max-jobs = 4;
   };
 
