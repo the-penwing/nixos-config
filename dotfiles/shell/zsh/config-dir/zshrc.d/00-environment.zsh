@@ -14,9 +14,9 @@ export DISABLE_FZF_AUTO_COMPLETION="false"
 export DISABLE_FZF_KEY_BINDINGS="false"
 export TIMEFMT=$'\nreal %*E\nuser %*U\nsys %*S\n'
 # SYSTEM SPECIFIC
-export PATH="$PATH:$HOME/nixos-config/scripts"
+export PATH="$PATH:$HOME/nixos-config/scripts:$HOME/.cargo/bin"
 # SDKs
-export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX26.1.sdk"
+export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX15.5.sdk"
 export PICO_SDK_PATH="/home/benvl/dev/hardware/pico2/cc/pico-sdk"
 # WM / DE
 export BEMOJI_PICKER_CMD="fuzzel -d"
