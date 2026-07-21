@@ -76,6 +76,9 @@ button {
   color: @pink;
 }
 
+#battery.plugged {
+  color: @pink;
+}
 #battery.warning {
   color: @orange;
 }
