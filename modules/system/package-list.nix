@@ -214,6 +214,7 @@
       gimp
       krita
       xournalpp
+      rnote
 
       # Host File System Shells
       kdePackages.dolphin
