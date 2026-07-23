@@ -282,6 +282,7 @@
       hyprpaper
       bibata-cursors
       dracula-icon-theme
+      papirus-icon-theme
       dracula-qt5-theme
       dracula-theme
       nwg-look
