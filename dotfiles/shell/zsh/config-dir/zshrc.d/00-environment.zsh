@@ -15,6 +15,7 @@ export DISABLE_FZF_KEY_BINDINGS="false"
 export TIMEFMT=$'\nreal %*E\nuser %*U\nsys %*S\n'
 # SYSTEM SPECIFIC
 export PATH="$PATH:$HOME/nixos-config/scripts:$HOME/.cargo/bin"
+export _ZO_EXCLUDE_DIRS="$HOME/icloud/*:$HOME/nextcloud/*"
 # SDKs
 export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX15.5.sdk"
 export PICO_SDK_PATH="/home/benvl/dev/hardware/pico2/cc/pico-sdk"

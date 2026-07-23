@@ -15,7 +15,7 @@
   },
   "pulseaudio": {
     "format": "󰕾 {volume}%",
-    "format-muted": "󰖁"
+    "format-muted": "󰖁 {volume}%"
   },
   "backlight": {
     "device": "amdgpu_bl1",
