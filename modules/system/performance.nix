@@ -55,6 +55,7 @@
       WIFI_PWR_ON_BAT = "on";
       WIFI_PWR_ON_AC = "off";
 
+      RUNTIME_PM_DENYLIST = "02:00.0 05:00.0";
       SOUND_POWER_SAVE_ON_BAT = 1;
       SOUND_POWER_SAVE_CONTROLLER = "Y";
 
