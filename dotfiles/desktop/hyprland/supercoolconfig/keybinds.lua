@@ -170,8 +170,8 @@ for i = 11, 20 do
 	bind(mainMod .. " + CTRL + SHIFT", key, hl.dsp.window.move({ workspace = workspace }))
 end
 
-bind(mainMod, "mouse_up", hl.dsp.focus({ workspace = "+1" }))
-bind(mainMod, "mouse_down", hl.dsp.focus({ workspace = "-1" }))
+bind(mainMod, "mouse_down", hl.dsp.focus({ workspace = "+1" }))
+bind(mainMod, "mouse_up", hl.dsp.focus({ workspace = "-1" }))
 bind(mainMod, "S", hl.dsp.workspace.toggle_special("magic"))
 bind(mainMod .. " + SHIFT", "S", hl.dsp.window.move({ workspace = "special:magic" }))
 bind(mainMod, "mouse:272", hl.dsp.window.drag(), { mouse = true })
