@@ -1,40 +1,70 @@
 # ========================================================================
 # Language Servers Configuration
 # ========================================================================
-[language-server]
-bash-language-server = { command = "bash-language-server", args = ["start"] }
-kotlin-language-server = { command = "kotlin-language-server" }
-lua-language-server = { command = "lua-language-server" }
-nil = { command = "nil" }
-nixd = { command = "nixd" }
-pyright = { command = "pyright-langserver", args = ["--stdio"] }
-ruff = { command = "ruff", args = ["server"] }
-rust-analyzer = { command = "rust-analyzer" }
-zls = { command = "zls" }
-yaml-language-server = { command = "yaml-language-server", args = ["--stdio"] }
-marksman = { command = "marksman", args = ["server"] }
+[language-server.bash-language-server]
+command = "bash-language-server"
+args = ["start"]
 
-clangd = { command = "sh", args = [
-  "-c",
-  "exec clangd --query-driver=/run/current-system/sw/bin/gcc,/run/current-system/sw/bin/clang",
-] }
+[language-server.kotlin-language-server]
+command = "kotlin-language-server"
+
+[language-server.lua-language-server]
+command = "lua-language-server"
+
+[language-server.nil]
+command = "nil"
+
+[language-server.nixd]
+command = "nixd"
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+
+[language-server.zls]
+command = "zls"
+
+[language-server.yaml-language-server]
+command = "yaml-language-server"
+args = ["--stdio"]
+[language-server.marksman]
+command = "marksman"
+args = ["server"]
+
+
+[language-server.clangd]
+command = "clangd"
+args = ["--query-driver=/run/current-system/sw/bin/*"]
 # Modern Web Stack LSPs
-typescript-language-server = { command = "typescript-language-server", args = [
-  "--stdio",
-] }
-tailwindcss-language-server = { command = "tailwindcss-language-server", args = [
-  "--stdio",
-] }
-vscode-html-language-server = { command = "vscode-html-language-server", args = [
-  "--stdio",
-] }
-vscode-css-language-server = { command = "vscode-css-language-server", args = [
-  "--stdio",
-] }
-vscode-json-language-server = { command = "vscode-json-language-server", args = [
-  "--stdio",
-] }
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
 
+[language-server.tailwindcss-language-server]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+[language-server.vscode-css-language-server]
+command = "vscode-css-language-server"
+args = ["--stdio"]
+[language-server.vscode-json-language-server]
+command = "vscode-json-language-server"
+args = ["--stdio"]
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+[language-server.rust-analyzer.config]
+cargo = { buildScripts = { enable = true } }
+checkOnSave = { command = "clippy" }
 # ========================================================================
 # Language Configurations
 # ========================================================================
