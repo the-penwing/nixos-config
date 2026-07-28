@@ -8,11 +8,21 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     naviterm = {
       url = "gitlab:detoxify92/naviterm";
@@ -29,18 +39,18 @@
     self,
     nixpkgs,
     home-manager,
+    ghostty,
+    rust-overlay,
     naviterm,
     solaar,
-    rust-overlay,
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    overlays = (import ./overlays/default.nix) ++ [rust-overlay.overlays.default];
+    overlays = (import ./overlays/default.nix) ++ [ghostty.overlays.default] ++ [rust-overlay.overlays.default];
     pkgs = import nixpkgs {
       inherit system overlays;
       config.allowUnfree = true;
     };
-    mkShell = import ./dev-envs/base-shell.nix {inherit pkgs;};
   in {
     nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -51,13 +61,16 @@
         {
           nixpkgs.overlays = overlays;
 
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "bak";
-          home-manager.users.benvl = import ./home.nix {inherit pkgs;};
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "bak";
+            users.benvl = import ./home.nix {inherit pkgs;};
+          };
         }
         {
           environment.systemPackages = [
+            pkgs.ghostty
             naviterm.packages.${system}.default
             # Rust toolchain with rust-src for rust-analyzer
             (pkgs.rust-bin.stable.latest.default.override {
@@ -86,29 +99,6 @@
           ];
         }
       ];
-    };
-
-    devShells = let
-      shells = import ./dev-envs {inherit pkgs;};
-    in {
-      x86_64-linux = {
-        pawn-appetit = mkShell {
-          buildInputs = shells.pawn-appetit.buildInputs;
-          shellHook = shells.pawn-appetit.shellHook;
-        };
-        bash-scripting = mkShell {
-          buildInputs = shells.bash-scripting.buildInputs;
-          shellHook = shells.bash-scripting.shellHook;
-        };
-        rust = mkShell {
-          buildInputs = shells.rust.buildInputs;
-          shellHook = shells.rust.shellHook;
-        };
-        rp2350 = mkShell {
-          buildInputs = shells.rp2350.buildInputs;
-          shellHook = shells.rp2350.shellHook;
-        };
-      };
     };
   };
 }
