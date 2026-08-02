@@ -78,6 +78,7 @@ format = '\[[$symbol$branch](yellow)\](yellow)'
 symbol = ""
 
 [git_status]
+use_git_executable = true
 style = "fg1"
 format = '([\[$all_status$ahead_behind\]]($style))'
 ahead = "[⇡$count](blue)"
