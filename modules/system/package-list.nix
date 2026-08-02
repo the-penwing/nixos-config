@@ -94,6 +94,7 @@
       ghostty
       tmux
       sesh
+      tree-sitter
 
       # --- Low-Level, C & Zig Ecosystems ---
       binary # Convert Numbers Between Bases
