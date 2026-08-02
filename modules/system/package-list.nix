@@ -217,6 +217,7 @@
       rnote
 
       # Host File System Shells
+      nautilus
       kdePackages.dolphin
       kdePackages.dolphin-plugins
 
@@ -384,7 +385,7 @@ in rec {
   defaults = {
     browserDesktop = "firefox.desktop";
     terminalDesktop = "com.mitchellh.ghostty.desktop";
-    fileManagerDesktop = "org.kde.dolphin.desktop";
+    fileManagerDesktop = "org.gnome.Nautilus.desktop";
     editorDesktop = "nvim.desktop";
     pdfDesktop = "org.pwmt.zathura.desktop";
   };
