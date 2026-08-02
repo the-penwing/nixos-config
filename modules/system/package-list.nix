@@ -284,7 +284,6 @@
       dracula-icon-theme
       papirus-icon-theme
       dracula-qt5-theme
-      dracula-theme
       nwg-look
       qt6Packages.qt6ct
       qt6Packages.qtstyleplugin-kvantum

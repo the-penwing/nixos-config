@@ -9,18 +9,18 @@ bindkey "^[[3~" delete-char
 bindkey "^[3;5~" delete-char
 
 ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+mkdir -p "$CACHE_DIR"
 
-# FZF shell integration
-source <(fzf --zsh)
-
-# FZF-tab styling
-zstyle ':fzf-tab:*' fzf-flags --color=dark '--color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f' '--color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7' --style default
-zstyle ':fzf-tab:*' fzf-min-height 6
+# FZF shell integration (Cached)
+if [[ ! -s "$CACHE_DIR/fzf.zsh" || $(command -v fzf) -nt "$CACHE_DIR/fzf.zsh" ]]; then
+	fzf --zsh >"$CACHE_DIR/fzf.zsh" 2>/dev/null
+fi
+source "$CACHE_DIR/fzf.zsh"
 
 # Yazi: file manager with cwd sync
 yy() {
-	local tmp cwd
-	tmp="$(mktemp -t yazi-cwd.XXXXXX)"
+	local tmp="$(mktemp)"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat "$tmp")" && [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
 		cd "$cwd"
@@ -41,23 +41,31 @@ function man() {
 		LESS_TERMCAP_us=$'\e[1;32m' \
 		command man "$@"
 }
-# direnv: load/unload environment based on .envrc
-eval "$(direnv hook zsh)"
 
-# zoxide: smart directory jumper (replaces cd)
-eval "$(zoxide init zsh)"
+# direnv (Cached)
+if [[ ! -s "$CACHE_DIR/direnv.zsh" || $(command -v direnv) -nt "$CACHE_DIR/direnv.zsh" ]]; then
+	direnv hook zsh >"$CACHE_DIR/direnv.zsh" 2>/dev/null
+fi
+source "$CACHE_DIR/direnv.zsh"
+
+# zoxide (Cached)
+if [[ ! -s "$CACHE_DIR/zoxide.zsh" || $(command -v zoxide) -nt "$CACHE_DIR/zoxide.zsh" ]]; then
+	zoxide init zsh >"$CACHE_DIR/zoxide.zsh" 2>/dev/null
+fi
+source "$CACHE_DIR/zoxide.zsh"
 
 # sesh: terminal session switcher (Alt+S)
 function sesh-sessions() {
-	{
+	local session
+	session=$(sesh list -t -c | fzf --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
+	zle reset-prompt >/dev/null 2>&1 || true
+
+	if [[ -n "$session" ]]; then
+		# Restore TTY control before connecting to the tmux session
 		exec </dev/tty
 		exec <&1
-		local session
-		session=$(sesh list -t -c | fzf --height 40% --reverse --border-label ' sesh ' --border --prompt '⚡  ')
-		zle reset-prompt >/dev/null 2>&1 || true
-		[[ -z "$session" ]] && return
-		sesh connect $session
-	}
+		sesh connect "$session"
+	fi
 }
 
 zle -N sesh-sessions
@@ -87,6 +95,15 @@ else
 	bindkey '^[[B' down-line-or-beginning-search
 	bindkey '^[OB' down-line-or-beginning-search
 fi
+
+update-zsh-plugins() {
+	for d in ~/.config/zsh/plugins/*/.git; do
+		local dir="$(dirname "$d")"
+		echo "Updating $(basename "$dir")..."
+		git -C "$dir" pull
+	done
+	echo "All plugins updated!"
+}
 
 # Ensure clean exit status for sourcing
 true

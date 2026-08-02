@@ -36,3 +36,6 @@ alias df='duf'
 alias cd='z'
 alias cdi='zi'
 alias fm='yy'
+
+# Ensure clean exit status for sourcing
+true
