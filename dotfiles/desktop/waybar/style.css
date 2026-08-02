@@ -69,6 +69,8 @@ button {
 
 #battery {
   padding: 0 10px;
+  background: inherit;
+  border-bottom: inherit;
   color: @green;
 }
 
@@ -79,6 +81,7 @@ button {
 #battery.plugged {
   color: @pink;
 }
+
 #battery.warning {
   color: @orange;
 }
