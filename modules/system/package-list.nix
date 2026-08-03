@@ -226,6 +226,9 @@
       feh
       vlc
 
+      # Games
+      solitaire-tui
+
       # Office Productivity & Knowledge Bases
       libreoffice-fresh
       obsidian
