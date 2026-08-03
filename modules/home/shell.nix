@@ -24,22 +24,6 @@
 
   services.ssh-agent.enable = true;
 
-  # systemd.user.services.load-pkcs11-key = {
-  #   Unit = {
-  #     Description = "Load PKCS#11 SSH key into ssh-agent";
-  #     After = ["ssh-agent.service" "dbus.service"];
-  #     Requires = ["ssh-agent.service"];
-  #   };
-  #   Service = {
-  #     Type = "oneshot";
-  #     ExecStart = "${pkgs.bash}/bin/bash -c 'sleep 2 && ${pkgs.openssh}/bin/ssh-add -s /run/current-system/sw/lib/opensc-pkcs11.so || true'";
-  #     RemainAfterExit = true;
-  #   };
-  #   Install = {
-  #     WantedBy = ["default.target"];
-  #   };
-  # };
-
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
