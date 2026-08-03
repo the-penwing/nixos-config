@@ -5,15 +5,18 @@ return {
 	init = function()
 		vim.g.rustaceanvim = {
 			server = {
+				capabilities = require("blink.cmp").get_lsp_capabilities(),
+				standalone = false,
 				default_settings = {
 					["rust-analyzer"] = {
 						cargo = { buildScripts = { enable = true } },
 						checkOnSave = true,
-						check = {
-							command = "clippy",
-						},
+						check = { command = "clippy" },
 					},
 				},
+			},
+			tools = {
+				notifications = { enabled = false },
 			},
 		}
 	end,
