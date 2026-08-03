@@ -1,1 +1,31 @@
-return {}
+return {
+	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
+	build = ":TSUpdate",
+	config = function()
+		require("nvim-treesitter").install({
+			"lua",
+			"vim",
+			"vimdoc",
+			"c",
+			"nix",
+			"rust",
+			"python",
+			"kotlin",
+			"zig",
+			"asm",
+			"json",
+			"yaml",
+			"toml",
+			"markdown",
+			"markdown_inline",
+			"html",
+			"css",
+			"javascript",
+			"typescript",
+			"tsx",
+			"bash",
+			"swift",
+		})
+	end,
+}

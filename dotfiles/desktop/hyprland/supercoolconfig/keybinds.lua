@@ -1,7 +1,7 @@
 local mainMod = "SUPER"
 
 local terminal = "ghostty"
-local fileManager = "dolphin"
+local fileManager = "nautilus"
 local browser = "firefox"
 local launcher = "fuzzel"
 local lockscreen = "hyprlock"

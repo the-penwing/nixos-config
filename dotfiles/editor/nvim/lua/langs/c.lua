@@ -3,8 +3,7 @@ return {
 	opts = {
 		servers = {
 			clangd = {
-				cmd = { "/run/current-system/sw/bin/clangd" },
-				settings = {},
+				cmd = { "/run/current-system/sw/bin/clangd", "--query-driver=/run/current-system/sw/bin/*" },
 			},
 		},
 	},

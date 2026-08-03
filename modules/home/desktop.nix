@@ -19,6 +19,10 @@
 
   services.wluma = {
     enable = true;
+    systemd = {
+      enable = true;
+      target = "default.target";
+    };
     settings = {
       als = {
         none = {};
