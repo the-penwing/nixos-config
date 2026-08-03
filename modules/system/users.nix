@@ -10,6 +10,7 @@
     group = "benvl";
     description = "Ben van Leeuwen";
     shell = pkgs.zsh;
+    linger = true;
     extraGroups = [
       "pcscd"
       "input"
