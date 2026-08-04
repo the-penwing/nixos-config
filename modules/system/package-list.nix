@@ -187,6 +187,8 @@
       pico-sdk
       picotool
       probe-rs-tools
+      tio
+      picocom
 
       # --- AI, Diagrams & Utilities ---
       # AI Assistance
@@ -349,6 +351,7 @@
       speedtest-cli
       usbutils
       libusb1
+      udiskie
       exfatprogs
 
       # iOS System Subsystem Interoperability

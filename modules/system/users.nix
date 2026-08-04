@@ -24,6 +24,8 @@
       "users"
       "libvirtd"
       "kvm"
+      "dialout"
+      "plugdev"
     ];
   };
 }

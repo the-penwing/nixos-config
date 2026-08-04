@@ -38,6 +38,10 @@
     package = pkgs.usbmuxd2;
   };
 
+  services.udisks2.enable = true;
+
+  services.udev.packages = [pkgs.udiskie];
+
   services.pcscd = {
     enable = true;
     plugins = [pkgs.ccid];
