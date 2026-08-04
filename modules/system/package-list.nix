@@ -219,6 +219,9 @@
       xournalpp
       rnote
 
+      # Design / CAD
+      kicad-unstable
+
       # Host File System Shells
       nautilus
       kdePackages.dolphin
