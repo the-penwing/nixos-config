@@ -105,6 +105,7 @@
       binutils
       # C / C++
       gcc
+      glib
       glibc
       clang
       libclang
@@ -150,6 +151,15 @@
       vscode-langservers-extracted
       tailwindcss-language-server
       eslint_d
+
+      # --- Local GUI App Stack / Deps ---
+      webkitgtk_4_1
+      gtk3
+      atkmm
+      cairo
+      gdk-pixbuf
+      xdotool
+      dioxus-cli
 
       # --- Nix Infrastructure & Tooling ---
       nixd

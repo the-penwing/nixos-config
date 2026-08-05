@@ -94,6 +94,13 @@
                 "thumbv8m.main-none-eabihf"
                 "riscv32imac-unknown-none-elf"
 
+                # --- Android + WASM ---
+                "wasm32-unknown-unknown"
+                "aarch64-linux-android"
+                "armv7-linux-androideabi"
+                "x86_64-linux-android"
+                "i686-linux-android"
+
                 # --- Common Desktop Targets ---
                 "x86_64-pc-windows-gnu" # Windows 64-bit
                 "aarch64-apple-darwin" # Apple Silicon Mac
