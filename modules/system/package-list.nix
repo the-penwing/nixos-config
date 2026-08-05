@@ -112,9 +112,16 @@
       lldb
       clang-tools
       cmake
+      mold
+      sccache
       gnumake
       pkg-config
       xxd
+      # Rust
+      cargo-watch
+      cargo-edit
+      cargo-expand
+      bacon
       # Zig
       zig
       zls
@@ -138,6 +145,8 @@
       ktlint
       detekt
       kotlin-language-server
+      # Android
+      android-tools
       # Shell
       bash-language-server
       shellcheck
