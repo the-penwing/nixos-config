@@ -21,6 +21,13 @@
     };
   };
 
+  hardware.graphics = {
+    enable = true;
+    extraPackages = [
+      pkgs.mesa.opencl
+    ];
+  };
+
   hardware.bluetooth.enable = true;
 
   hardware.acpilight = {

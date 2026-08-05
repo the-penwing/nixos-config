@@ -11,20 +11,20 @@
     "amd_pstate=active"
     "amdgpu.dcfeaturemask=0x2"
   ];
+
   boot.supportedFilesystems = [
     "exfat"
     "ntfs"
     "vfat"
   ];
 
-  hardware.graphics = {
-    enable = true;
-    extraPackages = [
-      pkgs.mesa.opencl
-    ];
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 20;
+    "vm.vfs_cache_pressure" = 50;
+    "vm.dirty_ratio" = 15;
+    "vm.dirty_background_ratio" = 5;
   };
 
-  environment.sessionVariables = {
-    RUSTICL_ENABLE = "radeonsi";
-  };
+  boot.tmp.useTmpfs = true;
+  boot.tmp.tmpfsSize = "6G";
 }

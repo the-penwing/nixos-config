@@ -16,7 +16,9 @@
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
 
-    # Development runtime tracking
+    # Dev
+    RUSTC_WRAPPER = "sccache";
+
     npm_config_prefix = "$HOME/.npm-global";
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent";
     DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock";

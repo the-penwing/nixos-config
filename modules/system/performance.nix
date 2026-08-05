@@ -11,13 +11,6 @@
     priority = 100;
   };
 
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 20;
-    "vm.vfs_cache_pressure" = 50;
-    "vm.dirty_ratio" = 15;
-    "vm.dirty_background_ratio" = 5;
-  };
-
   systemd.oomd.enable = false;
 
   # Keep UI responsive during local Nix builds.
@@ -32,11 +25,6 @@
     rulesProvider = pkgs.ananicy-cpp;
     settings.apply_nice = true;
   };
-
-  programs.ccache.enable = true;
-
-  boot.tmp.useTmpfs = true;
-  boot.tmp.tmpfsSize = "6G";
 
   services.tlp = {
     enable = true;
