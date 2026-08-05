@@ -12,11 +12,19 @@ ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
 CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 mkdir -p "$CACHE_DIR"
 
+# Helper function to check if a cached Nix hook file is broken
+_is_cache_invalid() {
+	local cache_file="$1"
+	[[ ! -s "$cache_file" ]] || ! grep -q '/nix/store/' "$cache_file" 2>/dev/null || ! [[ -e "$(grep -o '/nix/store/[^ "]*' "$cache_file" | head -n1)" ]]
+}
+
 # FZF shell integration (Cached)
-if [[ ! -s "$CACHE_DIR/fzf.zsh" || $(command -v fzf) -nt "$CACHE_DIR/fzf.zsh" ]]; then
-	fzf --zsh >"$CACHE_DIR/fzf.zsh" 2>/dev/null
+if command -v fzf >/dev/null 2>&1; then
+	if _is_cache_invalid "$CACHE_DIR/fzf.zsh"; then
+		fzf --zsh >"$CACHE_DIR/fzf.zsh" 2>/dev/null
+	fi
+	source "$CACHE_DIR/fzf.zsh"
 fi
-source "$CACHE_DIR/fzf.zsh"
 
 # Yazi: file manager with cwd sync
 yy() {
@@ -43,16 +51,20 @@ function man() {
 }
 
 # direnv (Cached)
-if [[ ! -s "$CACHE_DIR/direnv.zsh" || $(command -v direnv) -nt "$CACHE_DIR/direnv.zsh" ]]; then
-	direnv hook zsh >"$CACHE_DIR/direnv.zsh" 2>/dev/null
+if command -v direnv >/dev/null 2>&1; then
+	if _is_cache_invalid "$CACHE_DIR/direnv.zsh"; then
+		direnv hook zsh >"$CACHE_DIR/direnv.zsh" 2>/dev/null
+	fi
+	source "$CACHE_DIR/direnv.zsh"
 fi
-source "$CACHE_DIR/direnv.zsh"
 
 # zoxide (Cached)
-if [[ ! -s "$CACHE_DIR/zoxide.zsh" || $(command -v zoxide) -nt "$CACHE_DIR/zoxide.zsh" ]]; then
-	zoxide init zsh >"$CACHE_DIR/zoxide.zsh" 2>/dev/null
+if command -v zoxide >/dev/null 2>&1; then
+	if _is_cache_invalid "$CACHE_DIR/zoxide.zsh"; then
+		zoxide init zsh >"$CACHE_DIR/zoxide.zsh" 2>/dev/null
+	fi
+	source "$CACHE_DIR/zoxide.zsh"
 fi
-source "$CACHE_DIR/zoxide.zsh"
 
 # sesh: terminal session switcher (Alt+S)
 function sesh-sessions() {

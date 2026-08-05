@@ -19,6 +19,7 @@ export TIMEFMT=$'\nreal %*E\nuser %*U\nsys %*S\n'
 # SYSTEM SPECIFIC (Using native Zsh array syntax)
 path+=("$HOME/nixos-config/scripts" "$HOME/.cargo/bin")
 export _ZO_EXCLUDE_DIRS="$HOME/icloud/*:$HOME/nextcloud/*"
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
 # SDKs
 export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX15.5.sdk"
