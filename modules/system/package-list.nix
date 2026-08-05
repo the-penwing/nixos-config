@@ -33,6 +33,7 @@
       gnupg-pkcs11-scd
       pass
       openssl
+      openssl.dev
       opensc
 
       # Docs
