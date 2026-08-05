@@ -7,6 +7,7 @@
 # - Keep default app handlers in packages.nix so package choices and handlers stay aligned.
 {
   pkgs,
+  inputs,
   lib,
   ...
 }: let
@@ -22,6 +23,8 @@ in {
 
   programs.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
   };
 
@@ -34,7 +37,6 @@ in {
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
     ];
     config.common.default = ["hyprland" "gtk"];
   };
