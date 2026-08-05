@@ -135,6 +135,7 @@
       pyright
       ruff
       black
+      python3Packages.debugpy
       # Lua
       lua55Packages.lua
       lua55Packages.luarocks
