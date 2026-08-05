@@ -14,10 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-    };
-
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -58,7 +54,6 @@
   in {
     nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = {inherit inputs;};
       modules = [
         ./hosts/nixos-p14s/configuration.nix
         solaar.nixosModules.default
@@ -70,7 +65,6 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             backupFileExtension = "bak";
-            extraSpecialArgs = {inherit inputs;};
             users.benvl = import ./home.nix {inherit pkgs;};
           };
         }

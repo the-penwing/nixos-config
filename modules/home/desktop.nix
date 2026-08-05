@@ -3,16 +3,12 @@
 # Purpose:
 # - Keep user-level desktop helpers and user services in one place
 # - Avoid duplicate package declarations already managed system-wide
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.file.".config/hypr/.luarc.json" = {
     text = builtins.toJSON {
       workspace = {
         library = [
-          "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/share/hypr/stubs"
+          "${pkgs.hyprland}/share/hypr/stubs"
         ];
       };
       diagnostics = {
