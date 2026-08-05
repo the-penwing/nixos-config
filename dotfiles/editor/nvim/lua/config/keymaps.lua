@@ -41,9 +41,6 @@ vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { desc = "Move selection up" })
 -- Clear search highlight
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
 
--- Diagnostics list (global, not just current buffer)
-vim.keymap.set("n", "<leader>xx", vim.diagnostic.setloclist, { desc = "Diagnostics loclist" })
-
 -- LSP symbols via fzf-lua (mentioned earlier, wiring it now)
 vim.keymap.set("n", "<leader>fs", function()
 	require("fzf-lua").lsp_document_symbols()
@@ -51,3 +48,5 @@ end, { desc = "Document symbols" })
 vim.keymap.set("n", "<leader>fS", function()
 	require("fzf-lua").lsp_workspace_symbols()
 end, { desc = "Workspace symbols" })
+
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })

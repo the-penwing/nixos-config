@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, opts)
 		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 		vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-		vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, opts)
+		vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, opts)
 	end,
 })
 
@@ -35,5 +35,21 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 			gitsigns.preview_hunk,
 			vim.tbl_extend("force", opts, { desc = "Preview hunk" })
 		)
+	end,
+})
+
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		vim.diagnostic.open_float(nil, { focus = false })
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		local arg = vim.fn.argv(0)
+		if arg ~= "" and vim.fn.isdirectory(arg) == 1 then
+			vim.cmd("cd " .. vim.fn.fnameescape(arg))
+			require("mini.files").open(vim.uv.cwd())
+		end
 	end,
 })
