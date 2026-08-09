@@ -20,13 +20,9 @@ return {
 							check = {
 								command = "check",
 							},
-							completion = {
-								autoimport = { enable = true },
-								postfix = { enable = true },
-								callable = { snippets = "fill_arguments" },
-							},
 							cargo = {
 								buildScripts = { enable = true },
+								extraEnv = { CARGO_NET_OFFLINE = "true" },
 							},
 							procMacro = { enable = true },
 							files = {
