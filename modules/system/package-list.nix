@@ -107,6 +107,7 @@
       # C / C++
       gcc
       glib
+      glib-networking
       glibc
       clang
       libclang
@@ -163,13 +164,17 @@
       tailwindcss-language-server
       eslint_d
 
-      # --- Local GUI App Stack / Deps ---
+      # --- Libs ---
       webkitgtk_4_1
-      gtk3
+      libsoup_3
       atkmm
-      cairo
+      at-spi2-atk
+      librsvg
       gdk-pixbuf
       xdotool
+      cairo
+      # --- Local GUI App Stack / Deps ---
+      gtk3
       dioxus-cli
 
       # --- Nix Infrastructure & Tooling ---
