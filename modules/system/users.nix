@@ -28,4 +28,5 @@
       "plugdev"
     ];
   };
+  nix.settings.trusted-users = ["root" "benvl"];
 }
