@@ -35,7 +35,7 @@
 
   services.usbmuxd = {
     enable = true;
-    package = pkgs.usbmuxd2;
+    package = pkgs.usbmuxd;
   };
 
   services.udisks2.enable = true;

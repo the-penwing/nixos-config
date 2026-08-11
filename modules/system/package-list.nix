@@ -385,6 +385,7 @@
 
       # iOS System Subsystem Interoperability
       ifuse
+      usbmuxd
       libimobiledevice
 
       # Network Pipelines & Sync Bridges
