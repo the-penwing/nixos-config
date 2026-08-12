@@ -111,6 +111,7 @@
       glibc
       clang
       libclang
+      lld
       lldb
       clang-tools
       cmake
@@ -206,6 +207,8 @@
       nsis # Windows Installer
       cdrkit # ISO/CD-ROM imaging
       filezilla # File Transfer
+      # iOS Dev
+      ldid-procursus
 
       # --- Hardware & Embedded Development (RP2350 / ARM) ---
       gcc-arm-embedded
