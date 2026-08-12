@@ -24,6 +24,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    bacon = {
+      url = "github:Canop/bacon";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    bacon-ls = {
+      url = "github:crisidev/bacon-ls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     naviterm = {
       url = "gitlab:detoxify92/naviterm";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,12 +51,21 @@
     home-manager,
     ghostty,
     rust-overlay,
+    bacon,
+    bacon-ls,
     naviterm,
     solaar,
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    overlays = (import ./overlays/default.nix) ++ [ghostty.overlays.default] ++ [rust-overlay.overlays.default];
+    overlays =
+      (import ./overlays/default.nix)
+      ++ [
+        ghostty.overlays.default
+        rust-overlay.overlays.default
+        bacon.overlay.${system}
+        bacon-ls.overlay.${system}
+      ];
     pkgs = import nixpkgs {
       inherit system overlays;
       config.allowUnfree = true;
@@ -71,6 +90,8 @@
         {
           environment.systemPackages = [
             pkgs.ghostty
+            pkgs.bacon
+            pkgs.bacon-ls
             naviterm.packages.${system}.default
             # Rust toolchain with rust-src for rust-analyzer
             (pkgs.rust-bin.stable.latest.default.override {

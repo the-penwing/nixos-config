@@ -124,7 +124,6 @@
       cargo-watch
       cargo-edit
       cargo-expand
-      bacon
       # Zig
       zig
       zls
@@ -176,6 +175,8 @@
       xdotool
       cairo
       gtk3
+      fontconfig
+      fontconfig.dev
 
       # --- Nix Infrastructure & Tooling ---
       nixd
