@@ -22,7 +22,7 @@ export _ZO_EXCLUDE_DIRS="$HOME/icloud/*:$HOME/nextcloud/*"
 export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
 # SDKs
-export SDKROOT="/home/benvl/dev/resources/SDKs/MacOSX15.5.sdk"
+export SDKROOT="/home/benvl/dev/sdks/MacOSX15.5.sdk"
 export PICO_SDK_PATH="/home/benvl/dev/hardware/pico2/cc/pico-sdk"
 
 # WM / DE
