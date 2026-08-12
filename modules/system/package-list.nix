@@ -173,9 +173,7 @@
       gdk-pixbuf
       xdotool
       cairo
-      # --- Local GUI App Stack / Deps ---
       gtk3
-      dioxus-cli
 
       # --- Nix Infrastructure & Tooling ---
       nixd
