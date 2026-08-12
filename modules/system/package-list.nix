@@ -163,6 +163,7 @@
       vscode-langservers-extracted
       tailwindcss-language-server
       eslint_d
+      slint-lsp
 
       # --- Libs ---
       webkitgtk_4_1

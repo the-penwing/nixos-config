@@ -23,6 +23,7 @@ return {
 			"css",
 			"javascript",
 			"typescript",
+			"slint",
 			"tsx",
 			"bash",
 			"swift",
