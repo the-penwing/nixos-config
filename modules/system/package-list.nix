@@ -14,47 +14,52 @@
     # Fundamental tooling for files, networks, encryption, and basic operations
     # ========================================================================
     core = with pkgs; [
-      # Compression & Archiving
+      # --- Shell Environment & Navigation ---
+      direnv
+      starship
+      zoxide
+
+      # --- Search & Text Processing ---
+      bat
+      fd
+      fzf
+      glow
+      jq
+      ripgrep
+      sd
+
+      # --- Networking & Data Transfer ---
+      cloudflared
+      curl
+      rsync
+      wget
+
+      # --- Compression & Archiving ---
+      p7zip
+      unar
       unzip
       zip
 
-      # Environment, Shell & Prompts
-      direnv
-      starship
-
-      # Networking & Data Transfer
-      curl
-      wget
-      cloudflared
-
-      # Security, Keys & Certificates
+      # --- Security, Keys & Certificates ---
       cacert
       gnupg
       gnupg-pkcs11-scd
-      pass
+      opensc
       openssl
       openssl.dev
-      opensc
+      pass
 
-      # Docs
+      # --- Documentation & Manuals ---
       man-pages
       man-pages-posix
       tldr
       zeal
 
-      # Text and File Search + Structural Transformation
-      fd
-      fzf
-      jq
-      ripgrep
-      sd
-
-      # Version Control Systems
+      # --- Version Control Systems ---
       git
       github-cli
-      tea
       lazygit
-      rsync
+      tea
     ];
 
     # ========================================================================
@@ -62,26 +67,22 @@
     # Interactive command-line monitors, file managers, and text viewers
     # ========================================================================
     cli = with pkgs; [
-      # Analysis & Metrics
-      cloc
-
-      # Interactive File & Navigation Managers
-      eza
-      file
-      tree
-      yazi
-      zoxide
-
-      # System Health, Disk & Resource Monitors
+      # --- System Health, Disk & Resource Monitors ---
       btop
+      cloc
       duf
       dust
       fastfetch
       gdu
 
-      # Text Rendering & Document Inspection
-      bat
-      glow
+      # --- Interactive File & Navigation Managers ---
+      eza
+      file
+      tree
+      yazi
+
+      # --- Terminal Toys & Visuals ---
+      cmatrix
     ];
 
     # ========================================================================
@@ -89,192 +90,143 @@
     # Languages, specialized LSPs, compilation chains, and editors
     # ========================================================================
     dev = with pkgs; [
-      # ---  Core Editors, Terminals & Multiplexers ---
-      neovim
-      helix
+      # --- Core Editors, Terminals & Multiplexers ---
       ghostty
-      tmux
+      helix
+      neovim
       sesh
+      tmux
       tree-sitter
 
-      # --- Low-Level, C & Zig Ecosystems ---
-      binary # Convert Numbers Between Bases
-      # Assembly
-      nasm
+      # --- Assembly & Low-Level ---
       asm-lsp
-      nasmfmt
+      binary
       binutils
-      # C / C++
+      nasm
+      nasmfmt
+      xxd
+
+      # --- C & C++ Stack ---
+      clang
+      clang-tools
+      cmake
       gcc
       glib
       glib-networking
       glibc
-      clang
+      gnumake
       libclang
       lld
       lldb
-      clang-tools
-      cmake
       mold
-      sccache
-      gnumake
       pkg-config
-      xxd
-      # Rust
-      cargo-watch
+      sccache
+
+      # --- Rust Stack ---
       cargo-edit
       cargo-expand
-      # Zig
+      cargo-watch
+      cargo-zigbuild
+
+      # --- Zig Stack ---
       zig
       zls
 
-      # --- Managed Languages & Runtimes ---
-      # Python
-      python3
-      pyenv
-      uv
-      pyright
-      ruff
+      # --- Python Stack ---
       black
+      pyenv
+      pyright
+      python3
       python3Packages.debugpy
-      # Lua
-      lua55Packages.lua
-      lua55Packages.luarocks
-      lua55Packages.luacheck
+      ruff
+      uv
+
+      # --- Lua Stack ---
       lua-language-server
+      lua55Packages.lua
+      lua55Packages.luacheck
+      lua55Packages.luarocks
       selene
       stylua
-      # Kotlin
-      ktlint
+
+      # --- Web, Node & TypeScript Stack ---
+      browser-sync
+      eslint_d
+      nodejs
+      pnpm
+      slint-lsp
+      tailwindcss-language-server
+      typescript-language-server
+      vscode-langservers-extracted
+
+      # --- Kotlin & JVM Stack ---
       detekt
       kotlin-language-server
-      # Android
-      android-tools
-      # Shell
+      ktlint
+
+      # --- Shell Scripting ---
       bash-language-server
       shellcheck
       shfmt
 
-      # --- Web & Frontend Stack ---
-      browser-sync
-      nodejs
-      pnpm
-      typescript-language-server
-      vscode-langservers-extracted
-      tailwindcss-language-server
-      eslint_d
-      slint-lsp
-
-      # --- Libs ---
-      webkitgtk_4_1
-      libsoup_3
-      atkmm
-      at-spi2-atk
-      librsvg
-      gdk-pixbuf
-      xdotool
-      cairo
-      gtk3
-      fontconfig
-      fontconfig.dev
-
-      # --- Nix Infrastructure & Tooling ---
-      nixd
-      nil
-      alejandra
-      nix-search-tv
-
-      # --- Data, Serialization & Documentation ---
-      # Databases & Formats
-      sqlite
-      sqlitebrowser
-      taplo # TOML
-      yaml-language-server
-      yamllint
-      yamlfmt
-      # Markdown & Formatting
-      marksman
-      markdownlint-cli2
-      prettier
-
-      # --- Build, Automation & CI/CD ---
-      act # Local GitHub Actions
-      cargo-zigbuild
-      docker-compose
-
-      # --- Code Signing & Deployment Packaging ---
-      rcodesign
-      osslsigncode
-      nsis # Windows Installer
-      cdrkit # ISO/CD-ROM imaging
-      filezilla # File Transfer
-      # iOS Dev
-      ldid-procursus
-
-      # --- Hardware & Embedded Development (RP2350 / ARM) ---
+      # --- Hardware & Embedded Development (ARM / RP2350) ---
+      android-tools
       gcc-arm-embedded
       pico-sdk
+      picocom
       picotool
       probe-rs-tools
       tio
-      picocom
 
-      # --- AI, Diagrams & Utilities ---
-      # AI Assistance
-      github-copilot-cli
+      # --- Nix Infrastructure & Tooling ---
+      alejandra
+      nil
+      nix-search-tv
+      nixd
+
+      # --- Data, Formats & Documentation ---
+      markdownlint-cli2
+      marksman
+      prettier
+      sqlite
+      sqlitebrowser
+      taplo
+      yaml-language-server
+      yamlfmt
+      yamllint
+
+      # --- Build, Packaging & Deployment ---
+      act
+      cdrkit
+      docker-compose
+      filezilla
+      ldid-procursus
+      nsis
+      osslsigncode
+      rcodesign
+
+      # --- AI Assistance & Diagramming ---
       copilot-language-server
-      llama-cpp-vulkan
-      # Visuals & Graphics
       drawio
-      graphviz
+      github-copilot-cli
       gnome-graphs
+      graphviz
+      gucharmap
+      llama-cpp-vulkan
       mermaid-cli
-      gucharmap # Unicode character map
-    ];
-    # ========================================================================
-    # Graphical User Interface (GUI) Applications
-    # Heavyweight standalone client programs, web tools, and asset managers
-    # ========================================================================
-    gui = with pkgs; [
-      # Communications & Messaging
-      iamb
-      discord
 
-      # Digital Art & Image Compositing
-      aseprite
-      imagemagick
-      gimp
-      krita
-      xournalpp
-      rnote
-
-      # Design / CAD
-      kicad-unstable
-
-      # Host File System Shells
-      nautilus
-      kdePackages.dolphin
-      kdePackages.dolphin-plugins
-
-      # Media Playback & Visual Rendering
-      feh
-      vlc
-
-      # Games
-      solitaire-tui
-
-      # Office Productivity & Knowledge Bases
-      libreoffice-fresh
-      obsidian
-      zathura
-      zathuraPkgs.zathura_pdf_poppler
-
-      # Password Storage
-      bitwarden-desktop
-
-      # Web Browser
-      qutebrowser
-      chromium # Only for Bluetooth Cubing
+      # --- Development UI Libraries ---
+      at-spi2-atk
+      atkmm
+      cairo
+      fontconfig
+      fontconfig.dev
+      gdk-pixbuf
+      gtk3
+      librsvg
+      libsoup_3
+      webkitgtk_4_1
+      xdotool
     ];
 
     # ========================================================================
@@ -282,62 +234,96 @@
     # Wayland protocols, styling assets, volume mixers, and window hooks
     # ========================================================================
     desktop = with pkgs; [
-      # Application Orchestration & Launchers
+      # --- Launchers & UI Overlays ---
       bemoji
       fuzzel
       kando
-      waybar
+      libnotify
       rofi
+      swaynotificationcenter
+      waybar
 
-      # Audio Backends, Sinks & Mixers
+      # --- Display Capture & Layout ---
+      grim
+      hyprlock
+      slurp
+      swappy
+      wlr-randr
+
+      # --- Audio Backends & Control ---
       pamixer
       pavucontrol
       playerctl
       portaudio
 
-      # Hardware Integration & Radios
+      # --- Hardware, Power & Radios ---
       blueman
-
-      # Layout Capture & Display Managers
-      swaynotificationcenter
-      libnotify
-      hyprlock
-      grim
-      slurp
-      swappy
-      wlr-randr
-
-      # Policy Agents & Privilege Scalers
-      hyprpolkitagent
-      polkit_gnome
-      xdg-utils
-
-      # Power Topologies & Backlights
       brightnessctl
       ddcutil
       upower
 
-      # System Theming, Icons & Engine Rules
-      hyprpaper
+      # --- Polkit, Policy Agents & Clipboard ---
+      cliphist
+      hyprpolkitagent
+      polkit_gnome
+      wl-clipboard
+      xdg-utils
+
+      # --- System Theming, Icons & Engines ---
       bibata-cursors
       dracula-icon-theme
-      papirus-icon-theme
       dracula-qt5-theme
+      hyprpaper
       nwg-look
+      papirus-icon-theme
       qt6Packages.qt6ct
       qt6Packages.qtstyleplugin-kvantum
-
-      # Clipboard Intermediaries
-      cliphist
-      wl-clipboard
     ];
 
     # ========================================================================
-    # Penetration Testing & Networking
+    # Graphical User Interface (GUI) Applications
+    # Heavyweight standalone client programs, web tools, and asset managers
+    # ========================================================================
+    gui = with pkgs; [
+      # --- Web Browsers & Communications ---
+      bitwarden-desktop
+      chromium
+      discord
+      iamb
+      qutebrowser
+
+      # --- Media, Art & CAD ---
+      aseprite
+      feh
+      gimp
+      imagemagick
+      kicad-unstable
+      krita
+      rnote
+      vlc
+      xournalpp
+
+      # --- Office Productivity & Knowledge Bases ---
+      libreoffice-fresh
+      obsidian
+      zathura
+      zathuraPkgs.zathura_pdf_poppler
+
+      # --- File System Shells & Managers ---
+      kdePackages.dolphin
+      kdePackages.dolphin-plugins
+      nautilus
+
+      # --- Games ---
+      solitaire-tui
+    ];
+
+    # ========================================================================
+    # Penetration Testing & Security Auditing
     # Security auditing stacks, fuzzer arrays, and protocol scrapers
     # ========================================================================
     security = with pkgs; [
-      # Host Exploration & Network Mapping
+      # --- Reconnaissance & Mapping ---
       chisel
       inetutils
       netcat
@@ -347,24 +333,22 @@
       tcpdump
       wireshark
 
-      # Inter-process Transport & Protocol Exploits
+      # --- Exploitation & Transport Protocols ---
+      metasploit
       samba
       smbclient-ng
       smbmap
-
-      # Payload Deployment & Exploitation
-      metasploit
       sqlmap
 
-      # Signatures & Local Cryptanalysis
-      hashcat
-      john
-
-      # Web Scanning & Endpoint Fuzzing
+      # --- Web Scanning & Endpoint Fuzzing ---
       ffuf
       gobuster
 
-      # Wireless Layer Auditing
+      # --- Cryptanalysis & Password Cracking ---
+      hashcat
+      john
+
+      # --- Wireless Auditing ---
       aircrack-ng
       hcxtools
       iw
@@ -375,42 +359,33 @@
     # Low-level system interfaces, archive layers, and media codecs
     # ========================================================================
     system-infra = with pkgs; [
-      # Archive Handling & Unpacking
-      p7zip
-      unar
-
-      # Hardware Diagnostics & Speed Benches
-      speedtest-cli
-      usbutils
-      libusb1
-      udiskie
+      # --- Diagnostics, Drives & Hardware ---
       exfatprogs
+      libusb1
+      speedtest-cli
+      udiskie
+      usbutils
 
-      # iOS System Subsystem Interoperability
+      # --- iOS System Subsystem Interoperability ---
       ifuse
-      usbmuxd
       libimobiledevice
+      usbmuxd
 
-      # Network Pipelines & Sync Bridges
+      # --- Network Pipelines & Sync Bridges ---
       lftp
-      sshfs
       rclone
+      sshfs
 
-      # Processing Pipemaps & AV Codecs
+      # --- Processing Pipelines & AV Codecs ---
       ffmpeg
       ffmpegthumbnailer
       libheif
       mediainfo
       poppler-utils
 
-      # Terminal Screensavers & Overlays
-      cmatrix
-
-      # Video Frame Streaming Host
-      sunshine
-
-      # Window Matchers
+      # --- Streaming & Window Matchers ---
       bamf
+      sunshine
     ];
   };
 in rec {
