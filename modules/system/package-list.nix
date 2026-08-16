@@ -317,7 +317,6 @@
 
       # --- Games ---
       flycast
-      ppsspp-sdl-wayland
       solitaire-tui
     ];
 
