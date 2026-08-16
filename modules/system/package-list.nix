@@ -171,6 +171,7 @@
 
       # --- Hardware & Embedded Development (ARM / RP2350) ---
       android-tools
+      scrcpy
       gcc-arm-embedded
       pico-sdk
       picocom
