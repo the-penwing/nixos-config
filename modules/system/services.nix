@@ -16,13 +16,6 @@
 
   services.tailscale.enable = true;
   services.dbus.enable = true;
-  services.solaar = {
-    enable = true;
-    package = pkgs.solaar;
-    window = "hide";
-    batteryIcons = "regular";
-    extraArgs = "";
-  };
 
   services.syncthing = {
     enable = true;

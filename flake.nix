@@ -38,11 +38,6 @@
       url = "gitlab:detoxify92/naviterm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -54,7 +49,6 @@
     bacon,
     bacon-ls,
     naviterm,
-    solaar,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -75,7 +69,6 @@
       inherit system;
       modules = [
         ./hosts/nixos-p14s/configuration.nix
-        solaar.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays = overlays;
