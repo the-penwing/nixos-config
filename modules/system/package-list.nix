@@ -113,7 +113,6 @@
       gcc
       glib
       glib-networking
-      glibc
       gnumake
       libclang
       lld
