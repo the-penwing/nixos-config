@@ -1,4 +1,4 @@
 * text=auto eol=lf
 
 # Exclude zsh plugins from language
-dotfiles/shell/zsh/config-dir/plugins/* linguist-vendored
+dotfiles/shell/zsh/config-dir/plugins/** linguist-vendored
