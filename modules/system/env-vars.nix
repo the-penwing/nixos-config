@@ -6,8 +6,8 @@
 
   environment.sessionVariables = {
     # Preferred Default Editors
-    EDITOR = "hx";
-    SUDO_EDITOR = "hx";
+    EDITOR = "nvim";
+    SUDO_EDITOR = "nvim";
 
     # Graphics overrides for Hashcat and Wayland / Hyprland mapping
     RUSTICL_ENABLE = "radeonsi";
@@ -15,6 +15,8 @@
     NIXOS_OZONE_WL = "1";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    GTK_THEME = "Dracula";
 
     # Dev
     RUSTC_WRAPPER = "sccache";
