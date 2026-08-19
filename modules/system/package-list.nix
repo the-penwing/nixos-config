@@ -249,6 +249,8 @@
       slurp
       swappy
       wlr-randr
+      wl-screenrec
+      wshowkeys
 
       # --- Audio Backends & Control ---
       pamixer
