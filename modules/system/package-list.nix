@@ -312,8 +312,7 @@
       # --- File System Shells & Managers ---
       kdePackages.dolphin
       kdePackages.dolphin-plugins
-      nautilus
-
+      nemo-with-extensions
       # --- Games ---
       flycast
       solitaire-tui
@@ -401,7 +400,7 @@ in rec {
   defaults = {
     browserDesktop = "firefox.desktop";
     terminalDesktop = "com.mitchellh.ghostty.desktop";
-    fileManagerDesktop = "org.gnome.Nautilus.desktop";
+    fileManagerDesktop = "nemo.desktop";
     editorDesktop = "nvim.desktop";
     pdfDesktop = "org.pwmt.zathura.desktop";
   };
