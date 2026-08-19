@@ -9,6 +9,9 @@
   };
 
   programs.dconf.enable = true;
+
+  programs.wshowkeys.enable = true;
+
   programs.solaar = {
     enable = true;
     package = pkgs.solaar;
