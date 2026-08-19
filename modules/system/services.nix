@@ -42,11 +42,6 @@
 
   services.printing = {
     enable = true;
-    drivers = with pkgs; [
-      brlaser
-      cups-browsed
-      cups-filters
-    ];
   };
 
   services.avahi = {
