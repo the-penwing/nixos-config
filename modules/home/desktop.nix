@@ -39,6 +39,16 @@
     };
   };
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "Dracula";
+      icon-theme = "Papirus-Dark";
+      color-theme = "Bibata-Modern-Classic";
+      font-name = "Sans 11";
+    };
+  };
+
   home.packages = with pkgs; [
     mpris-scrobbler
   ];

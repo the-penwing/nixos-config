@@ -9,15 +9,6 @@
   };
 
   programs.dconf.enable = true;
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = "Dracula";
-      icon-theme = "Papirus-Dark";
-      color-theme = "Bibata-Modern-Classic";
-      font-name = "Sans 11";
-    };
-  };
   programs.solaar = {
     enable = true;
     package = pkgs.solaar;
