@@ -29,7 +29,7 @@
     "electron-39.8.10"
   ];
 
-  security.pki.certificateFiles = [./secrets/root.crt];
+  security.pki.certificateFiles = [./homelab.crt];
 
   system.stateVersion = "25.11";
 }
