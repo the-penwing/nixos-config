@@ -294,7 +294,7 @@
       qutebrowser
 
       # --- Media, Art & CAD ---
-      # aseprite
+      aseprite
       feh
       gimp
       imagemagick
