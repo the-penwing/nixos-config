@@ -191,6 +191,7 @@
       sqlite
       sqlitebrowser
       taplo
+      tombi
       yaml-language-server
       yamlfmt
       yamllint
@@ -241,7 +242,6 @@
       libnotify
       rofi
       swaynotificationcenter
-      waybar
 
       # --- Display Capture & Layout ---
       grim

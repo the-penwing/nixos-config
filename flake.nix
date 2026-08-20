@@ -38,6 +38,10 @@
       url = "gitlab:detoxify92/naviterm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ashell = {
+      url = "github:MalpenZibo/ashell";
+    };
   };
 
   outputs = {
@@ -49,6 +53,7 @@
     bacon,
     bacon-ls,
     naviterm,
+    ashell,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -86,6 +91,7 @@
             pkgs.bacon
             pkgs.bacon-ls
             naviterm.packages.${system}.default
+            ashell.packages.${system}.default
             # Rust toolchain with rust-src for rust-analyzer
             (pkgs.rust-bin.stable.latest.default.override {
               extensions = [
