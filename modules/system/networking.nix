@@ -16,18 +16,18 @@
         8080
         8000
         3000
+        47984 # Sunshine
+        47989 # Sunshine
+        48010 # Sunshine
       ];
-      allowedTCPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        }
-      ];
-      allowedUDPPortRanges = [
-        {
-          from = 1714;
-          to = 1764;
-        }
+      # All Sunshine
+      allowedUDPPorts = [
+        5353
+        47998
+        47999
+        48000
+        48002
+        48010
       ];
     };
     nameservers = ["192.168.50.117" "1.1.1.1"];
