@@ -22,7 +22,6 @@
       ];
       # All Sunshine
       allowedUDPPorts = [
-        5353
         47998
         47999
         48000
