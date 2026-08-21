@@ -1,42 +1,8 @@
 {...}: {
-  # ============================================================
-  # INPUT — keyd kernel-level key remapping
-  # Works on all connected keyboards (built-in + Logi Pebble 2)
-  #
-  # Scope is intentionally narrow to avoid conflicting with the
-  # existing Hyprland bindings in hyprland.conf.  Specifically:
-  #
-  #   Excluded (already bound in Hyprland):
-  #     Super+C  → cliphist picker
-  #     Super+V  → togglefloating
-  #     Super+S  → special workspace
-  #     Super+Q  → killactive
-  #     Super+E  → dolphin
-  #     Super+1–9,0 → workspace switching
-  #     Right Alt → compose key (kb_options = compose:ralt)
-  #     XF86 media / brightness → already handled by Hyprland
-  #
-  #   Remapped here (universal layer helpers):
-  #     Super+Z → Ctrl+Z  (undo — universal in every app)
-  #     Super+X → Ctrl+X  (cut  — universal in every app)
-  #     Super+A → Ctrl+A  (select-all — universal in every app)
-  #
-  # Caps Lock layer
-  # ──────────────
-  #   Tap  → Escape  (great for neovim)
-  #   Hold → activate the [capslock] layer below
-  #
-  #   Media:       Space=play/pause   ,=prev   .=next   M=mute
-  #   Volume:      Left=vol-down      Right=vol-up
-  #   Brightness:  Up=bright+         Down=bright-
-  #   Terminal:    C=^C  D=^D  Z=^Z  L=^L  U=^U  A=^A  E=^E  K=^K  W=^W
-  #   Session:     Q → Super+R which Hyprland binds to Caelestia launcher
-  # ============================================================
   services.keyd = {
     enable = true;
     keyboards = {
       default = {
-        # Apply to every connected keyboard (built-in + Logi Pebble 2)
         ids = ["*"];
         settings = {
           main = {
@@ -71,8 +37,8 @@
             k = "C-k"; # Delete to end of line
             w = "C-w"; # Delete word back
 
-            # Session launcher — sends Super+R which Hyprland maps to Caelestia launcher
-            q = "M-r";
+            # App launcher
+            r = "M-r";
           };
         };
       };
