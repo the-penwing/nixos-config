@@ -1,3 +1,4 @@
+-- ~/.config/hypr/hyprland.lua
 hl.window_rule({
 	name = "kando",
 	match = {
@@ -14,6 +15,5 @@ hl.window_rule({
 	float = true,
 	pin = true,
 })
-
-hl.bind("CTRL + Space", hl.dsp.global("menu.kando.Kando:menu"))
+hl.bind("CTRL + Space", hl.dsp.exec_cmd('kando -m "Main Menu"'))
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
