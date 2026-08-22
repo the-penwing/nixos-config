@@ -30,6 +30,7 @@
 
       # --- Networking & Data Transfer ---
       cloudflared
+      gping
       curl
       rsync
       wget
@@ -124,7 +125,7 @@
       # --- Rust Stack ---
       cargo-edit
       cargo-expand
-      cargo-watch
+      cargo-readme
       cargo-zigbuild
 
       # --- Zig Stack ---
