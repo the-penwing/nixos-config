@@ -190,14 +190,12 @@
       prettier
       sqlite
       sqlitebrowser
-      taplo
       tombi
       yaml-language-server
       yamlfmt
       yamllint
 
       # --- Build, Packaging & Deployment ---
-      act
       cdrkit
       docker-compose
       filezilla
@@ -208,12 +206,9 @@
 
       # --- AI Assistance & Diagramming ---
       copilot-language-server
-      drawio
       github-copilot-cli
-      gnome-graphs
       graphviz
       gucharmap
-      llama-cpp-vulkan
       mermaid-cli
 
       # --- Development UI Libraries ---
@@ -272,7 +267,6 @@
 
       # --- System Theming, Icons & Engines ---
       bibata-cursors
-      dracula-icon-theme
       dracula-qt5-theme
       hyprpaper
       nwg-look
