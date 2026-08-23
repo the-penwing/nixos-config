@@ -3,24 +3,19 @@ palette = "dracula"
 add_newline = true
 
 format = '''
-[┌─╼](brightyellow)$directory$git_branch$git_status
-[├─╼](brightyellow)$username$hostname$nix_shell$python
+[┌─╼](yellow)$directory$git_branch$git_status
+[├─╼](yellow)$username$hostname$nix_shell$rust$lua$python
 $character'''
 
 [palettes.dracula]
 # Backgrounds and Foregrounds
 background = "#282a36"
-foreground = "#f8f8f2"
-comment = "#6272a4"
 
-# Bright Colours (main accent colors)
-brightred = "#ff5555"
-brightgreen = "#50fa7b"
-brightyellow = "#f1fa8c"
-brightblue = "#bd93f9"
-brightpurple = "#bd93f9"
-brightaqua = "#8be9fd"
-brightorange = "#ffb86c"
+# Light shades for text
+light1 = "#f8f8f2"
+light2 = "#e0e0e0"
+light3 = "#c0c0c0"
+light4 = "#6272a4"
 
 # Neutral Colours
 red = "#ff5555"
@@ -30,23 +25,6 @@ blue = "#bd93f9"
 purple = "#bd93f9"
 aqua = "#8be9fd"
 orange = "#ffb86c"
-
-# Dim Colours
-dimred = "#ff5555"
-dimgreen = "#50fa7b"
-dimyellow = "#f1fa8c"
-dimblue = "#bd93f9"
-dimpurple = "#bd93f9"
-dimaqua = "#8be9fd"
-dimorange = "#ffb86c"
-
-# Light shades for text
-light0 = "#f8f8f2"
-light1 = "#f8f8f2"
-light2 = "#e0e0e0"
-light3 = "#c0c0c0"
-light4 = "#6272a4"
-fg1 = "#f8f8f2"
 
 [directory]
 style = "fg1"
@@ -69,8 +47,8 @@ format = '[@$hostname]($style)\]'
 disabled = false
 
 [character]
-success_symbol = "[└────╼](brightyellow)"
-error_symbol = "[└╼](brightorange)"
+success_symbol = "[└────╼](yellow)"
+error_symbol = "[└╼](orange)"
 
 [git_branch]
 style = "yellow"
@@ -90,16 +68,24 @@ untracked = "[?](orange)"
 deleted = "[✘](red)"
 conflicted = "[~](red)"
 
+[rust]
+format = '\[[${symbol}${version}]($style)\]'
+style = "orange"
+symbol = " "
+
 [python]
-format = '\[[${symbol}${version}](brightyellow)\][(\[$virtualenv\])]($style)'
-symbol = "[󰌠 ](brightyellow)"
-style = "fg1"
-version_format = "v${raw}"
+format = '\[[${symbol}${version}( \($virtualenv\))]($style)\]'
+symbol = "󰌠 "
+style = "yellow"
+
+[lua]
+format = '\[[${symbol}${version}]($style)\]'
+symbol = " "
+style = "blue"
 
 [nix_shell]
-symbol = "[󱄅 ](brightgreen)"
-style = "fg1"
-impure_msg = "[impure](red)"
-pure_msg = "[pure](brightgreen)"
-unknown_msg = "[unknown](yellow)"
-format = '[\[](fg1)${symbol}[${name}](blue)[\]](fg1)'
+format = '\[[${symbol}${name}${impure_msg}${pure_msg}${unknown_msg}\]](aqua)'
+symbol = "󱄅 "
+impure_msg = "[ impure](red)"
+pure_msg = "[ pure](green)"
+unknown_msg = "[ unknown](yellow)"
