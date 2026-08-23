@@ -6,7 +6,7 @@ return {
 				cmd = { "lua-language-server" },
 				settings = {
 					Lua = {
-						runtime = { version = "Lua 5.5" },
+						runtime = { version = "Lua 5.4" },
 						diagnostics = { globals = { "vim" } },
 						workspace = {
 							checkThirdParty = false,
