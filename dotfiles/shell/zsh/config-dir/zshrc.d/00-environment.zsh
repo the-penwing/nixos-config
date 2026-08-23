@@ -15,8 +15,9 @@ export FZF_DEFAULT_OPTS="--color=dark \
 export DISABLE_FZF_AUTO_COMPLETION="false"
 export DISABLE_FZF_KEY_BINDINGS="false"
 export TIMEFMT=$'\nreal %*E\nuser %*U\nsys %*S\n'
+export MANPAGER="nvim +Man!"
 
-# SYSTEM SPECIFIC (Using native Zsh array syntax)
+# SYSTEM SPECIFIC 
 path+=("$HOME/nixos-config/scripts" "$HOME/.cargo/bin")
 export _ZO_EXCLUDE_DIRS="$HOME/icloud/*:$HOME/nextcloud/*"
 export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
