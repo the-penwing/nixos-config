@@ -27,7 +27,7 @@ clipboard-write = allow
 copy-on-select = clipboard
 focus-follows-mouse = true
 shell-integration = zsh
-shell-integration-features = cursor,sudo,title
+shell-integration-features = no-cursor,sudo,title
 
 # Scrollback
 scrollback-limit = 20000
