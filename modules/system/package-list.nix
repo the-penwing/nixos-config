@@ -164,6 +164,7 @@
       elmPackages.elm-language-server
       elmPackages.elm-test
       elmPackages.elm-live
+      elmPackages.elm-review
       elm2nix
 
       # --- Kotlin & JVM Stack ---
