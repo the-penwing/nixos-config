@@ -158,6 +158,13 @@
       tailwindcss-language-server
       typescript-language-server
       vscode-langservers-extracted
+      # Elm Stack
+      elmPackages.elm
+      elmPackages.elm-format
+      elmPackages.elm-language-server
+      elmPackages.elm-test
+      elmPackages.elm-live
+      elm2nix
 
       # --- Kotlin & JVM Stack ---
       detekt
