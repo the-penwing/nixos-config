@@ -4,7 +4,7 @@ add_newline = true
 
 format = '''
 [┌─╼](yellow)$directory$git_branch$git_status
-[├─╼](yellow)$username$hostname$nix_shell$rust$lua$python
+[├─╼](yellow)$username$hostname$nix_shell$rust$lua$elm$python
 $character'''
 
 [palettes.dracula]
@@ -68,24 +68,29 @@ untracked = "[?](orange)"
 deleted = "[✘](red)"
 conflicted = "[~](red)"
 
-[rust]
-format = '\[[${symbol}${version}]($style)\]'
-style = "orange"
-symbol = " "
-
-[python]
-format = '\[[${symbol}${version}( \($virtualenv\))]($style)\]'
-symbol = "󰌠 "
-style = "yellow"
-
-[lua]
-format = '\[[${symbol}${version}]($style)\]'
-symbol = " "
-style = "blue"
-
 [nix_shell]
 format = '\[[${symbol}${name}${impure_msg}${pure_msg}${unknown_msg}\]](aqua)'
 symbol = "󱄅 "
 impure_msg = "[ impure](red)"
 pure_msg = "[ pure](green)"
 unknown_msg = "[ unknown](yellow)"
+
+[rust]
+format = '\[[${symbol}${version}]($style)\]'
+style = "orange"
+symbol = " "
+
+[lua]
+format = '\[[${symbol}${version}]($style)\]'
+style = "blue"
+symbol = " "
+
+[elm]
+format = '\[[${symbol}${version}]($style)\]'
+style = "cyan"
+symbol = " "
+
+[python]
+format = '\[[${symbol}${version}( \($virtualenv\))]($style)\]'
+style = "yellow"
+symbol = "󰌠 "

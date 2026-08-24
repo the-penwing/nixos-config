@@ -8,10 +8,14 @@ return {
 			nix = { "alejandra" },
 			markdown = { "prettier" },
 			lua = { "stylua" },
+			elm = { "elm-format" },
 		},
 		formatters = {
 			shfmt = {
 				prepend_args = { "-i", "2", "-ci" },
+			},
+			elm_format = {
+				prepend_args = { "--yes" },
 			},
 		},
 		format_on_save = {
