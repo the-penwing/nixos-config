@@ -29,6 +29,7 @@
       sd
 
       # --- Networking & Data Transfer ---
+      impala
       cloudflared
       gping
       curl
@@ -127,6 +128,7 @@
       cargo-expand
       cargo-readme
       cargo-zigbuild
+      slint-lsp
 
       # --- Zig Stack ---
       zig
@@ -154,7 +156,6 @@
       eslint_d
       nodejs
       pnpm
-      slint-lsp
       tailwindcss-language-server
       typescript-language-server
       vscode-langservers-extracted
@@ -178,14 +179,15 @@
       shfmt
 
       # --- Hardware & Embedded Development (ARM / RP2350) ---
-      android-tools
-      scrcpy
       gcc-arm-embedded
       pico-sdk
-      picocom
       picotool
       probe-rs-tools
       tio
+
+      # --- Android
+      android-tools
+      scrcpy
 
       # --- Nix Infrastructure & Tooling ---
       alejandra
@@ -214,9 +216,7 @@
       rcodesign
 
       # --- AI Assistance & Diagramming ---
-      copilot-language-server
       github-copilot-cli
-      graphviz
       gucharmap
       mermaid-cli
 
@@ -294,16 +294,12 @@
       chromium
       discord
       iamb
-      qutebrowser
 
       # --- Media, Art & CAD ---
       aseprite
       feh
-      gimp
       imagemagick
       kicad-unstable
-      krita
-      rnote
       vlc
       libvlc
       xournalpp
@@ -315,9 +311,8 @@
       zathuraPkgs.zathura_pdf_poppler
 
       # --- File System Shells & Managers ---
-      kdePackages.dolphin
-      kdePackages.dolphin-plugins
       nemo-with-extensions
+
       # --- Games ---
       flycast
       solitaire-tui
