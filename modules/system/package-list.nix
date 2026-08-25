@@ -262,7 +262,7 @@
       portaudio
 
       # --- Hardware, Power & Radios ---
-      blueman
+      bluetuith
       brightnessctl
       ddcutil
       upower

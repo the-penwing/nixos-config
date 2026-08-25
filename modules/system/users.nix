@@ -14,7 +14,6 @@
     extraGroups = [
       "pcscd"
       "input"
-      "networkmanager"
       "plugdev"
       "plocate"
       "video"

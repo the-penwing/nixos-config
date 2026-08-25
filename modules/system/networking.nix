@@ -1,3 +1,4 @@
+# modules/system/networking.nix
 # Networking and locale defaults for nixos-p14s.
 #
 # Security notes:
@@ -6,7 +7,19 @@
 {...}: {
   networking = {
     hostName = "nixos-p14s";
-    networkmanager.enable = true;
+    networkmanager.enable = false;
+
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        General.EnableNetworkConfiguration = true;
+      };
+    };
+
+    useDHCP = false;
+    interfaces.enp2s0f0.useDHCP = true;
+    interfaces.enp5s0.useDHCP = true;
+
     firewall = {
       enable = true;
       allowedTCPPorts = [
