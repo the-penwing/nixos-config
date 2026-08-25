@@ -27,4 +27,7 @@
 
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "6G";
+  system.activationScripts.text = ''
+    ln -sf ${pkgs.bash}/bin/bash /bin/bash
+  '';
 }

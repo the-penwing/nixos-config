@@ -3,7 +3,6 @@
 # ============================================================================
 {pkgs, ...}: {
   environment.localBinInPath = true;
-  environment.binsh = "${pkgs.bashInteractive}/bin/bash";
 
   environment.sessionVariables = {
     # Preferred Default Editors
