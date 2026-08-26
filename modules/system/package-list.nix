@@ -246,6 +246,7 @@
       libnotify
       rofi
       swaynotificationcenter
+      ashell
 
       # --- Display Capture & Layout ---
       grim
