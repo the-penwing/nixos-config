@@ -42,8 +42,14 @@
         48010
       ];
     };
-    nameservers = ["192.168.50.117" "8.8.8.8"];
-    search = ["homelab"];
+  };
+
+  services.resolved = {
+    enable = true;
+    extraConfig = ''
+      DNS=192.168.50.117
+      Domains=~homelab
+    '';
   };
 
   time.timeZone = "Australia/Sydney";
