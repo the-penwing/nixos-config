@@ -44,12 +44,16 @@
         HostName gitea.taile9a1d6.ts.net
         User git
 
+      Host echo-ts
+        Hostname iphone
+        Port 22
+        user mobile
       Host homelab-ts
-        Hostname 100.99.179.98
+        Hostname home-server
         Port 22
         User benvl
       Host alpine-ts
-        Hostname 100.68.51.33
+        Hostname alpine-rpi
         Port 22
         User root
       Host homelab
