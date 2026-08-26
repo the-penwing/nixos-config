@@ -8,7 +8,8 @@ hl.config({
 		touchpad = {
 			natural_scroll = true,
 			tap_to_click = true,
-			drag_lock = true,
+			drag_lock = 0,
+			tap_and_drag = true,
 			scroll_factor = 1.2,
 		},
 	},
@@ -16,13 +17,6 @@ hl.config({
 
 hl.gesture({
 	fingers = 3,
-	direction = "horizontal",
+	direction = "vertical",
 	action = "workspace",
-})
-
-hl.gesture({
-	fingers = 3,
-	direction = "up",
-	action = "workspace",
-	workspace = "special:magic",
 })
