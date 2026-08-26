@@ -305,7 +305,7 @@
       xournalpp
 
       # --- Office Productivity & Knowledge Bases ---
-      libreoffice-fresh
+      libreoffice-stable
       obsidian
       zathura
       zathuraPkgs.zathura_pdf_poppler
