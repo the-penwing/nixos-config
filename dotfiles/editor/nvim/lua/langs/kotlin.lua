@@ -3,9 +3,17 @@ return {
 	opts = {
 		servers = {
 			kotlin_language_server = {
-				root_dir = function(bufnr)
-					return vim.fs.root(bufnr, { "build.gradle", "build.gradle.kts", "pom.xml", ".git" })
-				end,
+				init_options = {
+					storagePath = vim.fn.stdpath("cache") .. "/kotlin_language_server",
+				},
+				root_markers = {
+					"build.gradle",
+					"build.gradle.kts",
+					"pom.xml",
+					"settings.gradle",
+					"settings.gradle.kts",
+					".git",
+				},
 				settings = {
 					kotlin = {
 						linting = { enabled = true },

@@ -169,6 +169,8 @@
       elm2nix
 
       # --- Kotlin & JVM Stack ---
+      jdk17
+      kotlin
       detekt
       kotlin-language-server
       ktlint
