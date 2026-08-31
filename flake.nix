@@ -8,6 +8,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    elephant.url = "github:abenz1267/elephant";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -17,6 +18,12 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.elephant.follows = "elephant";
     };
 
     rust-overlay = {
@@ -45,6 +52,8 @@
     nixpkgs,
     home-manager,
     ghostty,
+    walker,
+    elephant,
     rust-overlay,
     bacon,
     bacon-ls,
@@ -85,6 +94,8 @@
             pkgs.ghostty
             pkgs.bacon
             pkgs.bacon-ls
+            walker.packages.${system}.default
+            elephant.packages.${system}.default
             naviterm.packages.${system}.default
             # Rust toolchain with rust-src for rust-analyzer
             (pkgs.rust-bin.stable.latest.default.override {
