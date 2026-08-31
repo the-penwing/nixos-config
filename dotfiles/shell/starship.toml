@@ -90,6 +90,11 @@ format = '\[[${symbol}${version}]($style)\]'
 style = "cyan"
 symbol = " "
 
+[kotlin]
+format = '\[[${symbol}${version}]($style)\]'
+style = "purple"
+symbol = " "
+
 [python]
 format = '\[[${symbol}${version}( \($virtualenv\))]($style)\]'
 style = "yellow"
