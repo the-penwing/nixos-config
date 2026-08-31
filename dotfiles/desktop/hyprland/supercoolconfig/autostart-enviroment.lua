@@ -7,7 +7,7 @@ local exec_once_commands = {
 	"solaar --window=hide -w hide",
 	"kando",
 	"hyprpaper",
-	"ashell",
+	"ashell > ~/.cache/ashell.log 2>&1",
 }
 
 hl.on("hyprland.start", function()
