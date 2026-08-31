@@ -20,6 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    the-penwing = {
+      url = "github:the-penwing/the-penwing-nix-repo";
+    };
+
     walker = {
       url = "github:abenz1267/walker";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +56,7 @@
     nixpkgs,
     home-manager,
     ghostty,
+    the-penwing,
     walker,
     elephant,
     rust-overlay,
@@ -94,6 +99,7 @@
             pkgs.ghostty
             pkgs.bacon
             pkgs.bacon-ls
+            the-penwing.packages.${system}.blackjack-slint
             walker.packages.${system}.default
             elephant.packages.${system}.default
             naviterm.packages.${system}.default
