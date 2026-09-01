@@ -31,12 +31,13 @@ local core_binds = {
 	{ mods = mainMod, key = "Q", dispatcher = hl.dsp.window.close() },
 	{ mods = mainMod .. " + SHIFT", key = "Q", dispatcher = hl.dsp.exit() },
 	{
-		mods = mainMod .. "+ SHIFT",
+		mods = mainMod,
 		key = "F",
 		dispatcher = hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }),
 	},
 	{
-		mods = mainMod,
+		mods = mainMod .. "+ SHIFT",
+
 		key = "F",
 		dispatcher = hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }),
 	},
