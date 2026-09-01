@@ -245,7 +245,6 @@
       bemoji
       kando
       libnotify
-      rofi
       swaynotificationcenter
       ashell
 
