@@ -17,7 +17,7 @@ enable_workspace_filling = false
 [[CustomModule]]
 name = "appLauncher"
 icon = "󱗼"
-command = "fuzzel"
+command = "walker"
 
 [window_title]
 mode = "Title"

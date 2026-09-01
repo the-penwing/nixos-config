@@ -27,7 +27,7 @@ export SDKROOT="/home/benvl/dev/sdks/MacOSX15.5.sdk"
 export PICO_SDK_PATH="/home/benvl/dev/hardware/pico2/cc/pico-sdk"
 
 # WM / DE
-export BEMOJI_PICKER_CMD="fuzzel -d"
+export BEMOJI_PICKER_CMD="walker -d"
 export GPG_TTY="$TTY"
 
 # ============================================================================

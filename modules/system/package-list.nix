@@ -243,7 +243,6 @@
     desktop = with pkgs; [
       # --- Launchers & UI Overlays ---
       bemoji
-      fuzzel
       kando
       libnotify
       rofi

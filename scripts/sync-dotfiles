@@ -9,7 +9,6 @@ declare -a SYNC_PAIRS=(
   "dotfiles/editor/nvim:~/.config/nvim"
   "dotfiles/desktop/hyprland:~/.config/hypr"
   "dotfiles/desktop/ashell:~/.config/ashell/"
-  "dotfiles/desktop/fuzzel:~/.config/fuzzel"
   "dotfiles/apps/ghostty:~/.config/ghostty"
   "dotfiles/apps/fastfetch:~/.config/fastfetch"
   "dotfiles/apps/yazi:~/.config/yazi"

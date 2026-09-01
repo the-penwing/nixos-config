@@ -3,7 +3,7 @@ local mainMod = "SUPER"
 local terminal = "ghostty"
 local fileManager = "nemo"
 local browser = "firefox"
-local launcher = "fuzzel"
+local launcher = "nc -U /run/user/1000/walker/walker.sock"
 local lockscreen = "hyprlock"
 local docs = "zeal"
 local notifs = "swaync-client -t"
@@ -53,7 +53,7 @@ local clipboard_binds = {
 	{
 		mods = mainMod,
 		key = "V",
-		dispatcher = hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"),
+		dispatcher = hl.dsp.exec_cmd("cliphist list | walker -d | cliphist decode | wl-copy"),
 	},
 	{ mods = mainMod, key = "ALT + V", dispatcher = hl.dsp.exec_cmd("cliphist delete-query") },
 	{ mods = mainMod, key = "Period", dispatcher = hl.dsp.exec_cmd("bemoji -n") },
