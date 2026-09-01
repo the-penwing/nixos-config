@@ -28,6 +28,11 @@ return {
 				"kotlin-language-server",
 				"elm-language-server",
 				"tombi",
+				"stylua",
+				"shfmt",
+				"markdownlint-cli2",
+				"selene",
+				"prettier",
 			},
 			run_on_start = true,
 			start_delay = 3000, -- ms, gives lazy.nvim time to finish loading first

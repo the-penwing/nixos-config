@@ -151,7 +151,6 @@
 
       # --- Web, Node & TypeScript Stack ---
       browser-sync
-      eslint_d
       nodejs
       pnpm
       # Elm Stack
@@ -168,10 +167,6 @@
       detekt
       kotlin-language-server
       ktlint
-
-      # --- Shell Scripting ---
-      shellcheck
-      shfmt
 
       # --- Hardware & Embedded Development (ARM / RP2350) ---
       gcc-arm-embedded
@@ -191,12 +186,9 @@
       nixd
 
       # --- Data, Formats & Documentation ---
-      markdownlint-cli2
       prettier
       sqlite
       sqlitebrowser
-      yamlfmt
-      yamllint
 
       # --- Build, Packaging & Deployment ---
       cdrkit
