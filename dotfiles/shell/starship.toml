@@ -4,7 +4,7 @@ add_newline = true
 
 format = '''
 [┌─╼](yellow)$directory$git_branch$git_status
-[├─╼](yellow)$username$hostname$nix_shell$rust$lua$elm$python
+[├─╼](yellow)$username$hostname$nix_shell$rust$lua$elm$kotlin$python
 $character'''
 
 [palettes.dracula]
