@@ -8,7 +8,6 @@ declare -a SYNC_PAIRS=(
   "dotfiles/editor/helix:~/.config/helix"
   "dotfiles/editor/nvim:~/.config/nvim"
   "dotfiles/desktop/hyprland:~/.config/hypr"
-  "dotfiles/desktop/waybar:~/.config/waybar"
   "dotfiles/desktop/ashell:~/.config/ashell/"
   "dotfiles/desktop/fuzzel:~/.config/fuzzel"
   "dotfiles/apps/ghostty:~/.config/ghostty"
