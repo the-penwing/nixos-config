@@ -33,6 +33,13 @@ return {
 				"markdownlint-cli2",
 				"selene",
 				"prettier",
+				"shellcheck",
+				"eslint_d",
+				"black",
+				"yamlfmt",
+				"yamllint",
+				"ktlint",
+				"elm-format",
 			},
 			run_on_start = true,
 			start_delay = 3000, -- ms, gives lazy.nvim time to finish loading first
