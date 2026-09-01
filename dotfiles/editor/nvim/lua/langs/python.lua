@@ -1,12 +1,13 @@
+-- lua/langs/python.lua
 return {
 	{
 		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				pyright = { cmd = { "pyright-langserver", "--stdio" } },
-				ruff = { cmd = { "ruff", "server" } },
-			},
-		},
+		config = function()
+			vim.lsp.config("pyright", { cmd = { "pyright-langserver", "--stdio" } })
+			vim.lsp.enable("pyright")
+			vim.lsp.config("ruff", { cmd = { "ruff", "server" } })
+			vim.lsp.enable("ruff")
+		end,
 	},
 	{
 		"jim-at-jibba/micropython.nvim",

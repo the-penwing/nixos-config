@@ -1,11 +1,11 @@
+-- lua/langs/slint.lua
 return {
 	"neovim/nvim-lspconfig",
-	opts = {
-		servers = {
-			slint_lsp = {
-				cmd = { "slint-lsp" },
-				filetypes = { "slint" },
-			},
-		},
-	},
+	config = function()
+		vim.lsp.config("slint_lsp", {
+			cmd = { "slint-lsp" },
+			filetypes = { "slint" },
+		})
+		vim.lsp.enable("slint_lsp")
+	end,
 }

@@ -132,7 +132,6 @@
 
       # --- Zig Stack ---
       zig
-      zls
 
       # --- Python Stack ---
       black
@@ -144,7 +143,6 @@
       uv
 
       # --- Lua Stack ---
-      lua-language-server
       lua55Packages.lua
       lua55Packages.luacheck
       lua55Packages.luarocks
@@ -156,13 +154,9 @@
       eslint_d
       nodejs
       pnpm
-      tailwindcss-language-server
-      typescript-language-server
-      vscode-langservers-extracted
       # Elm Stack
       elmPackages.elm
       elmPackages.elm-format
-      elmPackages.elm-language-server
       elmPackages.elm-test
       elmPackages.elm-live
       elmPackages.elm-review
@@ -176,7 +170,6 @@
       ktlint
 
       # --- Shell Scripting ---
-      bash-language-server
       shellcheck
       shfmt
 
@@ -199,12 +192,9 @@
 
       # --- Data, Formats & Documentation ---
       markdownlint-cli2
-      marksman
       prettier
       sqlite
       sqlitebrowser
-      tombi
-      yaml-language-server
       yamlfmt
       yamllint
 

@@ -1,12 +1,5 @@
+-- lua/langs/markdown.lua
 return {
-	{
-		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				marksman = { cmd = { "marksman", "server" } },
-			},
-		},
-	},
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		ft = "markdown",
