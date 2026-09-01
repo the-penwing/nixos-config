@@ -3,7 +3,13 @@
 # Purpose:
 # - Keep user-level desktop helpers and user services in one place
 # - Avoid duplicate package declarations already managed system-wide
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  elephant,
+  system,
+  ...
+}: {
   home.file.".config/hypr/.luarc.json" = {
     text = builtins.toJSON {
       workspace = {
@@ -16,6 +22,14 @@
       };
     };
   };
+
+  home.activation.linkElephantProviders = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p $HOME/.config/elephant/providers
+    rm -f $HOME/.config/elephant/providers/*.so
+    for f in ${elephant.packages.${system}.elephant-with-providers}/lib/elephant/providers/*.so; do
+      ln -sf "$f" $HOME/.config/elephant/providers/
+    done
+  '';
 
   services.wluma = {
     enable = true;

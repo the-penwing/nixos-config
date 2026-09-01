@@ -91,7 +91,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             backupFileExtension = "bak";
-            users.benvl = import ./home.nix {inherit pkgs;};
+            users.benvl = import ./home.nix {inherit pkgs elephant system;};
           };
         }
         {
@@ -101,7 +101,7 @@
             pkgs.bacon-ls
             the-penwing.packages.${system}.blackjack-slint
             walker.packages.${system}.default
-            elephant.packages.${system}.default
+            elephant.packages.${system}.elephant-with-providers
             naviterm.packages.${system}.default
             # Rust toolchain with rust-src for rust-analyzer
             (pkgs.rust-bin.stable.latest.default.override {
