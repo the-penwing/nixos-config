@@ -10,7 +10,7 @@
 ; Lists / Containers
 [
   (value_arguments)
-  (value_parameters)
+  (function_value_parameters)
   (type_arguments)
   (type_parameters)
   (lambda_literal)
@@ -25,8 +25,4 @@
 
 ; Multi-line expressions/strings
 (string_literal) @indent.align
-
-; Align parameter blocks properly 
-(value_parameter
-  "}" @indent.end)
 

@@ -25,7 +25,7 @@ return {
 				"zls",
 				"marksman",
 				"lua-language-server",
-				"kotlin-language-server",
+				"kotlin-lsp",
 				"elm-language-server",
 				"tombi",
 				"stylua",

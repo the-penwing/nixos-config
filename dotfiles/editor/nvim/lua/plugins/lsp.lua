@@ -6,11 +6,16 @@ return {
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		require("mason-lspconfig").setup({
+			automatic_enable = {
+				exclude = { "kotlin_lsp" },
+			},
 			handlers = {
 				function(server_name)
 					vim.lsp.config(server_name, { capabilities = capabilities })
 					vim.lsp.enable(server_name)
 				end,
+
+				["kotlin_lsp"] = function() end,
 
 				["lua_ls"] = function()
 					vim.lsp.config("lua_ls", {
@@ -27,27 +32,6 @@ return {
 						},
 					})
 					vim.lsp.enable("lua_ls")
-				end,
-
-				["kotlin_language_server"] = function()
-					vim.lsp.config("kotlin_language_server", {
-						capabilities = capabilities,
-						init_options = {
-							storagePath = vim.fn.stdpath("cache") .. "/kotlin_language_server",
-						},
-						root_markers = {
-							"build.gradle",
-							"build.gradle.kts",
-							"pom.xml",
-							"settings.gradle",
-							"settings.gradle.kts",
-							".git",
-						},
-						settings = {
-							kotlin = { linting = { enabled = true } },
-						},
-					})
-					vim.lsp.enable("kotlin_language_server")
 				end,
 
 				["elmls"] = function()
