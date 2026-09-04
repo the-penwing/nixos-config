@@ -12,18 +12,6 @@ return {
 					vim.lsp.enable(server_name)
 				end,
 
-				["nixd"] = function()
-					vim.lsp.config("nixd", {
-						capabilities = capabilities,
-						settings = {
-							nixd = {
-								formatting = { command = { "alejandra" } },
-							},
-						},
-					})
-					vim.lsp.enable("nixd")
-				end,
-
 				["lua_ls"] = function()
 					vim.lsp.config("lua_ls", {
 						capabilities = capabilities,
@@ -112,5 +100,21 @@ return {
 			},
 		})
 		vim.lsp.enable("bacon_ls")
+
+		-- nixd: manual, not in Mason's registry
+		vim.lsp.config("nixd", {
+			capabilities = capabilities,
+			settings = {
+				nixd = {
+					formatting = { command = { "alejandra" } },
+				},
+			},
+		})
+		vim.lsp.enable("nixd")
+		-- nil: manual, running alongside nixd
+		vim.lsp.config("nil_ls", {
+			capabilities = capabilities,
+		})
+		vim.lsp.enable("nil_ls")
 	end,
 }
