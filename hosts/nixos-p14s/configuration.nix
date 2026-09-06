@@ -45,6 +45,10 @@
   ];
 
   security.pki.certificateFiles = [./homelab.crt];
+  boot.kernelParams = [
+    "amd_pstate=active"
+    "amdgpu.dcfeaturemask=0x2"
+  ];
 
   system.stateVersion = "25.11";
 }
