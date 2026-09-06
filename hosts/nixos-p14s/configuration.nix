@@ -10,6 +10,7 @@
   imports = [
     ./hardware-configuration.nix
     ./hardware.nix
+    ./performance.nix
     ../../modules/system
   ];
 
