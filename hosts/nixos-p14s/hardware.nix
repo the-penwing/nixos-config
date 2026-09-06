@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  hardware.amdgpu.initrd.enable = true;
+
   hardware.acpilight.enable = true;
 
   services.udev.extraRules = ''
