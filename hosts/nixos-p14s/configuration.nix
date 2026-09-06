@@ -9,6 +9,7 @@
 {...}: {
   imports = [
     ./hardware-configuration.nix
+    ./hardware.nix
     ../../modules/system
   ];
 
