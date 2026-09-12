@@ -93,9 +93,6 @@
     # Languages, specialized LSPs, compilation chains, and editors
     # ========================================================================
     dev = with pkgs; [
-      # EXAM PREP EDITORS (No vim motions)
-      micro
-
       # --- Core Editors, Terminals & Multiplexers ---
       ghostty
       helix
