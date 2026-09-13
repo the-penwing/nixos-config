@@ -9,6 +9,7 @@ return {
 			markdown = { "prettier" },
 			lua = { "stylua" },
 			elm = { "elm-format" },
+			kotlin = { "ktlint" },
 		},
 		formatters = {
 			shfmt = {
@@ -18,9 +19,11 @@ return {
 				prepend_args = { "--yes" },
 			},
 		},
-		format_on_save = {
-			timeout_ms = 500,
-			lsp_fallback = true,
-		},
+		format_on_save = function(bufnr)
+			if vim.bo[bufnr].filetype == "kotlin" then
+				return { timeout_ms = 3000, lsp_fallback = false }
+			end
+			return { timeout_ms = 500, lsp_fallback = true }
+		end,
 	},
 }

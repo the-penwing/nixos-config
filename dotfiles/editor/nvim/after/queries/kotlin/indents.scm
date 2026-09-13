@@ -2,7 +2,6 @@
 [
   (class_body)
   (function_body)
-  (statements)
   (enum_class_body)
   (control_structure_body)
 ] @indent.begin
@@ -26,3 +25,6 @@
 ; Multi-line expressions/strings
 (string_literal) @indent.align
 
+; Only indent standalone statement blocks not covered by body nodes
+((statements) @indent.begin
+  (#not-has-parent? @indent.begin class_body function_body control_structure_body))
