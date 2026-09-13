@@ -1,9 +1,4 @@
 # Package catalogue for nixos-p14s.
-#
-# Purpose:
-# - Keep package declarations in one place
-# - Provide default application metadata used by MIME defaults
-# - Make category-based cleanup easier over time
 {
   pkgs,
   lib,
@@ -30,7 +25,6 @@
 
       # --- Networking & Data Transfer ---
       impala
-      cloudflared
       gping
       curl
       rsync
@@ -55,7 +49,6 @@
       man-pages
       man-pages-posix
       tldr
-      zeal
 
       # --- Version Control Systems ---
       git
@@ -76,7 +69,6 @@
       duf
       dust
       fastfetch
-      gdu
 
       # --- Interactive File & Navigation Managers ---
       eza
@@ -114,8 +106,6 @@
       clang-tools
       cmake
       gcc
-      glib
-      glib-networking
       gnumake
       libclang
       lld
@@ -127,7 +117,6 @@
       # --- Rust Stack ---
       cargo-edit
       cargo-expand
-      cargo-readme
       cargo-zigbuild
       slint-lsp
 
@@ -151,9 +140,9 @@
       stylua
 
       # --- Web, Node & TypeScript Stack ---
-      browser-sync
       nodejs
       pnpm
+      prettier
       # Elm Stack
       elmPackages.elm
       elmPackages.elm-format
@@ -164,10 +153,13 @@
 
       # --- Kotlin & JVM Stack ---
       jetbrains.idea
-      android-studio
       jdk17
       gradle_8
       kotlin
+      # Android
+      android-studio
+      android-tools
+      scrcpy
 
       # --- Hardware & Embedded Development (ARM / RP2350) ---
       gcc-arm-embedded
@@ -176,47 +168,15 @@
       probe-rs-tools
       tio
 
-      # --- Android
-      android-tools
-      scrcpy
-
       # --- Nix Infrastructure & Tooling ---
       alejandra
       nil
       nix-search-tv
       nixd
 
-      # --- Data, Formats & Documentation ---
-      prettier
-      sqlite
-      sqlitebrowser
-
-      # --- Build, Packaging & Deployment ---
-      cdrkit
-      docker-compose
-      filezilla
-      ldid-procursus
-      nsis
-      osslsigncode
-      rcodesign
-
       # --- AI Assistance & Diagramming ---
       github-copilot-cli
-      gucharmap
       mermaid-cli
-
-      # --- Development UI Libraries ---
-      at-spi2-atk
-      atkmm
-      cairo
-      fontconfig
-      fontconfig.dev
-      gdk-pixbuf
-      gtk3
-      librsvg
-      libsoup_3
-      webkitgtk_4_1
-      xdotool
     ];
 
     # ========================================================================
@@ -243,7 +203,6 @@
       pamixer
       pavucontrol
       playerctl
-      portaudio
 
       # --- Hardware, Power & Radios ---
       bluetuith
@@ -254,13 +213,11 @@
       # --- Polkit, Policy Agents & Clipboard ---
       cliphist
       hyprpolkitagent
-      polkit_gnome
       wl-clipboard
       xdg-utils
 
       # --- System Theming, Icons & Engines ---
       bibata-cursors
-      dracula-qt5-theme
       hyprpaper
       nwg-look
       papirus-icon-theme
@@ -282,11 +239,9 @@
       # --- Media, Art & CAD ---
       aseprite
       feh
-      imagemagick
-      kicad-unstable
       vlc
-      libvlc
       xournalpp
+      gucharmap
 
       # --- Office Productivity & Knowledge Bases ---
       libreoffice-stable
@@ -299,43 +254,6 @@
 
       # --- Games ---
       flycast
-      solitaire-tui
-    ];
-
-    # ========================================================================
-    # Penetration Testing & Security Auditing
-    # Security auditing stacks, fuzzer arrays, and protocol scrapers
-    # ========================================================================
-    security = with pkgs; [
-      # --- Reconnaissance & Mapping ---
-      chisel
-      inetutils
-      netcat
-      nmap
-      openvpn
-      rustscan
-      tcpdump
-      wireshark
-
-      # --- Exploitation & Transport Protocols ---
-      metasploit
-      samba
-      smbclient-ng
-      smbmap
-      sqlmap
-
-      # --- Web Scanning & Endpoint Fuzzing ---
-      ffuf
-      gobuster
-
-      # --- Cryptanalysis & Password Cracking ---
-      hashcat
-      john
-
-      # --- Wireless Auditing ---
-      aircrack-ng
-      hcxtools
-      iw
     ];
 
     # ========================================================================
@@ -350,11 +268,6 @@
       udiskie
       usbutils
 
-      # --- iOS System Subsystem Interoperability ---
-      ifuse
-      libimobiledevice
-      usbmuxd
-
       # --- Network Pipelines & Sync Bridges ---
       lftp
       rclone
@@ -368,7 +281,6 @@
       poppler-utils
 
       # --- Streaming & Window Matchers ---
-      bamf
       sunshine
     ];
   };
