@@ -42,7 +42,7 @@ local core_binds = {
 		dispatcher = hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }),
 	},
 	{ mods = mainMod, key = "SHIFT + V", dispatcher = hl.dsp.window.float({ action = "toggle" }) },
-	{ mods = "", key = "CTRL + ALT + L", dispatcher = hl.dsp.exec_cmd(lockscreen) },
+	{ mods = mainMod, key = "CTRL + L", dispatcher = hl.dsp.exec_cmd(lockscreen) },
 }
 
 for _, item in ipairs(core_binds) do
