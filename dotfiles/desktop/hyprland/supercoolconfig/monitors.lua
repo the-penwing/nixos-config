@@ -20,22 +20,6 @@ hl.monitor({
 	scale = "1",
 })
 
--- iPhone XS Max (HEADLESS-1)
-hl.monitor({
-	output = "HEADLESS-1",
-	mode = "2688x1242@60",
-	position = "-2688x0",
-	scale = "1",
-})
-
--- iPad Mini (HEADLESS-2)
-hl.monitor({
-	output = "virtual",
-	mode = "2048x1536@60",
-	position = "-2048x0",
-	scale = "1",
-})
-
 -- Assign Workspaces 1-10 to Built-in Display
 for workspace = 1, 10 do
 	hl.workspace_rule({
@@ -44,8 +28,8 @@ for workspace = 1, 10 do
 	})
 end
 
--- Fallback loop for Workspaces 11-20 based on connected outputs
-local secondary_monitors = { "HDMI-A-1", "DP-2", "HEADLESS-1" }
+-- Workspaces 11-20 for external/virtual displays
+local secondary_monitors = { "HDMI-A-1", "DP-2", "moonlight" }
 
 for workspace = 11, 20 do
 	for _, mon in ipairs(secondary_monitors) do
