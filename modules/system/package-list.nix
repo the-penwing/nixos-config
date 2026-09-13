@@ -163,6 +163,7 @@
       elm2nix
 
       # --- Kotlin & JVM Stack ---
+      jetbrains.idea
       jdk17
       kotlin
       detekt
