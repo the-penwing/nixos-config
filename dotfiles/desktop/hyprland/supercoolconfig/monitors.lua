@@ -22,7 +22,7 @@ hl.monitor({
 
 -- iPhone XS Max (HEADLESS-1)
 hl.monitor({
-	output = "virtual",
+	output = "HEADLESS-1",
 	mode = "2688x1242@60",
 	position = "-2688x0",
 	scale = "1",
@@ -45,7 +45,7 @@ for workspace = 1, 10 do
 end
 
 -- Fallback loop for Workspaces 11-20 based on connected outputs
-local secondary_monitors = { "HDMI-A-1", "DP-2", "virtual", "eDP-1" }
+local secondary_monitors = { "HDMI-A-1", "DP-2", "HEADLESS-1" }
 
 for workspace = 11, 20 do
 	for _, mon in ipairs(secondary_monitors) do
