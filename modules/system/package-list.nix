@@ -165,6 +165,7 @@
       # --- Kotlin & JVM Stack ---
       jetbrains.idea
       jdk17
+      gradle_8
       kotlin
       detekt
       kotlin-language-server
