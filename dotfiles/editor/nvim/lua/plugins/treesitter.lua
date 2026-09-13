@@ -11,7 +11,6 @@ return {
 			"nix",
 			"rust",
 			"python",
-			"kotlin",
 			"zig",
 			"asm",
 			"json",

@@ -6,16 +6,11 @@ return {
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		require("mason-lspconfig").setup({
-			automatic_enable = {
-				exclude = { "kotlin_lsp" },
-			},
 			handlers = {
 				function(server_name)
 					vim.lsp.config(server_name, { capabilities = capabilities })
 					vim.lsp.enable(server_name)
 				end,
-
-				["kotlin_lsp"] = function() end,
 
 				["lua_ls"] = function()
 					vim.lsp.config("lua_ls", {

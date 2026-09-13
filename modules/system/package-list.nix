@@ -168,9 +168,6 @@
       jdk17
       gradle_8
       kotlin
-      detekt
-      kotlin-language-server
-      ktlint
 
       # --- Hardware & Embedded Development (ARM / RP2350) ---
       gcc-arm-embedded
