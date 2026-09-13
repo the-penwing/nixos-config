@@ -3,9 +3,6 @@
   lib,
   ...
 }: {
-  # Only start syncthing when explicitly requested
-  systemd.services.syncthing.wantedBy = lib.mkForce [];
-
   # Auto Mount iCloud
   systemd.services.icloud = {
     description = "Auto Mount Rclone iCloud Drive";
