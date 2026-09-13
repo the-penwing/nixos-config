@@ -164,6 +164,7 @@
 
       # --- Kotlin & JVM Stack ---
       jetbrains.idea
+      android-studio
       jdk17
       gradle_8
       kotlin
