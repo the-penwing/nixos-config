@@ -76,7 +76,6 @@
       ];
     pkgs = import nixpkgs {
       inherit system overlays;
-      config.allowUnfree = true;
     };
   in {
     nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
@@ -86,6 +85,9 @@
         home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays = overlays;
+          nixpkgs.config = {
+            allowUnfree = true;
+          };
 
           home-manager = {
             useGlobalPkgs = true;
