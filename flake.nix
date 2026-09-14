@@ -113,30 +113,8 @@
                 "rust-analyzer"
               ];
               targets = [
-                # --- Personal Deployment Targets ---
-                "i686-unknown-linux-musl" # iSH Shell
-                "aarch64-unknown-linux-gnu" # Raspberry Pi (Standard)
+                "x86_64-unknown-linux-gnu"
                 "aarch64-unknown-linux-musl" # Raspberry Pi (Alpine)
-
-                # --- RP2350 ---
-                "thumbv8m.main-none-eabihf"
-                "riscv32imac-unknown-none-elf"
-
-                # --- Mobile + WASM ---
-                "wasm32-unknown-unknown"
-                "aarch64-linux-android"
-                "armv7-linux-androideabi"
-                "x86_64-linux-android"
-                "i686-linux-android"
-                "aarch64-apple-ios"
-                "x86_64-apple-ios"
-
-                # --- Common Desktop Targets ---
-                "x86_64-pc-windows-gnu" # Windows 64-bit
-                "aarch64-apple-darwin" # Apple Silicon Mac
-                "x86_64-apple-darwin" # Intel Mac
-                "x86_64-unknown-linux-gnu" # Standard Desktop Linux (glibc)
-                "x86_64-unknown-linux-musl" # Static Desktop Linux (musl)
               ];
             })
           ];
