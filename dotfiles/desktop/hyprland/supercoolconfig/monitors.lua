@@ -20,22 +20,9 @@ hl.monitor({
 	scale = "1",
 })
 
--- Assign Workspaces 1-10 to Built-in Display
 for workspace = 1, 10 do
 	hl.workspace_rule({
 		workspace = tostring(workspace),
 		monitor = "eDP-1",
 	})
-end
-
--- Workspaces 11-20 for external/virtual displays
-local secondary_monitors = { "HDMI-A-1", "DP-2", "moonlight" }
-
-for workspace = 11, 20 do
-	for _, mon in ipairs(secondary_monitors) do
-		hl.workspace_rule({
-			workspace = tostring(workspace),
-			monitor = mon,
-		})
-	end
 end
