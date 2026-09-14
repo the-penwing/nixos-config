@@ -93,6 +93,11 @@
       tmux
       tree-sitter
 
+      # --- Build & Test ---
+      just
+      gnumake
+      cmake
+
       # --- Assembly & Low-Level ---
       asm-lsp
       binary
@@ -104,9 +109,7 @@
       # --- C & C++ Stack ---
       clang
       clang-tools
-      cmake
       gcc
-      gnumake
       libclang
       lld
       lldb
