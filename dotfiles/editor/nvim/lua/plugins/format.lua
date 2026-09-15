@@ -9,6 +9,7 @@ return {
 			markdown = { "prettier" },
 			lua = { "stylua" },
 			elm = { "elm-format" },
+			just = { "just" },
 		},
 		formatters = {
 			shfmt = {
@@ -16,6 +17,9 @@ return {
 			},
 			elm_format = {
 				prepend_args = { "--yes" },
+			},
+			just = {
+				prepend_args = { "--fmt" },
 			},
 		},
 		format_on_save = {
