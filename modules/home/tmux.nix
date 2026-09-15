@@ -47,4 +47,13 @@
       )\""
     '';
   };
+  systemd.user.services.tmux-server = {
+    Unit.Description = "tmux server persistance";
+    Service = {
+      Type = "forking";
+      ExecStart = "${pkgs.tmux}/bin/tmux start-server";
+      RemainAfterExit = true;
+    };
+    Install.WantedBy = ["default.target"];
+  };
 }
