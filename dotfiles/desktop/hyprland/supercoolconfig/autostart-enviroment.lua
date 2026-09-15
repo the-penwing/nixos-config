@@ -6,7 +6,6 @@ local exec_once_commands = {
 	"wl-paste --watch cliphist store",
 	"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
 	"swaync",
-	"solaar --window=hide -w hide",
 	"kando",
 	"hyprpaper",
 	"ashell > ~/.cache/ashell.log 2>&1",
