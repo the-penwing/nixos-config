@@ -1,8 +1,10 @@
-log_level = "all"
 outputs = "All"
 position = "Top"
 layer = "Top"
 enable_esc_key = true
+
+[logging]
+level = "all"
 
 [modules]
 left = ["appLauncher", "Workspaces"]
@@ -36,7 +38,7 @@ warn_threshold = 70
 alert_threshold = 85
 
 [media_player]
-max_title_length = 100
+max_text_length = 100
 indicator_format = "IconAndTitle"
 
 [tempo]
@@ -79,7 +81,6 @@ show_brightness_percentage = true
 enabled = true
 
 [appearance]
-style = "Islands"
 scale_factor = 1
 opacity = 0.75
 primary_color = "#bd93f9"
@@ -90,7 +91,6 @@ text_color = "#c1c4d6"
 workspace_colors = ["#bd93f9", "#ff79c6"]
 
 [appearance.menu]
-opacity = 0.4
 backdrop = 0
 
 [appearance.background_color]
