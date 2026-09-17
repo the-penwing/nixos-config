@@ -193,6 +193,7 @@
       libnotify
       swaynotificationcenter
       ashell
+      fuzzel
 
       # --- Display Capture & Layout ---
       grim
