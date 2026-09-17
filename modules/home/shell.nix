@@ -6,21 +6,8 @@
 # - Keep SSH agent behaviour explicit and auditable
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    lazygit
     pass-git-helper
   ];
-
-  programs.starship = {
-    enable = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-  };
-
-  programs.zoxide = {
-    enable = true;
-  };
 
   services.ssh-agent.enable = true;
 
