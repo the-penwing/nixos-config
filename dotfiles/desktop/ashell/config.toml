@@ -4,7 +4,7 @@ layer = "Top"
 enable_esc_key = true
 
 [logging]
-level = "all"
+level = "info"
 
 [modules]
 left = ["appLauncher", "Workspaces"]

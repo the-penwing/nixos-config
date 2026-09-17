@@ -8,7 +8,7 @@ local exec_once_commands = {
 	"swaync",
 	"kando",
 	"hyprpaper",
-	"WGPU_BACKEND=gl ashell > ~/.cache/ashell.log 2>&1",
+	"WGPU_BACKEND=gl ashell",
 }
 
 hl.on("hyprland.start", function()
