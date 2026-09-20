@@ -26,6 +26,10 @@ return {
 			"tsx",
 			"bash",
 			"swift",
+			"go",
+			"gomod",
+			"gosum",
+			"gowork",
 		}
 		require("nvim-treesitter").install(langs)
 

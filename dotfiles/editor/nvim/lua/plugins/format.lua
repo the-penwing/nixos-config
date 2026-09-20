@@ -10,6 +10,7 @@ return {
 			lua = { "stylua" },
 			elm = { "elm-format" },
 			just = { "just" },
+			go = { "goimports", "gofumpt" },
 		},
 		formatters = {
 			shfmt = {

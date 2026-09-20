@@ -124,6 +124,11 @@
       cargo-zigbuild
       slint-lsp
 
+      # --- Go Stack ---
+      go
+      delve
+      golangci-lint
+
       # --- Zig Stack ---
       zig
 

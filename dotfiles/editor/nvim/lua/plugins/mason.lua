@@ -39,6 +39,9 @@ return {
 				"yamllint",
 				"elm-format",
 				"just-lsp",
+				"gopls",
+				"goimports",
+				"gofumpt",
 			},
 			run_on_start = true,
 			start_delay = 3000, -- ms, gives lazy.nvim time to finish loading first
