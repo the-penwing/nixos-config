@@ -5,6 +5,7 @@ local exec_once_commands = {
 	"hyprpolkitagent",
 	"wl-paste --watch cliphist store",
 	"dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
+	"systemctl --user start hyprland-session.target",
 	"swaync",
 	"kando",
 	"hyprpaper",

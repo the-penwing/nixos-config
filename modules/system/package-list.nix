@@ -244,6 +244,7 @@
       bitwarden-desktop
       chromium
       discord
+      vesktop
       iamb
 
       # --- Media, Art & CAD ---

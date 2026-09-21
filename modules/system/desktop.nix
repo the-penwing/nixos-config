@@ -24,6 +24,12 @@ in {
     enable = true;
     xwayland.enable = true;
   };
+  systemd.user.targets.hyprland-session = {
+    description = "Hyprland compositor session";
+    bindsTo = ["graphical-session.target"];
+    wants = ["graphical-session-pre.target"];
+    after = ["graphical-session-pre.target"];
+  };
 
   # Privilege escalation and privileged action authentication.
   security.polkit.enable = true;
