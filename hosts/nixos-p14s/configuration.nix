@@ -38,10 +38,6 @@
     options = "--delete-older-than 7d";
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-39.8.10"
-  ];
-
   security.pki.certificateFiles = [./homelab.crt];
   boot.kernelParams = [
     "amd_pstate=active"
