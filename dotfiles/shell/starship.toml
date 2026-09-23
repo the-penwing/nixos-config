@@ -4,20 +4,15 @@ add_newline = true
 
 format = '''
 [┌─╼](yellow)$directory$git_branch$git_status
-[├─╼](yellow)$username$hostname$nix_shell$rust$lua$elm$kotlin$python$golang
+[├─╼](yellow)$username$hostname$nix_shell$elm$golang$kotlin$lua$python$rust
 $character'''
 
 [palettes.dracula]
-# Backgrounds and Foregrounds
 background = "#282a36"
-
-# Light shades for text
 light1 = "#f8f8f2"
 light2 = "#e0e0e0"
 light3 = "#c0c0c0"
 light4 = "#6272a4"
-
-# Neutral Colours
 red = "#ff5555"
 green = "#50fa7b"
 yellow = "#f1fa8c"
@@ -26,8 +21,9 @@ purple = "#bd93f9"
 aqua = "#8be9fd"
 orange = "#ffb86c"
 
+# Core Prompt Layout Modules
 [directory]
-style = "fg1"
+style = "light1"
 format = '\[[$path]($style)\]'
 truncate_to_repo = true
 truncation_length = 3
@@ -50,14 +46,15 @@ disabled = false
 success_symbol = "[└────╼](yellow)"
 error_symbol = "[└╼](orange)"
 
+# Git Configuration
 [git_branch]
 style = "yellow"
-format = '\[[$symbol$branch](yellow)\](yellow)'
+format = '\[[$symbol$branch](yellow)\]'
 symbol = ""
 
 [git_status]
 use_git_executable = true
-style = "fg1"
+style = "light1"
 format = '([\[$all_status$ahead_behind\]]($style))'
 ahead = "[⇡$count](blue)"
 behind = "[⇣$count](blue)"
@@ -68,39 +65,40 @@ untracked = "[?](orange)"
 deleted = "[✘](red)"
 conflicted = "[~](red)"
 
+# Environment & Language Modules (Alphabetical & Standardised)
 [nix_shell]
 format = '\[[${symbol}${name}${impure_msg}${pure_msg}${unknown_msg}\]](aqua)'
-symbol = "󱄅 "
+symbol = " "
 impure_msg = "[ impure](red)"
 pure_msg = "[ pure](green)"
 unknown_msg = "[ unknown](yellow)"
 
-[rust]
+[elm]
 format = '\[[${symbol}${version}]($style)\]'
-style = "orange"
-symbol = " "
-
-[lua]
-format = '\[[${symbol}${version}]($style)\]'
-style = "blue"
-symbol = " "
+style = "aqua"
+symbol = " "
 
 [golang]
 format = '\[[${symbol}${version}]($style)\]'
-style = "cyan"
+style = "aqua"
 symbol = " "
-
-[elm]
-format = '\[[${symbol}${version}]($style)\]'
-style = "cyan"
-symbol = " "
 
 [kotlin]
 format = '\[[${symbol}${version}]($style)\]'
 style = "purple"
 symbol = " "
 
+[lua]
+format = '\[[${symbol}${version}]($style)\]'
+style = "blue"
+symbol = " "
+
 [python]
 format = '\[[${symbol}${version}( \($virtualenv\))]($style)\]'
 style = "yellow"
-symbol = "󰌠 "
+symbol = " "
+
+[rust]
+format = '\[[${symbol}${version}]($style)\]'
+style = "orange"
+symbol = " "
