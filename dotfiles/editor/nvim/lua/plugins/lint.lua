@@ -11,9 +11,6 @@ return {
 			"--",
 		}
 
-		local detekt_linter = lint.linters.detekt
-		detekt_linter.args = { "--input" } -- append_fname=true will add the filename right after this
-
 		lint.linters_by_ft = {
 			markdown = { "markdownlint-cli2" },
 			lua = { "selene" },
