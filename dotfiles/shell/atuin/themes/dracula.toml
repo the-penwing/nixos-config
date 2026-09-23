@@ -1,0 +1,11 @@
+[theme]
+name = "dracula"
+
+[colors]
+Base = "#f8f8f2"
+Guidance = "#8be9fd"
+Important = "#ff79c6"
+Annotation = "#bd93f9"
+AlertInfo = "#50fa7b"
+AlertWarn = "#f1fa8c"
+AlertError = "#ff5555"

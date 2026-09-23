@@ -1,0 +1,12 @@
+sync_address = "https://atuin.taile9a1d6.ts.net"
+sync_frequency = "10m"
+inline_height = 15
+show_help = true
+show_tabs = true
+
+[theme]
+name = "dracula"
+
+[daemon]
+enabled = true
+autostart = true

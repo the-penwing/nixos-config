@@ -17,6 +17,7 @@ declare -a SYNC_PAIRS=(
   "dotfiles/shell/zellij:~/.config/zellij"
   "dotfiles/shell/starship.toml:~/.config/starship.toml"
   "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
+  "dotfiles/shell/atuin:~/.config/atuin"
 )
 
 ACTION="${1:-pull}"
