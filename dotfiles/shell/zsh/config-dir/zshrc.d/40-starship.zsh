@@ -10,11 +10,5 @@ if [[ ! -s "$CACHE_DIR/starship.zsh" || $(command -v starship) -nt "$CACHE_DIR/s
 fi
 source "$CACHE_DIR/starship.zsh"
 
-echo -ne '\e[1q'
-
-precmd() {
-  echo -ne '\e[1q'
-}
-
 # Ensure clean exit status for sourcing
 true
