@@ -249,6 +249,7 @@
 
       # --- Media, Art & CAD ---
       aseprite
+      gimp
       feh
       vlc
       xournalpp
