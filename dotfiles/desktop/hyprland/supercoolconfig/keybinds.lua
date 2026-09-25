@@ -64,15 +64,14 @@ for _, item in ipairs(clipboard_binds) do
 end
 
 local screenshot_binds = {
-	{ mods = "", key = "Print", dispatcher = hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy') },
-	{
-		mods = "SHIFT",
-		key = "Print",
-		dispatcher = hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png"),
-	},
 	{
 		mods = mainMod,
 		key = "Print",
+		dispatcher = hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'),
+	},
+	{
+		mods = mainMod,
+		key = "SHIFT + Print",
 		dispatcher = hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png'),
 	},
 }
