@@ -11,6 +11,7 @@
     core = with pkgs; [
       # --- Shell Environment & Navigation ---
       direnv
+      nix-direnv
       atuin
       starship
       zoxide

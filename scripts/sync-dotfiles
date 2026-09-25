@@ -18,6 +18,7 @@ declare -a SYNC_PAIRS=(
   "dotfiles/shell/starship.toml:~/.config/starship.toml"
   "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
   "dotfiles/shell/atuin:~/.config/atuin"
+  "dotfiles/shell/direnv:~/.config/direnv"
 )
 
 ACTION="${1:-pull}"

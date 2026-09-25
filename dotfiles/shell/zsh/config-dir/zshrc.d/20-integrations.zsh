@@ -12,7 +12,7 @@ ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
 CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 mkdir -p "$CACHE_DIR"
 
-# Helper function to check if a cached Nix hook file is broken
+# Helper function to check if a cached Nix hook file is broken (fzf, zoxide)
 _is_cache_invalid() {
 	local cache_file="$1"
 	[[ ! -s "$cache_file" ]] || ! grep -q '/nix/store/' "$cache_file" 2>/dev/null || ! [[ -e "$(grep -o '/nix/store/[^ "]*' "$cache_file" | head -n1)" ]]
@@ -36,10 +36,13 @@ yy() {
 	rm -f "$tmp"
 }
 
-# direnv (Cached)
+# direnv (Cached via binary path verification)
 if command -v direnv >/dev/null 2>&1; then
-	if _is_cache_invalid "$CACHE_DIR/direnv.zsh"; then
-		direnv hook zsh >"$CACHE_DIR/direnv.zsh" 2>/dev/null
+	local current_direnv
+	current_direnv="$(command -v direnv)"
+	if [[ ! -s "$CACHE_DIR/direnv.zsh" ]] || ! grep -q "$current_direnv" "$CACHE_DIR/direnv.zsh" 2>/dev/null; then
+		echo "# binary: $current_direnv" > "$CACHE_DIR/direnv.zsh"
+		direnv hook zsh >> "$CACHE_DIR/direnv.zsh" 2>/dev/null
 	fi
 	source "$CACHE_DIR/direnv.zsh"
 fi
@@ -59,7 +62,6 @@ function sesh-sessions() {
 	zle reset-prompt >/dev/null 2>&1 || true
 
 	if [[ -n "$session" ]]; then
-		# Restore TTY control before connecting to the tmux session
 		exec </dev/tty
 		exec <&1
 		sesh connect "$session"
@@ -105,3 +107,4 @@ update-zsh-plugins() {
 
 # Ensure clean exit status for sourcing
 true
+
