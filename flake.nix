@@ -21,7 +21,7 @@
     };
 
     the-penwing = {
-      url = "github:the-penwing/the-penwing-nix-repo";
+      url = "github:the-penwing/nix-repo";
     };
 
     walker = {
@@ -99,10 +99,14 @@
         }
         {
           environment.systemPackages = [
+            # My packages
+            the-penwing.packages.${system}.blackjack-slint
+            the-penwing.packages.${system}.blackjack-rs
+            the-penwing.packages.${system}.lua-dungeon-crawler
+
             pkgs.ghostty
             pkgs.bacon
             pkgs.bacon-ls
-            the-penwing.packages.${system}.blackjack-slint
             walker.packages.${system}.default
             elephant.packages.${system}.elephant-with-providers
             naviterm.packages.${system}.default
