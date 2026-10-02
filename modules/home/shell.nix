@@ -32,9 +32,10 @@
         User git
 
       Host echo-ts
-        Hostname iphone
-        Port 22
-        user mobile
+        Hostname echo
+        Port 8022
+        user u0_a332
+        setenv TERM=xterm-256color
       Host homelab-ts
         Hostname home-server
         Port 22
