@@ -28,7 +28,7 @@ alias sesh-fzf='sesh connect "$(sesh list | fzf)"'
 # ============================================================================
 # Aliases: Modern CLI Tool Replacements
 # ============================================================================
-alias ls='eza'
+alias ls='eza --icons=auto'
 alias ll='eza --icons -l'
 alias la='eza --icons -la'
 alias tree='eza --icons -T'
