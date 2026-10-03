@@ -5,7 +5,6 @@
 {...}: {
   imports = [
     ./shell.nix
-    ./services.nix
     ./tmux.nix
     ./desktop.nix
   ];
