@@ -20,9 +20,6 @@
       identityFile = "~/.ssh/id_ed25519";
     };
     extraConfig = ''
-      # Global PKCS11Provider for all hosts
-      PKCS11Provider /run/current-system/sw/lib/opensc-pkcs11.so
-
       Host github.com
         HostName github.com
         User git
