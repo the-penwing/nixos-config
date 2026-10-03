@@ -73,28 +73,40 @@ bindkey -M emacs '\es' sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
 
-# ============================================================================
-# Partial History (Keep at the absolute bottom so it overrides everything else)
-# ============================================================================
+# ==============================================================================
+# Partial History
+# ==============================================================================
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# Try terminfo keys first, fallback to standard ANSI codes if empty
+# Force terminal to send terminfo application sequences
+function zle-line-init() {
+    [[ -n ${terminfo[smkx]} ]] && echoti smkx
+}
+function zle-line-finish() {
+    [[ -n ${terminfo[rmkx]} ]] && echoti rmkx
+}
+zle -N zle-line-init
+zle -N zle-line-finish
+
+# Comprehensive key bindings covering terminfo and common fallback strings
 if [[ -n "${terminfo[kcuu1]}" ]]; then
-	bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
-else
-	bindkey '^[[A' up-line-or-beginning-search
-	bindkey '^[OA' up-line-or-beginning-search
+    bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+fi
+if [[ -n "${terminfo[kcud1]}" ]]; then
+    bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 fi
 
-if [[ -n "${terminfo[kcud1]}" ]]; then
-	bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
-else
-	bindkey '^[[B' down-line-or-beginning-search
-	bindkey '^[OB' down-line-or-beginning-search
-fi
+# Hardcoded fallback bindings for SSH, Termux, and standard emulators
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '\e[A' up-line-or-beginning-search
+
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^[OB' down-line-or-beginning-search
+bindkey '\e[B' down-line-or-beginning-search
 
 update-zsh-plugins() {
 	for d in ~/.config/zsh/plugins/*/.git; do
