@@ -11,10 +11,15 @@ return {
 		telescope.load_extension("fzf")
 
 		local builtin = require("telescope.builtin")
-		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-		vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-		vim.keymap.set("n", "gr", builtin.lsp_references, {})
-		vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
+		-- find/grep
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+		-- LSP navigation
+		vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "LSP References" })
+		vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "LSP Definitions" })
+		-- Symbols
+		vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
+		vim.keymap.set("n", "<leader>fS", builtin.lsp_dynamic_workspace_symbols, { desc = "Workspace symbols" })
 	end,
 }
