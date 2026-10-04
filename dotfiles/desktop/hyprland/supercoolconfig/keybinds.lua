@@ -1,7 +1,7 @@
 local mainMod = "SUPER"
 
 local terminal = "ghostty"
-local fileManager = "nemo"
+local fileManager = "thunar"
 local browser = "firefox"
 local launcher = "nc -U /run/user/1000/walker/walker.sock"
 local lockscreen = "hyprlock"

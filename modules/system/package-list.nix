@@ -263,7 +263,7 @@
       zathuraPkgs.zathura_pdf_poppler
 
       # --- File System Shells & Managers ---
-      nemo-with-extensions
+      thunar
 
       # --- Games ---
       flycast
