@@ -26,10 +26,7 @@
 
   services.upower.enable = true;
 
-  services.usbmuxd = {
-    enable = true;
-    package = pkgs.usbmuxd;
-  };
+  services.gvfs.enable = true;
 
   services.udisks2.enable = true;
 
