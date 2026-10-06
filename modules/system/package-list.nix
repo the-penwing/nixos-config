@@ -245,6 +245,7 @@
       bitwarden-desktop
       chromium
       vesktop
+      mprisence
       iamb
 
       # --- Media, Art & CAD ---
