@@ -89,4 +89,18 @@
       allow_streaming = true;
     };
   };
+
+  systemd.user.services.mprisence = {
+    Unit = {
+      Description = "mprisence - Discord Rich Presence for MPRIS players";
+      After = ["graphical-session.target"];
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.mprisence}/bin/mprisence";
+      Restart = "on-failure";
+      RestartSec = 5;
+    };
+    Install.WantedBy = ["default.target"];
+  };
 }
