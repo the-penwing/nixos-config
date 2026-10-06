@@ -65,6 +65,7 @@
 
   home.packages = with pkgs; [
     mpris-scrobbler
+    mprisence
   ];
 
   systemd.user.services.mpris-scrobbler = {
@@ -79,5 +80,13 @@
       RestartSec = 5;
     };
     Install.WantedBy = ["default.target"];
+  };
+
+  xdg.configFile."mprisence/config.toml".source = (pkgs.formats.toml {}).generate "mprisence-config.toml" {
+    player.naviterm = {
+      match_patterns = ["naviterm"];
+      ignore = false;
+      allow_streaming = true;
+    };
   };
 }
