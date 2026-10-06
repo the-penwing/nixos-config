@@ -244,7 +244,6 @@
       # --- Web Browsers & Communications ---
       bitwarden-desktop
       chromium
-      discord
       vesktop
       iamb
 
