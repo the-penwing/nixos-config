@@ -1,7 +1,12 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.zsh = {
     enable = true;
-    enableCompletion = false;
+    enableCompletion = true;
 
     history = {
       size = 50000;
@@ -40,18 +45,37 @@
       fm = "yy";
     };
 
+    autosuggestion = {
+      enable = true;
+      strategy = [
+        "history"
+        "completion"
+      ];
+    };
+
+    syntaxHighlighting.enable = true;
+
+    plugins = [
+      {
+        name = "fzf-tab";
+        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+      }
+    ];
+
     initContent = ''
+
+      zstyle ':fzf-tab:*' fzf-flags --color=dark '--color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f' '--color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7' --style default
+      zstyle ':fzf-tab:*' fzf-min-height 6
+
+      export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
       export GPG_TTY="$TTY"
       export TIMEFMT=$'\nreal %*E\nuser %*U\nsys %*S\n'
       typeset -U path fpath
       path+=("$HOME/nixos-config/scripts" "$HOME/.cargo/bin")
       export PATH
 
-      source ~/.config/zsh/zshrc.d/10-plugins.zsh
-      source ~/.config/zsh/zshrc.d/15-compinit.zsh
       source ~/.config/zsh/zshrc.d/20-integrations.zsh
       source ~/.config/zsh/zshrc.d/40-starship.zsh
-      source ~/.config/zsh/zshrc.d/45-syntax-highlighting.zsh
       source ~/.config/zsh/zshrc.d/50-atuin.zsh
       source ~/.config/zsh/zshrc.d/60-hyprland.zsh
     '';
