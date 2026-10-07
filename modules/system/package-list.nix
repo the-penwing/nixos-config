@@ -76,7 +76,6 @@
       eza
       file
       tree
-      yazi
 
       # --- Terminal Toys & Visuals ---
       cmatrix

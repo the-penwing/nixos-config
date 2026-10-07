@@ -1,5 +1,5 @@
 # ============================================================================
-# Integrations: fzf, yazi, zoxide, direnv, sesh
+# Integrations: fzf, zoxide, direnv, sesh
 # ============================================================================
 
 # Force Emacs mode early so plugins/configs don't put us in Vi mode
@@ -25,16 +25,6 @@ if command -v fzf >/dev/null 2>&1; then
 	fi
 	source "$CACHE_DIR/fzf.zsh"
 fi
-
-# Yazi: file manager with cwd sync
-yy() {
-	local tmp="$(mktemp)"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat "$tmp")" && [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
-		cd "$cwd"
-	fi
-	rm -f "$tmp"
-}
 
 # direnv (Cached via binary path verification)
 if command -v direnv >/dev/null 2>&1; then
