@@ -1,0 +1,101 @@
+{...}: {
+  programs.ashell = {
+    enable = true;
+    settings = {
+      outputs = "All";
+      position = "Top";
+      layer = "Top";
+      enable_esc_key = true;
+      logging = {
+        level = "info";
+      };
+      modules = {
+        left = ["Workspaces"];
+        center = ["Tempo"];
+        right = ["SystemInfo" "MediaPlayer" ["Tray"] ["Settings"]];
+      };
+      workspaces = {
+        visibility_mode = "All";
+        group_by_monitor = false;
+        enable_workspace_filling = false;
+      };
+      window_title = {
+        mode = "Title";
+        truncate_title_after_length = 150;
+      };
+      system_info = {
+        indicators = ["Cpu" "Memory" "Temperature"];
+        interval = 5;
+        cpu = {
+          warn_threshold = 60;
+          alert_threshold = 80;
+        };
+        memory = {
+          warn_threshold = 70;
+          alert_threshold = 85;
+        };
+      };
+      media_player = {
+        max_text_length = 100;
+        indicator_format = "IconAndTitle";
+      };
+      tempo = {
+        clock_format = "%a %d %b %R";
+        weather_location = {City = "Sydney";};
+        weather_indicator = "IconAndTemperature";
+      };
+      notifications = {
+        format = "%H:%M";
+        show_timestamps = true;
+        show_bodies = true;
+      };
+      settings = {
+        lock_cmd = "hyprlock &";
+        shutdown_cmd = "shutdown now";
+        audio_sinks_more_cmd = "pavucontrol -t 3";
+        audio_sources_more_cmd = "pavucontrol -t 4";
+        wifi_more_cmd = "ghostty -e impala";
+        bluetooth_more_cmd = "ghostty -e bluetuith";
+        battery_format = "IconAndPercentage";
+        peripheral_battery_format = "Icon";
+        audio_indicator_format = "IconAndPercentage";
+        microphone_indicator_format = "Icon";
+        network_indicator_format = "Icon";
+        bluetooth_indicator_format = "Icon";
+        brightness_indicator_format = "IconAndPercentage";
+        volume_step = 5;
+        max_volume = 100;
+        remove_airplane_btn = true;
+        remove_idle_btn = true;
+        indicators = ["Audio" "Brightness" "Network" "Bluetooth" "Battery"];
+      };
+      osd = {
+        enabled = true;
+        timeout = 1500;
+        show_volume_percentage = true;
+        show_brightness_percentage = true;
+      };
+      animations = {
+        enabled = true;
+      };
+      appearance = {
+        scale_factor = 1;
+        opacity = 0.75;
+        primary_color = "#bd93f9";
+        success_color = "#50fa7b";
+        warning_color = "#f1fa8c";
+        danger_color = "#ff5555";
+        text_color = "#c1c4d6";
+        workspace_colors = ["#bd93f9" "#ff79c6"];
+        menu = {
+          backdrop = 0;
+        };
+        background_color = {
+          base = "#363949";
+          weak = "#21222c";
+          strong = "#44475a";
+        };
+      };
+    };
+  };
+}

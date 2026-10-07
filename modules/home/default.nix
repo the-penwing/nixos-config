@@ -11,6 +11,7 @@
     ./fastfetch.nix
     ./tmux.nix
     ./helix.nix
+    ./ashell.nix
     ./desktop.nix
   ];
 }
