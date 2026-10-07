@@ -7,6 +7,7 @@
     ./shell.nix
     ./atuin.nix
     ./starship.nix
+    ./fastfetch.nix
     ./tmux.nix
     ./desktop.nix
   ];
