@@ -1,0 +1,124 @@
+{...}: {
+  programs.starship = {
+    enable = true;
+    settings = {
+      "$schema" = "https://starship.rs/config-schema.json";
+      palette = "dracula";
+      add_newline = true;
+
+      format = ''
+        [┌─╼](yellow)$directory$git_branch$git_status
+        [├─╼](yellow)$username$hostname$nix_shell$elm$golang$kotlin$lua$python$rust
+        $character'';
+
+      palettes.dracula = {
+        background = "#282a36";
+        light1 = "#f8f8f2";
+        light2 = "#e0e0e0";
+        light3 = "#c0c0c0";
+        light4 = "#6272a4";
+        red = "#ff5555";
+        green = "#50fa7b";
+        yellow = "#f1fa8c";
+        blue = "#bd93f9";
+        purple = "#bd93f9";
+        aqua = "#8be9fd";
+        orange = "#ffb86c";
+      };
+      # Core Prompt Layout Modules
+      directory = {
+        style = "light1";
+        format = ''\[[$path]($style)\]'';
+        truncate_to_repo = true;
+        truncation_length = 3;
+        fish_style_pwd_dir_length = 1;
+      };
+
+      username = {
+        style_user = "green";
+        style_root = "red";
+        format = ''\[[$user]($style)'';
+        disabled = false;
+        show_always = true;
+      };
+
+      hostname = {
+        ssh_only = false;
+        style = "aqua";
+        format = ''[@$hostname]($style)\]'';
+        disabled = false;
+      };
+
+      character = {
+        success_symbol = "[└────╼](yellow)";
+        error_symbol = "[└╼](orange)";
+      };
+
+      # Git Config
+      git_branch = {
+        style = "yellow";
+        format = ''\[[$symbol$branch]($style)\]'';
+        symbol = "";
+      };
+
+      git_status = {
+        use_git_executable = true;
+        style = "light1";
+        format = ''([\[$all_status$ahead_behind\]]($style))'';
+        ahead = "[⇡$count](blue)";
+        behind = "[⇣$count](blue)";
+        diverged = "[⇡$ahead_count⇣$behind_count](blue)";
+        modified = "[*](orange)";
+        staged = "[+](green)";
+        untracked = "[?](orange)";
+        deleted = "[✘](red)";
+        conflicted = "[~](red)";
+      };
+
+      # Env and Lang Modules
+      nix_shell = {
+        format = ''\[[$symbol$name$impure_msg$pure_msg$unknown_msg\]](aqua)'';
+        symbol = " ";
+        impure_msg = "[ impure](red)";
+        pure_msg = "[ pure](green)";
+        unknown_msg = "[ unknown](yellow)";
+      };
+
+      elm = {
+        format = ''\[[$symbol$version]($style)\]'';
+        style = "aqua";
+        symbol = " ";
+      };
+
+      golang = {
+        format = ''\[[$symbol$version]($style)\]'';
+        style = "aqua";
+        symbol = " ";
+      };
+
+      kotlin = {
+        format = ''\[[$symbol$version]($style)\]'';
+        style = "purple";
+        symbol = " ";
+      };
+
+      lua = {
+        format = ''\[[$symbol$version]($style)\]'';
+        style = "blue";
+        symbol = " ";
+      };
+
+      python = {
+        format = ''\[[$symbol$version( \($virtualenv\))]($style)\]'';
+        style = "yellow";
+        symbol = " ";
+      };
+
+      rust = {
+        format = ''\[[$symbol$version]($style)\]'';
+        style = "orange";
+        symbol = " ";
+      };
+    };
+  };
+}
