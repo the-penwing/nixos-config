@@ -10,7 +10,6 @@ declare -a SYNC_PAIRS=(
   "dotfiles/desktop/hyprland:~/.config/hypr"
   "dotfiles/desktop/ashell:~/.config/ashell/"
   "dotfiles/apps/ghostty:~/.config/ghostty"
-  "dotfiles/apps/fastfetch:~/.config/fastfetch"
   "dotfiles/shell/zsh/.zshrc:~/.zshrc"
   "dotfiles/shell/zsh/config-dir/:~/.config/zsh/"
   "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
