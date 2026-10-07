@@ -98,15 +98,6 @@ bindkey '^[[B' down-line-or-beginning-search
 bindkey '^[OB' down-line-or-beginning-search
 bindkey '\e[B' down-line-or-beginning-search
 
-update-zsh-plugins() {
-	for d in ~/.config/zsh/plugins/*/.git; do
-		local dir="$(dirname "$d")"
-		echo "Updating $(basename "$dir")..."
-		git -C "$dir" pull
-	done
-	echo "All plugins updated!"
-}
-
 # Ensure clean exit status for sourcing
 true
 
