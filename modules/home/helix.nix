@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.helix = {
     enable = true;
     settings = {
@@ -73,6 +73,10 @@
         ruff = {
           command = "ruff";
           args = ["server"];
+        };
+        tombi = {
+          command = "tombi";
+          args = ["lsp"];
         };
         yaml-language-server = {
           command = "yaml-language-server";
@@ -195,10 +199,7 @@
         }
         {
           name = "toml";
-          formatter = {
-            command = "taplo";
-            args = ["format" "-"];
-          };
+          language-servers = ["tombi"];
           auto-format = true;
         }
         {
@@ -216,6 +217,16 @@
         }
       ];
     };
+    extraPackages = with pkgs; [
+      bash-language-server
+      lua-language-server
+      marksman
+      shfmt
+      tombi
+      vscode-langservers-extracted
+      yaml-language-server
+      yamlfmt
+    ];
   };
   xdg.configFile."helix/runtime/queries/html/indents.scm".source =
     ./imports/queries/html/indents.scm;
