@@ -9,11 +9,7 @@
     # Fundamental tooling for files, networks, encryption, and basic operations
     # ========================================================================
     core = with pkgs; [
-      # --- Shell Environment & Navigation ---
-      direnv
-      nix-direnv
-      atuin
-      starship
+      # --- Shell Navigation ---
       zoxide
 
       # --- Search & Text Processing ---
