@@ -16,7 +16,6 @@ declare -a SYNC_PAIRS=(
   "dotfiles/shell/zsh/config-dir/:~/.config/zsh/"
   "dotfiles/shell/zellij:~/.config/zellij"
   "dotfiles/theme/gtk-3.0:~/.config/gtk-3.0"
-  "dotfiles/shell/atuin:~/.config/atuin"
   "dotfiles/shell/direnv:~/.config/direnv"
 )
 
