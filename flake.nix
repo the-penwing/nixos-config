@@ -104,7 +104,6 @@
             the-penwing.packages.${system}.blackjack-rs
             the-penwing.packages.${system}.lua-dungeon-crawler
 
-            pkgs.ghostty
             pkgs.bacon
             pkgs.bacon-ls
             walker.packages.${system}.default
