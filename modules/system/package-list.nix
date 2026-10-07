@@ -85,7 +85,6 @@
     dev = with pkgs; [
       # --- Core Editors, Terminals & Multiplexers ---
       ghostty
-      helix
       neovim
       sesh
       tmux

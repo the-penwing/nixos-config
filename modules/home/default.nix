@@ -9,6 +9,7 @@
     ./starship.nix
     ./fastfetch.nix
     ./tmux.nix
+    ./helix.nix
     ./desktop.nix
   ];
 }
