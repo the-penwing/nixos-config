@@ -1,17 +1,16 @@
 # Home module entrypoint.
-#
-# Purpose:
-# - Keep module imports explicit and easy to audit
 {...}: {
   imports = [
-    ./ghostty.nix
-    ./shell.nix
-    ./atuin.nix
-    ./starship.nix
-    ./fastfetch.nix
-    ./tmux.nix
-    ./helix.nix
     ./ashell.nix
+    ./atuin.nix
     ./desktop.nix
+    ./direnv.nix
+    ./fastfetch.nix
+    ./ghostty.nix
+    ./git.nix
+    ./helix.nix
+    ./ssh.nix
+    ./starship.nix
+    ./tmux.nix
   ];
 }

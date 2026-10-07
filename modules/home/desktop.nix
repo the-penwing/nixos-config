@@ -1,8 +1,3 @@
-# Home desktop module.
-#
-# Purpose:
-# - Keep user-level desktop helpers and user services in one place
-# - Avoid duplicate package declarations already managed system-wide
 {
   pkgs,
   lib,
