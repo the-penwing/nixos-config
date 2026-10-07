@@ -72,4 +72,9 @@
       credential.helper = "!pass-git-helper $@";
     };
   };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 }
