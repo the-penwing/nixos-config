@@ -64,6 +64,6 @@
       ];
     };
   };
-  xdg.configFile."fastfetch/ascii/nixos.txt".source = ./ascii/nixos.txt;
-  xdg.configFile."fastfetch/ascii/nixos-wrath.txt".source = ./ascii/nixos-wrath.txt;
+  xdg.configFile."fastfetch/ascii/nixos.txt".source = ./imports/ascii/nixos.txt;
+  xdg.configFile."fastfetch/ascii/nixos-wrath.txt".source = ./imports/ascii/nixos-wrath.txt;
 }
