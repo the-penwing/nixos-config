@@ -1,6 +1,7 @@
 {...}: {
   programs.starship = {
     enable = true;
+    enableZshIntegration = false;
     settings = {
       "$schema" = "https://starship.rs/config-schema.json";
       palette = "dracula";
