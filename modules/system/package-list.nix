@@ -84,10 +84,8 @@
     # ========================================================================
     dev = with pkgs; [
       # --- Core Editors, Terminals & Multiplexers ---
-      ghostty
       neovim
       sesh
-      tmux
       tree-sitter
 
       # --- Build & Test ---
