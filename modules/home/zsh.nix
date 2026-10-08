@@ -40,7 +40,6 @@
       ll = "eza --icons -l";
       la = "eza --icons -la";
       tree = "eza --icons -T";
-      fm = "yy";
     };
 
     autosuggestion = {
