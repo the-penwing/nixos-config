@@ -10,7 +10,6 @@
     # ========================================================================
     core = with pkgs; [
       # --- Shell Navigation ---
-      starship
       zoxide
 
       # --- Search & Text Processing ---
