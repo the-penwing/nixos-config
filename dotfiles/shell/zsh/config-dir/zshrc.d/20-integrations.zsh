@@ -4,15 +4,6 @@ bindkey -e
 bindkey "^[[3~" delete-char
 bindkey "^[3;5~" delete-char
 
-ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
-CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-mkdir -p "$CACHE_DIR"
-
-# Helper function to check if a cached Nix hook file is broken (fzf, zoxide)
-_is_cache_invalid() {
-	local cache_file="$1"
-	[[ ! -s "$cache_file" ]] || ! grep -q '/nix/store/' "$cache_file" 2>/dev/null || ! [[ -e "$(grep -o '/nix/store/[^ "]*' "$cache_file" | head -n1)" ]]
-}
 # sesh: terminal session switcher (Alt+S)
 function sesh-sessions() {
 	local session
