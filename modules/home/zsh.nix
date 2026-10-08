@@ -75,7 +75,6 @@
       export PATH
 
       source ~/.config/zsh/zshrc.d/20-integrations.zsh
-      source ~/.config/zsh/zshrc.d/40-starship.zsh
       source ~/.config/zsh/zshrc.d/50-atuin.zsh
       source ~/.config/zsh/zshrc.d/60-hyprland.zsh
     '';
