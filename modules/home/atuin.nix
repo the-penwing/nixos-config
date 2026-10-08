@@ -1,7 +1,10 @@
 {...}: {
   programs.atuin = {
     enable = true;
-    enableZshIntegration = false;
+    enableZshIntegration = true;
+    flags = [
+      "--disable-up-arrow"
+    ];
     settings = {
       sync_address = "https://atuin.taile9a1d6.ts.net";
       sync_frequency = "10m";
