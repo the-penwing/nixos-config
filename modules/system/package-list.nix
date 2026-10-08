@@ -23,6 +23,7 @@
       sd
 
       # --- Networking & Data Transfer ---
+      dig
       impala
       gping
       curl
@@ -90,6 +91,7 @@
 
       # --- Build & Test ---
       just
+      hyperfine
       gnumake
       cmake
 
