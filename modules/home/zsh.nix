@@ -40,8 +40,6 @@
       ll = "eza --icons -l";
       la = "eza --icons -la";
       tree = "eza --icons -T";
-      cd = "z";
-      cdi = "zi";
       fm = "yy";
     };
 

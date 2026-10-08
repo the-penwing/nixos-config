@@ -9,9 +9,6 @@
     # Fundamental tooling for files, networks, encryption, and basic operations
     # ========================================================================
     core = with pkgs; [
-      # --- Shell Navigation ---
-      zoxide
-
       # --- Search & Text Processing ---
       bat
       fd

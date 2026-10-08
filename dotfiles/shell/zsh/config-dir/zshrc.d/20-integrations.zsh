@@ -1,7 +1,3 @@
-# ============================================================================
-# Integrations: fzf, zoxide, direnv, sesh
-# ============================================================================
-
 # Force Emacs mode early so plugins/configs don't put us in Vi mode
 bindkey -e
 # Fix the Delete key producing a tilde
@@ -35,14 +31,6 @@ if command -v direnv >/dev/null 2>&1; then
 		direnv hook zsh >> "$CACHE_DIR/direnv.zsh" 2>/dev/null
 	fi
 	source "$CACHE_DIR/direnv.zsh"
-fi
-
-# zoxide (Cached)
-if command -v zoxide >/dev/null 2>&1; then
-	if _is_cache_invalid "$CACHE_DIR/zoxide.zsh"; then
-		zoxide init zsh >"$CACHE_DIR/zoxide.zsh" 2>/dev/null
-	fi
-	source "$CACHE_DIR/zoxide.zsh"
 fi
 
 # sesh: terminal session switcher (Alt+S)
