@@ -6,6 +6,7 @@
     ./desktop.nix
     ./direnv.nix
     ./fastfetch.nix
+    ./fzf.nix
     ./ghostty.nix
     ./git.nix
     ./helix.nix

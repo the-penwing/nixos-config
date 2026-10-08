@@ -12,7 +12,6 @@
       # --- Search & Text Processing ---
       bat
       fd
-      fzf
       glow
       jq
       ripgrep

@@ -13,15 +13,6 @@ _is_cache_invalid() {
 	local cache_file="$1"
 	[[ ! -s "$cache_file" ]] || ! grep -q '/nix/store/' "$cache_file" 2>/dev/null || ! [[ -e "$(grep -o '/nix/store/[^ "]*' "$cache_file" | head -n1)" ]]
 }
-
-# FZF shell integration (Cached)
-if command -v fzf >/dev/null 2>&1; then
-	if _is_cache_invalid "$CACHE_DIR/fzf.zsh"; then
-		fzf --zsh >"$CACHE_DIR/fzf.zsh" 2>/dev/null
-	fi
-	source "$CACHE_DIR/fzf.zsh"
-fi
-
 # sesh: terminal session switcher (Alt+S)
 function sesh-sessions() {
 	local session
@@ -77,4 +68,3 @@ bindkey '\e[B' down-line-or-beginning-search
 
 # Ensure clean exit status for sourcing
 true
-
