@@ -22,17 +22,6 @@ if command -v fzf >/dev/null 2>&1; then
 	source "$CACHE_DIR/fzf.zsh"
 fi
 
-# direnv (Cached via binary path verification)
-if command -v direnv >/dev/null 2>&1; then
-	local current_direnv
-	current_direnv="$(command -v direnv)"
-	if [[ ! -s "$CACHE_DIR/direnv.zsh" ]] || ! grep -q "$current_direnv" "$CACHE_DIR/direnv.zsh" 2>/dev/null; then
-		echo "# binary: $current_direnv" > "$CACHE_DIR/direnv.zsh"
-		direnv hook zsh >> "$CACHE_DIR/direnv.zsh" 2>/dev/null
-	fi
-	source "$CACHE_DIR/direnv.zsh"
-fi
-
 # sesh: terminal session switcher (Alt+S)
 function sesh-sessions() {
 	local session
