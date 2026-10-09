@@ -1,3 +1,0 @@
-[linter]
-[linter.rules.global_usage]
-ignore_pattern = "^hl$"
