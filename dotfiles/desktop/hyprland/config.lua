@@ -1,6 +1,6 @@
 local mod = "SUPER"
 
--- Colours (only the three the config actually uses)
+-- Colours
 local primary = "BD93F9"
 local secondary = "50FA7B"
 local inactive = "44475A"

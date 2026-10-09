@@ -10,6 +10,7 @@
     ./ghostty.nix
     ./git.nix
     ./helix.nix
+    ./hyprland.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix

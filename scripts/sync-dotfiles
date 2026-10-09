@@ -6,7 +6,6 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # Define sync pairs: (dotfiles_path, config_path)
 declare -a SYNC_PAIRS=(
   "dotfiles/editor/nvim:~/.config/nvim"
-  "dotfiles/desktop/hyprland:~/.config/hypr"
 )
 
 ACTION="${1:-pull}"
