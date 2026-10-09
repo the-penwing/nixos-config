@@ -124,9 +124,11 @@
       # PgUp/PgDn: line start/end
       bindkey '^[[5~' beginning-of-line
       bindkey '^[[6~' end-of-line
+    '';
 
-      # --- Hyprland (must stay last) ---
-      source ~/.config/zsh/zshrc.d/60-hyprland.zsh
+    profileExtra = ''
+      # Start Hyprland on tty1
+      [[ -z "$WAYLAND_DISPLAY" && "$(tty)" == "/dev/tty1" ]] && exec start-hyprland
     '';
   };
   home.sessionPath = [
