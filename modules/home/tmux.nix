@@ -51,6 +51,7 @@
     Unit.Description = "tmux server persistance";
     Service = {
       Type = "forking";
+      Environment = ["TMUX_TMPDIR=%t"];
       ExecStart = "${pkgs.tmux}/bin/tmux start-server";
       RemainAfterExit = true;
     };
