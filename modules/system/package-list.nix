@@ -132,10 +132,12 @@
       ruff
       uv
 
-      # --- Lua Stack ---
-      lua55Packages.lua
-      lua55Packages.luacheck
-      lua55Packages.luarocks
+      # --- Lua / Teal Stack ---
+      lua54Packages.lua
+      lua54Packages.tl
+      lua54Packages.cyan
+      lua54Packages.luacheck
+      lua54Packages.luarocks
       selene
       stylua
 

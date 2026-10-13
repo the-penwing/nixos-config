@@ -5,6 +5,7 @@ return {
 	config = function()
 		local langs = {
 			"lua",
+			"teal",
 			"vim",
 			"vimdoc",
 			"c",

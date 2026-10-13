@@ -25,6 +25,7 @@ return {
 				"zls",
 				"marksman",
 				"lua-language-server",
+				"teal-language-server",
 				"elm-language-server",
 				"tombi",
 				"stylua",
