@@ -57,6 +57,31 @@ return {
 			},
 		})
 
+		-- Custom lua_ls instance for teal files
+		vim.lsp.config("lua_ls_teal", {
+			capabilities = capabilities,
+			cmd = { "lua-language-server" },
+			filetypes = { "teal" },
+			root_markers = { "tlconfig.lua", ".git" },
+			settings = {
+				Lua = {
+					runtime = { version = "Lua 5.4" },
+					diagnostics = { enable = false },
+					semantic = { enable = false },
+					workspace = { checkThirdParty = false },
+				},
+			},
+			on_init = function(client)
+				local caps = client.server_capabilities
+				caps.hoverProvider = false
+				caps.semanticTokensProvider = nil
+				caps.definitionProvider = false
+				caps.signatureHelpProvider = false
+				caps.documentHighlightProvider = false
+			end,
+		})
+		vim.lsp.enable("lua_ls_teal")
+
 		-- asm_lsp: manual, Mason cargo-build fails on NixOS (OpenSSL/pkg-config), so Nix-provided instead
 		vim.lsp.config("asm_lsp", {
 			capabilities = capabilities,
