@@ -16,7 +16,6 @@ return {
 			ensure_installed = {
 				"json-lsp",
 				"yaml-language-server",
-				"clangd",
 				"html-lsp",
 				"css-lsp",
 				"bash-language-server",

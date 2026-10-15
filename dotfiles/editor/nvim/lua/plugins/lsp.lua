@@ -82,6 +82,12 @@ return {
 		})
 		vim.lsp.enable("lua_ls_teal")
 
+		vim.lsp.config("clangd", {
+			capabilities = capabilities,
+			cmd = { "clangd", "--query-driver=/run/current-system/sw/bin/*" },
+		})
+		vim.lsp.enable("clangd")
+
 		-- asm_lsp: manual, Mason cargo-build fails on NixOS (OpenSSL/pkg-config), so Nix-provided instead
 		vim.lsp.config("asm_lsp", {
 			capabilities = capabilities,
