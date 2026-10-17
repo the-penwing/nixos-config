@@ -58,6 +58,11 @@
         name = "fzf-tab";
         src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
       }
+      {
+        name = "fzf-git";
+        src = "${pkgs.fzf-git-sh}/share/fzf-git-sh";
+        file = "fzf-git.sh";
+      }
     ];
 
     initContent = ''
