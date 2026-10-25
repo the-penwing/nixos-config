@@ -5,61 +5,43 @@ return {
 	config = function()
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-		require("mason-lspconfig").setup({
-			handlers = {
-				function(server_name)
-					vim.lsp.config(server_name, { capabilities = capabilities })
-					vim.lsp.enable(server_name)
-				end,
+		vim.lsp.config("*", { capabilities = capabilities })
 
-				["lua_ls"] = function()
-					vim.lsp.config("lua_ls", {
-						capabilities = capabilities,
-						settings = {
-							Lua = {
-								runtime = { version = "Lua 5.4" },
-								diagnostics = { globals = { "vim" } },
-								workspace = {
-									checkThirdParty = false,
-									library = { vim.env.VIMRUNTIME },
-								},
-							},
-						},
-					})
-					vim.lsp.enable("lua_ls")
-				end,
-
-				["elmls"] = function()
-					vim.lsp.config("elmls", {
-						capabilities = capabilities,
-						settings = {
-							elmLS = {
-								elmPath = "elm",
-								elmFormatPath = "elm-format",
-								elmTestPath = "elm-test",
-								elmReviewPath = "elm-review",
-								disableElmLSDiagnostics = false,
-								onlyUpdateDiagnosticsOnSave = false,
-							},
-						},
-					})
-					vim.lsp.enable("elmls")
-				end,
-
-				["tombi"] = function()
-					vim.lsp.config("tombi", {
-						capabilities = capabilities,
-						filetypes = { "toml" },
-						root_markers = { "tombi.toml", "pyproject.toml", ".git" },
-					})
-					vim.lsp.enable("tombi")
-				end,
+		vim.lsp.config("lua_ls", {
+			settings = {
+				Lua = {
+					runtime = { version = "Lua 5.4" },
+					diagnostics = { globals = { "vim" } },
+					workspace = {
+						checkThirdParty = false,
+						library = { vim.env.VIMRUNTIME },
+					},
+				},
 			},
 		})
 
+		vim.lsp.config("elmls", {
+			settings = {
+				elmLS = {
+					elmPath = "elm",
+					elmFormatPath = "elm-format",
+					elmTestPath = "elm-test",
+					elmReviewPath = "elm-review",
+					disableElmLSDiagnostics = false,
+					onlyUpdateDiagnosticsOnSave = false,
+				},
+			},
+		})
+
+		vim.lsp.config("tombi", {
+			filetypes = { "toml" },
+			root_markers = { "tombi.toml", "pyproject.toml", ".git" },
+		})
+
+		require("mason-lspconfig").setup({})
+
 		-- Custom lua_ls instance for teal files
 		vim.lsp.config("lua_ls_teal", {
-			capabilities = capabilities,
 			cmd = { "lua-language-server" },
 			filetypes = { "teal" },
 			root_markers = { "tlconfig.lua", ".git" },
@@ -83,14 +65,12 @@ return {
 		vim.lsp.enable("lua_ls_teal")
 
 		vim.lsp.config("clangd", {
-			capabilities = capabilities,
 			cmd = { "clangd", "--query-driver=/run/current-system/sw/bin/*" },
 		})
 		vim.lsp.enable("clangd")
 
 		-- asm_lsp: manual, Mason cargo-build fails on NixOS (OpenSSL/pkg-config), so Nix-provided instead
 		vim.lsp.config("asm_lsp", {
-			capabilities = capabilities,
 			cmd = { "asm-lsp" },
 			filetypes = { "asm", "s", "S", "vmasm" },
 		})
@@ -98,7 +78,6 @@ return {
 
 		-- bacon_ls: manual, system-flake-managed, outside Mason
 		vim.lsp.config("bacon_ls", {
-			capabilities = capabilities,
 			cmd = { "bacon-ls" },
 			filetypes = { "rust" },
 			root_markers = { "Cargo.toml" },
@@ -113,7 +92,6 @@ return {
 
 		-- nixd: manual, not in Mason's registry
 		vim.lsp.config("nixd", {
-			capabilities = capabilities,
 			settings = {
 				nixd = {
 					formatting = { command = { "alejandra" } },
@@ -123,7 +101,6 @@ return {
 		vim.lsp.enable("nixd")
 		-- nil: manual, running alongside nixd
 		vim.lsp.config("nil_ls", {
-			capabilities = capabilities,
 			settings = {
 				nil_ls = {
 					flake = {

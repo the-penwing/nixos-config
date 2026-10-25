@@ -31,6 +31,8 @@ return {
 				"selene",
 				"prettier",
 				"shellcheck",
+				"pyright",
+				"ruff",
 				"black",
 				"yamlfmt",
 				"yamllint",
