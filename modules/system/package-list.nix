@@ -208,7 +208,7 @@
       playerctl
 
       # --- Hardware, Power & Radios ---
-      bluetuith
+      bluetui
       brightnessctl
       ddcutil
       upower
