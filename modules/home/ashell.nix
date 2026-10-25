@@ -55,7 +55,7 @@
         audio_sinks_more_cmd = "pavucontrol -t 3";
         audio_sources_more_cmd = "pavucontrol -t 4";
         wifi_more_cmd = "ghostty -e impala";
-        bluetooth_more_cmd = "ghostty -e bluetuith";
+        bluetooth_more_cmd = "ghostty -e bluetui";
         battery_format = "IconAndPercentage";
         peripheral_battery_format = "Icon";
         audio_indicator_format = "IconAndPercentage";
