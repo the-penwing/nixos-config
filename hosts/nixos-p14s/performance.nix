@@ -7,11 +7,11 @@
   services.tlp = {
     enable = true;
     settings = {
-      AMD_ENERGY_PERF_POLICY_ON_BAT = "power";
-      PLATFORM_PROFILE_ON_BAT = "low-power";
-      CPU_BOOST_ON_BAT = 0;
+      AMD_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
       AMD_ENERGY_PERF_POLICY_ON_AC = "performance";
+      PLATFORM_PROFILE_ON_BAT = "low-power";
       PLATFORM_PROFILE_ON_AC = "performance";
+      CPU_BOOST_ON_BAT = 0;
       CPU_BOOST_ON_AC = 1;
 
       START_CHARGE_THRESH_BAT0 = 75;
@@ -29,8 +29,8 @@
       SOUND_POWER_SAVE_CONTROLLER = "Y";
 
       SATA_LINKPWR_ON_AC = "med_power_with_dipm";
-      SATA_LINKPWR_ON_BAT = "med_power_with_dipm";
 
+      SATA_LINKPWR_ON_BAT = "min_power";
       PCIE_ASPM_ON_BAT = "powersupersave";
       PCIE_ASPM_ON_AC = "default";
     };
