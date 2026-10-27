@@ -6,7 +6,7 @@
       "--disable-up-arrow"
     ];
     settings = {
-      sync_address = "https://thepenwinghome.asuscomm.com/atuin";
+      sync_address = "https://thepenwing.asuscomm.com/atuin";
       sync_frequency = "10m";
 
       inline_height = 15;
