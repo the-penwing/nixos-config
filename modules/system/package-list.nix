@@ -43,7 +43,8 @@
       # --- Documentation & Manuals ---
       man-pages
       man-pages-posix
-      tldr
+      tlrc
+      tealdeer
 
       # --- Version Control Systems ---
       git

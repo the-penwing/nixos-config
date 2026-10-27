@@ -10,8 +10,14 @@
 }: {
   documentation = {
     enable = true;
-    man.enable = true;
+    man = {
+      man-db.enable = false;
+      mandoc.enable = true;
+      generateCaches = true;
+    };
     dev.enable = true;
+    info.enable = true;
+    doc.enable = true;
   };
 
   services.tailscale.enable = true;
