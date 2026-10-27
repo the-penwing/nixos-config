@@ -44,7 +44,6 @@
       man-pages
       man-pages-posix
       tlrc
-      tealdeer
 
       # --- Version Control Systems ---
       git
