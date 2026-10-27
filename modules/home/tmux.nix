@@ -31,7 +31,7 @@
       set -g renumber-windows on
       set -ga update-environment " WAYLAND_DISPLAY"
       set -g status-left-length 50
-      set -s theme
+      set -s theme terminal
 
       bind-key "T" run-shell "sesh connect \"$(
         sesh list --icons | fzf-tmux -p 80%,70% \
