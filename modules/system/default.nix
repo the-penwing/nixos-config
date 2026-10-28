@@ -6,8 +6,10 @@
     ./env-vars.nix
     ./flake-packages.nix
     ./hardware.nix
+    ./home-manager.nix
     ./input.nix
     ./networking.nix
+    ./nixpkgs.nix
     ./packages.nix
     ./performance.nix
     ./programs.nix

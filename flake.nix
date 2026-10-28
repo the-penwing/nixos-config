@@ -30,43 +30,15 @@
     naviterm.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
+  outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
-    overlays =
-      (import ./overlays/default.nix)
-      ++ [
-        inputs.ghostty.overlays.default
-        inputs.rust-overlay.overlays.default
-        inputs.bacon.overlay.${system}
-        inputs.bacon-ls.overlay.${system}
-      ];
   in {
+    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+
     nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {inherit inputs system;};
-      modules = [
-        ./hosts/nixos-p14s/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          nixpkgs.overlays = overlays;
-          nixpkgs.config = {
-            allowUnfree = true;
-            android_sdk.accept_license = true;
-          };
-
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            backupFileExtension = "bak";
-            extraSpecialArgs = {inherit inputs system;};
-            users.benvl = import ./home.nix;
-          };
-        }
-      ];
+      modules = [./hosts/nixos-p14s/configuration.nix];
     };
   };
 }
