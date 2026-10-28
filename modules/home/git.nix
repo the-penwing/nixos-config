@@ -16,6 +16,13 @@
         name = "Ben van Leeuwen";
         email = "thepenwing@gmail.com";
       };
+      sendemail = {
+        smtpserver = "smtp.gmail.com";
+        smtpserverport = 587;
+        smtpencryption = "tls";
+        smtpuser = "thepenwing@gmail.com";
+        confirm = "auto";
+      };
       core = {
         autocrlf = false;
         eol = "lf";
@@ -44,4 +51,9 @@
       interactive.diffFilter = "delta --color-only";
     };
   };
+  xdg.configFile."pass-git-helper/git-pass-mapping.ini".text = ''
+    [smtp.gmail.com*]
+    target = email/gmail
+    allow_insecure_protocol = true
+  '';
 }
