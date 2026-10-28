@@ -120,7 +120,8 @@
         extensions = ["rust-src" "rust-analyzer"];
         targets = [
           "x86_64-unknown-linux-gnu"
-          "thumbv8m.main-none-eabihf"
+          "thumbv8m.main-none-eabihf" # Pico 2 ARM
+          "riscv32imac-unknown-none-elf" # Pico 2 RISC-V
           "aarch64-unknown-linux-musl" # Raspberry Pi (Alpine)
         ];
       })
