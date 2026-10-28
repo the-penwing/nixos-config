@@ -38,7 +38,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("systemctl --user start hyprland-session.target")
 	hl.exec_cmd("swaync")
-	hl.exec_cmd("kando")
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("WGPU_BACKEND=gl ashell")
 	hl.exec_cmd("hyprswitch init --show-title &")
@@ -136,7 +135,6 @@ hl.bind(mod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(mod .. " + SHIFT + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mod .. " + R", hl.dsp.exec_cmd("nc -U /run/user/1000/walker/walker.sock"))
 hl.bind(mod .. " + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind("CTRL + Space", hl.dsp.exec_cmd('kando -m "Main Menu"'))
 
 -- Clipboard and emoji
 hl.bind(mod .. " + V", hl.dsp.exec_cmd("cliphist list | walker -d | cliphist decode | wl-copy"))
@@ -224,17 +222,3 @@ end
 hl.window_rule({ name = "float-pip", match = { title = "^(Picture-in-Picture)$" }, float = true })
 hl.window_rule({ name = "size-dolphin", match = { class = "^(org.kde.dolphin)$" }, size = "900 600" })
 hl.window_rule({ name = "size-pavucontrol", match = { class = "^(pavucontrol)$" }, size = "700 450" })
-
-hl.window_rule({
-	name = "kando",
-	match = { class = "menu.kando.Kando", title = "Kando Menu" },
-	no_blur = true,
-	opaque = true,
-	move = { 0, 0 },
-	rounding = 0,
-	size = { "100%", "100%" },
-	border_size = 0,
-	no_anim = true,
-	float = true,
-	pin = true,
-})

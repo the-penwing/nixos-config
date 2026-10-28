@@ -188,7 +188,6 @@
     desktop = with pkgs; [
       # --- Launchers & UI Overlays ---
       bemoji
-      kando
       libnotify
       swaynotificationcenter
       ashell
