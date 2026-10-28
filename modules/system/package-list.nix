@@ -120,6 +120,7 @@
         extensions = ["rust-src" "rust-analyzer"];
         targets = [
           "x86_64-unknown-linux-gnu"
+          "thumbv8m.main-none-eabihf"
           "aarch64-unknown-linux-musl" # Raspberry Pi (Alpine)
         ];
       })
@@ -177,6 +178,7 @@
       pico-sdk
       picotool
       probe-rs-tools
+      flip-link
       tio
 
       # --- Nix Infrastructure & Tooling ---
