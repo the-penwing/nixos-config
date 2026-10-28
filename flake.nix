@@ -4,14 +4,18 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    the-penwing.url = "github:the-penwing/nix-repo";
-    elephant.url = "github:abenz1267/elephant";
 
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    the-penwing.url = "github:the-penwing/nix-repo";
+    the-penwing.inputs.nixpkgs.follows = "nixpkgs";
+
     ghostty.url = "github:ghostty-org/ghostty";
     ghostty.inputs.nixpkgs.follows = "nixpkgs";
+
+    elephant.url = "github:abenz1267/elephant";
+    elephant.inputs.nixpkgs.follows = "nixpkgs";
 
     walker.url = "github:abenz1267/walker";
     walker.inputs.nixpkgs.follows = "nixpkgs";
@@ -22,9 +26,11 @@
 
     bacon.url = "github:Canop/bacon";
     bacon.inputs.nixpkgs.follows = "nixpkgs";
+    bacon.inputs.naersk.inputs.nixpkgs.follows = "nixpkgs";
 
     bacon-ls.url = "github:crisidev/bacon-ls";
     bacon-ls.inputs.nixpkgs.follows = "nixpkgs";
+    bacon-ls.inputs.naersk.inputs.nixpkgs.follows = "nixpkgs";
 
     naviterm.url = "gitlab:detoxify92/naviterm";
     naviterm.inputs.nixpkgs.follows = "nixpkgs";

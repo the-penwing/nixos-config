@@ -1,6 +1,11 @@
-{...}: {
+{
+  inputs,
+  system,
+  ...
+}: {
   programs.ghostty = {
     enable = true;
+    package = inputs.ghostty.packages.${system}.default;
     enableZshIntegration = false;
     settings = {
       theme = "Dracula";
