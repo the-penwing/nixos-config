@@ -14,6 +14,9 @@
     ghostty.url = "github:ghostty-org/ghostty";
     ghostty.inputs.nixpkgs.follows = "nixpkgs";
 
+    blip.url = "github:blip-net/nix";
+    blip.inputs.nixpkgs.follows = "nixpkgs";
+
     elephant.url = "github:abenz1267/elephant";
     elephant.inputs.nixpkgs.follows = "nixpkgs";
 

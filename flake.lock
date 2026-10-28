@@ -44,6 +44,26 @@
         "type": "github"
       }
     },
+    "blip": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793062804,
+        "narHash": "sha256-nd67OzZ169qA07xp3X4zZNvYX7FyFGmb9bKllc5dCMQ=",
+        "owner": "blip-net",
+        "repo": "nix",
+        "rev": "92ae525425b38b2873d8d52a564a9c146fccba08",
+        "type": "github"
+      },
+      "original": {
+        "owner": "blip-net",
+        "repo": "nix",
+        "type": "github"
+      }
+    },
     "elephant": {
       "inputs": {
         "nixpkgs": [
@@ -364,6 +384,7 @@
       "inputs": {
         "bacon": "bacon",
         "bacon-ls": "bacon-ls",
+        "blip": "blip",
         "elephant": "elephant",
         "ghostty": "ghostty",
         "home-manager": "home-manager_2",

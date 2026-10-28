@@ -1,6 +1,7 @@
 # modules/system/default.nix
 {...}: {
   imports = [
+    ./blip.nix
     ./boot.nix
     ./desktop.nix
     ./env-vars.nix
