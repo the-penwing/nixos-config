@@ -1,8 +1,4 @@
-# System package wiring.
-#
-# Purpose:
-# - Pull all package categories from .package-list.nix
-# - Keep the package catalogue as a single source of truth
+# modules/system/packages.nix
 {
   pkgs,
   lib,

@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  elephant,
+  inputs,
   system,
   ...
 }: {
@@ -21,7 +21,7 @@
   home.activation.linkElephantProviders = lib.hm.dag.entryAfter ["writeBoundary"] ''
     mkdir -p $HOME/.config/elephant/providers
     rm -f $HOME/.config/elephant/providers/*.so
-    for f in ${elephant.packages.${system}.elephant-with-providers}/lib/elephant/providers/*.so; do
+    for f in ${inputs.elephant.packages.${system}.elephant-with-providers}/lib/elephant/providers/*.so; do
       ln -sf "$f" $HOME/.config/elephant/providers/
     done
   '';

@@ -1,85 +1,53 @@
-# Flake entrypoint for Ben's NixOS + Home Manager setup.
-#
-# Purpose:
-# - Define all upstream inputs
-# - Export host configuration and development shells
+# flake.nix
 {
-  description = "benvl NixOS config";
+  description = "NixOS config for the-penwing (benvl)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    the-penwing.url = "github:the-penwing/nix-repo";
     elephant.url = "github:abenz1267/elephant";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    ghostty.url = "github:ghostty-org/ghostty";
+    ghostty.inputs.nixpkgs.follows = "nixpkgs";
 
-    the-penwing = {
-      url = "github:the-penwing/nix-repo";
-    };
+    walker.url = "github:abenz1267/walker";
+    walker.inputs.nixpkgs.follows = "nixpkgs";
+    walker.inputs.elephant.follows = "elephant";
 
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.elephant.follows = "elephant";
-    };
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    bacon.url = "github:Canop/bacon";
+    bacon.inputs.nixpkgs.follows = "nixpkgs";
 
-    bacon = {
-      url = "github:Canop/bacon";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    bacon-ls.url = "github:crisidev/bacon-ls";
+    bacon-ls.inputs.nixpkgs.follows = "nixpkgs";
 
-    bacon-ls = {
-      url = "github:crisidev/bacon-ls";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    naviterm = {
-      url = "gitlab:detoxify92/naviterm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    naviterm.url = "gitlab:detoxify92/naviterm";
+    naviterm.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
-    self,
     nixpkgs,
     home-manager,
-    ghostty,
-    the-penwing,
-    walker,
-    elephant,
-    rust-overlay,
-    bacon,
-    bacon-ls,
-    naviterm,
     ...
   } @ inputs: let
     system = "x86_64-linux";
     overlays =
       (import ./overlays/default.nix)
       ++ [
-        ghostty.overlays.default
-        rust-overlay.overlays.default
-        bacon.overlay.${system}
-        bacon-ls.overlay.${system}
+        inputs.ghostty.overlays.default
+        inputs.rust-overlay.overlays.default
+        inputs.bacon.overlay.${system}
+        inputs.bacon-ls.overlay.${system}
       ];
-    pkgs = import nixpkgs {
-      inherit system overlays;
-    };
   in {
     nixosConfigurations."nixos-p14s" = nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = {inherit inputs system;};
       modules = [
         ./hosts/nixos-p14s/configuration.nix
         home-manager.nixosModules.home-manager
@@ -94,21 +62,22 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             backupFileExtension = "bak";
-            users.benvl = import ./home.nix {inherit pkgs elephant system;};
+            extraSpecialArgs = {inherit inputs system;};
+            users.benvl = import ./home.nix;
           };
         }
-        {
+        ({pkgs, ...}: {
           environment.systemPackages = [
             # My packages
-            the-penwing.packages.${system}.blackjack-slint
-            the-penwing.packages.${system}.blackjack-rs
-            the-penwing.packages.${system}.lua-dungeon-crawler
+            inputs.the-penwing.packages.${system}.blackjack-slint
+            inputs.the-penwing.packages.${system}.blackjack-rs
+            inputs.the-penwing.packages.${system}.lua-dungeon-crawler
 
             pkgs.bacon
             pkgs.bacon-ls
-            walker.packages.${system}.default
-            elephant.packages.${system}.elephant-with-providers
-            naviterm.packages.${system}.default
+            inputs.walker.packages.${system}.default
+            inputs.elephant.packages.${system}.elephant-with-providers
+            inputs.naviterm.packages.${system}.default
             # Rust toolchain with rust-src for rust-analyzer
             (pkgs.rust-bin.stable.latest.default.override {
               extensions = [
@@ -121,7 +90,7 @@
               ];
             })
           ];
-        }
+        })
       ];
     };
   };

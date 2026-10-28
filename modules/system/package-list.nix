@@ -1,4 +1,4 @@
-# Package catalogue for nixos-p14s.
+# modules/system/package-list.nix
 {
   pkgs,
   lib,
