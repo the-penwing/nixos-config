@@ -3,17 +3,13 @@
 # Purpose:
 # - Keep service declarations readable
 # - Prefer socket activation/on-demand startup where practical
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   documentation = {
     enable = true;
     man = {
       man-db.enable = false;
       mandoc.enable = true;
-      generateCaches = true;
+      cache.enable = true;
     };
     dev.enable = true;
     info.enable = true;

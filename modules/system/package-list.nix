@@ -309,7 +309,7 @@ in rec {
   defaults = {
     browserDesktop = "firefox.desktop";
     terminalDesktop = "com.mitchellh.ghostty.desktop";
-    fileManagerDesktop = "nemo.desktop";
+    fileManagerDesktop = "thunar.desktop";
     editorDesktop = "nvim.desktop";
     pdfDesktop = "org.pwmt.zathura.desktop";
   };
