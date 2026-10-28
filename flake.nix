@@ -66,18 +66,6 @@
             users.benvl = import ./home.nix;
           };
         }
-        {
-          environment.systemPackages = [
-            # My packages
-            inputs.the-penwing.packages.${system}.blackjack-slint
-            inputs.the-penwing.packages.${system}.blackjack-rs
-            inputs.the-penwing.packages.${system}.lua-dungeon-crawler
-
-            inputs.walker.packages.${system}.default
-            inputs.elephant.packages.${system}.elephant-with-providers
-            inputs.naviterm.packages.${system}.default
-          ];
-        }
       ];
     };
   };

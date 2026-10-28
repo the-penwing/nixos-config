@@ -1,13 +1,10 @@
-# System module entrypoint.
-#
-# Purpose:
-# - Keep host configuration modular and predictable
-# - Separate desktop, networking, hardware, services, and performance concerns
+# modules/system/default.nix
 {...}: {
   imports = [
     ./boot.nix
     ./desktop.nix
     ./env-vars.nix
+    ./flake-packages.nix
     ./hardware.nix
     ./input.nix
     ./networking.nix
