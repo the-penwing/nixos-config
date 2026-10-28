@@ -110,10 +110,19 @@
       sccache
 
       # --- Rust Stack ---
+      bacon
+      bacon-ls
       cargo-edit
       cargo-expand
       cargo-zigbuild
       slint-lsp
+      (rust-bin.stable.latest.default.override {
+        extensions = ["rust-src" "rust-analyzer"];
+        targets = [
+          "x86_64-unknown-linux-gnu"
+          "aarch64-unknown-linux-musl" # Raspberry Pi (Alpine)
+        ];
+      })
 
       # --- Go Stack ---
       go

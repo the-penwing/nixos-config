@@ -66,31 +66,18 @@
             users.benvl = import ./home.nix;
           };
         }
-        ({pkgs, ...}: {
+        {
           environment.systemPackages = [
             # My packages
             inputs.the-penwing.packages.${system}.blackjack-slint
             inputs.the-penwing.packages.${system}.blackjack-rs
             inputs.the-penwing.packages.${system}.lua-dungeon-crawler
 
-            pkgs.bacon
-            pkgs.bacon-ls
             inputs.walker.packages.${system}.default
             inputs.elephant.packages.${system}.elephant-with-providers
             inputs.naviterm.packages.${system}.default
-            # Rust toolchain with rust-src for rust-analyzer
-            (pkgs.rust-bin.stable.latest.default.override {
-              extensions = [
-                "rust-src"
-                "rust-analyzer"
-              ];
-              targets = [
-                "x86_64-unknown-linux-gnu"
-                "aarch64-unknown-linux-musl" # Raspberry Pi (Alpine)
-              ];
-            })
           ];
-        })
+        }
       ];
     };
   };
