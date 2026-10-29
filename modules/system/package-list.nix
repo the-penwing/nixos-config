@@ -114,6 +114,8 @@
       bacon-ls
       cargo-edit
       cargo-expand
+      cargo-release
+      cargo-all-features
       cargo-zigbuild
       slint-lsp
       (rust-bin.stable.latest.default.override {
