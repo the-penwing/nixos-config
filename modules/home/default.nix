@@ -9,6 +9,7 @@
     ./fzf.nix
     ./ghostty.nix
     ./git.nix
+    ./gpg.nix
     ./helix.nix
     ./hyprland.nix
     ./ssh.nix
