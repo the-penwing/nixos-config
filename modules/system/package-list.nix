@@ -16,6 +16,8 @@
       jq
       ripgrep
       sd
+      scc
+      cloc
 
       # --- Networking & Data Transfer ---
       dig
@@ -60,7 +62,6 @@
     cli = with pkgs; [
       # --- System Health, Disk & Resource Monitors ---
       btop
-      cloc
       duf
       dust
       fastfetch
