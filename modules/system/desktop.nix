@@ -18,17 +18,20 @@ in {
     variant = "";
   };
 
-  services.getty.autologinUser = "benvl";
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "matrix";
+      bigclock = "en";
+      clear_password = true;
+      hide_borders = true;
+    };
+  };
 
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     xwayland.enable = true;
-  };
-  systemd.user.targets.hyprland-session = {
-    description = "Hyprland compositor session";
-    bindsTo = ["graphical-session.target"];
-    wants = ["graphical-session-pre.target"];
-    after = ["graphical-session-pre.target"];
   };
 
   # Privilege escalation and privileged action authentication.

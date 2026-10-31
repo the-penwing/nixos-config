@@ -35,12 +35,9 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("walker --gapplication-service")
 	hl.exec_cmd("hyprpolkitagent")
 	hl.exec_cmd("wl-paste --watch cliphist store")
-	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-	hl.exec_cmd("systemctl --user start hyprland-session.target")
-	hl.exec_cmd("swaync")
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("WGPU_BACKEND=gl ashell")
-	hl.exec_cmd("hyprswitch init --show-title &")
+	hl.exec_cmd("hyprswitch init --show-title")
 end)
 
 -- Input

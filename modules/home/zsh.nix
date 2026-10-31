@@ -130,11 +130,6 @@
       bindkey '^[[5~' beginning-of-line
       bindkey '^[[6~' end-of-line
     '';
-
-    profileExtra = ''
-      # Start Hyprland on tty1
-      [[ -z "$WAYLAND_DISPLAY" && "$(tty)" == "/dev/tty1" ]] && exec start-hyprland
-    '';
   };
   home.sessionPath = [
     "$HOME/nixos-config/scripts"
