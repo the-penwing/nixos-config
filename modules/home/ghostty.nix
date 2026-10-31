@@ -29,6 +29,11 @@
       mouse-hide-while-typing = true;
       cursor-style = "block";
       cursor-style-blink = true;
+
+      keybind = [
+        "ctrl+enter=text:\\r"
+        "ctrl+j=text:\\n"
+      ];
     };
   };
 }
