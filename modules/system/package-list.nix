@@ -265,6 +265,7 @@
       # --- Office Productivity & Knowledge Bases ---
       libreoffice-stable
       obsidian
+      readest
       zathura
       zathuraPkgs.zathura_pdf_poppler
 
