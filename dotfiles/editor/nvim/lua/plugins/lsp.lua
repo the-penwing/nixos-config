@@ -90,6 +90,9 @@ return {
 		})
 		vim.lsp.enable("bacon_ls")
 
+		-- gleam lsp: manual, part of the gleam compiler
+		vim.lsp.enable("gleam")
+
 		-- nixd: manual, not in Mason's registry
 		vim.lsp.config("nixd", {
 			settings = {

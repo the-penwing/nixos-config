@@ -10,14 +10,16 @@ return {
 			lua = { "stylua" },
 			elm = { "elm-format" },
 			just = { "just" },
+			gleam = { "gleam" },
 			go = { "goimports", "gofumpt" },
 		},
 		formatters = {
 			shfmt = {
 				prepend_args = { "-i", "2", "-ci" },
 			},
-			elm_format = {
-				prepend_args = { "--yes" },
+			["elm-format"] = {
+				command = "elm-format",
+				args = { "--stdin" },
 			},
 			just = {
 				prepend_args = { "--fmt" },
@@ -25,7 +27,7 @@ return {
 		},
 		format_on_save = {
 			timeout_ms = 500,
-			lsp_fallback = true,
+			lsp_format = "fallback",
 		},
 	},
 }

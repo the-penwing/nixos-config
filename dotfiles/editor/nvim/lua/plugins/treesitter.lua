@@ -26,6 +26,7 @@ return {
 			"slint",
 			"tsx",
 			"bash",
+			"gleam",
 			"go",
 			"gomod",
 			"gosum",

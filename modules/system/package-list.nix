@@ -129,6 +129,11 @@
         ];
       })
 
+      # --- Gleam Stack ---
+      gleam
+      beamPackages.erlang
+      rebar3
+
       # --- Go Stack ---
       go
       delve
