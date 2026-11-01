@@ -294,7 +294,7 @@
       sshfs
 
       # --- Processing Pipelines & AV Codecs ---
-      ffmpeg
+      ffmpeg-full
       ffmpegthumbnailer
       libheif
       mediainfo
