@@ -26,7 +26,6 @@ return {
 			"slint",
 			"tsx",
 			"bash",
-			"swift",
 			"go",
 			"gomod",
 			"gosum",
