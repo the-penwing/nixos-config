@@ -9,7 +9,7 @@
     enableZshIntegration = false;
     settings = {
       theme = "Dracula";
-      font-family = "MesloLGS Nerd Font";
+      font-family = "MesloLGS Nerd Font Mono";
       font-size = 12;
       adjust-cell-height = 1;
       window-padding-x = 5;
