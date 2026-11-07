@@ -26,6 +26,7 @@
       curl
       rsync
       wget
+      nicotine-plus
 
       # --- Compression & Archiving ---
       p7zip

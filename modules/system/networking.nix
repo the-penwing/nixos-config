@@ -29,6 +29,8 @@
         8080
         8000
         3000
+        2234 # Soulseek
+        2235 # Soulseek
         47984 # Sunshine
         47989 # Sunshine
         48010 # Sunshine
