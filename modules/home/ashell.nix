@@ -1,6 +1,11 @@
-{...}: {
+{
+  inputs,
+  system,
+  ...
+}: {
   programs.ashell = {
     enable = true;
+    package = inputs.ashell.packages.${system}.default;
     settings = {
       outputs = "All";
       position = "Top";

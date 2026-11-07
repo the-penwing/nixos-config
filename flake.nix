@@ -14,6 +14,8 @@
     ghostty.url = "github:ghostty-org/ghostty";
     ghostty.inputs.nixpkgs.follows = "nixpkgs";
 
+    ashell.url = "github:MalpenZibo/ashell";
+
     blip.url = "github:blip-net/nix";
     blip.inputs.nixpkgs.follows = "nixpkgs";
 
