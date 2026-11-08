@@ -40,6 +40,7 @@
 
   security.pki.certificateFiles = [./homelab.crt];
   boot.kernelParams = [
+    "amdgpu.abmlevel=0"
     "amd_pstate=active"
     "amdgpu.dcfeaturemask=0x2"
   ];
