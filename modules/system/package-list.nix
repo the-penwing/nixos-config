@@ -115,6 +115,7 @@
       bacon
       bacon-ls
       cargo-edit
+      cargo-cache
       cargo-expand
       cargo-release
       cargo-all-features
