@@ -132,7 +132,7 @@ hl.bind(mod .. " + D", hl.dsp.exec_cmd("zeal"))
 hl.bind(mod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(mod .. " + SHIFT + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mod .. " + R", hl.dsp.exec_cmd("nc -U /run/user/1000/walker/walker.sock"))
-hl.bind(mod .. " + CTRL + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mod .. " + CTRL + L", hl.dsp.exec_cmd("loginctl lock-session"))
 
 -- Clipboard and emoji
 hl.bind(mod .. " + V", hl.dsp.exec_cmd("cliphist list | walker -d | cliphist decode | wl-copy"))
