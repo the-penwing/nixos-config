@@ -161,7 +161,7 @@
       selene
       stylua
 
-      # --- Web, Node & TypeScript Stack ---
+      # --- Web Stack ---
       nodejs
       pnpm
       prettier
@@ -196,6 +196,9 @@
       nil
       nix-search-tv
       nixd
+
+      # Markdown Linter
+      rumdl
 
       # --- AI Assistance & Diagramming ---
       github-copilot-cli
