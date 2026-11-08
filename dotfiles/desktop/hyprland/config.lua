@@ -30,6 +30,7 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- Autostart
 hl.on("hyprland.start", function()
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("udiskie")
 	hl.exec_cmd("elephant")
 	hl.exec_cmd("walker --gapplication-service")
