@@ -1,8 +1,13 @@
-{pkgs, ...}: {
+{...}: {
   nix.settings = {
-    cores = 10;
-    max-jobs = 4;
+    cores = 4;
+    max-jobs = 2;
+    build-dir = "/var/tmp/nix-build";
   };
+
+  systemd.tmpfiles.rules = [
+    "d /var/tmp/nix-build 0755 root root -"
+  ];
 
   services.tlp = {
     enable = true;
