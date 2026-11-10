@@ -282,6 +282,7 @@
       thunar
 
       # --- Games ---
+      prismlauncher
       flycast
     ];
 
