@@ -38,7 +38,11 @@ return {
 			root_markers = { "tombi.toml", "pyproject.toml", ".git" },
 		})
 
-		require("mason-lspconfig").setup({})
+		require("mason-lspconfig").setup({
+			automatic_enable = {
+				exclude = { "rust_analyzer" },
+			},
+		})
 
 		-- Custom lua_ls instance for teal files
 		vim.lsp.config("lua_ls_teal", {
@@ -81,6 +85,9 @@ return {
 			cmd = { "bacon-ls" },
 			filetypes = { "rust" },
 			root_markers = { "Cargo.toml" },
+			on_init = function(client)
+				client.server_capabilities.completionProvider = nil
+			end,
 			settings = {
 				bacon_ls = {
 					backend = "cargo",
@@ -102,6 +109,7 @@ return {
 			},
 		})
 		vim.lsp.enable("nixd")
+
 		-- nil: manual, running alongside nixd
 		vim.lsp.config("nil_ls", {
 			settings = {

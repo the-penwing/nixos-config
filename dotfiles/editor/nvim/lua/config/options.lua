@@ -39,3 +39,5 @@ opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = true
 opt.clipboard = "unnamedplus"
+
+vim.o.exrc = true

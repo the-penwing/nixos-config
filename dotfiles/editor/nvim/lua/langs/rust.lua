@@ -1,3 +1,4 @@
+-- lua/langs/rust.lua
 return {
 	{
 		"mrcjkb/rustaceanvim",
@@ -20,10 +21,11 @@ return {
 								diagnostics = { enable = false },
 								cargo = {
 									buildScripts = { enable = true },
+									targetDir = true,
 								},
 								procMacro = { enable = true },
 								files = {
-									excludeDirs = { "target", ".git", "node_modules" },
+									excludeDirs = { "target", ".dx", ".git", "node_modules" },
 								},
 							},
 						},
@@ -34,26 +36,5 @@ return {
 				}
 			end
 		end,
-	},
-	{
-		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				bacon_ls = {
-					cmd = { "bacon-ls" },
-					filetypes = { "rust" },
-					root_markers = { "Cargo.toml" },
-					settings = {
-						bacon_ls = {
-							backend = "cargo",
-							cargo = {
-								command = "clippy",
-								checkOnSave = true,
-							},
-						},
-					},
-				},
-			},
-		},
 	},
 }
