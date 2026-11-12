@@ -8,8 +8,6 @@
     userAllowOther = true;
   };
 
-  programs.kdeconnect.enable = true;
-
   programs.dconf.enable = true;
 
   programs.wshowkeys.enable = true;
