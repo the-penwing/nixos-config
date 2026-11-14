@@ -91,6 +91,12 @@
       }
       zle -N sesh-sessions
 
+      direnv-sizes() {
+        nix-store --gc --print-roots | grep -E 'direnv' | while read -r root _ p; do
+          printf '%s\t%s\n' "$(nix path-info -S "$p" | cut -f2)" "$root"
+        done | sort -n | numfmt --to=iec --field=1
+      }
+
       # Application keypad mode
       function zle-line-init() {
         [[ -n ''${terminfo[smkx]} ]] && echoti smkx

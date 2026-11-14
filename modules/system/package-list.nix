@@ -155,8 +155,7 @@
 
       # --- Kotlin & JVM Stack ---
       jetbrains.idea
-      gradle_8
-      kotlin
+      jdk21
       # Android
       android-studio
       android-tools
@@ -253,7 +252,7 @@
       thunar
 
       # --- Games ---
-      prismlauncher
+      (prismlauncher.override {jdks = [jdk21];})
     ];
 
     # ========================================================================
