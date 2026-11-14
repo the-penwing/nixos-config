@@ -11,7 +11,6 @@
       mandoc.enable = true;
       cache.enable = true;
     };
-    dev.enable = true;
     info.enable = true;
     doc.enable = true;
   };
@@ -55,4 +54,6 @@
   };
 
   services.flatpak.enable = true;
+
+  services.speechd.enable = false;
 }

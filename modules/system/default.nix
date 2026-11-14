@@ -17,6 +17,5 @@
     ./services.nix
     ./systemd.nix
     ./users.nix
-    ./virtualisation.nix
   ];
 }

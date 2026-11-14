@@ -6,13 +6,15 @@
 #
 # Customisation notes:
 # - Keep machine-specific certificates and stateVersion here.
-{...}: {
+{inputs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./hardware.nix
     ./performance.nix
     ../../modules/system
   ];
+
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];

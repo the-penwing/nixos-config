@@ -101,11 +101,8 @@
       xxd
 
       # --- C & C++ Stack ---
-      clang
       clang-tools
       gcc
-      libclang
-      lld
       lldb
       mold
       pkg-config
@@ -119,29 +116,19 @@
       cargo-expand
       cargo-release
       cargo-all-features
-      cargo-zigbuild
       slint-lsp
       (rust-bin.stable.latest.default.override {
         extensions = ["rust-src" "rust-analyzer"];
         targets = [
           "x86_64-unknown-linux-gnu"
-          "thumbv8m.main-none-eabihf" # Pico 2 ARM
           "wasm32-unknown-unknown"
         ];
       })
-
-      # --- Gleam Stack ---
-      gleam
-      beamPackages.erlang
-      rebar3
 
       # --- Go Stack ---
       go
       delve
       golangci-lint
-
-      # --- Zig Stack ---
-      zig
 
       # --- Python Stack ---
       black
@@ -165,17 +152,9 @@
       nodejs
       pnpm
       prettier
-      # Elm Stack
-      elmPackages.elm
-      elmPackages.elm-format
-      elmPackages.elm-test
-      elmPackages.elm-live
-      elmPackages.elm-review
-      elm2nix
 
       # --- Kotlin & JVM Stack ---
       jetbrains.idea
-      jdk17
       gradle_8
       kotlin
       # Android
@@ -183,12 +162,7 @@
       android-tools
       scrcpy
 
-      # --- Hardware & Embedded Development (ARM / RP2350) ---
-      gcc-arm-embedded
-      pico-sdk
-      picotool
-      probe-rs-tools
-      flip-link
+      # --- Hardware & Embedded Development ---
       tio
 
       # --- Nix Infrastructure & Tooling ---
@@ -202,7 +176,6 @@
 
       # --- AI Assistance & Diagramming ---
       github-copilot-cli
-      mermaid-cli
     ];
 
     # ========================================================================
@@ -264,7 +237,6 @@
 
       # --- Media, Art & CAD ---
       aseprite
-      gimp
       feh
       vlc
       xournalpp
@@ -282,7 +254,6 @@
 
       # --- Games ---
       prismlauncher
-      flycast
     ];
 
     # ========================================================================
@@ -303,7 +274,7 @@
       sshfs
 
       # --- Processing Pipelines & AV Codecs ---
-      ffmpeg-full
+      ffmpeg
       ffmpegthumbnailer
       libheif
       mediainfo
