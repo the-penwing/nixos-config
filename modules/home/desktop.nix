@@ -37,23 +37,8 @@
   };
 
   home.packages = with pkgs; [
-    mpris-scrobbler
     mprisence
   ];
-
-  systemd.user.services.mpris-scrobbler = {
-    Unit = {
-      Description = "mpris-scrobbler - ListenBrainz scrobbler via MPRIS";
-      After = ["graphical-session.target"];
-    };
-    Service = {
-      Type = "simple";
-      ExecStart = "${pkgs.mpris-scrobbler}/bin/mpris-scrobbler";
-      Restart = "on-failure";
-      RestartSec = 5;
-    };
-    Install.WantedBy = ["default.target"];
-  };
 
   xdg.configFile."mprisence/config.toml".source = (pkgs.formats.toml {}).generate "mprisence-config.toml" {
     player.naviterm = {
