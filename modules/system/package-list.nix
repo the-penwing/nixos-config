@@ -290,6 +290,9 @@ in rec {
 
   fonts = with pkgs; [
     nerd-fonts.meslo-lg
+    plus-jakarta-sans
+    inter
+    crimson-pro
   ];
 
   defaults = {
